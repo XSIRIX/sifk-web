@@ -334,7 +334,7 @@ li {
 .hero-section {
   position: relative;
   min-height: min(96vh, 980px);
-  padding: 45px 0 clamp(3rem, 6vw, 5rem);
+  padding: 50px 0 clamp(3rem, 6vw, 5rem);
 }
 
 .hero-rail {
