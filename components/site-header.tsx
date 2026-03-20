@@ -57,11 +57,11 @@ export function SiteHeader() {
               <Image
                 alt="SIFK GmbH"
                 className="brandmark-logo"
-                height={96}
+                height={400}
                 onError={() => setLogoUnavailable(true)}
                 priority
-                src="/logo-main.png"
-                width={96}
+                src="/logo-horizontal.png"
+                width={1200}
               />
             </span>
           )}
