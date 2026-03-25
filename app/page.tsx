@@ -1,48 +1,14 @@
+import Image from "next/image";
 import Link from "next/link";
 
+import { ParallaxHero } from "@/components/parallax-hero";
 import { Reveal } from "@/components/reveal";
 import { homeContent, pillars, serviceOverview } from "@/lib/site-content";
 
 export default function HomePage() {
   return (
     <>
-      <section className="hero-section">
-        <div className="hero-orbit hero-orbit-left" aria-hidden="true" />
-        <div className="hero-orbit hero-orbit-right" aria-hidden="true" />
-        <div className="hero-rail hero-rail-top" aria-hidden="true" />
-        <div className="hero-rail hero-rail-bottom" aria-hidden="true" />
-
-        <div className="shell hero-grid">
-          <div className="hero-copy hero-animate-copy">
-            <p className="eyebrow">{homeContent.hero.eyebrow}</p>
-            <h1>{homeContent.hero.title}</h1>
-            <p className="hero-text">{homeContent.hero.text}</p>
-
-            <div className="hero-actions">
-              <Link className="button" href={homeContent.hero.primaryCta.href}>
-                {homeContent.hero.primaryCta.label}
-              </Link>
-              <Link className="button button-secondary" href={homeContent.hero.secondaryCta.href}>
-                {homeContent.hero.secondaryCta.label}
-              </Link>
-            </div>
-          </div>
-
-          <div className="hero-stage hero-animate-stage" aria-hidden="true">
-            <div className="hero-stage-panel">
-              <span>Deutschland</span>
-              <span>Afrika</span>
-            </div>
-            <div className="hero-stage-panel">
-              <strong>Verbindung als Marke</strong>
-              <p>
-                Ein ruhiges, mineralisches Interface für Märkte, Projekte und
-                Energieeffizienz.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ParallaxHero />
 
       <section className="section shell">
         <div className="routing-grid">
@@ -76,6 +42,23 @@ export default function HomePage() {
             <Reveal delay={index * 120} key={pillar.id}>
               <article className={`pillar-card pillar-${pillar.accent}`} id={pillar.id}>
                 <div className="pillar-visual" aria-hidden="true">
+                  {pillar.id === "internationale-geschaeftsentwicklung" ? (
+                    <Image
+                      alt=""
+                      className="pillar-visual-image"
+                      fill
+                      sizes="(max-width: 980px) 100vw, 40vw"
+                      src="/homepage/home-pillar-international.png"
+                    />
+                  ) : pillar.id === "energieberatung-deutschland" ? (
+                    <Image
+                      alt=""
+                      className="pillar-visual-image"
+                      fill
+                      sizes="(max-width: 980px) 100vw, 40vw"
+                      src="/homepage/home-pillar-energy.png"
+                    />
+                  ) : null}
                   <span>{pillar.shortTitle}</span>
                 </div>
 

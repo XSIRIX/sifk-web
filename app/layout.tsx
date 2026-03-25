@@ -1,22 +1,23 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Plus_Jakarta_Sans } from "next/font/google";
+import { Bodoni_Moda, Schibsted_Grotesk } from "next/font/google";
 
+import { SmoothScroll } from "@/components/smooth-scroll";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { siteMeta } from "@/lib/site-content";
 
 import "./globals.css";
 
-const displayFont = Cormorant_Garamond({
+const displayFont = Bodoni_Moda({
   subsets: ["latin"],
   variable: "--font-display",
-  weight: ["400", "500", "600", "700"]
+  weight: ["400", "500", "600", "700", "800"]
 });
 
-const bodyFont = Plus_Jakarta_Sans({
+const bodyFont = Schibsted_Grotesk({
   subsets: ["latin"],
   variable: "--font-body",
-  weight: ["400", "500", "600", "700"]
+  weight: ["400", "500", "600", "700", "800"]
 });
 
 export const metadata: Metadata = {
@@ -35,6 +36,7 @@ export default function RootLayout({
   return (
     <html className={`${displayFont.variable} ${bodyFont.variable}`} lang="de">
       <body>
+        <SmoothScroll />
         <div className="page-frame">
           <SiteHeader />
           <main>{children}</main>
