@@ -88,7 +88,7 @@ export function SiteHeader() {
           </nav>
 
           <Link className="button button-small" href="/kontakt" onClick={() => setIsOpen(false)}>
-            Anfrage
+            Kontakt
           </Link>
         </div>
       </div>

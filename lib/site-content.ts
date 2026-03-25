@@ -23,7 +23,7 @@ export const siteMeta = {
 export const navigation: NavItem[] = [
   { href: "/leistungen", label: "Leistungen" },
   { href: "/ueber-uns", label: "Über uns" },
-  { href: "/kontakt", label: "Kontakt" }
+  { href: "/unser-team", label: "Unser Team" }
 ];
 
 export const homeContent = {
@@ -60,8 +60,7 @@ export const homeContent = {
       "Neue Märkte entstehen nicht durch Zufall, sondern durch die richtigen Verbindungen.",
     points: [
       "Afrika als Wachstumsraum mit realer wirtschaftlicher Dynamik",
-      "Partnerschaften mit Substanz statt oberflächlicher Vermittlung",
-      "Energieeffizienz als messbarer Hebel für belastbare Entscheidungen"
+      "Partnerschaften mit Substanz statt oberflächlicher Vermittlung"
     ]
   },
   trust: [
@@ -171,7 +170,7 @@ export const servicePageContent = {
 export const aboutPageContent = {
   intro: {
     eyebrow: "Über uns",
-    title: "SIFK denkt Verbindung als unternehmerische Aufgabe.",
+    title: "SIFK gestaltet Verbindung mit unternehmerischer Klarheit.",
     text:
       "Die Marke steht für das aktive Zusammenführen von Märkten, Partnern, Projekten und Energieeffizienz. Daraus entsteht ein Beratungsansatz, der wirtschaftliche Chancen und belastbare Umsetzung zusammendenkt."
   },
@@ -227,4 +226,39 @@ export const contactPageContent = {
         "Für übergreifende Fragen zur Marke, Kooperationen oder organisatorische Themen."
     }
   ]
+};
+
+export const teamPageContent = {
+  intro: {
+    eyebrow: "Unser Team",
+    title: "Ein Team, das Verbindung operativ tragfähig macht.",
+    text:
+      "SIFK bündelt internationale Geschäftsentwicklung, Energieberatung und strukturierte Projektführung in einer gemeinsamen Arbeitsweise. So entstehen Entscheidungen, die fachlich klar und in der Umsetzung belastbar bleiben."
+  },
+  focus: [
+    {
+      title: "Internationale Geschäftsentwicklung",
+      text:
+        "Wir arbeiten an Markteintritt, Partnerschaften und belastbaren Beziehungen mit Afrika-Bezug. Der Fokus liegt auf realistischen Schritten, klaren Rollen und anschlussfähigen Gesprächen."
+    },
+    {
+      title: "Energieberatung und Effizienz",
+      text:
+        "Technische Analyse, wirtschaftliche Priorisierung und umsetzbare Maßnahmenlogik werden zusammen gedacht, damit Effizienzthemen nicht abstrakt bleiben."
+    },
+    {
+      title: "Projektführung und Koordination",
+      text:
+        "Zwischen Strategie und Umsetzung sorgt das Team für Struktur, Priorisierung und saubere Kommunikation mit allen relevanten Beteiligten."
+    }
+  ],
+  collaboration: [
+    "klare Verantwortlichkeiten statt diffuser Übergaben",
+    "fachliche Tiefe mit unternehmerischem Blick",
+    "kommunikative Sicherheit über kulturelle und operative Kontexte hinweg"
+  ],
+  cta: {
+    href: "/kontakt",
+    label: "Kontakt aufnehmen"
+  }
 };

@@ -3,7 +3,8 @@ import Link from "next/link";
 
 import { ParallaxHero } from "@/components/parallax-hero";
 import { Reveal } from "@/components/reveal";
-import { homeContent, pillars, serviceOverview } from "@/lib/site-content";
+import { StoryScroll } from "@/components/story-scroll";
+import { homeContent, pillars } from "@/lib/site-content";
 
 export default function HomePage() {
   return (
@@ -89,54 +90,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="story-section">
-        <div className="shell story-grid">
-          <Reveal>
-            <p className="eyebrow">Differenzierung</p>
-            <h2>{homeContent.story.quote}</h2>
-          </Reveal>
-
-          <Reveal className="story-points" delay={120}>
-            {homeContent.story.points.map((point) => (
-              <p key={point}>{point}</p>
-            ))}
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="section shell">
-        <Reveal className="section-head">
-          <p className="eyebrow">Leistungsüberblick</p>
-          <h2>Scanbar aufgebaut, ohne generische Feature-Kacheln.</h2>
-        </Reveal>
-
-        <div className="service-overview-grid">
-          {serviceOverview.map((group, index) => (
-            <Reveal delay={index * 120} key={group.title}>
-              <article className="service-overview-card">
-                <h3>{group.title}</h3>
-                <ul className="service-lines">
-                  {group.items.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
-      <section className="section shell">
-        <div className="trust-grid">
-          {homeContent.trust.map((item, index) => (
-            <Reveal delay={index * 80} key={item}>
-              <article className="trust-card">
-                <p>{item}</p>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-      </section>
+      <StoryScroll
+        eyebrow="Differenzierung"
+        points={homeContent.story.points}
+        quote={homeContent.story.quote}
+      />
 
       <section className="section shell">
         <Reveal className="cta-banner">
