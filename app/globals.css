@@ -782,9 +782,10 @@ p {
 
 .parallax-copy {
   position: relative;
-  max-width: min(46rem, 100%);
+  width: min(75%, 72rem);
+  max-width: none;
   min-height: min(34rem, 58vh);
-  transform: translateY(calc(var(--sequence-progress) * 2.2rem));
+  transform: translateY(calc(var(--sequence-progress) * -2.2rem));
 }
 
 .parallax-copy .eyebrow,
@@ -793,10 +794,11 @@ p {
 }
 
 .parallax-copy h1 {
-  max-width: 10ch;
-  font-size: clamp(2.6rem, 5.3vw, 4.9rem);
+  max-width: none;
+  font-size: clamp(2.5rem, 4.8vw, 4.9rem);
   color: oklch(0.985 0.008 90);
   text-shadow: 0 10px 40px oklch(0.08 0.01 232 / 0.35);
+  text-wrap: pretty;
 }
 
 .parallax-copy .hero-actions {
@@ -822,8 +824,10 @@ p {
 
 .parallax-intro {
   bottom: 0;
+  width: 100%;
+  max-width: none;
   opacity: var(--intro-opacity);
-  transform: translateY(calc(var(--sequence-progress) * 1rem));
+  transform: translateY(calc(var(--sequence-progress) * -1rem));
 }
 
 .parallax-bridge {
@@ -928,6 +932,11 @@ p {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.routing-cluster {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.6rem);
+}
+
 .routing-panel,
 .service-overview-card,
 .trust-card,
@@ -972,9 +981,42 @@ p {
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
-  background: radial-gradient(circle, color-mix(in oklab, var(--signal) 62%, white), transparent 70%);
   content: "";
-  opacity: 0.6;
+  opacity: 0.8;
+  filter: blur(3px);
+}
+
+.routing-panel-atlas::after {
+  background: radial-gradient(circle, color-mix(in oklab, var(--accent) 68%, white), transparent 70%);
+}
+
+.routing-panel-signal::after {
+  background: radial-gradient(circle, color-mix(in oklab, var(--signal) 74%, white), transparent 70%);
+}
+
+.routing-panel-atlas .routing-badge {
+  border-color: color-mix(in oklab, var(--accent) 35%, white);
+}
+
+.routing-panel-signal .routing-badge {
+  border-color: color-mix(in oklab, var(--signal) 34%, white);
+}
+
+.routing-panel-atlas .routing-link {
+  color: color-mix(in oklab, var(--accent-deep) 82%, var(--ink));
+}
+
+.routing-panel-signal .routing-link {
+  color: color-mix(in oklab, var(--signal) 56%, var(--ink));
+}
+
+.routing-panel-signal::before {
+  border-color: oklch(0.75 0.04 156 / 0.34);
+}
+
+.routing-panel-atlas::before {
+  border-color: oklch(0.72 0.06 52 / 0.32);
+  content: "";
 }
 
 .routing-panel:hover,
@@ -1038,29 +1080,82 @@ p {
   text-align: center;
 }
 
-.positioning-block::before,
-.positioning-block::after {
-  position: absolute;
-  top: 50%;
-  width: clamp(3rem, 7vw, 7rem);
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--accent));
-  content: "";
-  transform: translateY(-50%);
-}
-
-.positioning-block::before {
-  left: -2rem;
-}
-
-.positioning-block::after {
-  right: -2rem;
-  transform: translateY(-50%) scaleX(-1);
-}
-
 .positioning-block p {
-  font-size: clamp(1.38rem, 2.5vw, 2rem);
-  line-height: 1.48;
+  font-size: clamp(1.18rem, 2vw, 1.7rem);
+  line-height: 1.42;
+}
+
+.positioning-bridge {
+  display: grid;
+  gap: 1.2rem;
+  max-width: min(50rem, 100%);
+  margin-top: clamp(0.2rem, 1vw, 0.6rem);
+  padding: clamp(1.4rem, 2.4vw, 2rem) clamp(1.2rem, 2.4vw, 2rem);
+  border: 1px solid color-mix(in oklab, var(--line) 82%, white);
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, oklch(0.995 0.008 90 / 0.76), oklch(0.98 0.012 86 / 0.9)),
+    linear-gradient(130deg, oklch(1 0 0 / 0.34), transparent 52%);
+  box-shadow: var(--paper-shadow);
+  backdrop-filter: blur(14px);
+}
+
+.positioning-kicker {
+  margin: 0 auto;
+  padding: 0.38rem 0.78rem;
+  border: 1px solid color-mix(in oklab, var(--line-strong) 46%, white);
+  border-radius: 999px;
+  background: oklch(1 0 0 / 0.56);
+  color: var(--text-soft);
+  font-size: 0.68rem;
+  font-weight: 700;
+  font-family: var(--font-body), sans-serif;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.positioning-connector {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  gap: 0.9rem;
+  width: min(22rem, 100%);
+  margin: 0 auto;
+}
+
+.connector-arm {
+  display: block;
+  height: 1px;
+}
+
+.connector-arm-atlas {
+  background: linear-gradient(90deg, transparent, color-mix(in oklab, var(--accent) 82%, white));
+}
+
+.connector-arm-signal {
+  background: linear-gradient(90deg, color-mix(in oklab, var(--signal) 82%, white), transparent);
+}
+
+.connector-node {
+  display: grid;
+  place-items: center;
+  width: 2.1rem;
+  height: 2.1rem;
+  border: 1px solid color-mix(in oklab, var(--line-strong) 42%, white);
+  border-radius: 50%;
+  background:
+    linear-gradient(135deg, color-mix(in oklab, var(--accent) 34%, white), color-mix(in oklab, var(--signal) 44%, white));
+  box-shadow:
+    inset 0 1px 0 oklch(1 0 0 / 0.6),
+    0 12px 24px oklch(0.53 0.024 238 / 0.08);
+}
+
+.connector-node span {
+  display: block;
+  width: 0.56rem;
+  height: 0.56rem;
+  border-radius: 50%;
+  background: oklch(0.98 0.008 90);
 }
 
 .section-head {
@@ -1653,7 +1748,13 @@ p {
   }
 
   .parallax-copy {
+    width: 100%;
+    max-width: none;
     min-height: min(32rem, 56vh);
+  }
+
+  .routing-grid {
+    grid-template-columns: 1fr;
   }
 
   .service-block {
@@ -1716,7 +1817,7 @@ p {
   }
 
   .parallax-copy h1 {
-    max-width: 10.5ch;
+    max-width: 11.5ch;
   }
 
   .parallax-copy {
@@ -1737,6 +1838,15 @@ p {
 
   .parallax-bridge-route span {
     width: 100%;
+  }
+
+  .positioning-block::before,
+  .positioning-block::after {
+    display: none;
+  }
+
+  .positioning-bridge {
+    border-radius: 28px;
   }
 
   .hero-stage {

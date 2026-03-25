@@ -129,7 +129,7 @@ export function ParallaxHero() {
       const progress = reducedMotionRef.current
         ? 0
         : Math.min(Math.max(-rect.top / scrollable, 0), 1);
-      const introOpacity = Math.max(0, Math.min(1, 1 - (progress - 0.34) / 0.29));
+      const introOpacity = Math.max(0, Math.min(1, 1 - (progress - 0.28) / 0.29));
       const bridgeOpacity = Math.max(0, Math.min(1, (progress - 0.5) / 0.24));
       const targetFrame = Math.min(
         FRAME_COUNT - 1,

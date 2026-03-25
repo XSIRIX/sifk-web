@@ -10,11 +10,11 @@ export default function HomePage() {
     <>
       <ParallaxHero />
 
-      <section className="section shell">
+      <section className="section shell routing-cluster">
         <div className="routing-grid">
           {homeContent.routing.map((item) => (
             <Reveal delay={item.title.includes("Internationale") ? 0 : 120} key={item.title}>
-              <Link className="routing-panel" href={item.href}>
+              <Link className={`routing-panel routing-panel-${item.accent}`} href={item.href}>
                 <span className="routing-badge">{item.badge}</span>
                 <h2>{item.title}</h2>
                 <p>{item.description}</p>
@@ -23,10 +23,16 @@ export default function HomePage() {
             </Reveal>
           ))}
         </div>
-      </section>
 
-      <section className="section shell">
-        <Reveal className="positioning-block">
+        <Reveal className="positioning-block positioning-bridge">
+          <div className="positioning-connector" aria-hidden="true">
+            <span className="connector-arm connector-arm-atlas" />
+            <span className="connector-node">
+              <span />
+            </span>
+            <span className="connector-arm connector-arm-signal" />
+          </div>
+          <p className="positioning-kicker">Gemeinsame Plattform</p>
           <p>{homeContent.positioning}</p>
         </Reveal>
       </section>

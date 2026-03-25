@@ -41,14 +41,16 @@ export const homeContent = {
       description:
         "Markteintritt, Partnerschaften und Projektbegleitung mit Fokus auf afrikanische Märkte.",
       href: "/leistungen#internationale-geschaeftsentwicklung",
-      badge: "Afrika-Fokus"
+      badge: "Afrika-Fokus",
+      accent: "atlas"
     },
     {
       title: "Energieberatung Deutschland",
       description:
         "Energieaudits, Nichtwohngebäude-Beratung und wirtschaftliche Effizienzlösungen für Unternehmen.",
       href: "/leistungen#energieberatung-deutschland",
-      badge: "DIN-orientiert"
+      badge: "DIN-orientiert",
+      accent: "signal"
     }
   ],
   positioning:
