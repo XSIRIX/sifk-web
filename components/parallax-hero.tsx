@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 
@@ -209,7 +210,11 @@ export function ParallaxHero() {
               <p>Wir setzen die Brücke von Deutschland nach Afrika.</p>
               <div className="parallax-bridge-route">
                 <strong>Deutschland</strong>
-                <span />
+                <span className="parallax-bridge-line parallax-bridge-line-static" aria-hidden="true" />
+                <span className="parallax-bridge-logo">
+                  <Image alt="SIFK GmbH" height={400} src="/logo-horizontal-lg.png" width={1200} />
+                </span>
+                <span className="parallax-bridge-line" aria-hidden="true" />
                 <strong>Afrika</strong>
               </div>
             </div>

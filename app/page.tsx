@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import { ParallaxHero } from "@/components/parallax-hero";
+import { PillarCards } from "@/components/pillar-cards";
 import { Reveal } from "@/components/reveal";
 import { StoryScroll } from "@/components/story-scroll";
 import { homeContent, pillars } from "@/lib/site-content";
@@ -44,50 +44,7 @@ export default function HomePage() {
           <h2>Eigenständig lesbar, sichtbar zusammengehörig.</h2>
         </Reveal>
 
-        <div className="pillar-grid">
-          {pillars.map((pillar, index) => (
-            <Reveal delay={index * 120} key={pillar.id}>
-              <article className={`pillar-card pillar-${pillar.accent}`} id={pillar.id}>
-                <div className="pillar-visual" aria-hidden="true">
-                  {pillar.id === "internationale-geschaeftsentwicklung" ? (
-                    <Image
-                      alt=""
-                      className="pillar-visual-image"
-                      fill
-                      sizes="(max-width: 980px) 100vw, 40vw"
-                      src="/homepage/home-pillar-international.png"
-                    />
-                  ) : pillar.id === "energieberatung-deutschland" ? (
-                    <Image
-                      alt=""
-                      className="pillar-visual-image"
-                      fill
-                      sizes="(max-width: 980px) 100vw, 40vw"
-                      src="/homepage/home-pillar-energy.png"
-                    />
-                  ) : null}
-                  <span>{pillar.shortTitle}</span>
-                </div>
-
-                <div className="pillar-content">
-                  <h3>{pillar.title}</h3>
-                  <p className="pillar-lead">{pillar.lead}</p>
-                  <p>{pillar.description}</p>
-
-                  <ul className="detail-list">
-                    {pillar.services.map((service) => (
-                      <li key={service}>{service}</li>
-                    ))}
-                  </ul>
-
-                  <Link className="text-link" href={pillar.href}>
-                    Mehr erfahren
-                  </Link>
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
+        <PillarCards pillars={pillars} />
       </section>
 
       <StoryScroll
