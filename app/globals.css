@@ -879,6 +879,7 @@ p {
   width: 100%;
   max-width: none;
   opacity: var(--intro-opacity);
+  pointer-events: auto;
   transform: translateY(calc(var(--sequence-progress) * -1rem));
 }
 
@@ -888,6 +889,7 @@ p {
   gap: 1rem;
   max-width: 38rem;
   opacity: var(--bridge-opacity);
+  pointer-events: none;
   transform: translateY(calc((1 - var(--bridge-opacity)) * 2.5rem));
 }
 
