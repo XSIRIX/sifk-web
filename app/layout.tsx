@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Bodoni_Moda, Schibsted_Grotesk } from "next/font/google";
 
+import { HashScrollController } from "@/components/hash-scroll-controller";
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -65,6 +66,7 @@ export default function RootLayout({
   return (
     <html className={`${displayFont.variable} ${bodyFont.variable}`} lang="de">
       <body>
+        <HashScrollController />
         <SmoothScroll />
         <ThemeColorController />
         <div className="page-frame">

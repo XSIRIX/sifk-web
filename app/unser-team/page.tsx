@@ -1,13 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Reveal } from "@/components/reveal";
 import { teamPageContent } from "@/lib/site-content";
 
 export default function TeamPage() {
   return (
     <>
       <section className="page-intro">
-        <div className="shell page-intro-grid page-intro-grid-visual">
+        <Reveal className="shell page-intro-grid page-intro-grid-visual">
           <div className="page-intro-copy">
             <div>
               <p className="eyebrow">{teamPageContent.intro.eyebrow}</p>
@@ -33,13 +34,14 @@ export default function TeamPage() {
               <p>Strategische Klarheit, belastbare Beziehungen und saubere Umsetzung.</p>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section className="section shell">
         <div className="team-profile-grid">
-          {teamPageContent.profiles.map((profile) => (
-            <article className="team-profile-card" key={profile.name}>
+          {teamPageContent.profiles.map((profile, index) => (
+            <Reveal delay={index * 100} key={profile.name}>
+              <article className="team-profile-card">
               <div className={`team-profile-portrait team-profile-portrait-${profile.accent}`}>
                 <Image
                   alt={profile.imageAlt}
@@ -59,13 +61,14 @@ export default function TeamPage() {
                   <li key={area}>{area}</li>
                 ))}
               </ul>
-            </article>
+              </article>
+            </Reveal>
           ))}
         </div>
       </section>
 
       <section className="section shell">
-        <div className="about-band">
+        <Reveal className="about-band">
           <div>
             <p className="eyebrow">Zusammenarbeit</p>
             <h2>Ein Teammodell mit klarer Führung und sauberer Abstimmung.</h2>
@@ -76,11 +79,11 @@ export default function TeamPage() {
               <li key={item}>{item}</li>
             ))}
           </ul>
-        </div>
+        </Reveal>
       </section>
 
       <section className="section shell">
-        <div className="cta-banner">
+        <Reveal className="cta-banner">
           <div>
             <p className="eyebrow">Nächster Schritt</p>
             <h2>Wenn Sie das Team hinter SIFK kennenlernen möchten, sprechen wir weiter.</h2>
@@ -95,7 +98,7 @@ export default function TeamPage() {
               {teamPageContent.cta.label}
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );

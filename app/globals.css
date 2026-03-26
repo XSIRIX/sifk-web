@@ -1914,15 +1914,20 @@ p {
   display: grid;
   grid-template-columns: minmax(0, 0.84fr) minmax(0, 1.16fr);
   gap: 1.25rem;
+  align-items: stretch;
 }
 
 .contact-options {
+  display: grid;
+  gap: 1.25rem;
   align-content: start;
 }
 
 .contact-form {
   display: grid;
+  grid-template-rows: auto auto 1fr auto;
   gap: 1rem;
+  min-height: 100%;
   padding: clamp(1.55rem, 3vw, 2.4rem);
   border-radius: 34px;
 }
@@ -1936,6 +1941,11 @@ p {
 .contact-form label {
   display: grid;
   gap: 0.55rem;
+}
+
+.contact-form > label:last-of-type {
+  grid-template-rows: auto 1fr;
+  min-height: 100%;
 }
 
 .contact-form span {
@@ -1956,6 +1966,11 @@ p {
     border-color 220ms var(--ease-out-quart),
     box-shadow 220ms var(--ease-out-quart),
     transform 220ms var(--ease-out-quart);
+}
+
+.contact-form textarea {
+  min-height: 100%;
+  resize: vertical;
 }
 
 .contact-form input:focus-visible,
