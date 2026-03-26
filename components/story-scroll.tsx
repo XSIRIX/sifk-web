@@ -13,21 +13,21 @@ export function StoryScroll({ eyebrow, quote, points }: StoryScrollProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const slides = useMemo(() => [quote, ...points], [points, quote]);
-  const sideImage =
-    activeIndex === 1
-      ? {
-          alt: "Wachstumsvisualisierung",
-          src: "/homepage/growth.png"
-        }
-      : activeIndex === slides.length - 1
-        ? {
-            alt: "Partnerschaftsvisualisierung",
-            src: "/homepage/partnership.png"
-          }
-      : {
-          alt: "Stilisierte Karte von Afrika",
-          src: "/homepage/africa-map.png"
-        };
+  const slideImages = [
+    {
+      alt: "Stilisierte Karte von Afrika",
+      src: "/homepage/africa-map.png"
+    },
+    {
+      alt: "Wachstumsvisualisierung",
+      src: "/homepage/growth.png"
+    },
+    ...points.slice(1).map(() => ({
+      alt: "Partnerschaftsvisualisierung",
+      src: "/homepage/partnership.png"
+    }))
+  ];
+  const sideImage = slideImages[Math.min(activeIndex, slideImages.length - 1)];
 
   useEffect(() => {
     const section = sectionRef.current;
@@ -106,8 +106,9 @@ export function StoryScroll({ eyebrow, quote, points }: StoryScrollProps) {
           <div className="story-scroll-side">
             <Image
               alt={sideImage.alt}
-              className="story-point-image"
+              className="story-point-image story-point-image-animated"
               height={1920}
+              key={`${sideImage.src}-${activeIndex}`}
               sizes="(max-width: 1100px) min(100vw - 2rem, 28rem), 24rem"
               src={sideImage.src}
               width={1080}

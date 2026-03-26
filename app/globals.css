@@ -1529,6 +1529,10 @@ p {
   filter: drop-shadow(0 22px 38px oklch(0.07 0.012 242 / 0.22));
 }
 
+.story-point-image-animated {
+  animation: fadeSlideIn 320ms var(--ease-out-expo) both;
+}
+
 .story-point-list {
   display: grid;
   gap: 1rem;
