@@ -8,12 +8,6 @@ import { siteMeta } from "@/lib/site-content";
 
 import "./globals.css";
 
-const metadataBaseUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  process.env.VERCEL_PROJECT_PRODUCTION_URL ||
-  process.env.VERCEL_URL ||
-  "http://localhost:3000";
-
 const displayFont = Bodoni_Moda({
   subsets: ["latin"],
   variable: "--font-display",
@@ -27,35 +21,11 @@ const bodyFont = Schibsted_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    metadataBaseUrl.startsWith("http") ? metadataBaseUrl : `https://${metadataBaseUrl}`
-  ),
   title: {
     default: siteMeta.name,
     template: `%s | ${siteMeta.name}`
   },
-  description: siteMeta.description,
-  icons: {
-    icon: "/logo-icon.png",
-    shortcut: "/logo-icon.png",
-    apple: "/logo-icon.png"
-  },
-  openGraph: {
-    title: siteMeta.name,
-    description: siteMeta.description,
-    images: [
-      {
-        url: "/logo-horizontal-lg.png",
-        alt: `${siteMeta.name} logo`
-      }
-    ]
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteMeta.name,
-    description: siteMeta.description,
-    images: ["/logo-horizontal-lg.png"]
-  }
+  description: siteMeta.description
 };
 
 export const viewport: Viewport = {
