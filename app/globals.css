@@ -2013,6 +2013,27 @@ p {
     min-height: 30rem;
   }
 
+  .trust-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 721px) and (max-width: 1100px) {
+  .parallax-copy h1 {
+    font-size: clamp(4.35rem, 7.9vw, 5.85rem);
+  }
+
+  .parallax-copy .button,
+  .parallax-copy .button-secondary {
+    min-height: 4rem;
+    padding: 1.05rem 1.7rem;
+    font-size: 1.02rem;
+  }
+
+  .parallax-bridge p {
+    font-size: clamp(2.35rem, 4.6vw, 3.2rem);
+  }
+
   .story-scroll-section {
     min-height: calc(var(--story-steps, 4) * 52vh);
     padding: clamp(4rem, 8vw, 6rem) 0;
@@ -2020,9 +2041,9 @@ p {
 
   .story-scroll-sticky {
     position: sticky;
-    top: calc(var(--header-offset) + 0.35rem);
+    top: calc(var(--header-offset) + 3rem);
     min-height: min(72svh, 38rem);
-    padding: 0.2rem 0 0;
+    padding: 1.35rem 0 0;
   }
 
   .story-copy-stage {
@@ -2049,7 +2070,7 @@ p {
   .story-scroll-copy {
     text-align: center;
     gap: 1rem;
-    margin-top: 3.25rem;
+    margin-top: 6rem;
   }
 
   .story-scroll-copy .eyebrow {
@@ -2063,15 +2084,11 @@ p {
   }
 
   .story-point-image {
-    width: min(82vw, 21rem);
+    width: min(88vw, 28rem);
     display: block;
     margin: 0 auto;
     transform: none;
     margin-bottom: 0;
-  }
-
-  .trust-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -2148,6 +2165,10 @@ p {
     width: 100%;
     max-width: none;
     min-height: min(32rem, 56vh);
+  }
+
+  .parallax-copy h1 {
+    font-size: clamp(3.1rem, 6vw, 4.3rem);
   }
 
   .routing-grid {
@@ -2268,6 +2289,63 @@ p {
 
   .parallax-bridge-line {
     min-width: 0;
+  }
+
+  .story-scroll-section {
+    min-height: calc(var(--story-steps, 4) * 52vh);
+    padding: clamp(4rem, 8vw, 6rem) 0;
+  }
+
+  .story-scroll-sticky {
+    position: sticky;
+    top: calc(var(--header-offset) + 0.35rem);
+    min-height: min(72svh, 38rem);
+    padding: 0.2rem 0 0;
+  }
+
+  .story-copy-stage {
+    position: relative;
+    min-height: clamp(5.5rem, 15vw, 8.5rem);
+  }
+
+  .story-copy-slide {
+    position: absolute;
+    inset: 0;
+    display: block;
+    max-width: none;
+    opacity: 0;
+    transform: translateY(1rem) scale(0.985);
+    padding: 0;
+    border-top: 0;
+  }
+
+  .story-copy-slide.is-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  .story-scroll-copy {
+    text-align: center;
+    gap: 1rem;
+    margin-top: 3.25rem;
+  }
+
+  .story-scroll-copy .eyebrow {
+    margin-bottom: 0;
+  }
+
+  .story-scroll-side {
+    gap: 0.1rem;
+    justify-items: center;
+    align-content: start;
+  }
+
+  .story-point-image {
+    width: min(82vw, 21rem);
+    display: block;
+    margin: 0 auto;
+    transform: none;
+    margin-bottom: 0;
   }
 
   .positioning-block::before,
