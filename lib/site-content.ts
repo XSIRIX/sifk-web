@@ -17,7 +17,7 @@ export type Pillar = {
 export const siteMeta = {
   name: "SIFK GmbH",
   description:
-    "SIFK verbindet internationale Geschäftsentwicklung mit Fokus auf Afrika mit fundierter Energieberatung für Unternehmen und Nichtwohngebäude in Deutschland."
+    "SIFK verbindet internationale Geschäftsentwicklung mit Afrika-Fokus und fundierte Energieberatung für Unternehmen und Nichtwohngebäude in Deutschland."
 };
 
 export const navigation: NavItem[] = [
