@@ -37,13 +37,12 @@ export function StoryScroll({ eyebrow, quote, points }: StoryScrollProps) {
     }
 
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const desktop = window.matchMedia("(min-width: 1101px)");
     let frameHandle = 0;
 
     const update = () => {
       frameHandle = 0;
 
-      if (reducedMotion.matches || !desktop.matches) {
+      if (reducedMotion.matches) {
         setActiveIndex(0);
         return;
       }
@@ -69,7 +68,6 @@ export function StoryScroll({ eyebrow, quote, points }: StoryScrollProps) {
     window.addEventListener("scroll", requestUpdate, { passive: true });
     window.addEventListener("resize", requestUpdate);
     reducedMotion.addEventListener("change", requestUpdate);
-    desktop.addEventListener("change", requestUpdate);
 
     return () => {
       if (frameHandle) {
@@ -79,7 +77,6 @@ export function StoryScroll({ eyebrow, quote, points }: StoryScrollProps) {
       window.removeEventListener("scroll", requestUpdate);
       window.removeEventListener("resize", requestUpdate);
       reducedMotion.removeEventListener("change", requestUpdate);
-      desktop.removeEventListener("change", requestUpdate);
     };
   }, [slides.length]);
 

@@ -22,8 +22,8 @@ export const siteMeta = {
 
 export const navigation: NavItem[] = [
   { href: "/leistungen", label: "Leistungen" },
-  { href: "/ueber-uns", label: "Über uns" },
-  { href: "/unser-team", label: "Unser Team" }
+  { href: "/unser-team", label: "Unser Team" },
+  { href: "/ueber-uns", label: "Über uns" }
 ];
 
 export const homeContent = {
@@ -235,21 +235,36 @@ export const teamPageContent = {
     text:
       "SIFK bündelt internationale Geschäftsentwicklung, Energieberatung und strukturierte Projektführung in einer gemeinsamen Arbeitsweise. So entstehen Entscheidungen, die fachlich klar und in der Umsetzung belastbar bleiben."
   },
-  focus: [
+  profiles: [
     {
-      title: "Internationale Geschäftsentwicklung",
+      name: "Internationale Geschäftsentwicklung",
+      role: "Markteintritt und Partnerschaften",
+      accent: "atlas",
+      image: "/profile/black.jpg",
+      imageAlt: "Porträt für internationale Geschäftsentwicklung",
       text:
-        "Wir arbeiten an Markteintritt, Partnerschaften und belastbaren Beziehungen mit Afrika-Bezug. Der Fokus liegt auf realistischen Schritten, klaren Rollen und anschlussfähigen Gesprächen."
+        "Verantwortet Gespräche, Partnerschaftsaufbau und belastbare Beziehungen mit Afrika-Bezug. Der Fokus liegt auf realistischen Schritten, klaren Rollen und anschlussfähigen Entscheidungen.",
+      areas: ["Markteintritt", "Partnerschaften", "Stakeholder-Kommunikation"]
     },
     {
-      title: "Energieberatung und Effizienz",
+      name: "Energieberatung",
+      role: "Analyse und Effizienzlogik",
+      accent: "signal",
+      image: "/profile/asian.jpg",
+      imageAlt: "Porträt für Energieberatung",
       text:
-        "Technische Analyse, wirtschaftliche Priorisierung und umsetzbare Maßnahmenlogik werden zusammen gedacht, damit Effizienzthemen nicht abstrakt bleiben."
+        "Verbindet technische Analyse mit wirtschaftlicher Priorisierung, damit Effizienzthemen nachvollziehbar bewertet und in konkrete Maßnahmen übersetzt werden können.",
+      areas: ["Audits", "Nichtwohngebäude", "Wirtschaftliche Priorisierung"]
     },
     {
-      title: "Projektführung und Koordination",
+      name: "Projektkoordination",
+      role: "Umsetzung und Struktur",
+      accent: "forge",
+      image: "/profile/white.jpg",
+      imageAlt: "Porträt für Projektkoordination",
       text:
-        "Zwischen Strategie und Umsetzung sorgt das Team für Struktur, Priorisierung und saubere Kommunikation mit allen relevanten Beteiligten."
+        "Hält Projekte zwischen Strategie, Beratung und operativer Umsetzung zusammen. So bleiben Prioritäten, Kommunikation und Verantwortlichkeiten über alle Beteiligten hinweg sauber geführt.",
+      areas: ["Projektstruktur", "Abstimmung", "Umsetzungssteuerung"]
     }
   ],
   collaboration: [

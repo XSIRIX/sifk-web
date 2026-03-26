@@ -60,7 +60,7 @@ export function SiteHeader() {
                 height={400}
                 onError={() => setLogoUnavailable(true)}
                 priority
-                src="/logo-horizontal.png"
+                src="/logo-menu.png"
                 width={1200}
               />
             </span>

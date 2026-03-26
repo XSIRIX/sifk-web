@@ -37,11 +37,28 @@ export default function TeamPage() {
       </section>
 
       <section className="section shell">
-        <div className="principles-grid">
-          {teamPageContent.focus.map((item) => (
-            <article className="principle-card" key={item.title}>
-              <h2>{item.title}</h2>
-              <p>{item.text}</p>
+        <div className="team-profile-grid">
+          {teamPageContent.profiles.map((profile) => (
+            <article className="team-profile-card" key={profile.name}>
+              <div className={`team-profile-portrait team-profile-portrait-${profile.accent}`}>
+                <Image
+                  alt={profile.imageAlt}
+                  className="team-profile-portrait-image"
+                  fill
+                  sizes="(max-width: 1100px) 100vw, 30vw"
+                  src={profile.image}
+                />
+              </div>
+              <div className="team-profile-head">
+                <p className="eyebrow">{profile.role}</p>
+                <h2>{profile.name}</h2>
+              </div>
+              <p>{profile.text}</p>
+              <ul className="team-profile-list">
+                {profile.areas.map((area) => (
+                  <li key={area}>{area}</li>
+                ))}
+              </ul>
             </article>
           ))}
         </div>
