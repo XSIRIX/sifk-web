@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-const HERO_THEME_COLOR = "#0f171d";
+const HERO_THEME_COLOR = "#f6f1e7";
 const DEFAULT_THEME_COLOR = "#f6f1e7";
 
 function setThemeColor(color: string) {

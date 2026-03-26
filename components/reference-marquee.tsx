@@ -20,7 +20,7 @@ const OTHER_LOGOS: ReferenceLogo[] = [
   { alt: "Proland", src: "/references/proland.png" },
   { alt: "Sameer", src: "/references/sameer.png" },
   { alt: "Werther", src: "/references/werther.png" },
-  { alt: "Kochlöffel", src: "/references/kochlöffel.jpg" },
+  { alt: "Kochlöffel", src: "/references/kochloffel.jpg" },
   { alt: "Kautex", src: "/references/kautex.png" },
   { alt: "Multimatic", src: "/references/multimatic.png" },
   { alt: "Walther", src: "/references/walther.webp" },

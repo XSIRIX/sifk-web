@@ -106,8 +106,9 @@ export function StoryScroll({ eyebrow, quote, points }: StoryScrollProps) {
           <div className="story-scroll-side">
             <Image
               alt={sideImage.alt}
-              className="story-point-image"
+              className="story-point-image story-point-image-animated"
               height={1920}
+              key={`${sideImage.src}-${activeIndex}`}
               sizes="(max-width: 1100px) min(100vw - 2rem, 28rem), 24rem"
               src={sideImage.src}
               width={1080}
