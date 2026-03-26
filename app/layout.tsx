@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Bodoni_Moda, Schibsted_Grotesk } from "next/font/google";
 
 import { SmoothScroll } from "@/components/smooth-scroll";
@@ -26,6 +26,13 @@ export const metadata: Metadata = {
     template: `%s | ${siteMeta.name}`
   },
   description: siteMeta.description
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#0f171d"
 };
 
 export default function RootLayout({

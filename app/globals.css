@@ -30,6 +30,7 @@
 
 html {
   background: var(--bg);
+  min-height: 100%;
 }
 
 html.lenis,
@@ -48,6 +49,8 @@ html.lenis body {
 body {
   margin: 0;
   min-width: 320px;
+  min-height: 100svh;
+  min-height: 100dvh;
   background:
     radial-gradient(circle at top left, oklch(0.95 0.03 68 / 0.5), transparent 28%),
     radial-gradient(circle at 88% 16%, oklch(0.91 0.045 150 / 0.45), transparent 24%),
@@ -106,6 +109,8 @@ img {
 
 main {
   overflow: clip;
+  min-height: 100svh;
+  min-height: 100dvh;
   padding-top: var(--header-offset);
 }
 
@@ -742,7 +747,8 @@ p {
 .parallax-hero-sticky {
   position: sticky;
   top: 0;
-  height: 100vh;
+  min-height: 100svh;
+  height: 100dvh;
   overflow: clip;
   background: oklch(0.16 0.018 232);
 }
@@ -784,7 +790,10 @@ p {
   display: grid;
   align-items: end;
   min-height: 100%;
-  padding: calc(var(--header-offset) + clamp(0.55rem, 1.4vw, 1rem)) 0 2.5rem;
+  padding:
+    calc(env(safe-area-inset-top, 0px) + var(--header-offset) + clamp(0.55rem, 1.4vw, 1rem))
+    0
+    calc(env(safe-area-inset-bottom, 0px) + 2.5rem);
 }
 
 .parallax-copy {
@@ -956,6 +965,100 @@ p {
   gap: 1.25rem;
 }
 
+.reference-band {
+  position: relative;
+  z-index: 2;
+  margin-top: 0;
+  padding: 0;
+}
+
+.reference-band-copy {
+  display: grid;
+  gap: 0.3rem;
+  margin: 0 0 1.55rem;
+  justify-items: center;
+}
+
+.reference-band-copy .eyebrow {
+  margin-bottom: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+}
+
+.reference-band-title {
+  max-width: 34rem;
+  color: var(--ink);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.45rem, 2.1vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.035em;
+  line-height: 1.02;
+  text-align: center;
+  text-wrap: balance;
+}
+
+.reference-band-inner {
+  display: grid;
+  gap: 0.75rem;
+  padding: clamp(0.7rem, 1.4vw, 0.95rem);
+  border: 1px solid color-mix(in oklab, var(--line) 78%, white);
+  border-radius: 30px;
+  background:
+    linear-gradient(180deg, oklch(0.995 0.008 90 / 0.76), oklch(0.982 0.012 87 / 0.92)),
+    linear-gradient(120deg, oklch(1 0 0 / 0.28), transparent 58%);
+  box-shadow: var(--paper-shadow);
+  overflow: clip;
+}
+
+.reference-marquee {
+  position: relative;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+}
+
+.reference-marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  width: max-content;
+  animation: reference-marquee 120s linear infinite;
+  will-change: transform;
+}
+
+.reference-logo-chip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: clamp(8.8rem, 12vw, 10.8rem);
+  height: clamp(3.6rem, 5.4vw, 4.4rem);
+  padding: 0.6rem 1rem;
+  border: 1px solid color-mix(in oklab, var(--line) 72%, white);
+  border-radius: 999px;
+  background:
+    linear-gradient(180deg, oklch(0.998 0.004 90 / 0.88), oklch(0.986 0.012 88 / 0.98)),
+    linear-gradient(120deg, oklch(1 0 0 / 0.38), transparent 58%);
+  box-shadow:
+    inset 0 1px 0 oklch(1 0 0 / 0.72),
+    0 12px 24px oklch(0.53 0.024 238 / 0.06);
+}
+
+.reference-logo-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+
+@keyframes reference-marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 .routing-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -963,6 +1066,7 @@ p {
 .routing-cluster {
   display: grid;
   gap: clamp(1.5rem, 4vw, 2.6rem);
+  padding-top: clamp(2.35rem, 4.6vw, 4.15rem);
 }
 
 .routing-panel,
@@ -2175,6 +2279,22 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .routing-cluster {
+    padding-top: clamp(1.75rem, 3.8vw, 2.8rem);
+  }
+
+  .reference-band {
+    margin-top: 0;
+  }
+
+  .reference-band-copy {
+    gap: 0.35rem;
+  }
+
+  .reference-band-title {
+    max-width: 100%;
+  }
+
   .service-block {
     grid-template-columns: 1fr;
   }
@@ -2260,6 +2380,35 @@ p {
 
   .parallax-copy {
     min-height: min(24rem, 46vh);
+  }
+
+  .reference-band {
+    margin-top: 0;
+    padding: 0;
+  }
+
+  .routing-cluster {
+    padding-top: 1.25rem;
+  }
+
+  .reference-band-copy {
+    margin-bottom: 1.1rem;
+  }
+
+  .reference-band-inner {
+    gap: 0.7rem;
+    padding: 0.7rem;
+    border-radius: 24px;
+  }
+
+  .reference-logo-chip {
+    min-width: 7.6rem;
+    height: 3.7rem;
+    padding-inline: 0.85rem;
+  }
+
+  .reference-band-title {
+    font-size: clamp(1.15rem, 5.6vw, 1.45rem);
   }
 
   .parallax-bridge {
@@ -2403,6 +2552,12 @@ p {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .reference-marquee-track {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transform: translateX(0) !important;
+  }
+
   *,
   *::before,
   *::after {

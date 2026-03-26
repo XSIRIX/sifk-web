@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { ParallaxHero } from "@/components/parallax-hero";
 import { PillarCards } from "@/components/pillar-cards";
+import { ReferenceMarquee } from "@/components/reference-marquee";
 import { Reveal } from "@/components/reveal";
 import { StoryScroll } from "@/components/story-scroll";
 import { homeContent, pillars } from "@/lib/site-content";
@@ -12,6 +13,10 @@ export default function HomePage() {
       <ParallaxHero />
 
       <section className="section shell routing-cluster">
+        <Reveal delay={80}>
+          <ReferenceMarquee />
+        </Reveal>
+
         <div className="routing-grid">
           {homeContent.routing.map((item) => (
             <Reveal delay={item.title.includes("Internationale") ? 0 : 120} key={item.title}>
