@@ -7,25 +7,39 @@ type StoryScrollProps = {
   eyebrow: string;
   quote: string;
   points: string[];
+  imageAlts?: {
+    default: string;
+    growth: string;
+    partnership: string;
+  };
 };
 
-export function StoryScroll({ eyebrow, quote, points }: StoryScrollProps) {
+export function StoryScroll({
+  eyebrow,
+  quote,
+  points,
+  imageAlts = {
+    default: "Stilisierte Karte von Afrika",
+    growth: "Wachstumsvisualisierung",
+    partnership: "Partnerschaftsvisualisierung"
+  }
+}: StoryScrollProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const slides = useMemo(() => [quote, ...points], [points, quote]);
   const sideImage =
     activeIndex === 1
       ? {
-          alt: "Wachstumsvisualisierung",
+          alt: imageAlts.growth,
           src: "/homepage/growth.png"
         }
       : activeIndex === slides.length - 1
         ? {
-            alt: "Partnerschaftsvisualisierung",
+            alt: imageAlts.partnership,
             src: "/homepage/partnership.png"
           }
       : {
-          alt: "Stilisierte Karte von Afrika",
+          alt: imageAlts.default,
           src: "/homepage/africa-map.png"
         };
 

@@ -24,7 +24,7 @@ export function ThemeColorController() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (pathname !== "/") {
+    if (pathname !== "/" && pathname !== "/en") {
       setThemeColor(DEFAULT_THEME_COLOR);
       return;
     }

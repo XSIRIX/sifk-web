@@ -6,6 +6,17 @@ import { useEffect, useRef } from "react";
 
 import { homeContent } from "@/lib/site-content";
 
+type ParallaxHeroProps = {
+  content?: typeof homeContent;
+  bridgeCopy?: {
+    kicker: string;
+    text: string;
+    from: string;
+    to: string;
+    canvasAlt: string;
+  };
+};
+
 const FRAME_COUNT = 143;
 const FRAME_URLS = Array.from(
   { length: FRAME_COUNT },
@@ -14,7 +25,16 @@ const FRAME_URLS = Array.from(
 
 const PRELOAD_RADIUS = 10;
 
-export function ParallaxHero() {
+export function ParallaxHero({
+  content = homeContent,
+  bridgeCopy = {
+    kicker: "Deutschland nach Afrika",
+    text: "Wir setzen die Brücke von Deutschland nach Afrika.",
+    from: "Deutschland",
+    to: "Afrika",
+    canvasAlt: "Frankfurt skyline transitioning toward Cape Town"
+  }
+}: ParallaxHeroProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const frameRef = useRef(0);
@@ -182,7 +202,7 @@ export function ParallaxHero() {
     <section className="parallax-hero" ref={sectionRef}>
       <div className="parallax-hero-sticky">
         <canvas
-          aria-label="Frankfurt skyline transitioning toward Cape Town"
+          aria-label={bridgeCopy.canvasAlt}
           className="parallax-canvas"
           ref={canvasRef}
         />
@@ -192,30 +212,30 @@ export function ParallaxHero() {
         <div className="shell parallax-overlay">
           <div className="parallax-copy">
             <div className="parallax-intro">
-              <p className="eyebrow">{homeContent.hero.eyebrow}</p>
-              <h1>{homeContent.hero.title}</h1>
+              <p className="eyebrow">{content.hero.eyebrow}</p>
+              <h1>{content.hero.title}</h1>
 
               <div className="hero-actions">
-                <Link className="button" href={homeContent.hero.primaryCta.href}>
-                  {homeContent.hero.primaryCta.label}
+                <Link className="button" href={content.hero.primaryCta.href}>
+                  {content.hero.primaryCta.label}
                 </Link>
-                <Link className="button button-secondary" href={homeContent.hero.secondaryCta.href}>
-                  {homeContent.hero.secondaryCta.label}
+                <Link className="button button-secondary" href={content.hero.secondaryCta.href}>
+                  {content.hero.secondaryCta.label}
                 </Link>
               </div>
             </div>
 
             <div className="parallax-bridge">
-              <span className="parallax-bridge-kicker">Deutschland nach Afrika</span>
-              <p>Wir setzen die Brücke von Deutschland nach Afrika.</p>
+              <span className="parallax-bridge-kicker">{bridgeCopy.kicker}</span>
+              <p>{bridgeCopy.text}</p>
               <div className="parallax-bridge-route">
-                <strong>Deutschland</strong>
+                <strong>{bridgeCopy.from}</strong>
                 <span className="parallax-bridge-line parallax-bridge-line-static" aria-hidden="true" />
                 <span className="parallax-bridge-logo">
                   <Image alt="SIFK GmbH" height={400} src="/logo-horizontal-lg.png" width={1200} />
                 </span>
                 <span className="parallax-bridge-line" aria-hidden="true" />
-                <strong>Afrika</strong>
+                <strong>{bridgeCopy.to}</strong>
               </div>
             </div>
           </div>

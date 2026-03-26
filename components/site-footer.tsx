@@ -1,21 +1,33 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+import { getLocaleFromPathname, localizePath, switchLocalePath } from "@/lib/locale-routing";
+import { sharedCopy } from "@/lib/shared-copy";
 
 export function SiteFooter() {
+  const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname);
+  const copy = sharedCopy[locale];
+
   return (
     <footer className="site-footer">
       <div className="shell footer-grid">
         <div>
-          <p className="footer-kicker">SIFK GmbH</p>
-          <p className="footer-copy">
-            Internationale Geschäftsentwicklung mit Fokus auf Afrika und
-            Energieberatung für Unternehmen in Deutschland.
-          </p>
+          <p className="footer-kicker">{copy.footer.kicker}</p>
+          <p className="footer-copy">{copy.footer.copy}</p>
         </div>
 
         <div className="footer-links">
-          <Link href="/kontakt">Kontakt</Link>
-          <Link href="/impressum">Impressum</Link>
-          <Link href="/datenschutz">Datenschutz</Link>
+          {copy.footer.links.map((item) => (
+            <Link href={localizePath(item.href, locale)} key={item.href}>
+              {item.label}
+            </Link>
+          ))}
+          <Link href={switchLocalePath(pathname ?? "/", locale === "de" ? "en" : "de")}>
+            {locale === "de" ? "English" : "Deutsch"}
+          </Link>
         </div>
       </div>
     </footer>

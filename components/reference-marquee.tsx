@@ -7,6 +7,12 @@ type ReferenceLogo = {
   src: string;
 };
 
+type ReferenceMarqueeProps = {
+  eyebrow?: string;
+  title?: string;
+  ariaLabel?: string;
+};
+
 const PRIORITY_LOGOS: ReferenceLogo[] = [
   { alt: "BackWerk", src: "/references/backwerk.png" },
   { alt: "Eichbaum", src: "/references/eichbaum.svg" },
@@ -56,7 +62,11 @@ function shuffleLogos(logos: ReferenceLogo[]) {
   return shuffled;
 }
 
-export function ReferenceMarquee() {
+export function ReferenceMarquee({
+  eyebrow = "Referenzen",
+  title = "Kunden und Partner, die auf unsere Arbeit vertrauen.",
+  ariaLabel = "Referenzlogos"
+}: ReferenceMarqueeProps) {
   const [logos, setLogos] = useState(() => [...PRIORITY_LOGOS, ...OTHER_LOGOS]);
 
   useEffect(() => {
@@ -70,14 +80,14 @@ export function ReferenceMarquee() {
   return (
     <section className="reference-band" aria-labelledby="references-title">
       <div className="reference-band-copy">
-        <p className="eyebrow">Referenzen</p>
+        <p className="eyebrow">{eyebrow}</p>
         <p className="reference-band-title" id="references-title">
-          Kunden und Partner, die auf unsere Arbeit vertrauen.
+          {title}
         </p>
       </div>
 
       <div className="reference-band-inner">
-        <div className="reference-marquee" aria-label="Referenzlogos">
+        <div className="reference-marquee" aria-label={ariaLabel}>
           <div className="reference-marquee-track">
             {loopedLogos.map((logo, index) => (
               <div

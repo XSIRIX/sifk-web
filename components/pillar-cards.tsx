@@ -17,9 +17,10 @@ const MAX_POINTER_OFFSET = 22;
 
 type PillarCardsProps = {
   pillars: Pillar[];
+  linkLabel?: string;
 };
 
-export function PillarCards({ pillars }: PillarCardsProps) {
+export function PillarCards({ pillars, linkLabel = "Mehr erfahren" }: PillarCardsProps) {
   const cardRefs = useRef<Array<HTMLElement | null>>([]);
   const reducedMotionRef = useRef(true);
   const finePointerRef = useRef(false);
@@ -148,7 +149,7 @@ export function PillarCards({ pillars }: PillarCardsProps) {
                 </ul>
 
                 <Link className="text-link" href={pillar.href}>
-                  Mehr erfahren
+                  {linkLabel}
                 </Link>
               </div>
             </article>

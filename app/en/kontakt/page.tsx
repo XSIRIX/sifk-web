@@ -1,0 +1,36 @@
+import { ContactForm } from "@/components/contact-form";
+import { Reveal } from "@/components/reveal";
+import { contactPageContentEn } from "@/lib/site-content-en";
+
+export default function ContactPageEn() {
+  return (
+    <>
+      <section className="page-intro">
+        <Reveal className="shell page-intro-grid">
+          <div>
+            <p className="eyebrow">{contactPageContentEn.intro.eyebrow}</p>
+            <h1>{contactPageContentEn.intro.title}</h1>
+          </div>
+          <p className="page-intro-text">{contactPageContentEn.intro.text}</p>
+        </Reveal>
+      </section>
+
+      <section className="section shell contact-layout">
+        <div className="contact-options">
+          {contactPageContentEn.options.map((option, index) => (
+            <Reveal delay={index * 100} key={option.title}>
+              <article className="contact-option">
+                <h2>{option.title}</h2>
+                <p>{option.text}</p>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={140}>
+          <ContactForm locale="en" />
+        </Reveal>
+      </section>
+    </>
+  );
+}

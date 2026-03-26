@@ -2,7 +2,15 @@
 
 import { FormEvent, useState } from "react";
 
-export function ContactForm() {
+import type { Locale } from "@/lib/locale-routing";
+import { sharedCopy } from "@/lib/shared-copy";
+
+type ContactFormProps = {
+  locale?: Locale;
+};
+
+export function ContactForm({ locale = "de" }: ContactFormProps) {
+  const copy = sharedCopy[locale].contactForm;
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
@@ -14,37 +22,39 @@ export function ContactForm() {
     <form className="contact-form" onSubmit={handleSubmit}>
       <div className="field-grid">
         <label>
-          <span>Name</span>
-          <input name="name" placeholder="Ihr Name" required type="text" />
+          <span>{copy.fields.name}</span>
+          <input name="name" placeholder={copy.fields.namePlaceholder} required type="text" />
         </label>
 
         <label>
-          <span>Unternehmen</span>
-          <input name="company" placeholder="Organisation oder Firma" type="text" />
+          <span>{copy.fields.company}</span>
+          <input name="company" placeholder={copy.fields.companyPlaceholder} type="text" />
         </label>
       </div>
 
       <div className="field-grid">
         <label>
-          <span>E-Mail</span>
-          <input name="email" placeholder="name@unternehmen.de" required type="email" />
+          <span>{copy.fields.email}</span>
+          <input name="email" placeholder={copy.fields.emailPlaceholder} required type="email" />
         </label>
 
         <label>
-          <span>Anliegen</span>
+          <span>{copy.fields.topic}</span>
           <select defaultValue="allgemein" name="topic">
-            <option value="international">Internationale Geschäftsentwicklung</option>
-            <option value="energie">Energieberatung Deutschland</option>
-            <option value="allgemein">Allgemeine Anfrage</option>
+            {copy.options.map((option) => (
+              <option key={option.value} value={option.value}>
+                {option.label}
+              </option>
+            ))}
           </select>
         </label>
       </div>
 
       <label>
-        <span>Projekt oder Fragestellung</span>
+        <span>{copy.fields.message}</span>
         <textarea
           name="message"
-          placeholder="Beschreiben Sie kurz Ihr Vorhaben, den Kontext und den gewünschten nächsten Schritt."
+          placeholder={copy.fields.messagePlaceholder}
           required
           rows={7}
         />
@@ -52,17 +62,14 @@ export function ContactForm() {
 
       <div className="form-actions">
         <button className="button" type="submit">
-          Anfrage vorbereiten
+          {copy.submit}
         </button>
-        <p>
-          Formularversand ist im Boilerplate bewusst noch nicht an eine Inbox angebunden.
-        </p>
+        <p>{copy.disclaimer}</p>
       </div>
 
       {submitted ? (
         <p className="form-notice" role="status">
-          Danke. Die Struktur steht; als Nächstes kann das Formular an die gewünschte
-          E-Mail oder ein CRM angebunden werden.
+          {copy.success}
         </p>
       ) : null}
     </form>
