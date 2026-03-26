@@ -1043,8 +1043,11 @@ p {
 }
 
 .reference-logo-image {
-  width: 100%;
-  height: 100%;
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100%;
   object-fit: contain;
   mix-blend-mode: multiply;
 }
@@ -2160,6 +2163,8 @@ p {
     inset: 0;
     display: block;
     max-width: none;
+    font-size: clamp(1.85rem, 8vw, 2.35rem);
+    line-height: 1;
     opacity: 0;
     transform: translateY(1rem) scale(0.985);
     padding: 0;
@@ -2403,8 +2408,8 @@ p {
 
   .reference-logo-chip {
     min-width: 7.6rem;
-    height: 3.7rem;
-    padding-inline: 0.85rem;
+    height: 4.6rem;
+    padding: 0.8rem 0.95rem;
   }
 
   .reference-band-title {
@@ -2462,6 +2467,8 @@ p {
     inset: 0;
     display: block;
     max-width: none;
+    font-size: clamp(1.7rem, 7.2vw, 2.1rem);
+    line-height: 1;
     opacity: 0;
     transform: translateY(1rem) scale(0.985);
     padding: 0;
@@ -2490,9 +2497,9 @@ p {
   }
 
   .story-point-image {
-    width: min(82vw, 21rem);
+    width: min(68vw, 17rem);
     display: block;
-    margin: 0 auto;
+    margin: -4rem auto 0;
     transform: none;
     margin-bottom: 0;
   }

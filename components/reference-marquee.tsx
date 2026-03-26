@@ -84,7 +84,14 @@ export function ReferenceMarquee() {
                 className="reference-logo-chip"
                 key={`${logo.src}-${index}`}
               >
-                <img alt={logo.alt} className="reference-logo-image" loading="lazy" src={logo.src} />
+                <img
+                  alt={logo.alt}
+                  className="reference-logo-image"
+                  decoding="async"
+                  fetchPriority={index < 8 ? "high" : "auto"}
+                  loading={index < 8 ? "eager" : "lazy"}
+                  src={logo.src}
+                />
               </div>
             ))}
           </div>
