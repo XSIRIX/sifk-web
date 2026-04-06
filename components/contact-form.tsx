@@ -9,13 +9,33 @@ type ContactFormProps = {
   locale?: Locale;
 };
 
+type FormStatus = "idle" | "sending" | "sent" | "error";
+
 export function ContactForm({ locale = "de" }: ContactFormProps) {
   const copy = sharedCopy[locale].contactForm;
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<FormStatus>("idle");
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+    setStatus("sending");
+
+    const form = event.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+
+      if (!response.ok) throw new Error();
+
+      setStatus("sent");
+      form.reset();
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -61,15 +81,21 @@ export function ContactForm({ locale = "de" }: ContactFormProps) {
       </label>
 
       <div className="form-actions">
-        <button className="button" type="submit">
-          {copy.submit}
+        <button className="button" disabled={status === "sending"} type="submit">
+          {status === "sending" ? copy.sending : copy.submit}
         </button>
         <p>{copy.disclaimer}</p>
       </div>
 
-      {submitted ? (
+      {status === "sent" ? (
         <p className="form-notice" role="status">
           {copy.success}
+        </p>
+      ) : null}
+
+      {status === "error" ? (
+        <p className="form-notice form-notice--error" role="alert">
+          {copy.error}
         </p>
       ) : null}
     </form>

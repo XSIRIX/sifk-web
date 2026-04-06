@@ -29,8 +29,10 @@ export const sharedCopy: Record<
       };
       options: Array<{ value: string; label: string }>;
       submit: string;
+      sending: string;
       disclaimer: string;
       success: string;
+      error: string;
     };
   }
 > = {
@@ -75,11 +77,14 @@ export const sharedCopy: Record<
         { value: "energie", label: "Energieberatung Deutschland" },
         { value: "allgemein", label: "Allgemeine Anfrage" }
       ],
-      submit: "Anfrage vorbereiten",
+      submit: "Anfrage senden",
+      sending: "Wird gesendet …",
       disclaimer:
-        "Formularversand ist im Boilerplate bewusst noch nicht an eine Inbox angebunden.",
+        "Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.",
       success:
-        "Danke. Die Struktur steht; als Nächstes kann das Formular an die gewünschte E-Mail oder ein CRM angebunden werden."
+        "Vielen Dank für Ihre Nachricht. Wir melden uns in Kürze bei Ihnen.",
+      error:
+        "Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
     }
   },
   en: {
@@ -123,11 +128,14 @@ export const sharedCopy: Record<
         { value: "energie", label: "Energy consulting Germany" },
         { value: "allgemein", label: "General inquiry" }
       ],
-      submit: "Prepare inquiry",
+      submit: "Send inquiry",
+      sending: "Sending …",
       disclaimer:
-        "In this boilerplate, form submission is intentionally not yet connected to an inbox.",
+        "Your data will only be used to process your inquiry.",
       success:
-        "Thanks. The structure is in place; next, the form can be connected to your preferred email destination or CRM."
+        "Thank you for your message. We will get back to you shortly.",
+      error:
+        "Something went wrong. Please try again."
     }
   }
 };
