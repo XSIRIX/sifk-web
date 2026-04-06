@@ -4,7 +4,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
 
-import { homeContent } from "@/lib/site-content";
+import { cloodyBadge as cloodyBadgeDefault, homeContent } from "@/lib/site-content";
+
+type CloodyBadge = {
+  kicker: string;
+  tagline: string;
+  href: string;
+};
 
 type ParallaxHeroProps = {
   content?: typeof homeContent;
@@ -15,6 +21,7 @@ type ParallaxHeroProps = {
     to: string;
     canvasAlt: string;
   };
+  cloodyBadge?: CloodyBadge;
 };
 
 const FRAME_COUNT = 143;
@@ -33,7 +40,8 @@ export function ParallaxHero({
     from: "Deutschland",
     to: "Afrika",
     canvasAlt: "Frankfurt skyline transitioning toward Cape Town"
-  }
+  },
+  cloodyBadge = cloodyBadgeDefault
 }: ParallaxHeroProps) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
@@ -210,6 +218,66 @@ export function ParallaxHero({
         <div className="parallax-grid" aria-hidden="true" />
 
         <div className="shell parallax-overlay">
+          {cloodyBadge && (
+            <Link className="parallax-cloody-badge" href={cloodyBadge.href}>
+              <svg
+                aria-hidden="true"
+                className="parallax-cloody-badge-icon"
+                fill="none"
+                viewBox="0 0 56 56"
+              >
+                {/* Stylised Africa silhouette */}
+                <path
+                  d="M28 6c-2.2 1-4.8 2.8-6.4 5.6-1.2 2.2-1.6 4-2.8 6.8-.8 1.8-2.4 3.6-3.6 6-.8 1.6-1.2 3.6-.8 6 .4 2.8 1.6 5.2 3.2 7.2 1.6 2 3.2 3.6 4.4 5.6 1 1.6 1.6 3.2 2.4 4.8.4.8 1.2 2 2 2.4.8.4 1.6-.4 2.4-1.2 1.2-1.2 2-2.8 2.8-4.4.8-1.6 2-3.2 3.2-5.2 1.6-2.4 2.4-4.4 2.8-7.2.4-2 .4-4.4-.4-6.4-1.2-2.8-2-4.8-2.8-7.2-1-2.8-1.6-5.2-3.2-7.6C30.2 8.8 29.2 7 28 6Z"
+                  fill="oklch(0.62 0.16 53 / 0.25)"
+                  stroke="oklch(0.62 0.16 53 / 0.7)"
+                  strokeWidth="1"
+                />
+                {/* Trade route nodes */}
+                <circle cx="26" cy="20" fill="oklch(0.82 0.12 53)" r="2" />
+                <circle cx="30" cy="32" fill="oklch(0.82 0.12 53)" r="2" />
+                <circle cx="24" cy="38" fill="oklch(0.82 0.12 53)" r="1.5" />
+                {/* Connection lines between nodes */}
+                <line
+                  stroke="oklch(0.82 0.12 53 / 0.5)"
+                  strokeDasharray="2 2"
+                  strokeWidth="1"
+                  x1="26" x2="30" y1="22" y2="30"
+                />
+                <line
+                  stroke="oklch(0.82 0.12 53 / 0.5)"
+                  strokeDasharray="2 2"
+                  strokeWidth="1"
+                  x1="29" x2="25" y1="34" y2="37"
+                />
+                {/* Outgoing trade lines to edges */}
+                <line
+                  opacity="0.3"
+                  stroke="oklch(0.9 0.06 53)"
+                  strokeDasharray="3 3"
+                  strokeWidth="0.8"
+                  x1="26" x2="10" y1="20" y2="14"
+                />
+                <line
+                  opacity="0.3"
+                  stroke="oklch(0.9 0.06 53)"
+                  strokeDasharray="3 3"
+                  strokeWidth="0.8"
+                  x1="30" x2="46" y1="32" y2="28"
+                />
+              </svg>
+              <div className="parallax-cloody-badge-copy">
+                <span>{cloodyBadge.kicker}</span>
+                <strong>Cloody</strong>
+                <em>{cloodyBadge.tagline}</em>
+                <p className="parallax-cloody-badge-live">
+                  <span aria-hidden="true" />
+                  In Entwicklung
+                </p>
+              </div>
+            </Link>
+          )}
+
           <div className="parallax-copy">
             <div className="parallax-intro">
               <p className="eyebrow">{content.hero.eyebrow}</p>

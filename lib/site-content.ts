@@ -228,6 +228,81 @@ export const contactPageContent = {
   ]
 };
 
+export const cloodyBadge = {
+  kicker: "Handelsplattform Afrika",
+  tagline: "Pay less than you guess.",
+  href: "/cloody"
+};
+
+export const cloodyPageContent = {
+  intro: {
+    eyebrow: "Projekt Cloody",
+    title: "Der afrikanische Marktplatz, der Handel neu denkt.",
+    text: "Cloody ist eine community-basierte Handelsplattform, die direkten Handel mit Afrika ermöglicht. Für Privatpersonen und Unternehmen. Mit integrierter Zollabwicklung. Unter dem Prinzip: Pay less than you guess."
+  },
+  vision: {
+    eyebrow: "Vision",
+    title: "Handel mit Afrika, zugänglich für alle.",
+    text: "Cloody macht den Zugang zu afrikanischen Märkten so einfach wie einen Online-Einkauf. Die Plattform verbindet Anbieter und Käufer direkt, reduziert Zwischenstufen und schafft Transparenz, die Vertrauen aufbaut.",
+    points: [
+      "Direkter Handel ohne unnötige Mittelsmänner",
+      "Integrierte Zollabwicklung über die Plattform",
+      "Offener Marktplatz für Privatpersonen und Unternehmen",
+      "Preistransparenz als Kernprinzip"
+    ]
+  },
+  concept: {
+    eyebrow: "Konzept",
+    title: "Pay less than you guess.",
+    text: "Cloody setzt auf ein Preismodell, das Erwartungen unterbietet. Durch Bündelung, Community-Logistik und direkte Beschaffungswege entstehen Preisvorteile, die an die Nutzer weitergegeben werden."
+  },
+  howItWorks: {
+    eyebrow: "So funktioniert es",
+    title: "Drei Schritte zum Handel mit Afrika.",
+    steps: [
+      {
+        step: "01",
+        title: "Angebot entdecken",
+        text: "Durchsuchen Sie den Marktplatz nach Produkten und Dienstleistungen aus afrikanischen Märkten, oder stellen Sie selbst ein Angebot ein."
+      },
+      {
+        step: "02",
+        title: "Zoll und Logistik",
+        text: "Die Plattform übernimmt die gesamte Zollabwicklung und koordiniert den Versand, damit der Handel reibungslos abläuft."
+      },
+      {
+        step: "03",
+        title: "Direkt handeln",
+        text: "Kaufen oder verkaufen Sie direkt, transparent und zu Konditionen, die beide Seiten stärken."
+      }
+    ]
+  },
+  audience: {
+    eyebrow: "Zielgruppe",
+    title: "Für alle, die mit Afrika handeln wollen.",
+    groups: [
+      {
+        title: "Privatpersonen",
+        text: "Zugang zu einzigartigen Produkten aus afrikanischen Märkten, ohne Komplexität bei Zoll und Versand."
+      },
+      {
+        title: "Unternehmen",
+        text: "Direkte Beschaffungswege und neue Absatzmärkte, unterstützt durch eine belastbare Plattformstruktur."
+      },
+      {
+        title: "Afrikanische Anbieter",
+        text: "Ein internationaler Vertriebskanal, der den Zugang zu europäischen Käufern vereinfacht und professionalisiert."
+      }
+    ]
+  },
+  cta: {
+    eyebrow: "Interesse",
+    title: "Cloody entsteht. Sprechen Sie mit uns.",
+    text: "Das Projekt befindet sich in der Entwicklung. Wenn Sie als Partner, Anbieter oder Early Adopter dabei sein wollen, starten wir das Gespräch.",
+    action: { href: "/kontakt", label: "Kontakt aufnehmen" }
+  }
+};
+
 export const teamPageContent = {
   intro: {
     eyebrow: "Unser Team",
@@ -235,36 +310,96 @@ export const teamPageContent = {
     text:
       "SIFK bündelt internationale Geschäftsentwicklung, Energieberatung und strukturierte Projektführung in einer gemeinsamen Arbeitsweise. So entstehen Entscheidungen, die fachlich klar und in der Umsetzung belastbar bleiben."
   },
-  profiles: [
+  sectionLeadership: {
+    eyebrow: "Geschäftsleitung & Beratung",
+    title: "Erfahrung, die Richtung gibt."
+  },
+  coreTeam: [
     {
-      name: "Internationale Geschäftsentwicklung",
-      role: "Markteintritt und Partnerschaften",
-      accent: "atlas",
-      image: "/profile/black.jpg",
-      imageAlt: "Porträt für internationale Geschäftsentwicklung",
-      text:
-        "Verantwortet Gespräche, Partnerschaftsaufbau und belastbare Beziehungen mit Afrika-Bezug. Der Fokus liegt auf realistischen Schritten, klaren Rollen und anschlussfähigen Entscheidungen.",
-      areas: ["Markteintritt", "Partnerschaften", "Stakeholder-Kommunikation"]
-    },
-    {
-      name: "Energieberatung",
-      role: "Analyse und Effizienzlogik",
+      name: "Rainer Bardtke",
+      initials: "RB",
+      role: "Unternehmensberatung Bereich Energie",
       accent: "signal",
-      image: "/profile/asian.jpg",
-      imageAlt: "Porträt für Energieberatung",
+      flags: ["🇩🇪"],
+      languages: "DE (Muttersprache), EN C2, FR B1, ES A1",
       text:
-        "Verbindet technische Analyse mit wirtschaftlicher Priorisierung, damit Effizienzthemen nachvollziehbar bewertet und in konkrete Maßnahmen übersetzt werden können.",
-      areas: ["Audits", "Nichtwohngebäude", "Wirtschaftliche Priorisierung"]
+        "Über 30 Jahre Erfahrung in der Energiebranche. Verbindet technische Analyse mit wirtschaftlicher Priorisierung für nachhaltige Effizienzlösungen.",
+      areas: ["Energieaudit", "Nichtwohngebäude-Beratung", "Wirtschaftliche Effizienz"]
     },
     {
-      name: "Projektkoordination",
-      role: "Umsetzung und Struktur",
-      accent: "forge",
-      image: "/profile/white.jpg",
-      imageAlt: "Porträt für Projektkoordination",
+      name: "Pheeraphon Karch",
+      initials: "PK",
+      role: "Geschäftsleitung",
+      accent: "atlas",
+      flags: ["🇩🇪"],
+      languages: "DE (Muttersprache), EN C2",
       text:
-        "Hält Projekte zwischen Strategie, Beratung und operativer Umsetzung zusammen. So bleiben Prioritäten, Kommunikation und Verantwortlichkeiten über alle Beteiligten hinweg sauber geführt.",
-      areas: ["Projektstruktur", "Abstimmung", "Umsetzungssteuerung"]
+        "Leitet SIFK seit November 2022. Verbindet internationale Perspektive mit unternehmerischer Klarheit und strukturierter Projektführung.",
+      areas: ["Geschäftsführung", "Projektstruktur", "Internationale Koordination"]
+    }
+  ],
+  sectionInternational: {
+    eyebrow: "Unser internationales Team",
+    title: "SIFK-Mitarbeiter weltweit."
+  },
+  intlTeam: [
+    {
+      name: "Panu Mankit",
+      initials: "PM",
+      role: "Assistent der Geschäftsleitung",
+      flags: ["🇩🇪", "🇱🇦"],
+      qualification: "DE & Laotisch (Muttersprache), EN C2",
+      text: "Unterstützt die Geschäftsführung bei Projektorganisation, Korrespondenz und CRM-Verwaltung. Zuvor stellvertretender Vertriebsleiter bei NRG GmbH und Co-Founder in Thailand."
+    },
+    {
+      name: "Tom Twimukire",
+      initials: "TT",
+      role: "Director Business Development",
+      flags: ["🇺🇬"],
+      qualification: "MBA, B.Com (Hons)",
+      org: "Tocom Ltd",
+      text: "Gründer und Geschäftsführer von Tocom Ltd. Über 10 Jahre Erfahrung in Markenstrategie, Go-to-Market-Planung und digitalem Marketing in ostafrikanischen Wachstumsmärkten."
+    },
+    {
+      name: "Dr. Kobla Xoese Nanewortor",
+      initials: "KN",
+      role: "Projektleitung Technisches Engineering",
+      flags: ["🇬🇭"],
+      qualification: "Dr.-Ing. Elektrotechnik",
+      org: "TenneT TSO GmbH",
+      text: "Promovierter Ingenieur mit Schwerpunkt Hochspannungstechnik und Energieverteilung. Erfahrung in Netzplanung, EEG-Anlagenprüfung und Zertifizierung bei E.ON, TÜV NORD und Siemens."
+    },
+    {
+      name: "Muwanga K. James",
+      initials: "MJ",
+      role: "Director, Accounting & Business",
+      flags: ["🇺🇬"],
+      qualification: "B.Comm Business Studies (Accounting)",
+      text: "Erfahrener Finanzexperte mit Hintergrund in interner Revision, Buchhaltung und strategischer Unternehmensberatung. Leitet mehrere Unternehmen in Uganda."
+    },
+    {
+      name: "John Damulira",
+      initials: "JD",
+      role: "Operations Manager",
+      flags: ["🇺🇬"],
+      qualification: "B.Comm, Makerere University",
+      text: "Operations Manager mit Erfahrung im Bau- und Immobiliensektor sowie im internationalen Kreditmanagement bei G4S Uganda und Spedag Interfreight."
+    },
+    {
+      name: "Celestine Wafula",
+      initials: "CW",
+      role: "Sales Executive",
+      flags: ["🇰🇪"],
+      qualification: "BSc Pharmaceutical Technology",
+      text: "9 Jahre Vertriebserfahrung in Ostafrika, der Türkei, Ägypten und Thailand. Spezialisiert auf strategische Vertriebsplanung, Kundenbeziehungen und datengetriebene Marktanalyse."
+    },
+    {
+      name: "Albert Guido Moshi",
+      initials: "AM",
+      role: "Logistik & Umweltmanagement",
+      flags: ["🇹🇿"],
+      qualification: "MSc, Zertifizierter Projektmanager (GPM)",
+      text: "MSc in Umwelt- und Ressourcenmanagement mit Erfahrung in Disposition, Fuhrparkmanagement und internationalem Versand. Engagiert in der deutsch-tansanischen Bildungsarbeit."
     }
   ],
   collaboration: [

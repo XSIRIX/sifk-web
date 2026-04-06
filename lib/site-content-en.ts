@@ -186,6 +186,81 @@ export const contactPageContentEn = {
   ]
 };
 
+export const cloodyBadgeEn = {
+  kicker: "African Trading Platform",
+  tagline: "Pay less than you guess.",
+  href: "/en/cloody"
+};
+
+export const cloodyPageContentEn = {
+  intro: {
+    eyebrow: "Project Cloody",
+    title: "The African marketplace that rethinks trade.",
+    text: "Cloody is a community-based trading platform enabling direct trade with Africa. For individuals and businesses alike. With integrated customs processing. Under the principle: Pay less than you guess."
+  },
+  vision: {
+    eyebrow: "Vision",
+    title: "Trade with Africa, accessible to everyone.",
+    text: "Cloody makes access to African markets as straightforward as an online purchase. The platform connects sellers and buyers directly, reduces intermediaries, and creates the transparency that builds trust.",
+    points: [
+      "Direct trade without unnecessary middlemen",
+      "Integrated customs processing through the platform",
+      "Open marketplace for individuals and businesses",
+      "Price transparency as a core principle"
+    ]
+  },
+  concept: {
+    eyebrow: "Concept",
+    title: "Pay less than you guess.",
+    text: "Cloody builds on a pricing model that beats expectations. Through bundling, community logistics, and direct sourcing channels, price advantages are created and passed on to users."
+  },
+  howItWorks: {
+    eyebrow: "How it works",
+    title: "Three steps to trading with Africa.",
+    steps: [
+      {
+        step: "01",
+        title: "Discover offerings",
+        text: "Browse the marketplace for products and services from African markets, or list your own offering."
+      },
+      {
+        step: "02",
+        title: "Customs and logistics",
+        text: "The platform handles all customs processing and coordinates shipping, so trade runs smoothly."
+      },
+      {
+        step: "03",
+        title: "Trade directly",
+        text: "Buy or sell directly, transparently, and on terms that strengthen both sides."
+      }
+    ]
+  },
+  audience: {
+    eyebrow: "Target audience",
+    title: "For everyone who wants to trade with Africa.",
+    groups: [
+      {
+        title: "Individuals",
+        text: "Access to unique products from African markets, without customs and shipping complexity."
+      },
+      {
+        title: "Businesses",
+        text: "Direct sourcing channels and new sales markets, backed by a reliable platform structure."
+      },
+      {
+        title: "African sellers",
+        text: "An international distribution channel that simplifies and professionalises access to European buyers."
+      }
+    ]
+  },
+  cta: {
+    eyebrow: "Interest",
+    title: "Cloody is taking shape. Talk to us.",
+    text: "The project is in development. Whether you want to join as a partner, seller, or early adopter, let\u2019s start the conversation.",
+    action: { href: "/en/kontakt", label: "Get in touch" }
+  }
+};
+
 export const teamPageContentEn = {
   intro: {
     eyebrow: "Our Team",
@@ -193,36 +268,96 @@ export const teamPageContentEn = {
     text:
       "SIFK combines international business development, energy consulting, and structured project delivery in one shared operating model. That creates decisions that are both technically clear and durable in execution."
   },
-  profiles: [
+  sectionLeadership: {
+    eyebrow: "Leadership & Consulting",
+    title: "Experience that sets direction."
+  },
+  coreTeam: [
     {
-      name: "International Business Development",
-      role: "Market entry and partnerships",
-      accent: "atlas",
-      image: "/profile/black.jpg",
-      imageAlt: "Portrait for international business development",
-      text:
-        "Leads conversations, partnership development, and durable relationships with an Africa focus. The emphasis is on realistic steps, clear roles, and decisions that can move forward.",
-      areas: ["Market entry", "Partnerships", "Stakeholder communication"]
-    },
-    {
-      name: "Energy Consulting",
-      role: "Analysis and efficiency logic",
+      name: "Rainer Bardtke",
+      initials: "RB",
+      role: "Energy Consulting",
       accent: "signal",
-      image: "/profile/asian.jpg",
-      imageAlt: "Portrait for energy consulting",
+      flags: ["🇩🇪"],
+      languages: "DE (native), EN C2, FR B1, ES A1",
       text:
-        "Combines technical analysis with economic prioritization so efficiency topics can be evaluated clearly and turned into practical measures.",
-      areas: ["Audits", "Non-residential buildings", "Economic prioritization"]
+        "Over 30 years of experience in the energy sector. Combines technical analysis with economic prioritization for sustainable efficiency solutions.",
+      areas: ["Energy audit", "Non-residential consulting", "Economic efficiency"]
     },
     {
-      name: "Project Coordination",
-      role: "Execution and structure",
-      accent: "forge",
-      image: "/profile/white.jpg",
-      imageAlt: "Portrait for project coordination",
+      name: "Pheeraphon Karch",
+      initials: "PK",
+      role: "Managing Director",
+      accent: "atlas",
+      flags: ["🇩🇪"],
+      languages: "DE (native), EN C2",
       text:
-        "Keeps projects together across strategy, consulting, and operational execution. Priorities, communication, and responsibilities remain aligned across all stakeholders.",
-      areas: ["Project structure", "Coordination", "Execution steering"]
+        "Has been leading SIFK since November 2022. Combines international perspective with entrepreneurial clarity and structured project delivery.",
+      areas: ["Executive leadership", "Project structure", "International coordination"]
+    }
+  ],
+  sectionInternational: {
+    eyebrow: "Our International Team",
+    title: "SIFK employees worldwide."
+  },
+  intlTeam: [
+    {
+      name: "Panu Mankit",
+      initials: "PM",
+      role: "Executive Assistant",
+      flags: ["🇩🇪", "🇱🇦"],
+      qualification: "DE & Lao (native), EN C2",
+      text: "Supports executive management with project coordination, correspondence, and CRM administration. Previously deputy sales manager at NRG GmbH and co-founder in Thailand."
+    },
+    {
+      name: "Tom Twimukire",
+      initials: "TT",
+      role: "Director Business Development",
+      flags: ["🇺🇬"],
+      qualification: "MBA, B.Com (Hons)",
+      org: "Tocom Ltd",
+      text: "Founder and managing director of Tocom Ltd. Over 10 years of experience in brand strategy, go-to-market planning, and digital marketing across East African growth markets."
+    },
+    {
+      name: "Dr. Kobla Xoese Nanewortor",
+      initials: "KN",
+      role: "Project Lead Technical Engineering",
+      flags: ["🇬🇭"],
+      qualification: "Dr.-Ing. Electrical Engineering",
+      org: "TenneT TSO GmbH",
+      text: "PhD engineer specializing in high-voltage technology and power distribution. Experienced in grid planning, renewable energy certification, and network analysis at E.ON, TÜV NORD, and Siemens."
+    },
+    {
+      name: "Muwanga K. James",
+      initials: "MJ",
+      role: "Director, Accounting & Business",
+      flags: ["🇺🇬"],
+      qualification: "B.Comm Business Studies (Accounting)",
+      text: "Seasoned finance professional with a background in internal auditing, accounting systems, and strategic business advisory. Manages multiple enterprises in Uganda."
+    },
+    {
+      name: "John Damulira",
+      initials: "JD",
+      role: "Operations Manager",
+      flags: ["🇺🇬"],
+      qualification: "B.Comm, Makerere University",
+      text: "Operations manager with experience in construction and real estate as well as international credit control at G4S Uganda and Spedag Interfreight."
+    },
+    {
+      name: "Celestine Wafula",
+      initials: "CW",
+      role: "Sales Executive",
+      flags: ["🇰🇪"],
+      qualification: "BSc Pharmaceutical Technology",
+      text: "9 years of sales experience across East Africa, Turkey, Egypt, and Thailand. Specializes in strategic sales planning, client relationships, and data-driven market analysis."
+    },
+    {
+      name: "Albert Guido Moshi",
+      initials: "AM",
+      role: "Logistics & Environmental Management",
+      flags: ["🇹🇿"],
+      qualification: "MSc, Certified Project Manager (GPM)",
+      text: "MSc in Environmental and Resource Management with experience in dispatch, fleet management, and international shipping. Active in German-Tanzanian educational outreach."
     }
   ],
   collaboration: [

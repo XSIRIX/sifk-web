@@ -5,7 +5,7 @@ import { PillarCards } from "@/components/pillar-cards";
 import { ReferenceMarquee } from "@/components/reference-marquee";
 import { Reveal } from "@/components/reveal";
 import { StoryScroll } from "@/components/story-scroll";
-import { homeContentEn, pillarsEn } from "@/lib/site-content-en";
+import { cloodyBadgeEn, homeContentEn, pillarsEn } from "@/lib/site-content-en";
 
 export default function HomePageEn() {
   return (
@@ -18,6 +18,7 @@ export default function HomePageEn() {
           to: "Africa",
           canvasAlt: "Frankfurt skyline transitioning toward Cape Town"
         }}
+        cloodyBadge={cloodyBadgeEn}
         content={homeContentEn}
       />
 

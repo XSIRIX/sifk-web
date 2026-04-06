@@ -479,6 +479,10 @@ p {
   transform: scaleX(1);
 }
 
+.nav-cloody {
+  color: var(--accent) !important;
+}
+
 .nav-toggle {
   display: none;
   width: 3rem;
@@ -966,6 +970,121 @@ p {
   height: 5.6rem;
   object-fit: contain;
   filter: brightness(0) invert(1);
+}
+
+.parallax-cloody-badge {
+  position: absolute;
+  top: calc(env(safe-area-inset-top, 0px) + var(--header-offset) + clamp(0.55rem, 1.4vw, 1rem));
+  right: 0;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 1rem;
+  align-items: center;
+  padding: 1rem 1.6rem 1rem 0.8rem;
+  border: 1px solid oklch(0.62 0.16 53 / 0.18);
+  border-radius: 26px;
+  background:
+    radial-gradient(circle at 18% 40%, oklch(0.62 0.16 53 / 0.1), transparent 60%),
+    linear-gradient(135deg, oklch(0.14 0.018 52 / 0.62), oklch(0.1 0.012 232 / 0.48));
+  backdrop-filter: blur(20px);
+  box-shadow:
+    0 20px 48px oklch(0.06 0.01 232 / 0.24),
+    inset 0 1px 0 oklch(1 0 0 / 0.05);
+  opacity: var(--intro-opacity);
+  pointer-events: auto;
+  text-decoration: none;
+  transition:
+    transform 280ms var(--ease-out-expo),
+    box-shadow 280ms var(--ease-out-expo),
+    border-color 280ms var(--ease-out-expo);
+}
+
+.parallax-cloody-badge:hover,
+.parallax-cloody-badge:focus-visible {
+  transform: translateY(-2px) scale(1.02);
+  border-color: oklch(0.62 0.16 53 / 0.32);
+  box-shadow:
+    0 28px 64px oklch(0.06 0.01 232 / 0.32),
+    0 0 0 1px oklch(0.62 0.16 53 / 0.08),
+    inset 0 1px 0 oklch(1 0 0 / 0.07);
+}
+
+.parallax-cloody-badge:hover .parallax-cloody-badge-icon {
+  transform: scale(1.06);
+}
+
+.parallax-cloody-badge-icon {
+  width: 5rem;
+  height: 5rem;
+  transition: transform 280ms var(--ease-out-expo);
+}
+
+.parallax-cloody-badge-copy {
+  display: grid;
+  gap: 0.2rem;
+}
+
+.parallax-cloody-badge-copy span {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: oklch(0.78 0.04 53);
+}
+
+.parallax-cloody-badge-copy strong {
+  color: var(--accent);
+  font-family: var(--font-display), serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.parallax-cloody-badge-copy em {
+  color: oklch(0.82 0.012 90);
+  font-size: 0.8rem;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+.parallax-cloody-badge-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin: 0.15rem 0 0;
+  color: oklch(0.78 0.06 53);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.parallax-cloody-badge-live span {
+  position: relative;
+  display: block;
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 50%;
+  background: oklch(0.72 0.14 53);
+  font-size: 0;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.parallax-cloody-badge-live span::after {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: oklch(0.72 0.14 53 / 0.4);
+  content: "";
+  animation: cloodyPulse 2s var(--ease-out-quart) infinite;
+}
+
+@keyframes cloodyPulse {
+  0% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 0; transform: scale(2.2); }
+  100% { opacity: 0; transform: scale(2.2); }
 }
 
 .parallax-chip {
@@ -1803,6 +1922,10 @@ p {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.team-profile-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .team-profile-card {
   position: relative;
   display: grid;
@@ -1837,19 +1960,33 @@ p {
 }
 
 .team-profile-portrait::after {
-  inset: 1rem auto auto 1rem;
-  width: 2.4rem;
-  height: 2.4rem;
-  border: 1px solid oklch(1 0 0 / 0.22);
-  border-radius: 50%;
-  z-index: 1;
+  display: none;
 }
 
-.team-profile-portrait-image {
+.team-profile-initials {
   position: relative;
-  object-fit: cover;
-  object-position: center 20%;
-  filter: saturate(0.92) contrast(1.03) brightness(0.96);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-display), serif;
+  font-size: clamp(3.5rem, 5vw, 5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: oklch(0.95 0.01 90 / 0.88);
+}
+
+.team-profile-flags {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 2;
+  display: flex;
+  gap: 0.45rem;
+  font-size: 2.8rem;
+  line-height: 1;
 }
 
 .team-profile-portrait-atlas {
@@ -1935,6 +2072,120 @@ p {
   border-radius: 50%;
   background: color-mix(in oklab, var(--accent) 70%, white);
   content: "";
+}
+
+.team-profile-languages {
+  color: var(--text-muted);
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.section-head {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.section-head h2 {
+  max-width: 18ch;
+}
+
+/* ── International team grid ── */
+
+.team-intl-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.team-intl-card {
+  display: grid;
+  grid-template-columns: 3.5rem 1fr;
+  gap: 1rem;
+  align-items: start;
+  padding: 1.35rem;
+  border: 1px solid color-mix(in oklab, var(--line) 86%, white);
+  border-radius: 24px;
+  background:
+    linear-gradient(180deg, oklch(0.995 0.008 90 / 0.74), oklch(0.98 0.012 86 / 0.88)),
+    linear-gradient(130deg, oklch(1 0 0 / 0.3), transparent 50%);
+  box-shadow: var(--paper-shadow);
+  backdrop-filter: blur(14px);
+  transition:
+    transform 240ms var(--ease-out-quart),
+    box-shadow 240ms var(--ease-out-quart);
+}
+
+.team-intl-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--soft-shadow);
+}
+
+.team-intl-avatar {
+  position: relative;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 30% 30%, oklch(0.82 0.04 56 / 0.18), transparent 60%),
+    linear-gradient(180deg, oklch(0.22 0.022 232), oklch(0.14 0.014 232));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.team-intl-initials {
+  font-family: var(--font-display), serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: oklch(0.92 0.01 90 / 0.85);
+  letter-spacing: -0.02em;
+}
+
+.team-intl-flag {
+  position: absolute;
+  bottom: -0.2rem;
+  right: -0.3rem;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.team-intl-info {
+  display: grid;
+  gap: 0.3rem;
+  min-width: 0;
+}
+
+.team-intl-info h3 {
+  font-size: clamp(1.1rem, 1.5vw, 1.35rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+}
+
+.team-intl-info .eyebrow {
+  margin: 0;
+  font-size: 0.72rem;
+}
+
+.team-intl-qual {
+  color: var(--text-soft);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+
+.team-intl-org {
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  font-style: italic;
+}
+
+.team-intl-text {
+  margin-top: 0.25rem;
+  color: var(--text-soft);
+  font-size: 0.88rem;
+  line-height: 1.6;
 }
 
 .about-band {
@@ -2048,7 +2299,39 @@ p {
 }
 
 .legal-copy h1 {
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.8rem;
+}
+
+.legal-copy h2 {
+  font-size: clamp(1.05rem, 1.1vw + 0.7rem, 1.25rem);
+  margin-top: 2.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.legal-copy p {
+  line-height: 1.7;
+  margin-bottom: 0.8rem;
+}
+
+.legal-copy ul {
+  padding-left: 1.4rem;
+  margin-bottom: 0.8rem;
+}
+
+.legal-copy li {
+  line-height: 1.7;
+  margin-bottom: 0.3rem;
+  color: var(--text-soft);
+}
+
+.legal-copy a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.legal-copy a:hover {
+  color: var(--accent-deep);
 }
 
 .site-footer {
@@ -2163,6 +2446,62 @@ p {
   }
 }
 
+.cloody-vision {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  gap: 2rem;
+  padding: clamp(1.55rem, 3vw, 2.5rem);
+  border: 1px solid color-mix(in oklab, var(--line) 86%, white);
+  border-radius: 40px;
+  background:
+    linear-gradient(180deg, oklch(0.995 0.008 90 / 0.74), oklch(0.98 0.012 86 / 0.88)),
+    linear-gradient(135deg, oklch(0.72 0.06 52 / 0.06), transparent 40%);
+  box-shadow: var(--paper-shadow);
+  backdrop-filter: blur(14px);
+}
+
+.cloody-concept {
+  max-width: 48rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.cloody-concept-headline {
+  color: var(--accent);
+  font-family: var(--font-display), serif;
+  font-size: clamp(1.8rem, 3.6vw, 3rem);
+  font-style: italic;
+  letter-spacing: -0.02em;
+}
+
+.cloody-audience-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.cloody-audience-card {
+  padding: clamp(1.35rem, 2.5vw, 2rem);
+  border: 1px solid color-mix(in oklab, var(--line) 86%, white);
+  border-radius: 32px;
+  background:
+    linear-gradient(180deg, oklch(0.995 0.008 90 / 0.74), oklch(0.98 0.012 86 / 0.88)),
+    linear-gradient(160deg, oklch(0.72 0.06 52 / 0.04), transparent 36%);
+  box-shadow: var(--paper-shadow);
+  backdrop-filter: blur(14px);
+}
+
+.cloody-audience-card h3 {
+  margin: 0 0 0.6rem;
+  color: var(--ink);
+  font-size: 1.1rem;
+}
+
+.cloody-audience-card p {
+  margin: 0;
+  color: var(--text-soft);
+}
+
 @media (max-width: 1100px) {
   .parallax-overlay,
   .hero-grid,
@@ -2170,7 +2509,8 @@ p {
   .cta-banner,
   .page-intro-grid,
   .about-band,
-  .contact-layout {
+  .contact-layout,
+  .cloody-vision {
     grid-template-columns: 1fr;
   }
 
@@ -2179,6 +2519,10 @@ p {
   }
 
   .trust-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .team-intl-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -2320,6 +2664,21 @@ p {
     grid-template-columns: 1fr;
   }
 
+  .parallax-cloody-badge {
+    padding: 0.8rem 1.2rem 0.8rem 0.6rem;
+    border-radius: 22px;
+    gap: 0 0.75rem;
+  }
+
+  .parallax-cloody-badge-icon {
+    width: 4.2rem;
+    height: 4.2rem;
+  }
+
+  .parallax-cloody-badge-copy strong {
+    font-size: 1.35rem;
+  }
+
   .parallax-hero {
     height: 280vh;
   }
@@ -2374,6 +2733,22 @@ p {
 @media (max-width: 720px) {
   .shell {
     width: min(calc(100% - 1.2rem), var(--max-width));
+  }
+
+  .team-intl-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cloody-audience-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cloody-audience-card {
+    border-radius: 28px;
+  }
+
+  .cloody-vision {
+    border-radius: 28px;
   }
 
   .site-header {
@@ -2622,6 +2997,33 @@ p {
 }
 
 @media (max-width: 520px) {
+  .parallax-cloody-badge {
+    padding: 0.65rem 1rem 0.65rem 0.5rem;
+    border-radius: 16px;
+    gap: 0 0.55rem;
+  }
+
+  .parallax-cloody-badge-icon {
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  .parallax-cloody-badge-copy span {
+    font-size: 0.58rem;
+  }
+
+  .parallax-cloody-badge-copy strong {
+    font-size: 1.05rem;
+  }
+
+  .parallax-cloody-badge-copy em {
+    font-size: 0.66rem;
+  }
+
+  .parallax-cloody-badge-live {
+    font-size: 0.58rem;
+  }
+
   .parallax-copy .eyebrow {
     margin-bottom: 0.8rem;
     font-size: 0.7rem;

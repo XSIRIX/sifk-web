@@ -92,6 +92,7 @@ export function SiteHeader() {
           <nav className="main-nav" aria-label={copy.header.navAriaLabel}>
             {copy.navigation.map((item) => (
               <Link
+                className={item.label === "Cloody" ? "nav-cloody" : undefined}
                 key={item.href}
                 href={localizePath(item.href, locale)}
                 onClick={() => setIsOpen(false)}

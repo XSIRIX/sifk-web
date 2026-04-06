@@ -38,7 +38,8 @@ export const sharedCopy: Record<
     navigation: [
       { href: "/leistungen", label: "Leistungen" },
       { href: "/unser-team", label: "Unser Team" },
-      { href: "/ueber-uns", label: "Über uns" }
+      { href: "/ueber-uns", label: "Über uns" },
+      { href: "/cloody", label: "Cloody" }
     ],
     header: {
       contactLabel: "Kontakt",
@@ -85,7 +86,8 @@ export const sharedCopy: Record<
     navigation: [
       { href: "/leistungen", label: "Services" },
       { href: "/unser-team", label: "Team" },
-      { href: "/ueber-uns", label: "About" }
+      { href: "/ueber-uns", label: "About" },
+      { href: "/en/cloody", label: "Cloody" }
     ],
     header: {
       contactLabel: "Contact",

@@ -38,29 +38,63 @@ export default function TeamPage() {
       </section>
 
       <section className="section shell">
-        <div className="team-profile-grid">
-          {teamPageContent.profiles.map((profile, index) => (
-            <Reveal delay={index * 100} key={profile.name}>
+        <Reveal>
+          <div className="section-head">
+            <p className="eyebrow">{teamPageContent.sectionLeadership.eyebrow}</p>
+            <h2>{teamPageContent.sectionLeadership.title}</h2>
+          </div>
+        </Reveal>
+        <div className="team-profile-grid team-profile-grid-2">
+          {teamPageContent.coreTeam.map((member, index) => (
+            <Reveal delay={index * 100} key={member.name}>
               <article className="team-profile-card">
-              <div className={`team-profile-portrait team-profile-portrait-${profile.accent}`}>
-                <Image
-                  alt={profile.imageAlt}
-                  className="team-profile-portrait-image"
-                  fill
-                  sizes="(max-width: 1100px) 100vw, 30vw"
-                  src={profile.image}
-                />
-              </div>
-              <div className="team-profile-head">
-                <p className="eyebrow">{profile.role}</p>
-                <h2>{profile.name}</h2>
-              </div>
-              <p>{profile.text}</p>
-              <ul className="team-profile-list">
-                {profile.areas.map((area) => (
-                  <li key={area}>{area}</li>
-                ))}
-              </ul>
+                <div className={`team-profile-portrait team-profile-portrait-${member.accent}`}>
+                  <span className="team-profile-initials">{member.initials}</span>
+                  <span className="team-profile-flags">
+                    {member.flags.map((flag) => (
+                      <span key={flag}>{flag}</span>
+                    ))}
+                  </span>
+                </div>
+                <div className="team-profile-head">
+                  <p className="eyebrow">{member.role}</p>
+                  <h2>{member.name}</h2>
+                </div>
+                <p className="team-profile-languages">{member.languages}</p>
+                <p>{member.text}</p>
+                <ul className="team-profile-list">
+                  {member.areas.map((area) => (
+                    <li key={area}>{area}</li>
+                  ))}
+                </ul>
+              </article>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
+      <section className="section shell">
+        <Reveal>
+          <div className="section-head">
+            <p className="eyebrow">{teamPageContent.sectionInternational.eyebrow}</p>
+            <h2>{teamPageContent.sectionInternational.title}</h2>
+          </div>
+        </Reveal>
+        <div className="team-intl-grid">
+          {teamPageContent.intlTeam.map((member, index) => (
+            <Reveal delay={index * 80} key={member.name}>
+              <article className="team-intl-card">
+                <div className="team-intl-avatar">
+                  <span className="team-intl-initials">{member.initials}</span>
+                  <span className="team-intl-flag">{member.flags[0]}</span>
+                </div>
+                <div className="team-intl-info">
+                  <h3>{member.name}</h3>
+                  <p className="eyebrow">{member.role}</p>
+                  <p className="team-intl-qual">{member.qualification}</p>
+                  {member.org && <p className="team-intl-org">{member.org}</p>}
+                  {member.text && <p className="team-intl-text">{member.text}</p>}
+                </div>
               </article>
             </Reveal>
           ))}
