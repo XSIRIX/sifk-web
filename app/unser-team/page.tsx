@@ -73,7 +73,7 @@ export default function TeamPage() {
         </div>
       </section>
 
-      <section className="section shell">
+      <section className="section shell" id="internationales-team">
         <Reveal>
           <div className="section-head">
             <p className="eyebrow">{teamPageContent.sectionInternational.eyebrow}</p>

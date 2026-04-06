@@ -35,6 +35,31 @@ export const homeContentEn = {
   ],
   positioning:
     "SIFK combines international business development with energy consulting to create a consulting-led platform for markets, projects, and sustainable development.",
+  overview: [
+    {
+      title: "DIN-certified consulting",
+      text: "Energy audit per DIN EN 16247, consulting per DIN V 18599 — standards-compliant and field-proven.",
+      accent: "signal",
+      href: "/en/leistungen#energieberatung-deutschland"
+    },
+    {
+      title: "Own teams on the ground",
+      text: "Specialists in Uganda, Ghana, Kenya, and Tanzania — not just contacts, but operational presence.",
+      accent: "atlas",
+      href: "/en/unser-team"
+    },
+    {
+      title: "Engineers, MBAs, GPM",
+      text: "PhD engineers, certified project managers, and seasoned finance professionals under one roof.",
+      accent: "ink",
+      href: "/en/unser-team#internationales-team"
+    }
+  ],
+  stats: [
+    { value: "30+", label: "Years experience" },
+    { value: "6", label: "Countries" },
+    { value: "9", label: "Specialists" }
+  ],
   story: {
     quote:
       "New markets do not emerge by chance, but through the right connections.",
@@ -192,27 +217,50 @@ export const cloodyBadgeEn = {
   href: "/en/cloody"
 };
 
+export const cloodyPromoEn = {
+  eyebrow: "Project Cloody",
+  title: "The African marketplace is taking shape.",
+  text: "Cloody connects Europe and Africa through a community-based trading platform — with integrated customs processing and the principle: Pay less than you guess.",
+  tagline: "Pay less than you guess.",
+  action: { href: "/en/cloody", label: "Learn more" },
+  highlights: [
+    "Direct trade without middlemen",
+    "Integrated customs processing",
+    "Community-based logistics"
+  ]
+};
+
 export const cloodyPageContentEn = {
   intro: {
     eyebrow: "Project Cloody",
     title: "The African marketplace that rethinks trade.",
-    text: "Cloody is a community-based trading platform enabling direct trade with Africa. For individuals and businesses alike. With integrated customs processing. Under the principle: Pay less than you guess."
+    text: "Cloody is a community-based trading platform enabling direct trade with Africa. For individuals and businesses alike. With integrated customs processing. Under the principle: Pay less than you guess.",
+    stats: [
+      { value: "54", label: "African countries" },
+      { value: "1.4 bn", label: "People on the continent" },
+      { value: "\u221E", label: "Possibilities" }
+    ]
   },
   vision: {
     eyebrow: "Vision",
     title: "Trade with Africa, accessible to everyone.",
     text: "Cloody makes access to African markets as straightforward as an online purchase. The platform connects sellers and buyers directly, reduces intermediaries, and creates the transparency that builds trust.",
     points: [
-      "Direct trade without unnecessary middlemen",
-      "Integrated customs processing through the platform",
-      "Open marketplace for individuals and businesses",
-      "Price transparency as a core principle"
+      { title: "Direct", text: "Trade without unnecessary middlemen" },
+      { title: "Integrated", text: "Customs processing through the platform" },
+      { title: "Open", text: "Marketplace for individuals and businesses" },
+      { title: "Transparent", text: "Price transparency as a core principle" }
     ]
   },
   concept: {
     eyebrow: "Concept",
     title: "Pay less than you guess.",
-    text: "Cloody builds on a pricing model that beats expectations. Through bundling, community logistics, and direct sourcing channels, price advantages are created and passed on to users."
+    text: "Cloody builds on a pricing model that beats expectations. Through bundling, community logistics, and direct sourcing channels, price advantages are created and passed on to users.",
+    pillars: [
+      { label: "Bundling", text: "Buy together, pay less" },
+      { label: "Community logistics", text: "Shared routes, shared costs" },
+      { label: "Direct sourcing", text: "No middlemen, no markups" }
+    ]
   },
   howItWorks: {
     eyebrow: "How it works",
@@ -241,21 +289,25 @@ export const cloodyPageContentEn = {
     groups: [
       {
         title: "Individuals",
+        icon: "discover",
         text: "Access to unique products from African markets, without customs and shipping complexity."
       },
       {
         title: "Businesses",
+        icon: "scale",
         text: "Direct sourcing channels and new sales markets, backed by a reliable platform structure."
       },
       {
         title: "African sellers",
+        icon: "globe",
         text: "An international distribution channel that simplifies and professionalises access to European buyers."
       }
     ]
   },
   cta: {
     eyebrow: "Interest",
-    title: "Cloody is taking shape. Talk to us.",
+    title: "Cloody is taking shape.",
+    subtitle: "Talk to us.",
     text: "The project is in development. Whether you want to join as a partner, seller, or early adopter, let\u2019s start the conversation.",
     action: { href: "/en/kontakt", label: "Get in touch" }
   }

@@ -5,7 +5,7 @@ import { PillarCards } from "@/components/pillar-cards";
 import { ReferenceMarquee } from "@/components/reference-marquee";
 import { Reveal } from "@/components/reveal";
 import { StoryScroll } from "@/components/story-scroll";
-import { cloodyBadgeEn, homeContentEn, pillarsEn } from "@/lib/site-content-en";
+import { cloodyBadgeEn, cloodyPromoEn, homeContentEn, pillarsEn } from "@/lib/site-content-en";
 
 export default function HomePageEn() {
   return (
@@ -22,7 +22,7 @@ export default function HomePageEn() {
         content={homeContentEn}
       />
 
-      <section className="section shell routing-cluster">
+      <section className="section shell">
         <Reveal delay={80}>
           <ReferenceMarquee
             ariaLabel="Reference logos"
@@ -31,29 +31,24 @@ export default function HomePageEn() {
           />
         </Reveal>
 
-        <div className="routing-grid">
-          {homeContentEn.routing.map((item, index) => (
-            <Reveal delay={index === 0 ? 0 : 120} key={item.title}>
-              <Link className={`routing-panel routing-panel-${item.accent}`} href={item.href}>
-                <span className="routing-badge">{item.badge}</span>
-                <h2>{item.title}</h2>
-                <p>{item.description}</p>
-                <span className="routing-link">Go to section</span>
+        <div className="overview-cards">
+          {homeContentEn.overview.map((card, index) => (
+            <Reveal delay={index * 80} key={card.title}>
+              <Link className={`overview-card overview-card-${card.accent}`} href={card.href}>
+                <h3>{card.title}</h3>
+                <p>{card.text}</p>
               </Link>
             </Reveal>
           ))}
         </div>
 
-        <Reveal className="positioning-block positioning-bridge">
-          <div className="positioning-connector" aria-hidden="true">
-            <span className="connector-arm connector-arm-atlas" />
-            <span className="connector-node">
-              <span />
-            </span>
-            <span className="connector-arm connector-arm-signal" />
-          </div>
-          <p className="positioning-kicker">Shared platform</p>
-          <p>{homeContentEn.positioning}</p>
+        <Reveal className="overview-stats">
+          {homeContentEn.stats.map((stat) => (
+            <div className="overview-stat" key={stat.label}>
+              <span className="overview-stat-value">{stat.value}</span>
+              <span className="overview-stat-label">{stat.label}</span>
+            </div>
+          ))}
         </Reveal>
       </section>
 
@@ -64,6 +59,28 @@ export default function HomePageEn() {
         </Reveal>
 
         <PillarCards linkLabel="Learn more" pillars={pillarsEn} />
+
+        <Reveal className="cloody-promo">
+          <div className="cloody-promo-copy">
+            <p className="eyebrow">{cloodyPromoEn.eyebrow}</p>
+            <h2>{cloodyPromoEn.title}</h2>
+            <p className="cloody-promo-text">{cloodyPromoEn.text}</p>
+          </div>
+
+          <div className="cloody-promo-aside">
+            <p className="cloody-promo-tagline">{cloodyPromoEn.tagline}</p>
+            <ul className="cloody-promo-highlights">
+              {cloodyPromoEn.highlights.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <Link className="button" href={cloodyPromoEn.action.href}>
+              {cloodyPromoEn.action.label}
+            </Link>
+          </div>
+
+          <div className="cloody-promo-orb" aria-hidden="true" />
+        </Reveal>
       </section>
 
       <StoryScroll

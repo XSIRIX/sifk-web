@@ -55,6 +55,31 @@ export const homeContent = {
   ],
   positioning:
     "SIFK verbindet internationale Geschäftsentwicklung mit fundierter Energieberatung und schafft damit eine beratungsnahe Plattform für Märkte, Projekte und nachhaltige Entwicklung.",
+  overview: [
+    {
+      title: "DIN-zertifizierte Beratung",
+      text: "Energieaudit nach DIN EN 16247, Beratung nach DIN V 18599 — normkonform und praxiserprobt.",
+      accent: "signal",
+      href: "/leistungen#energieberatung-deutschland"
+    },
+    {
+      title: "Eigene Teams vor Ort",
+      text: "Fachkräfte in Uganda, Ghana, Kenia und Tansania — nicht nur Kontakte, sondern operative Präsenz.",
+      accent: "atlas",
+      href: "/unser-team"
+    },
+    {
+      title: "Ingenieure, MBAs, GPM",
+      text: "Promovierte Ingenieure, zertifizierte Projektmanager und erfahrene Finanzexperten unter einem Dach.",
+      accent: "ink",
+      href: "/unser-team#internationales-team"
+    }
+  ],
+  stats: [
+    { value: "30+", label: "Jahre Erfahrung" },
+    { value: "6", label: "Länder" },
+    { value: "9", label: "Fachkräfte" }
+  ],
   story: {
     quote:
       "Neue Märkte entstehen nicht durch Zufall, sondern durch die richtigen Verbindungen.",
@@ -234,27 +259,50 @@ export const cloodyBadge = {
   href: "/cloody"
 };
 
+export const cloodyPromo = {
+  eyebrow: "Projekt Cloody",
+  title: "Der afrikanische Marktplatz entsteht.",
+  text: "Cloody verbindet Europa und Afrika über eine community-basierte Handelsplattform — mit integrierter Zollabwicklung und dem Prinzip: Pay less than you guess.",
+  tagline: "Pay less than you guess.",
+  action: { href: "/cloody", label: "Mehr erfahren" },
+  highlights: [
+    "Direkter Handel ohne Mittelsmänner",
+    "Integrierte Zollabwicklung",
+    "Community-basierte Logistik"
+  ]
+};
+
 export const cloodyPageContent = {
   intro: {
     eyebrow: "Projekt Cloody",
     title: "Der afrikanische Marktplatz, der Handel neu denkt.",
-    text: "Cloody ist eine community-basierte Handelsplattform, die direkten Handel mit Afrika ermöglicht. Für Privatpersonen und Unternehmen. Mit integrierter Zollabwicklung. Unter dem Prinzip: Pay less than you guess."
+    text: "Cloody ist eine community-basierte Handelsplattform, die direkten Handel mit Afrika ermöglicht. Für Privatpersonen und Unternehmen. Mit integrierter Zollabwicklung. Unter dem Prinzip: Pay less than you guess.",
+    stats: [
+      { value: "54", label: "Afrikanische Länder" },
+      { value: "1,4 Mrd.", label: "Menschen auf dem Kontinent" },
+      { value: "∞", label: "Möglichkeiten" }
+    ]
   },
   vision: {
     eyebrow: "Vision",
     title: "Handel mit Afrika, zugänglich für alle.",
     text: "Cloody macht den Zugang zu afrikanischen Märkten so einfach wie einen Online-Einkauf. Die Plattform verbindet Anbieter und Käufer direkt, reduziert Zwischenstufen und schafft Transparenz, die Vertrauen aufbaut.",
     points: [
-      "Direkter Handel ohne unnötige Mittelsmänner",
-      "Integrierte Zollabwicklung über die Plattform",
-      "Offener Marktplatz für Privatpersonen und Unternehmen",
-      "Preistransparenz als Kernprinzip"
+      { title: "Direkt", text: "Handel ohne unnötige Mittelsmänner" },
+      { title: "Integriert", text: "Zollabwicklung über die Plattform" },
+      { title: "Offen", text: "Marktplatz für Privatpersonen und Unternehmen" },
+      { title: "Transparent", text: "Preistransparenz als Kernprinzip" }
     ]
   },
   concept: {
     eyebrow: "Konzept",
     title: "Pay less than you guess.",
-    text: "Cloody setzt auf ein Preismodell, das Erwartungen unterbietet. Durch Bündelung, Community-Logistik und direkte Beschaffungswege entstehen Preisvorteile, die an die Nutzer weitergegeben werden."
+    text: "Cloody setzt auf ein Preismodell, das Erwartungen unterbietet. Durch Bündelung, Community-Logistik und direkte Beschaffungswege entstehen Preisvorteile, die an die Nutzer weitergegeben werden.",
+    pillars: [
+      { label: "Bündelung", text: "Gemeinsam günstiger einkaufen" },
+      { label: "Community-Logistik", text: "Geteilte Versandwege, geteilte Kosten" },
+      { label: "Direktbeschaffung", text: "Keine Zwischenhändler, keine Aufschläge" }
+    ]
   },
   howItWorks: {
     eyebrow: "So funktioniert es",
@@ -283,21 +331,25 @@ export const cloodyPageContent = {
     groups: [
       {
         title: "Privatpersonen",
+        icon: "discover",
         text: "Zugang zu einzigartigen Produkten aus afrikanischen Märkten, ohne Komplexität bei Zoll und Versand."
       },
       {
         title: "Unternehmen",
+        icon: "scale",
         text: "Direkte Beschaffungswege und neue Absatzmärkte, unterstützt durch eine belastbare Plattformstruktur."
       },
       {
         title: "Afrikanische Anbieter",
+        icon: "globe",
         text: "Ein internationaler Vertriebskanal, der den Zugang zu europäischen Käufern vereinfacht und professionalisiert."
       }
     ]
   },
   cta: {
     eyebrow: "Interesse",
-    title: "Cloody entsteht. Sprechen Sie mit uns.",
+    title: "Cloody entsteht.",
+    subtitle: "Sprechen Sie mit uns.",
     text: "Das Projekt befindet sich in der Entwicklung. Wenn Sie als Partner, Anbieter oder Early Adopter dabei sein wollen, starten wir das Gespräch.",
     action: { href: "/kontakt", label: "Kontakt aufnehmen" }
   }
