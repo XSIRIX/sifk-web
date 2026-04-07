@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Bodoni_Moda, Schibsted_Grotesk } from "next/font/google";
+import { Inter } from "next/font/google";
 
 import { HashScrollController } from "@/components/hash-scroll-controller";
 import { LocaleDocumentController } from "@/components/locale-document-controller";
@@ -11,13 +11,13 @@ import { siteMeta } from "@/lib/site-content";
 
 import "./globals.css";
 
-const displayFont = Bodoni_Moda({
+const displayFont = Inter({
   subsets: ["latin"],
   variable: "--font-display",
   weight: ["400", "500", "600", "700", "800"]
 });
 
-const bodyFont = Schibsted_Grotesk({
+const bodyFont = Inter({
   subsets: ["latin"],
   variable: "--font-body",
   weight: ["400", "500", "600", "700", "800"]

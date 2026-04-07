@@ -316,100 +316,141 @@ export const cloodyPageContentEn = {
 export const teamPageContentEn = {
   intro: {
     eyebrow: "Our Team",
-    title: "A team that makes connection operationally reliable.",
+    title: "A team with clear leadership, regional depth, and reliable execution.",
     text:
       "SIFK combines international business development, energy consulting, and structured project delivery in one shared operating model. That creates decisions that are both technically clear and durable in execution."
   },
   sectionLeadership: {
-    eyebrow: "Leadership & Consulting",
-    title: "Experience that sets direction."
+    eyebrow: "Leadership & Practice Leads",
+    title: "Clear responsibility with a clean operating structure."
   },
-  coreTeam: [
+  executiveLead: {
+    name: "Pheeraphon Karch",
+    role: "Managing Director",
+    accent: "atlas",
+    flags: ["🇩🇪"],
+    country: "Germany",
+    languages: "German, English C2",
+    text:
+      "Has led SIFK since November 2022. Combines company strategy, operational steering, and international communication with clear client focus.",
+    areas: ["Company strategy", "Operational leadership", "International client communication"]
+  },
+  practiceLeads: [
     {
-      name: "Rainer Bardtke",
-      initials: "RB",
-      role: "Energy Consulting",
-      accent: "signal",
+      name: "Adrian Müller",
+      role: "Head of Energy and Africa",
+      accent: "forge",
       flags: ["🇩🇪"],
-      languages: "DE (native), EN C2, FR B1, ES A1",
+      country: "Germany",
+      languages: "German (native), English fluent, French basic",
       text:
-        "Over 30 years of experience in the energy sector. Combines technical analysis with economic prioritization for sustainable efficiency solutions.",
-      areas: ["Energy audit", "Non-residential consulting", "Economic efficiency"]
+        "Lead energy auditor at SIFK focused on consulting for non-residential buildings, systems, and technical infrastructure under DIN 16247 and DIN 18599.",
+      areas: ["DIN EN 16247-1 energy audits", "Non-residential buildings & systems", "Technical efficiency assessment"]
     },
     {
-      name: "Pheeraphon Karch",
-      initials: "PK",
-      role: "Managing Director",
-      accent: "atlas",
+      name: "Rainer Bardtke",
+      role: "Director | Africa Business Advisory",
+      accent: "signal",
       flags: ["🇩🇪"],
-      languages: "DE (native), EN C2",
+      country: "Germany / Africa",
+      languages: "German (native), English C2, French B1, Spanish A1",
       text:
-        "Has been leading SIFK since November 2022. Combines international perspective with entrepreneurial clarity and structured project delivery.",
-      areas: ["Executive leadership", "Project structure", "International coordination"]
+        "Brings long-running experience in executive management, international sales, and market development. Leads the Africa practice with a focus on durable partnerships and practical market entry.",
+      areas: ["Africa market development", "Sales & partnerships", "Commercial development"]
     }
   ],
+  africaDesk: {
+    eyebrow: "Africa Team",
+    title: "Operational market insight, regional language capability, and direct project support for the Africa practice.",
+    members: [
+      {
+        name: "Patience Bauer",
+        role: "Environmental & Resource Management Specialist",
+        flags: ["🇺🇬", "🇩🇪"],
+        country: "Uganda / Germany",
+        text:
+          "Strategic business consultant with more than 15 years of experience bridging German operational standards and African market dynamics. Specialized in Uganda-Germany market access, operational scaling, and intercultural coordination."
+      },
+      {
+        name: "Panu Mankit",
+        role: "Executive Operations Specialist",
+        flags: ["🇩🇪"],
+        country: "Germany",
+        text:
+          "Supports projects with strong operational coordination, correspondence, and data management. Brings experience from sales operations, CRM, and executive support."
+      },
+      {
+        name: "Haulie Tembo-Schäfer",
+        role: "Business Development Specialist",
+        flags: ["🇿🇲"],
+        country: "Zambia",
+        text:
+          "Brings 11 years of sales experience in West Africa with a focus on business processes, market understanding, and performance metrics. Strong in solution-oriented work with practical, implementable proposals."
+      }
+    ]
+  },
   sectionInternational: {
     eyebrow: "Our International Team",
-    title: "SIFK employees worldwide."
+    title: "Local expert partners and grounded market presence across multiple African countries."
   },
   intlTeam: [
     {
-      name: "Panu Mankit",
-      initials: "PM",
-      role: "Executive Assistant",
-      flags: ["🇩🇪", "🇱🇦"],
-      qualification: "DE & Lao (native), EN C2",
-      text: "Supports executive management with project coordination, correspondence, and CRM administration. Previously deputy sales manager at NRG GmbH and co-founder in Thailand."
+      name: "Mahlet Asfha Woldegiorgis",
+      role: "Africa Team | Ethiopia",
+      flags: ["🇪🇹"],
+      country: "Ethiopia",
+      qualification: "German, English, Amharic | Pharmacy",
+      text: "Brings a pharmacy background, work experience in Addis Ababa, and language fluency in German, English, and Amharic. Supports coordination in German-Ethiopian contexts."
     },
     {
       name: "Tom Twimukire",
-      initials: "TT",
       role: "Director Business Development",
       flags: ["🇺🇬"],
+      country: "Uganda",
       qualification: "MBA, B.Com (Hons)",
       org: "Tocom Ltd",
       text: "Founder and managing director of Tocom Ltd. Over 10 years of experience in brand strategy, go-to-market planning, and digital marketing across East African growth markets."
     },
     {
       name: "Dr. Kobla Xoese Nanewortor",
-      initials: "KN",
       role: "Project Lead Technical Engineering",
       flags: ["🇬🇭"],
+      country: "Ghana",
       qualification: "Dr.-Ing. Electrical Engineering",
       org: "TenneT TSO GmbH",
-      text: "PhD engineer specializing in high-voltage technology and power distribution. Experienced in grid planning, renewable energy certification, and network analysis at E.ON, TÜV NORD, and Siemens."
+      text: "PhD engineer specializing in high-voltage technology, grid planning, and certification of decentralized power generation. Experienced at TenneT, E.ON, TÜV NORD, and Siemens."
     },
     {
       name: "Muwanga K. James",
-      initials: "MJ",
       role: "Director, Accounting & Business",
       flags: ["🇺🇬"],
+      country: "Uganda",
       qualification: "B.Comm Business Studies (Accounting)",
-      text: "Seasoned finance professional with a background in internal auditing, accounting systems, and strategic business advisory. Manages multiple enterprises in Uganda."
+      text: "Seasoned finance and business professional focused on accounting, internal audit, and strategic company leadership. Manages multiple businesses in Uganda."
     },
     {
       name: "John Damulira",
-      initials: "JD",
       role: "Operations Manager",
       flags: ["🇺🇬"],
+      country: "Uganda",
       qualification: "B.Comm, Makerere University",
-      text: "Operations manager with experience in construction and real estate as well as international credit control at G4S Uganda and Spedag Interfreight."
+      text: "Operations manager with experience in construction, real estate, and credit-control-driven client operations at G4S Uganda."
     },
     {
       name: "Celestine Wafula",
-      initials: "CW",
       role: "Sales Executive",
       flags: ["🇰🇪"],
-      qualification: "BSc Pharmaceutical Technology",
-      text: "9 years of sales experience across East Africa, Turkey, Egypt, and Thailand. Specializes in strategic sales planning, client relationships, and data-driven market analysis."
+      country: "Kenya",
+      qualification: "BSc Pharmaceutical Technology | Business Management & Digital Marketing",
+      text: "Sales executive with 9 years of experience across East Africa, Turkey, Egypt, and Thailand. Specializes in sales planning, client relationships, and market analysis."
     },
     {
       name: "Albert Guido Moshi",
-      initials: "AM",
       role: "Logistics & Environmental Management",
       flags: ["🇹🇿"],
+      country: "Tanzania",
       qualification: "MSc, Certified Project Manager (GPM)",
-      text: "MSc in Environmental and Resource Management with experience in dispatch, fleet management, and international shipping. Active in German-Tanzanian educational outreach."
+      text: "MSc in Environmental and Resource Management with experience in dispatch, fleet management, international shipping, and operational rail logistics. Active in German-Tanzanian educational outreach."
     }
   ],
   collaboration: [
