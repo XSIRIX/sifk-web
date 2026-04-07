@@ -386,6 +386,14 @@ export const teamPageContentEn = {
         country: "Zambia",
         text:
           "Brings 11 years of sales experience in West Africa with a focus on business processes, market understanding, and performance metrics. Strong in solution-oriented work with practical, implementable proposals."
+      },
+      {
+        name: "Christian Brecht",
+        role: "Sales Director",
+        flags: ["🇩🇪"],
+        country: "Germany",
+        text:
+          "Brings more than 30 years of experience in existing-customer support, business acquisition, and the preparation of robust market analyses."
       }
     ]
   },

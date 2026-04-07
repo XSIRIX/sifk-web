@@ -428,6 +428,14 @@ export const teamPageContent = {
         country: "Sambia",
         text:
           "11 Jahre Vertriebserfahrung in West-Afrika mit Schwerpunkt auf Geschäftsprozessen, Marktverständnis und belastbaren Kennzahlen. Stärken sind lösungsorientierte Ansätze mit Fokus auf praktikable, umsetzbare Vorschläge."
+      },
+      {
+        name: "Christian Brecht",
+        role: "Vertriebsleiter",
+        flags: ["🇩🇪"],
+        country: "Deutschland",
+        text:
+          "Über 30 Jahre Erfahrung in der Betreuung bestehender Kunden, in der Akquise und in der Erstellung belastbarer Marktanalysen."
       }
     ]
   },
