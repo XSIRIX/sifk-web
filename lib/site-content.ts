@@ -394,7 +394,7 @@ export const teamPageContent = {
       role: "Director | Unternehmensberatung Bereich Afrika",
       accent: "signal",
       flags: ["🇩🇪"],
-      country: "Deutschland / Afrika",
+      country: "Deutschland",
       languages: "Deutsch (Muttersprache), Englisch C2, Französisch B1, Spanisch A1",
       text:
         "Bringt langjährige Erfahrung aus Geschäftsleitung, internationalem Vertrieb und Marktaufbau ein. Steuert den Bereich Afrika mit Fokus auf belastbare Partnerschaften und klare Markterschließung.",

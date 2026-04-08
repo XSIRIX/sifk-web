@@ -352,7 +352,7 @@ export const teamPageContentEn = {
       role: "Director | Africa Business Advisory",
       accent: "signal",
       flags: ["🇩🇪"],
-      country: "Germany / Africa",
+      country: "Germany",
       languages: "German (native), English C2, French B1, Spanish A1",
       text:
         "Brings long-running experience in executive management, international sales, and market development. Leads the Africa practice with a focus on durable partnerships and practical market entry.",
