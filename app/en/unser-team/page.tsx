@@ -100,7 +100,7 @@ export default function TeamPageEn() {
           <section className="team-connector-band team-connector-band-layer" aria-hidden="true">
             <div className="team-connector-line" />
             <div className="team-connector-node" />
-            <p>Energy Lead</p>
+            <p>Head of the Energy and Africa Division</p>
           </section>
         </Reveal>
 

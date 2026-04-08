@@ -338,7 +338,7 @@ export const teamPageContentEn = {
   practiceLeads: [
     {
       name: "Adrian Müller",
-      role: "Head of Energy and Africa",
+      role: "Head of the Energy Division",
       accent: "forge",
       flags: ["🇩🇪"],
       country: "Germany",
