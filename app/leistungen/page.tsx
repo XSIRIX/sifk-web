@@ -1,11 +1,17 @@
+import { StructuredData } from "@/components/structured-data";
+import { serviceStructuredData } from "@/lib/structured-data";
+import { createPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 
 import { Reveal } from "@/components/reveal";
 import { pillars, servicePageContent } from "@/lib/site-content";
 
+export const metadata = createPageMetadata("/leistungen", "de");
+
 export default function ServicesPage() {
   return (
     <>
+      <StructuredData data={serviceStructuredData("de")} />
       <section className="page-intro">
         <Reveal className="shell page-intro-grid">
           <div>

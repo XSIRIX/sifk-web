@@ -1,8 +1,5 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Impressum",
-};
+import { createPageMetadata } from "@/lib/seo";
+export const metadata = createPageMetadata("/impressum", "de");
 
 export default function LegalNoticePage() {
   return (

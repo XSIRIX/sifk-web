@@ -1,3 +1,4 @@
+import { createPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 
 import { ParallaxHero } from "@/components/parallax-hero";
@@ -6,6 +7,8 @@ import { ReferenceMarquee } from "@/components/reference-marquee";
 import { Reveal } from "@/components/reveal";
 import { StoryScroll } from "@/components/story-scroll";
 import { cloodyBadgeEn, cloodyPromoEn, homeContentEn, pillarsEn } from "@/lib/site-content-en";
+
+export const metadata = createPageMetadata("/", "en");
 
 export default function HomePageEn() {
   return (

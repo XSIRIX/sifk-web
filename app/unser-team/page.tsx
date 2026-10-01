@@ -1,9 +1,12 @@
+import { createPageMetadata } from "@/lib/seo";
 import Image from "next/image";
 import Link from "next/link";
 
 import { Reveal } from "@/components/reveal";
 import { teamPageContent } from "@/lib/site-content";
 import { buildTeamEmail } from "@/lib/team-email";
+
+export const metadata = createPageMetadata("/unser-team", "de");
 
 export default function TeamPage() {
   const executiveEmail = buildTeamEmail(teamPageContent.executiveLead.name);

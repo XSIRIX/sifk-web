@@ -1,7 +1,10 @@
+import { createPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 
 import { Reveal } from "@/components/reveal";
 import { cloodyPageContent } from "@/lib/site-content";
+
+export const metadata = createPageMetadata("/cloody", "de");
 
 export default function CloodyPage() {
   return (

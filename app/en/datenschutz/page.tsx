@@ -1,8 +1,5 @@
-import type { Metadata } from "next";
-
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-};
+import { createPageMetadata } from "@/lib/seo";
+export const metadata = createPageMetadata("/datenschutz", "en");
 
 export default function PrivacyPageEn() {
   return (

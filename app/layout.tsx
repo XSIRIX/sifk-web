@@ -6,8 +6,11 @@ import { LocaleDocumentController } from "@/components/locale-document-controlle
 import { SmoothScroll } from "@/components/smooth-scroll";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { StructuredData } from "@/components/structured-data";
 import { ThemeColorController } from "@/components/theme-color-controller";
+import { siteUrl } from "@/lib/seo";
 import { siteMeta } from "@/lib/site-content";
+import { companyStructuredData } from "@/lib/structured-data";
 
 import "./globals.css";
 
@@ -24,6 +27,7 @@ const bodyFont = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: siteMeta.name,
     template: `%s | ${siteMeta.name}`
@@ -67,6 +71,7 @@ export default function RootLayout({
   return (
     <html className={`${displayFont.variable} ${bodyFont.variable}`} lang="de">
       <body>
+        <StructuredData data={companyStructuredData} />
         <LocaleDocumentController />
         <HashScrollController />
         <SmoothScroll />

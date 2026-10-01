@@ -1,7 +1,10 @@
+import { createPageMetadata } from "@/lib/seo";
 import Link from "next/link";
 
 import { Reveal } from "@/components/reveal";
 import { aboutPageContent } from "@/lib/site-content";
+
+export const metadata = createPageMetadata("/ueber-uns", "de");
 
 export default function AboutPage() {
   return (

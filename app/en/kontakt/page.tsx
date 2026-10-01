@@ -1,6 +1,9 @@
+import { createPageMetadata } from "@/lib/seo";
 import { ContactForm } from "@/components/contact-form";
 import { Reveal } from "@/components/reveal";
 import { contactPageContentEn } from "@/lib/site-content-en";
+
+export const metadata = createPageMetadata("/kontakt", "en");
 
 export default function ContactPageEn() {
   return (
