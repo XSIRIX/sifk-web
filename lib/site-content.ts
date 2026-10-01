@@ -388,17 +388,6 @@ export const teamPageContent = {
       text:
         "Leitender Energieauditor bei SIFK mit Schwerpunkt Energieberatung für Nichtwohngebäude, Anlagen und Systeme nach DIN 16247 und DIN 18599. Bringt Maschinenbau und angewandte Informatik zusammen.",
       areas: ["Energieaudits DIN EN 16247-1", "Nichtwohngebäude & Systeme", "Technische Effizienzbewertung"]
-    },
-    {
-      name: "Rainer Bardtke",
-      role: "Director | Unternehmensberatung Bereich Afrika",
-      accent: "signal",
-      flags: ["🇩🇪"],
-      country: "Deutschland",
-      languages: "Deutsch (Muttersprache), Englisch C2, Französisch B1, Spanisch A1",
-      text:
-        "Bringt langjährige Erfahrung aus Geschäftsleitung, internationalem Vertrieb und Marktaufbau ein. Steuert den Bereich Afrika mit Fokus auf belastbare Partnerschaften und klare Markterschließung.",
-      areas: ["Markterschließung Afrika", "Vertrieb & Partnerschaften", "Unternehmerische Entwicklung"]
     }
   ],
   africaDesk: {

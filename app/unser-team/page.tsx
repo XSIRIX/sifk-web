@@ -11,7 +11,6 @@ export const metadata = createPageMetadata("/unser-team", "de");
 export default function TeamPage() {
   const executiveEmail = buildTeamEmail(teamPageContent.executiveLead.name);
   const energyLeadEmail = buildTeamEmail(teamPageContent.practiceLeads[0].name);
-  const africaLeadEmail = buildTeamEmail(teamPageContent.practiceLeads[1].name);
 
   return (
     <>
@@ -162,59 +161,9 @@ export default function TeamPage() {
                 <h3>Strategische Markterschließung, Partnerschaften und belastbare Umsetzung für afrikanische Geschäftskontexte.</h3>
               </div>
 
-              <article className="team-profile-card team-profile-card-lead team-profile-card-branch-root">
-                <div className="team-profile-media">
-                  <div
-                    className={`team-profile-portrait team-profile-portrait-lead team-profile-portrait-centered team-profile-portrait-${teamPageContent.practiceLeads[1].accent}`}
-                  >
-                    <span className="team-profile-hero-flag">
-                      {teamPageContent.practiceLeads[1].flags[0]}
-                    </span>
-                    <div className="team-profile-emblem team-profile-emblem-compact">
-                      <span className="team-profile-country">
-                        {teamPageContent.practiceLeads[1].country}
-                      </span>
-                    </div>
-                    {teamPageContent.practiceLeads[1].flags.length > 1 && (
-                      <span className="team-profile-flags">
-                        {teamPageContent.practiceLeads[1].flags.slice(1).map((flag) => (
-                          <span key={flag}>{flag}</span>
-                        ))}
-                      </span>
-                    )}
-                  </div>
-                  <p className="team-profile-languages">
-                    {teamPageContent.practiceLeads[1].languages}
-                  </p>
-                </div>
-                <div className="team-profile-copy">
-                  <div className="team-profile-head">
-                    <p className="eyebrow">{teamPageContent.practiceLeads[1].role}</p>
-                    <h2>{teamPageContent.practiceLeads[1].name}</h2>
-                  </div>
-                  <p>{teamPageContent.practiceLeads[1].text}</p>
-                  <ul className="team-profile-list">
-                    {teamPageContent.practiceLeads[1].areas.map((area) => (
-                      <li key={area}>{area}</li>
-                    ))}
-                  </ul>
-                  <div className="team-contact">
-                    <p className="team-contact-label">E-Mail</p>
-                    <a className="button-secondary button-small team-contact-link" href={`mailto:${africaLeadEmail}`}>
-                      {africaLeadEmail}
-                    </a>
-                  </div>
-                </div>
-              </article>
-
-              <div className="team-connector-band team-connector-band-compact">
-                <div className="team-connector-line team-connector-line-soft" />
-                <div className="team-connector-node team-connector-node-soft" />
-              </div>
-
               <div className="team-branch-team">
                 <div className="section-head section-head-compact section-head-branch">
-                  <p className="eyebrow">Team unter Rainer Bardtke</p>
+                  <p className="eyebrow">{teamPageContent.africaDesk.eyebrow}</p>
                   <h3>{teamPageContent.africaDesk.title}</h3>
                 </div>
 

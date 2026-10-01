@@ -2419,6 +2419,11 @@ p {
   line-height: 1.06;
 }
 
+.team-lead-stack .section-head-left h3 {
+  width: 100%;
+  max-width: none;
+}
+
 .section-head-branch {
   gap: 0.45rem;
   justify-items: center;

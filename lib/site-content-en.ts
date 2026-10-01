@@ -346,17 +346,6 @@ export const teamPageContentEn = {
       text:
         "Lead energy auditor at SIFK focused on consulting for non-residential buildings, systems, and technical infrastructure under DIN 16247 and DIN 18599.",
       areas: ["DIN EN 16247-1 energy audits", "Non-residential buildings & systems", "Technical efficiency assessment"]
-    },
-    {
-      name: "Rainer Bardtke",
-      role: "Director | Africa Business Advisory",
-      accent: "signal",
-      flags: ["🇩🇪"],
-      country: "Germany",
-      languages: "German (native), English C2, French B1, Spanish A1",
-      text:
-        "Brings long-running experience in executive management, international sales, and market development. Leads the Africa practice with a focus on durable partnerships and practical market entry.",
-      areas: ["Africa market development", "Sales & partnerships", "Commercial development"]
     }
   ],
   africaDesk: {
