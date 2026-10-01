@@ -34,9 +34,9 @@ export const metadata: Metadata = {
   },
   description: siteMeta.description,
   icons: {
-    icon: "/logo-icon.png",
-    shortcut: "/logo-icon.png",
-    apple: "/logo-icon.png"
+    icon: { url: "/favicon.png", type: "image/png", sizes: "512x512" },
+    shortcut: "/favicon.png",
+    apple: { url: "/favicon.png", sizes: "512x512" }
   },
   openGraph: {
     title: siteMeta.name,
