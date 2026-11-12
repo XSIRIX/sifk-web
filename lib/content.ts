@@ -81,7 +81,7 @@ const de = {
     hero: {
       title: ["Wachstum in Afrika.", "Effizienz in Deutschland."],
       text:
-        "SIFK begleitet Unternehmen beim Markteintritt in afrikanischen Ländern und senkt den Energieverbrauch von Betrieben und Gebäuden in Deutschland. Mit eigenem Team in sieben Ländern.",
+        "SIFK begleitet Unternehmen beim Markteintritt in afrikanischen Ländern und senkt den Energieverbrauch von Betrieben und Gebäuden in Deutschland.",
       actions: [
         { href: "/leistungen#internationale-geschaeftsentwicklung", label: "Markteintritt Afrika" },
         { href: "/leistungen#energieberatung-deutschland", label: "Energieberatung" }
@@ -108,7 +108,6 @@ const de = {
           alt: "Die Skyline von Frankfurt am Main bei Sonnenuntergang über dem Fluss"
         }
       },
-      more: { href: "/leistungen", label: "Alle Leistungen ansehen" } as Link,
       pauseScene: "Bildbewegung anhalten",
       playScene: "Bildbewegung fortsetzen"
     },
@@ -364,6 +363,7 @@ const de = {
   team: {
     intro: {
       title: "13 Menschen. 7 Länder.\nEin Team.",
+      photoAlt: "Fünf Menschen arbeiten gemeinsam an einem Tisch mit Laptops und Unterlagen (Symbolbild)",
       text:
         "In Schriesheim sitzen Geschäftsführung, Energieberatung und Vertrieb. In sechs afrikanischen Ländern arbeiten Fachleute, die ihre Märkte von innen kennen."
     },
@@ -642,7 +642,7 @@ const en: SiteContent = {
     hero: {
       title: ["Growth in Africa.", "Efficiency in Germany."],
       text:
-        "SIFK helps companies enter African markets and cuts the energy use of businesses and buildings in Germany. With our own team in seven countries.",
+        "SIFK helps companies enter African markets and cuts the energy use of businesses and buildings in Germany.",
       actions: [
         { href: "/leistungen#internationale-geschaeftsentwicklung", label: "Market entry Africa" },
         { href: "/leistungen#energieberatung-deutschland", label: "Energy consulting" }
@@ -669,7 +669,6 @@ const en: SiteContent = {
           alt: "The Frankfurt am Main skyline at sunset above the river"
         }
       },
-      more: { href: "/leistungen", label: "See all services" },
       pauseScene: "Pause image motion",
       playScene: "Resume image motion"
     },
@@ -925,6 +924,7 @@ const en: SiteContent = {
   team: {
     intro: {
       title: "13 people. 7 countries.\nOne team.",
+      photoAlt: "Five people working together at a table with laptops and papers (stock photo)",
       text:
         "Management, energy consulting and sales are based in Schriesheim. In six African countries, specialists work who know their markets from the inside."
     },

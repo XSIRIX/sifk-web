@@ -1,3 +1,9 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+
+import { MOTION_QUERY } from "@/components/motion-root";
+
 type ReferenceLogo = { alt: string; src: string };
 
 const LOGOS: ReferenceLogo[] = [
@@ -45,26 +51,49 @@ type ReferenceMarqueeProps = {
 };
 
 /**
- * Clients and partners: a band of our woven ribbons on top, the sentence in
- * the middle, and below it two rows of logos gliding slowly past each other.
+ * Clients and partners: the sentence, then the model street of businesses on
+ * the five ribbons, and below it two rows of logos gliding past each other.
  */
 export function ReferenceMarquee({ title, ariaLabel }: ReferenceMarqueeProps) {
+  const root = useRef<HTMLElement | null>(null);
+
+  // The street stands first; a moment later the sentence rises from behind it.
+  useEffect(() => {
+    const el = root.current;
+    const street = el?.querySelector<HTMLImageElement>(".refs-street img");
+    if (!el || !street || !window.matchMedia(MOTION_QUERY).matches) return;
+    el.classList.add("is-armed");
+    const seen = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        seen.disconnect();
+        // Only once the picture is really painted may the sentence follow.
+        street
+          .decode()
+          .catch(() => undefined)
+          .then(() => el.classList.add("is-in"));
+      },
+      { threshold: 0.08 }
+    );
+    seen.observe(street);
+    return () => {
+      seen.disconnect();
+      el.classList.remove("is-armed", "is-in");
+    };
+  }, []);
+
   const rows = Array.from({ length: ROWS }, (_unused, row) => LOGOS.filter((_logo, index) => index % ROWS === row));
 
   return (
-    <section aria-labelledby="references-title" className="refs sheet field f-white">
-      {/* Our own weave, moving in a soft breeze: the picture of working together. */}
-      <div aria-hidden="true" className="refs-weave">
-        <img alt="" decoding="async" src="/brand/weave-poster.webp" />
-        <video autoPlay loop muted playsInline poster="/brand/weave-poster.webp" preload="metadata">
-          <source media="(max-width: 40rem)" src="/brand/weave-loop-sm.mp4" type="video/mp4" />
-          <source src="/brand/weave-loop.mp4" type="video/mp4" />
-        </video>
-      </div>
+    <section aria-labelledby="references-title" className="refs sheet field f-plaster" ref={root}>
       <div className="shell refs-say">
-        <h2 className="display" data-split id="references-title">
+        <h2 className="display" id="references-title">
           {title}
         </h2>
+      </div>
+      {/* The street of businesses on the five ribbons. Decoration: the logos below carry the names. */}
+      <div aria-hidden="true" className="refs-street">
+        <img alt="" height={800} src="/world/clients-street.webp" width={2736} />
       </div>
       <div aria-label={ariaLabel} className="refs-stage" role="group">
         {rows.map((logos, row) => (

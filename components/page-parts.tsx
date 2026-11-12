@@ -62,14 +62,16 @@ type PageHeroProps = {
   text: string;
   field?: string;
   art?: { src: string; alt: string; width: number; height: number };
+  /** A photograph instead of a model: it stands as a plain rectangle. */
+  photo?: { src: string; alt: string; width: number; height: number };
   /** Anything else that should stand in the right-hand columns instead of a picture. */
   side?: ReactNode;
   children?: ReactNode;
 };
 
-export function PageHero({ title, text, field = "f-plaster", art, side, children }: PageHeroProps) {
+export function PageHero({ title, text, field = "f-plaster", art, photo, side, children }: PageHeroProps) {
   return (
-    <section className={`page-hero sheet field ${field}${art || side ? "" : " is-wide"}`}>
+    <section className={`page-hero sheet field ${field}${art || photo || side ? "" : " is-wide"}`}>
       <div className="shell grid page-hero-in">
         <div className="page-hero-copy">
           <h1 className="mega" data-split>
@@ -90,6 +92,11 @@ export function PageHero({ title, text, field = "f-plaster", art, side, children
           <div className="page-hero-art">
             <img alt={art.alt} data-parallax="5" fetchPriority="high" height={art.height} src={art.src} width={art.width} />
           </div>
+        ) : null}
+        {photo ? (
+          <figure className="page-hero-photo" data-rv>
+            <img alt={photo.alt} fetchPriority="high" height={photo.height} src={photo.src} width={photo.width} />
+          </figure>
         ) : null}
         {side ? <div className="page-hero-side">{side}</div> : null}
       </div>

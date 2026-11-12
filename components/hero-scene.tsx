@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
-import { ArrowIcon, PauseIcon, PlayIcon } from "@/components/icons";
+import { ArrowIcon } from "@/components/icons";
 import { MOTION_QUERY, STACK_QUERY } from "@/components/motion-root";
 
 gsap.registerPlugin(ScrollTrigger, useGSAP);
@@ -15,74 +15,56 @@ type HeroSceneProps = {
   title: string[];
   text: string;
   primary: { href: string; label: string };
-  secondary: { href: string; label: string };
   sceneAlt: string;
-  pauseLabel: string;
-  playLabel: string;
   indexLabel: string;
   index: Array<{ href: string; label: string; text: string }>;
 };
 
 /** Where the repeating part of the hero film starts, in seconds. */
-const LOOP_FROM = 5;
+const LOOP_FROM = 3.5;
 
-const INDEX_FIELDS = ["f-glut", "f-laub", "f-lime", "f-ink", "f-gold"];
+// The order of the logo: black, red, gold, then the two greens.
+const INDEX_FIELDS = ["f-ink", "f-glut", "f-gold", "f-lime", "f-laub"];
 
 export function HeroScene({
   title,
   text,
   primary,
-  secondary,
   sceneAlt,
-  pauseLabel,
-  playLabel,
   indexLabel,
   index
 }: HeroSceneProps) {
   const root = useRef<HTMLElement | null>(null);
   const video = useRef<HTMLVideoElement | null>(null);
-  const [playing, setPlaying] = useState(false);
-  const [canPlay, setCanPlay] = useState(false);
+  // True when the film cannot play: then the finished picture is shown instead.
+  const [woven, setWoven] = useState(false);
 
-  // The film is an enhancement: the still is the first paint, the loop fades in over it.
+  // The film is an enhancement: the empty table is the first paint, the film fades in over it.
   useEffect(() => {
     const el = video.current;
     if (!el || !window.matchMedia(MOTION_QUERY).matches) return;
 
-    // The still that is already on screen doubles as the poster: no second download.
-    el.poster = root.current?.querySelector("img")?.currentSrc ?? "";
-    el.src = window.matchMedia("(max-width: 44rem)").matches ? "/world/hero-m.mp4" : "/world/hero.mp4";
-    const onPlaying = () => {
-      el.classList.add("is-on");
-      setPlaying(true);
-      setCanPlay(true);
-    };
-    // The first five seconds weave the ribbons in and play once. After that
-    // only the living scene repeats, from the five-second mark.
+    const file = window.matchMedia("(max-width: 44rem)").matches ? "/world/hero-m.mp4" : "/world/hero.mp4";
+    if (!el.src.endsWith(file)) el.src = file;
+    const onPlaying = () => el.classList.add("is-on");
+    // The first 3.5 seconds weave the ribbons in and play once. After that
+    // only the living scene repeats, from that mark.
     const onEnded = () => {
       el.currentTime = LOOP_FROM;
       el.play().catch(() => undefined);
     };
     el.addEventListener("playing", onPlaying, { once: true });
     el.addEventListener("ended", onEnded);
-    el.play().catch(() => undefined);
+    // Only a real refusal to play counts. A play() that was merely interrupted
+    // (the effect running twice in development) must not swap in the finished picture.
+    el.play().catch((error: unknown) => {
+      if ((error as DOMException | null)?.name === "NotAllowedError") setWoven(true);
+    });
     return () => {
       el.removeEventListener("playing", onPlaying);
       el.removeEventListener("ended", onEnded);
     };
   }, []);
-
-  const toggle = () => {
-    const el = video.current;
-    if (!el) return;
-    if (el.paused) {
-      el.play().catch(() => undefined);
-      setPlaying(true);
-    } else {
-      el.pause();
-      setPlaying(false);
-    }
-  };
 
   useGSAP(
     () => {
@@ -109,16 +91,26 @@ export function HeroScene({
     <section className="hero sheet" ref={root}>
       <div className="hero-media">
         <picture>
-          <source media="(max-width: 44rem)" srcSet="/world/hero-m.webp" />
-          <img
-            alt={sceneAlt}
-            fetchPriority="high"
-            height={1437}
-            sizes="100vw"
-            src="/world/hero.webp"
-            srcSet="/world/hero-1440.webp 1440w, /world/hero.webp 2560w"
-            width={2560}
-          />
+          {/* The film starts on an empty table and weaves the ribbons in, so the
+              first paint is that same empty table. The finished, woven picture is
+              only for visitors who get no film. */}
+          {woven ? (
+            <>
+              <source media="(max-width: 44rem)" srcSet="/world/hero-m.webp" />
+              <source sizes="100vw" srcSet="/world/hero-1440.webp 1440w, /world/hero.webp 2560w" />
+            </>
+          ) : (
+            <>
+              <source media="(prefers-reduced-motion: reduce) and (max-width: 44rem)" srcSet="/world/hero-m.webp" />
+              <source
+                media="(prefers-reduced-motion: reduce)"
+                sizes="100vw"
+                srcSet="/world/hero-1440.webp 1440w, /world/hero.webp 2560w"
+              />
+              <source media="(max-width: 44rem)" srcSet="/world/hero-start-m.webp" />
+            </>
+          )}
+          <img alt={sceneAlt} fetchPriority="high" height={1080} src="/world/hero-start.webp" width={1920} />
         </picture>
         <video aria-hidden="true" muted playsInline preload="none" ref={video} tabIndex={-1} />
       </div>
@@ -137,22 +129,8 @@ export function HeroScene({
             {primary.label}
             <ArrowIcon />
           </Link>
-          <Link className="link" href={secondary.href}>
-            {secondary.label}
-          </Link>
         </div>
       </div>
-
-      {canPlay ? (
-        <button
-          aria-label={playing ? pauseLabel : playLabel}
-          className="media-toggle hero-toggle"
-          onClick={toggle}
-          type="button"
-        >
-          {playing ? <PauseIcon /> : <PlayIcon />}
-        </button>
-      ) : null}
 
       <nav aria-label={indexLabel} className="chapters">
         {index.map((item, i) => (

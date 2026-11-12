@@ -56,12 +56,13 @@ export function SiteHeader() {
       if (!frame) frame = window.requestAnimationFrame(read);
     };
     queue();
-    const settle = window.setTimeout(queue, 500);
+    // The page may still be settling (fonts, the hero's entrance): ask again a few times.
+    const settles = [500, 1500, 3000].map((ms) => window.setTimeout(queue, ms));
     window.addEventListener("scroll", queue, { passive: true });
     window.addEventListener("resize", queue);
     return () => {
       window.cancelAnimationFrame(frame);
-      window.clearTimeout(settle);
+      settles.forEach((id) => window.clearTimeout(id));
       window.removeEventListener("scroll", queue);
       window.removeEventListener("resize", queue);
     };
@@ -86,8 +87,9 @@ export function SiteHeader() {
   }, [open]);
 
   const isCurrent = (href: string) => pathname === localizePath(href, locale);
-  // The open menu is a gold sheet: the bar joins it.
-  const ground = open ? "gold" : field;
+  // The open menu is a sheet in the colour the bar already has.
+  const ground = field;
+  const menuField = field === "hero" ? "plaster" : field;
 
   return (
     <>
@@ -142,7 +144,7 @@ export function SiteHeader() {
         </div>
       </header>
 
-      <div className={`menu${open ? " is-open" : ""}`} id="site-menu" inert={!open}>
+      <div className={`menu f-${menuField}${open ? " is-open" : ""}`} id="site-menu" inert={!open}>
         <nav aria-label={copy.header.navAriaLabel} className="menu-links">
           {copy.navigation.map((item) => (
             <Link href={localizePath(item.href, locale)} key={item.href}>
@@ -151,7 +153,7 @@ export function SiteHeader() {
           ))}
           <Link href={localizePath("/kontakt", locale)}>{copy.header.contactLabel}</Link>
         </nav>
-        <div className="menu-foot f-gold">
+        <div className="menu-foot">
           <Link className="btn" href={localizePath(firstCall.href, locale)}>
             {firstCall.label}
             <ArrowIcon />

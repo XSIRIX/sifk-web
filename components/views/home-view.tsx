@@ -54,11 +54,8 @@ export function HomeView({ locale }: { locale: Locale }) {
       <HeroScene
         index={home.index.items}
         indexLabel={home.index.label}
-        pauseLabel={common.pauseVideo}
-        playLabel={common.playVideo}
         primary={{ href: to(common.firstCall.href), label: common.firstCall.label }}
         sceneAlt={home.hero.places.africa.sceneAlt}
-        secondary={{ href: to(home.hero.more.href), label: home.hero.more.label }}
         text={home.hero.text}
         title={home.hero.title}
       />

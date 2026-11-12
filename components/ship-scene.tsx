@@ -25,8 +25,8 @@ type ShipSceneProps = {
 };
 
 /**
- * The container ship. When its chapter arrives it sails in from the left edge
- * of the screen; only once it is in place do the words come up. After that it
+ * The container ship. When its chapter arrives it lies at the left edge of the
+ * screen; scrolling sails it to the right, slightly downhill. The words come up on arrival. After that it
  * rides gently, and keeps drifting to the right while the page scrolls on.
  */
 export function ShipScene({ as: Heading = "h2", title, tag, text, alt, link, top = false, id }: ShipSceneProps) {
@@ -57,54 +57,91 @@ export function ShipScene({ as: Heading = "h2", title, tag, text, alt, link, top
 
         gsap.set(side, { autoAlpha: 0, y: 28 });
 
-        const sail = gsap
+        // The words come up once, when the chapter arrives.
+        const words = gsap
           .timeline({ paused: true })
-          .fromTo(
-            ship,
-            { x: () => -(window.innerWidth * 1.08) },
-            { x: 0, duration: 2.6, ease: "power3.out", immediateRender: true },
-            0
-          )
-          .call(
-            () => {
-              arrived = true;
-              gsap.to(split.lines, { yPercent: 0, duration: 1.2, ease: "expo.out", stagger: 0.1 });
-            },
-            [],
-            1.15
-          )
-          .to(side, { autoAlpha: 1, y: 0, duration: 1.1, ease: "expo.out", stagger: 0.1 }, 1.45)
-          // In port it rides on the swell.
-          .to(ship, { y: -10, rotation: 0.35, duration: 3.4, ease: "sine.inOut", yoyo: true, repeat: -1 }, 2.6);
+          .call(() => {
+            arrived = true;
+            gsap.to(split.lines, { yPercent: 0, duration: 1.2, ease: "expo.out", stagger: 0.1 });
+          })
+          .to(side, { autoAlpha: 1, y: 0, duration: 1.1, ease: "expo.out", stagger: 0.1 }, 0.3);
 
         const arrive = ScrollTrigger.create({
           trigger: el,
           start: () => flowTop(el) - window.innerHeight * 0.5,
           once: true,
-          onEnter: () => sail.play()
+          onEnter: () => words.play()
         });
 
-        // The scroll keeps it under way, left to right.
-        const drift = gsap.fromTo(
-          ship,
-          { xPercent: -3 },
-          {
-            xPercent: 4,
-            ease: "none",
-            scrollTrigger: {
-              trigger: el,
-              start: () => flowTop(el) - window.innerHeight,
-              end: () => flowTop(el) + el.offsetHeight,
-              scrub: true
+        const fromEdge = { x: () => -(window.innerWidth * 0.2), y: () => -(window.innerWidth * 0.06) };
+
+        // On its own page there is no scroll yet: the ship comes in by itself, from the
+        // left edge along its heading. Scrolling then carries it a little further.
+        // On the home page the scroll sails the whole trip.
+        let sail: gsap.core.Animation;
+        let onward: gsap.core.Animation | null = null;
+
+        if (top) {
+          sail = gsap.fromTo(
+            ship,
+            { ...fromEdge, autoAlpha: 0 },
+            { x: 0, y: 0, autoAlpha: 1, duration: 3.2, ease: "power2.out", immediateRender: true, delay: 0.15 }
+          );
+          // xPercent / yPercent so the scroll never fights the entrance.
+          onward = gsap.fromTo(
+            ship,
+            { xPercent: 0, yPercent: 0 },
+            {
+              xPercent: 105,
+              yPercent: 56,
+              ease: "power1.in",
+              scrollTrigger: { trigger: el, start: 0, end: () => el.offsetHeight, scrub: 0.6 }
             }
-          }
-        );
+          );
+        } else {
+          // No hold and no empty stretch. Coming in, the scroll brings the ship from the
+          // left edge. Once the chapter stands still, the closing band slides over it,
+          // and over exactly that stretch the ship sails out on the right.
+          const stacked = () => document.documentElement.classList.contains("stack");
+          const enter = () => flowTop(el) - window.innerHeight * 0.85;
+          // Where the chapter comes to rest: its lower edge on the lower edge of the screen.
+          const holdStart = () => flowTop(el) + (stacked() ? Math.max(0, el.offsetHeight - window.innerHeight) : 0);
+          // The closing band and the footer behind it cover the chapter over one screen of scroll.
+          const cover = () => (stacked() ? window.innerHeight : 0);
+
+          // One even run: every bit of scroll moves the ship the same distance. It comes
+          // in over the left edge of the screen when the chapter arrives and has left
+          // over the right edge by the time the closing band has covered it.
+          const HEADING = 0.12;
+          const whole = () => window.innerWidth * 1.03;
+          const tail = () => cover() * 0.7 || el.offsetHeight * 0.8;
+
+          sail = gsap.fromTo(
+            ship,
+            { x: () => -whole(), y: () => -whole() * HEADING },
+            {
+              x: () => whole(),
+              y: () => whole() * HEADING,
+              ease: "none",
+              immediateRender: true,
+              scrollTrigger: {
+                trigger: el,
+                start: enter,
+                end: () => holdStart() + tail(),
+                scrub: 0.3,
+                invalidateOnRefresh: true
+              }
+            }
+          );
+        }
 
         return () => {
           arrive.kill();
-          drift.scrollTrigger?.kill();
-          drift.kill();
+          sail.scrollTrigger?.kill();
           sail.kill();
+          onward?.scrollTrigger?.kill();
+          onward?.kill();
+          words.kill();
           split.revert();
           gsap.set([ship, ...side], { clearProps: "all" });
         };

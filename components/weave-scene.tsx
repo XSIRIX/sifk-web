@@ -98,18 +98,50 @@ export function WeaveScene({ children, markAlt, germany, africa, field = "f-whit
         };
       });
 
-      // Small screens: it weaves once when it comes into view.
+      // Small screens: no scroll-driven weaving and no GSAP. CSS transitions bring the
+      // bands in from the screen edges when the mark scrolls in, and send them back
+      // out when it is scrolled away again.
       mm.add(`${MOTION_QUERY} and (max-width: 1088px)`, () => {
-        const timeline = build(false).progress(0);
-        const trigger = ScrollTrigger.create({
-          trigger: art,
-          start: "top 72%",
-          once: true,
-          onEnter: () => timeline.timeScale(0.8).play()
-        });
+        const bands = [...weft, ...warp, ...coast];
+        const measure = () => {
+          weft.forEach((band, index) => {
+            band.style.setProperty("--from", `translateX(${fromSide(band, index)}px)`);
+            band.style.setProperty("--wait", `${index * 0.08}s`);
+          });
+          warp.forEach((band, index) => {
+            band.style.setProperty("--from", `translateY(${fromEnd(band, index, false)}px)`);
+            band.style.setProperty("--wait", `${0.12 + index * 0.05}s`);
+          });
+          coast.forEach((band, index) => {
+            band.style.setProperty("--from", "scale(0)");
+            band.style.setProperty("--wait", `${1 + index * 0.1}s`);
+          });
+        };
+        measure();
+        el.classList.add("is-loose");
+        // Only once the bands are parked outside may they start to move.
+        const ready = window.requestAnimationFrame(() => el.classList.add("is-ready"));
+
+        const watch = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.isIntersecting) el.classList.add("is-woven");
+            // Gone below the screen again: the reader scrolled back up.
+            else if (entry.boundingClientRect.top > 0) el.classList.remove("is-woven");
+          },
+          { threshold: 0.3 }
+        );
+        watch.observe(art);
+        window.addEventListener("resize", measure);
+
         return () => {
-          trigger.kill();
-          timeline.progress(1).kill();
+          window.cancelAnimationFrame(ready);
+          watch.disconnect();
+          window.removeEventListener("resize", measure);
+          el.classList.remove("is-loose", "is-ready", "is-woven");
+          bands.forEach((band) => {
+            band.style.removeProperty("--from");
+            band.style.removeProperty("--wait");
+          });
         };
       });
     },

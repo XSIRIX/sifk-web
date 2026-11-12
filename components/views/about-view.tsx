@@ -5,7 +5,8 @@ import { WeaveScene } from "@/components/weave-scene";
 import { getContent, type CountryCode } from "@/lib/content";
 import { localizePath, type Locale } from "@/lib/locale-routing";
 
-const PRINCIPLE_FIELDS = ["f-glut", "f-gold", "f-laub"];
+// The order of the logo: black, red, gold; the facts below are green.
+const PRINCIPLE_FIELDS = ["f-ink", "f-glut", "f-gold"];
 const PLACE_ORDER: CountryCode[] = ["de", "gh", "zm", "ug", "ke", "et", "tz"];
 
 export function AboutView({ locale }: { locale: Locale }) {
@@ -48,7 +49,7 @@ export function AboutView({ locale }: { locale: Locale }) {
         ))}
       </section>
 
-      <section className="facts sheet field f-ink">
+      <section className="facts sheet field f-laub">
         <div className="shell grid facts-in">
           <div className="facts-col">
             <h2 className="display" data-split>

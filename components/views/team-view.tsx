@@ -65,7 +65,12 @@ export function TeamView({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <PageHero field="f-lime" text={team.intro.text} title={team.intro.title} />
+      <PageHero
+        field="f-lime"
+        photo={{ src: "/people/team.webp", alt: team.intro.photoAlt, width: 1800, height: 1200 }}
+        text={team.intro.text}
+        title={team.intro.title}
+      />
 
       <section className="team-group sheet field f-white">
         <div className="shell">

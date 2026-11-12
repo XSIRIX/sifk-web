@@ -35,32 +35,51 @@ Animate the image as one continuous locked-off shot from a tripod: the camera do
 Sound: a quiet, soft room tone. No music. No dialogue. No text on screen.
 ```
 
-## hero film, 15 seconds (current)
+## hero film (current)
 
-- Use: Home hero film (public/world/hero.mp4, hero-m.mp4). Seconds 0 to 5 weave the ribbons in and play once; seconds 5 to 15 repeat. Master: hero-15s.mp4.
-- Steadied in ffmpeg: outside the moving areas every frame is the sharp hero still (hero.png at 1920 wide), so still parts cannot shimmer and stay full quality. The clips are 720p and only show inside the feathered moving areas.
+- Use: Home hero film (public/world/hero.mp4, hero-m.mp4). Seconds 0 to 3.5 weave the ribbons in and play once; seconds 3.5 to 13.5 repeat (the weave clip is cut at 3.5 s, once the ribbons lie flat, with a 0.3 s fade onto the first loop frame). Master: hero-film.mp4. The phone cut hero-m.mp4 (and the stills hero-m.webp, hero-start-m.webp) is 960x1920: the lower 960x710 is a crop of hero.mp4 (1460x1080 from x=180, so the castle and Table Mountain both show); the upper 960x1210 is the film's own top pixel row, blurred and stretched upward, so the words stand on the film's backdrop without a seam. Made locally with ffmpeg, no new generation.
+- Native 1080p, 30 frames a second, no upscaling. The two clips are joined directly. One fix in ffmpeg: during the weave-in the truck yard (bottom left) and the quay with the ships (bottom right) show the first frame of the loop clip, so no vehicle moves before the loop starts.
 - Start picture (hero-start.png): halleyfy image edit of the hero still, job `job_01M77X874GQR7VHW2K5MP7E8E5`
 
 ```text
 Edit image 1. Remove every coloured paper ribbon from the scene: the black, red-orange and golden yellow ribbons that run across, and the golden yellow, lime green and deep green ribbons that run from front to back, including the woven crossing in the middle. Where the ribbons lay, show the same clean, seamless, very pale grey-white studio table surface as around them, with soft matching light and no marks, seams or shadows of ribbons. Keep everything else exactly as it is, pixel for pixel: the same camera, framing and crop, the same white factory hall, office block, hill with castle tower, trees, table mountain, acacias, towers, harbour, cranes, containers, ships and trucks in the same places, the same light and the same empty pale backdrop. The result is an all-white model with no colour anywhere.
 ```
 
-- Weave-in clip: halleyfy video, 5 s, 720p, start = hero-start.png, end = hero still, job `job_01M77XAVPY526EA9YE9WRSX01X`
+- Weave-in clip: halleyfy video, 5 s, 1080p, start = hero-start.png, end = hero still, job `job_01M781Q6DG7R5BZJVZQ1BN9GKP`
 
 ```text
-One continuous locked-off shot from a tripod: the camera does not move, zoom, tilt or drift at all, and the framing stays exactly as in the image from the first frame to the last. An all-white architectural scale model stands on a pale studio table.
-Wide flat matte paper ribbons roll out across the table, fast and crisp, like rolls of paper tape unrolling. First three ribbons in black, red-orange and golden yellow unroll side by side from the factory on the left and run across the table toward the harbour on the right. At the same moment three ribbons in golden yellow, lime green and deep green unroll side by side from the front edge of the table toward the back. Where the two sets meet in the middle, they slide over and under each other and settle into a tidy basket weave, like woven cloth. Then all six ribbons lie flat and still.
-Every building, tree, hill, mountain, tower, crane, ship and truck stays perfectly still and unchanged for the whole clip. The upper half stays the same empty, seamless pale studio backdrop: no sky, no clouds, nothing appears in it.
-Sound: a soft paper rustle, quiet room tone. No music. No dialogue. No text on screen.
+[Core Task]
+Animate the image: wide flat matte paper ribbons unroll across the table of the all-white architectural scale model and weave together in the middle. The whole film keeps the image's look: soft even studio light, white plaster model, pale seamless studio backdrop.
+
+[Plot Summary]
+1. Three ribbons in black, red-orange and golden yellow unroll side by side from the factory hall on the left, fast and crisp like rolls of paper tape, and run across the table toward the harbour on the right.
+2. At the same moment three ribbons in golden yellow, lime green and deep green unroll side by side from the front edge of the table toward the back.
+3. Where the two sets meet in the middle they slide over and under each other and settle into a tidy basket weave, like woven cloth, then lie flat.
+4. The small white trucks beside the factory start to roll slowly and the two white ships at the quay begin to drift gently on the spot.
+
+[Audio Style]
+A soft paper rustle that follows the unrolling ribbons, quiet room tone. No music. Nobody speaks.
+
+[Camera & Core Constraints]
+One continuous locked-off tripod shot: the camera does not move, zoom or drift, the framing stays exactly as in the image. Every building, tree, hill, mountain, tower and crane keeps its exact shape and place. The upper half stays the same empty pale studio backdrop: no sky, no clouds. No text on screen.
 ```
 
-- Loop clip: halleyfy video, 10 s, 720p, start and end = hero still, job `job_01M77X8ANZ34571B7CQDFKQY7H`
+- Loop clip: halleyfy video, 10 s, 1080p, start and end = hero still, job `job_01M781Q874Y5KQE1RP3JT92SDR`
 
 ```text
-One continuous locked-off shot from a tripod: the camera does not move, zoom, tilt or drift at all, and the framing stays exactly as in the image from the first frame to the last. A white architectural scale model on a studio table comes to life like a busy miniature. The upper half of the picture stays the same empty, seamless, very pale grey studio backdrop for the whole clip: no sky, no clouds, no horizon, nothing ever appears in it.
-On the left, the small white trucks drive off along the road beside the factory hall at a steady, lively pace and leave the frame at the left edge, while new white trucks drive in from the left edge and park where the first ones stood. On the right, the two small white ships cast off and glide out of the harbour toward the right edge and out of frame, while new white ships glide in from the right edge and moor at the quay where the first ones lay. The gantry cranes lower and lift a white container once.
-The coloured paper ribbons stay flat, sharp and exactly where they are, with the same colours and the same woven crossing in the middle. Every building, tree, hill, mountain and tower stays perfectly still and unchanged. The clip ends on exactly the same picture it started with.
-Sound: a quiet, soft room tone. No music. No dialogue. No text on screen.
+[Core Task]
+Animate the image: the all-white architectural scale model on the studio table comes to life like a busy miniature, with trucks driving and ships sailing. The whole film keeps the image's look: soft even studio light, white plaster model, flat matte coloured paper ribbons, pale seamless studio backdrop.
+
+[Plot Summary]
+1. On the left, the small white trucks drive off along the road beside the factory hall at a steady, lively pace and leave the frame at the left edge.
+2. On the right, the two small white ships cast off and glide out of the harbour toward the right edge and out of frame, while the gantry cranes lower and lift one white container.
+3. New white trucks drive in from the left edge and park exactly where the first ones stood, and new white ships glide in from the right edge and moor at the quay exactly where the first ones lay.
+
+[Audio Style]
+A quiet, soft room tone with faint tiny motor hum. No music. Nobody speaks.
+
+[Camera & Core Constraints]
+One continuous locked-off tripod shot: the camera does not move, zoom or drift, the framing stays exactly as in the image. The coloured paper ribbons stay flat, sharp and exactly where they are, with the same colours and the same woven crossing. Every building, tree, hill, mountain and tower keeps its exact shape and place. The upper half stays the same empty pale studio backdrop: no sky, no clouds. No text on screen.
 ```
 
 ## africa
@@ -186,4 +205,33 @@ A small round diorama of the coffee highlands of Ethiopia: terraced hillside wit
 
 ```text
 A small round diorama of northern Tanzania: the snow-capped cone of Mount Kilimanjaro rising behind open savanna, two elephants walking and two umbrella-shaped acacia trees in the foreground. One lime green ribbon runs across the savanna toward the mountain as a track. It is a physical architectural scale model made of matte white card and plaster, finely detailed with crisp edges, standing on a thin white base slab. Everything is white except the paper ribbons named here. The ribbons are wide, flat, matte paper bands with straight parallel edges and square-cut ends. Soft light from the upper left. Three-quarter view from slightly above. The whole object is completely visible and generously padded on every side. No text, no letters, no logos, no flags, no people. Transparency: an isolated object on actual, fully transparent alpha. No backdrop, no floor, no rectangle, no plinth and no cast shadow.
+```
+
+## clients street
+
+- Use: Picture band of the "clients and partners" section on the home page (public/world/clients-street.webp, the middle band of the master cropped to 2736 x 800). A still; the slow drift is done in CSS. The backdrop of the shipped file is levelled to Plaster (#ecebe9) with sharp, so the picture meets the plaster field of the section without an edge; the master keeps its original grey backdrop.
+- Master: clients-street.png (2736 x 1536)
+- Made with: halleyfy image. Draft 16:9, 1K, with hero.png as style reference, job `job_01M781MA3305XGCQQGG1F2HM77`. Final 16:9, 2K, an edit of that draft, job `job_01M781SK1RDW7J7391H2T42DN5`.
+- No film: four attempts to animate it with halleyfy video were stopped by the service's content filter (nothing charged).
+
+Draft prompt:
+
+```text
+Use: wide picture band for the "clients and partners who work with us" section of the website of a German consultancy that bridges Germany and Africa. It will be cropped to a low, wide strip and gently animated.
+Subject: a physical architectural scale model (maquette) photographed in a bright studio, in exactly the same handmade look as Image 1. Image 1 is the style reference only: match its matte white card and plaster material, its level of fine detail, its soft light and its pale seamless backdrop, but build a new scene. Every building, tree and object is matte white card and plaster with crisp edges. The ONLY colour in the whole picture is a set of wide flat matte paper ribbons in exactly five colours: black, red-orange, golden yellow, lime green and deep green. The ribbons have straight parallel edges and square-cut ends, like thick paper bands.
+Scene: one long straight street seen from the side, running from the left edge to the right edge of the picture. Along the far side of the street stands a row of about nine small, clearly different white model buildings, each one a different kind of business: a bakery with a little awning and bread racks in the window, a brewery with two copper-kettle shaped tanks and a tall chimney (all white), a small hotel with balconies, a carpenter's workshop with stacked timber, a pharmacy with a rounded corner, a machine factory hall with a saw-tooth roof, a coffee house with an umbrella terrace, a print shop, and a small office tower. Between them a few round trees and umbrella-shaped acacia trees. The street itself is made of the five paper ribbons lying flat side by side as five parallel lanes (black, red-orange, golden yellow, lime green, deep green), running past every front door from edge to edge.
+Composition: wide 16:9, camera slightly elevated, looking at the row almost front-on, 50mm feel, gentle tilt-shift depth of field. The row of buildings and the ribbon street sit in the middle horizontal band of the frame. The upper 30 percent is empty, clean, very pale warm-grey seamless studio backdrop. The lower 15 percent is empty pale table surface.
+Light: soft daylight from the upper left, soft long shadows on a seamless very pale grey-white surface.
+Look: photorealistic studio photograph of a real handmade architecture model, calm, precise, premium, sharp focus, no motion blur.
+Exclude: no text, no letters, no signs with writing, no logos, no flags, no people, no colour anywhere except the five ribbon colours.
+```
+
+Final prompt (Image 1 = the draft):
+
+```text
+Use: final, high-detail version of Image 1 for a wide picture band on a website; it will also be the first frame of a short locked-camera video.
+Image 1 is the approved picture. Recreate it exactly, at finer detail: the same composition, camera, framing and crop; the same row of nine small white card-and-plaster model buildings in the same order and places (bakery with awning, brewery with two tanks and a chimney, hotel with balconies, carpenter's workshop with stacked timber, pharmacy with a rounded corner, factory hall with a saw-tooth roof, coffee house with umbrella terrace, print shop, small office tower); the same trees; the same street made of five flat matte paper ribbons lying side by side from the left edge to the right edge, in this order from back to front: black, red-orange, golden yellow, lime green, deep green; the same empty pale seamless studio backdrop above and empty pale table below; the same soft daylight from the upper left.
+Improve only the detail: crisper edges on windows, doors, awnings, roof tiles and tree foliage, clean straight ribbon edges, fine paper texture on the ribbons, no blur on the buildings. Keep the ribbons perfectly straight, flat and parallel.
+Look: photorealistic studio photograph of a real handmade architecture model, calm, precise, premium, sharp focus, no motion blur.
+Exclude: no text, no letters, no signs with writing, no logos, no flags, no people, no colour anywhere except the five ribbon colours.
 ```
