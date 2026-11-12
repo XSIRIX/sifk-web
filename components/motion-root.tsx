@@ -70,6 +70,30 @@ export function MotionRoot() {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  // A link to the page already open (the logo on the home page) goes back to
+  // its top and drops the chapter from the address. The router alone would
+  // leave the page where it is, because the first chapter is a stuck sheet.
+  // Runs in the capture phase, so it decides before the router's link does.
+  useEffect(() => {
+    const onClick = (event: MouseEvent) => {
+      if (event.defaultPrevented || event.button !== 0) return;
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const link = (event.target as HTMLElement | null)?.closest<HTMLAnchorElement>("a[href]");
+      if (!link || (link.target && link.target !== "_self") || link.hasAttribute("download")) return;
+      const url = new URL(link.href, window.location.href);
+      const here = window.location;
+      if (url.origin !== here.origin || url.pathname !== here.pathname || url.search !== here.search || url.hash) {
+        return;
+      }
+      event.preventDefault();
+      if (lenisRef.current) lenisRef.current.scrollTo(0, { duration: 1.2, force: true });
+      else window.scrollTo({ top: 0, behavior: "auto" });
+      if (here.hash) history.replaceState(history.state, "", url.pathname + url.search);
+    };
+    document.addEventListener("click", onClick, true);
+    return () => document.removeEventListener("click", onClick, true);
+  }, []);
+
   // Smooth scroll, driven by the same clock as the scroll animations.
   useEffect(() => {
     const root = document.documentElement;
@@ -103,7 +127,7 @@ export function MotionRoot() {
       if (!target || id === "main") return;
       event.preventDefault();
       lenis.scrollTo(flowTop(target), { duration: 1.4 });
-      history.replaceState(null, "", `#${id}`);
+      history.replaceState(history.state, "", `#${id}`);
     };
     document.addEventListener("click", onClick);
 
