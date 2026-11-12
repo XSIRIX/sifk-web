@@ -3,6 +3,8 @@
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
+import { flowTop } from "@/components/motion-root";
+
 function getHeaderOffset() {
   const header = document.querySelector<HTMLElement>(".site-header");
 
@@ -22,7 +24,9 @@ function scrollToHashTarget() {
     return;
   }
 
-  const top = Math.max(0, target.getBoundingClientRect().top + window.scrollY - getHeaderOffset());
+  // A whole chapter lands flush with the top; anything smaller clears the header.
+  const offset = target.matches("section, .sheet") ? 0 : getHeaderOffset();
+  const top = Math.max(0, flowTop(target) - offset);
 
   window.scrollTo({
     top,

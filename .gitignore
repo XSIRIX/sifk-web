@@ -5,3 +5,6 @@ coverage
 *.log
 .DS_Store
 next-env.d.ts
+.vercel
+.taste-skill
+.impeccable/review

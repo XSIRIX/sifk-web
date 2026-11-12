@@ -4,7 +4,6 @@ import Link from "next/link";
 import { type SubmitEvent, useRef, useState } from "react";
 
 import { ArrowIcon } from "@/components/icons";
-import { WeaveMark } from "@/components/weave-mark";
 import { localizePath, type Locale } from "@/lib/locale-routing";
 import { sharedCopy } from "@/lib/shared-copy";
 
@@ -62,10 +61,9 @@ export function ContactForm({ locale = "de" }: { locale?: Locale }) {
   if (status === "sent") {
     return (
       <div className="form-success" ref={successRef} role="status" tabIndex={-1}>
-        <WeaveMark className="form-success-mark" weave="mount" />
         <p className="form-success-title">{copy.successTitle}</p>
         <p>{copy.successText}</p>
-        <button className="text-link" onClick={() => setStatus("idle")} type="button">
+        <button className="link" onClick={() => setStatus("idle")} type="button">
           {copy.successAgain}
         </button>
       </div>
@@ -80,7 +78,7 @@ export function ContactForm({ locale = "de" }: { locale?: Locale }) {
     ) : null;
 
   return (
-    <form className="contact-form" noValidate onSubmit={handleSubmit}>
+    <form className="contact-form" data-rv="kids" noValidate onSubmit={handleSubmit}>
       <fieldset className="topic-field">
         <legend className="field-label">{copy.fields.topic}</legend>
         <div className="topic-options">
@@ -94,7 +92,7 @@ export function ContactForm({ locale = "de" }: { locale?: Locale }) {
       </fieldset>
 
       <div className="field-row">
-        <label className="field">
+        <label className="field-box">
           <span className="field-label">{copy.fields.name}</span>
           <input
             aria-describedby={errors.name ? "name-error" : undefined}
@@ -108,7 +106,7 @@ export function ContactForm({ locale = "de" }: { locale?: Locale }) {
           {fieldError("name")}
         </label>
 
-        <label className="field">
+        <label className="field-box">
           <span className="field-label">
             {copy.fields.company} <span className="field-optional">({copy.fields.optional})</span>
           </span>
@@ -116,7 +114,7 @@ export function ContactForm({ locale = "de" }: { locale?: Locale }) {
         </label>
       </div>
 
-      <label className="field">
+      <label className="field-box">
         <span className="field-label">{copy.fields.email}</span>
         <input
           aria-describedby={errors.email ? "email-error" : undefined}
@@ -131,7 +129,7 @@ export function ContactForm({ locale = "de" }: { locale?: Locale }) {
         {fieldError("email")}
       </label>
 
-      <label className="field">
+      <label className="field-box">
         <span className="field-label">{copy.fields.message}</span>
         <textarea
           aria-describedby={errors.message ? "message-error" : undefined}
@@ -156,13 +154,13 @@ export function ContactForm({ locale = "de" }: { locale?: Locale }) {
       ) : null}
 
       <div className="form-actions">
-        <button className="button button-primary" disabled={status === "sending"} type="submit">
+        <button className="btn" disabled={status === "sending"} type="submit">
           {status === "sending" ? copy.sending : copy.submit}
-          <ArrowIcon className="icon button-arrow" />
+          <ArrowIcon />
         </button>
         <p className="form-note">
           {copy.disclaimer}{" "}
-          <Link className="text-link" href={localizePath("/datenschutz", locale)}>
+          <Link className="inline-link" href={localizePath("/datenschutz", locale)}>
             {copy.privacyLink}
           </Link>
         </p>

@@ -1,95 +1,133 @@
-import { MailIcon } from "@/components/icons";
-import { Monogram } from "@/components/monogram";
-import { NetworkMap } from "@/components/network-map";
-import { PageHero, WovenMosaic } from "@/components/page-hero";
-import { CloseBand } from "@/components/page-parts";
-import { Reveal } from "@/components/reveal";
-import { getContent, type TeamMember } from "@/lib/content";
-import type { Locale } from "@/lib/locale-routing";
+import { CtaBand, PageHero } from "@/components/page-parts";
+import { PLACE_FIELD } from "@/components/views/home-view";
+import { getContent, type CountryCode, type TeamMember } from "@/lib/content";
+import { localizePath, type Locale } from "@/lib/locale-routing";
 import { buildTeamEmail } from "@/lib/team-email";
 
-function PersonCard({ member, emailTo, featured = false, index = 0 }: { member: TeamMember; emailTo: string; featured?: boolean; index?: number }) {
-  const email = buildTeamEmail(member.name);
-  const meta = [member.location, member.qualification, member.org].filter(Boolean).join(" · ");
+const TITLES = new Set(["dr.", "dr", "prof.", "prof"]);
 
-  return (
-    <Reveal as="li" className={`person${featured ? " person-featured" : ""}`} index={index}>
-      <Monogram countries={member.countries} name={member.name} size={featured ? "lg" : "md"} />
-      <div className="person-body">
-        <h3 className="person-name">{member.name}</h3>
-        <p className="person-role">{member.role}</p>
-        <p className="person-meta">{meta}</p>
-        <p className="person-text">{member.text}</p>
-        {member.areas ? (
-          <ul className="tag-list">
-            {member.areas.map((area) => (
-              <li key={area}>{area}</li>
-            ))}
-          </ul>
-        ) : null}
-        {member.languages ? <p className="person-meta">{member.languages}</p> : null}
-        <a aria-label={`${emailTo} ${member.name}: ${email}`} className="person-email" href={`mailto:${email}`}>
-          <MailIcon />
-          {email}
-        </a>
-      </div>
-    </Reveal>
-  );
+function initials(name: string) {
+  const parts = name.split(/\s+/).filter((part) => !TITLES.has(part.toLowerCase()));
+  const first = parts[0]?.[0] ?? "";
+  const last = parts.length > 1 ? (parts[parts.length - 1]?.[0] ?? "") : "";
+  return (first + last).toUpperCase();
 }
 
 export function TeamView({ locale }: { locale: Locale }) {
-  const { team } = getContent(locale);
+  const { team, home, places, countries } = getContent(locale);
+
+  // No portraits are invented. A person's tile carries their initials on the
+  // colour of the country they work from.
+  const person = (member: TeamMember) => {
+    const code = member.countries[0];
+    const email = buildTeamEmail(member.name);
+
+    return (
+      <li className="person" key={member.name}>
+        <div className={`person-tile ${PLACE_FIELD[code]}`}>
+          <img alt="" className="flag person-flag" decoding="async" height={512} loading="lazy" src={`/flags/${code}.svg`} width={512} />
+          <b aria-hidden="true">{initials(member.name)}</b>
+          <span>{countries[code]}</span>
+        </div>
+        <h3>{member.name}</h3>
+        <p className="person-role">
+          {member.role}
+          <br />
+          {member.location}
+          {member.org ? `, ${member.org}` : ""}
+        </p>
+        <p className="person-meta">{member.text}</p>
+        {member.qualification ? <p className="person-meta">{member.qualification}</p> : null}
+        {member.languages ? <p className="person-meta">{member.languages}</p> : null}
+        <a aria-label={`${team.emailTo} ${member.name}`} className="inline-link" href={`mailto:${email}`}>
+          {email}
+        </a>
+      </li>
+    );
+  };
+
+  // Each country's model stands once, at the head of the group it belongs to.
+  const groupPlaces = (members: TeamMember[]) => {
+    const codes = [...new Set(members.map((member) => member.countries[0]))] as CountryCode[];
+    return (
+      <ul className="team-places" data-rv="kids">
+        {codes.map((code) => (
+          <li key={code}>
+            <div className={`team-place ${PLACE_FIELD[code]}`}>
+              <img alt={places.alt[code]} decoding="async" height={900} loading="lazy" src={`/world/${code}.webp`} width={900} />
+            </div>
+            <span>{countries[code]}</span>
+          </li>
+        ))}
+      </ul>
+    );
+  };
 
   return (
     <>
-      <PageHero className="page-hero-mosaic" media={<WovenMosaic />} text={team.intro.text} title={team.intro.title} />
+      <PageHero field="f-lime" text={team.intro.text} title={team.intro.title} />
 
-      <section className="team-map">
+      <section className="team-group sheet field f-white">
         <div className="shell">
-          <NetworkMap locale={locale} tone="on-light" />
-        </div>
-      </section>
-
-      <section className="section">
-        <div className="shell">
-          <h2 className="display-3 section-title">{team.leadership.title}</h2>
-          <ul className="people-grid-featured">
-            {team.leadership.members.map((member, index) => (
-              <PersonCard emailTo={team.emailTo} featured index={index} key={member.name} member={member} />
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="section section-tight">
-        <div className="shell">
-          <div className="section-head-split">
-            <h2 className="display-3">{team.africaDesk.title}</h2>
-            <p className="lead">{team.africaDesk.text}</p>
+          <div className="team-head">
+            <div className="team-say">
+              <h2 className="display" data-split>
+                {team.leadership.title}
+              </h2>
+            </div>
+            {groupPlaces(team.leadership.members)}
           </div>
-          <ul className="people-grid-cards">
-            {team.africaDesk.members.map((member, index) => (
-              <PersonCard emailTo={team.emailTo} index={index % 3} key={member.name} member={member} />
-            ))}
+          <ul className="people is-lead" data-rv="kids">
+            {team.leadership.members.map(person)}
           </ul>
         </div>
       </section>
 
-      <section className="section section-tight" id="internationales-team">
+      <section className="team-group sheet field f-plaster">
         <div className="shell">
-          <div className="section-head-split">
-            <h2 className="display-3">{team.onSite.title}</h2>
-            <p className="lead">{team.onSite.text}</p>
+          <div className="team-head">
+            <div className="team-say">
+              <h2 className="display" data-split>
+                {team.africaDesk.title}
+              </h2>
+              <p className="lead" data-rv>
+                {team.africaDesk.text}
+              </p>
+            </div>
+            {groupPlaces(team.africaDesk.members)}
           </div>
-          <ul className="people-grid-cards">
-            {team.onSite.members.map((member, index) => (
-              <PersonCard emailTo={team.emailTo} index={index % 3} key={member.name} member={member} />
-            ))}
+          <ul className="people" data-rv="kids">
+            {team.africaDesk.members.map(person)}
           </ul>
         </div>
       </section>
 
-      <CloseBand locale={locale} text={team.close.text} title={team.close.title} />
+      <section className="team-group sheet field f-white">
+        <div className="shell">
+          <div className="team-head">
+            <div className="team-say">
+              <h2 className="display" data-split>
+                {team.onSite.title}
+              </h2>
+              <p className="lead" data-rv>
+                {team.onSite.text}
+              </p>
+            </div>
+            {groupPlaces(team.onSite.members)}
+          </div>
+          <ul className="people" data-rv="kids">
+            {team.onSite.members.map(person)}
+          </ul>
+        </div>
+      </section>
+
+      <CtaBand
+        field="f-glut"
+        href={localizePath("/kontakt", locale)}
+        text={team.close.text}
+        title={team.close.title}
+        word={home.closeWord}
+      />
     </>
   );
 }

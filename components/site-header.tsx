@@ -1,57 +1,69 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 
 import { ArrowIcon } from "@/components/icons";
+import { getContent } from "@/lib/content";
 import { getLocaleFromPathname, localizePath, switchLocalePath } from "@/lib/locale-routing";
 import { sharedCopy } from "@/lib/shared-copy";
+
+const FIELD = /\bf-(plaster|white|ink|glut|gold|lime|laub)\b/;
 
 export function SiteHeader() {
   const pathname = usePathname() ?? "/";
   const locale = getLocaleFromPathname(pathname);
   const copy = sharedCopy[locale];
+  const firstCall = getContent(locale).common.firstCall;
+  const otherLocale = locale === "de" ? "en" : "de";
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
-  const [dark, setDark] = useState(false);
-  const headerRef = useRef<HTMLElement | null>(null);
-  const toggleRef = useRef<HTMLButtonElement | null>(null);
+  const [field, setField] = useState("plaster");
+  const [solid, setSolid] = useState(false);
+  const [hidden, setHidden] = useState(false);
+  const lastY = useRef(0);
+  const bar = useRef<HTMLElement | null>(null);
 
-  // Header follows the section underneath it: light text over dark chapters.
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY;
+      setSolid(y > 24);
+      setHidden(y > 480 && y > lastY.current);
+      lastY.current = y;
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  // The bar takes the colour of the chapter that lies under it. Chapters stack
+  // like sheets, so the one on top is asked for directly at the bar's lower edge.
   useEffect(() => {
     let frame = 0;
-
-    const update = () => {
+    const read = () => {
       frame = 0;
-      const probe = (headerRef.current?.offsetHeight ?? 72) / 2;
-      const darkSections = document.querySelectorAll<HTMLElement>('[data-tone="dark"]');
-      let overDark = false;
-
-      darkSections.forEach((section) => {
-        const rect = section.getBoundingClientRect();
-        if (rect.top <= probe && rect.bottom >= probe) {
-          overDark = true;
-        }
-      });
-
-      setDark(overDark);
-      setScrolled(window.scrollY > 8);
+      const y = (bar.current?.offsetHeight ?? 72) + 2;
+      for (const node of document.elementsFromPoint(window.innerWidth / 2, y)) {
+        if (node.closest(".site-header, .menu")) continue;
+        const host = node.closest<HTMLElement>(".sheet, section, footer");
+        if (!host) continue;
+        const name = FIELD.exec(host.className)?.[1];
+        setField(host.classList.contains("hero") ? "hero" : name ?? (host.matches("footer") ? "ink" : "plaster"));
+        return;
+      }
     };
-
-    const request = () => {
-      if (!frame) frame = requestAnimationFrame(update);
+    const queue = () => {
+      if (!frame) frame = window.requestAnimationFrame(read);
     };
-
-    update();
-    window.addEventListener("scroll", request, { passive: true });
-    window.addEventListener("resize", request);
-
+    queue();
+    const settle = window.setTimeout(queue, 500);
+    window.addEventListener("scroll", queue, { passive: true });
+    window.addEventListener("resize", queue);
     return () => {
-      if (frame) cancelAnimationFrame(frame);
-      window.removeEventListener("scroll", request);
-      window.removeEventListener("resize", request);
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(settle);
+      window.removeEventListener("scroll", queue);
+      window.removeEventListener("resize", queue);
     };
   }, [pathname]);
 
@@ -61,134 +73,91 @@ export function SiteHeader() {
 
   useEffect(() => {
     const root = document.documentElement;
+    if (open) root.dataset.menu = "open";
+    else delete root.dataset.menu;
+    document.body.style.overflow = open ? "hidden" : "";
 
-    if (open) {
-      root.dataset.menu = "open";
-    } else {
-      delete root.dataset.menu;
-    }
-
-    if (!open) {
-      return;
-    }
-
+    if (!open) return;
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setOpen(false);
-        toggleRef.current?.focus();
-      }
+      if (event.key === "Escape") setOpen(false);
     };
-    const onResize = () => {
-      if (window.innerWidth > 960) setOpen(false);
-    };
-
     window.addEventListener("keydown", onKey);
-    window.addEventListener("resize", onResize);
-
-    return () => {
-      window.removeEventListener("keydown", onKey);
-      window.removeEventListener("resize", onResize);
-      delete root.dataset.menu;
-    };
+    return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  const tone = open ? "dark" : dark ? "dark" : "light";
-  const isActive = (href: string) => {
-    const target = localizePath(href, locale);
-    return pathname === target || pathname.startsWith(`${target}/`);
-  };
+  const isCurrent = (href: string) => pathname === localizePath(href, locale);
+  // The open menu is a gold sheet: the bar joins it.
+  const ground = open ? "gold" : field;
 
   return (
-    <header
-      className={`site-header${scrolled ? " is-scrolled" : ""}${open ? " is-open" : ""}`}
-      data-header-tone={tone}
-      ref={headerRef}
-    >
-      <div className="shell header-bar">
-        <Link aria-label={copy.header.homeLabel} className="brandmark" href={localizePath("/", locale)}>
-          <Image
-            alt=""
-            className="brandmark-logo brandmark-logo-ink"
-            height={400}
-            priority
-            src="/logo-menu.png"
-            width={1200}
-          />
-          <Image
-            alt=""
-            className="brandmark-logo brandmark-logo-light"
-            height={400}
-            priority
-            src="/logo-menu-light.png"
-            width={1200}
-          />
-        </Link>
+    <>
+      <header
+        className={`site-header on-${ground}${solid || open ? " is-solid" : ""}${hidden && !open ? " is-hidden" : ""}`}
+        ref={bar}
+      >
+        <div className="shell header-in">
+          <Link aria-label={copy.header.homeLabel} className="brand" href={localizePath("/", locale)}>
+            <img alt="SIFK GmbH – Bridging Germany & Africa" height={80} src="/logo-horizontal.png" width={240} />
+          </Link>
 
-        <nav aria-label={copy.header.navAriaLabel} className="header-nav">
-          {copy.navigation.map((item) => (
+          <nav aria-label={copy.header.navAriaLabel} className="nav">
+            {copy.navigation.map((item) => (
+              <Link
+                aria-current={isCurrent(item.href) ? "page" : undefined}
+                className="nav-link"
+                href={localizePath(item.href, locale)}
+                key={item.href}
+              >
+                {item.label}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="header-side">
             <Link
-              aria-current={isActive(item.href) ? "page" : undefined}
-              className="nav-link"
-              href={localizePath(item.href, locale)}
-              key={item.href}
+              aria-label={copy.header.localeAriaLabel}
+              className="locale"
+              href={switchLocalePath(pathname, otherLocale)}
+              hrefLang={otherLocale}
+              lang={otherLocale}
             >
-              {item.label}
+              {copy.header.localeLabel}
             </Link>
-          ))}
-        </nav>
-
-        <div className="header-actions">
-          <Link
-            aria-label={copy.header.localeAriaLabel}
-            className="locale-link"
-            href={switchLocalePath(pathname, locale === "de" ? "en" : "de")}
-            hrefLang={locale === "de" ? "en" : "de"}
-          >
-            {copy.header.localeLabel}
-          </Link>
-          <Link className="button button-primary button-small header-cta" href={localizePath("/kontakt", locale)}>
-            {copy.header.contactLabel}
-          </Link>
-          <button
-            aria-controls="mobile-menu"
-            aria-expanded={open}
-            aria-label={open ? copy.header.closeMenu : copy.header.openMenu}
-            className="menu-toggle"
-            onClick={() => setOpen((value) => !value)}
-            ref={toggleRef}
-            type="button"
-          >
-            <span />
-            <span />
-          </button>
-        </div>
-      </div>
-
-      <div className="mobile-menu" hidden={!open} id="mobile-menu">
-        <nav aria-label={copy.header.navAriaLabel} className="shell mobile-menu-inner">
-          {[...copy.navigation, { href: "/kontakt", label: copy.header.contactLabel }].map((item, index) => (
-            <Link
-              aria-current={isActive(item.href) ? "page" : undefined}
-              className="mobile-link"
-              href={localizePath(item.href, locale)}
-              key={item.href}
-              onClick={() => setOpen(false)}
-              style={{ ["--i" as string]: index }}
-            >
-              {item.label}
+            <Link className="btn" href={localizePath(firstCall.href, locale)}>
+              {firstCall.label}
               <ArrowIcon />
             </Link>
+            <button
+              aria-controls="site-menu"
+              aria-expanded={open}
+              aria-label={open ? copy.header.closeMenu : copy.header.openMenu}
+              className="menu-btn"
+              onClick={() => setOpen((value) => !value)}
+              type="button"
+            >
+              <span />
+              <span />
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <div className={`menu${open ? " is-open" : ""}`} id="site-menu" inert={!open}>
+        <nav aria-label={copy.header.navAriaLabel} className="menu-links">
+          {copy.navigation.map((item) => (
+            <Link href={localizePath(item.href, locale)} key={item.href}>
+              {item.label}
+            </Link>
           ))}
-          <Link
-            className="mobile-locale"
-            href={switchLocalePath(pathname, locale === "de" ? "en" : "de")}
-            hrefLang={locale === "de" ? "en" : "de"}
-            onClick={() => setOpen(false)}
-          >
-            {locale === "de" ? "English" : "Deutsch"}
-          </Link>
+          <Link href={localizePath("/kontakt", locale)}>{copy.header.contactLabel}</Link>
         </nav>
+        <div className="menu-foot f-gold">
+          <Link className="btn" href={localizePath(firstCall.href, locale)}>
+            {firstCall.label}
+            <ArrowIcon />
+          </Link>
+        </div>
       </div>
-    </header>
+    </>
   );
 }

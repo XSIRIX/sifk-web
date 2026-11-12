@@ -3,88 +3,85 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-import { WeaveMark } from "@/components/weave-mark";
+import { CornerArrow } from "@/components/page-parts";
 import { company } from "@/lib/company";
-import { getLocaleFromPathname, localizePath, switchLocalePath } from "@/lib/locale-routing";
+import { getContent } from "@/lib/content";
+import { getLocaleFromPathname, localizePath } from "@/lib/locale-routing";
 import { sharedCopy } from "@/lib/shared-copy";
 
 export function SiteFooter() {
   const pathname = usePathname() ?? "/";
   const locale = getLocaleFromPathname(pathname);
   const copy = sharedCopy[locale];
+  const content = getContent(locale);
+  const year = new Date().getFullYear();
 
   return (
-    <footer className="site-footer" data-tone="dark">
-      <div className="shell footer-grid">
-        <div className="footer-brand">
-          <WeaveMark className="footer-mark" weave="view" />
-          <p className="footer-name">SIFK GmbH</p>
-          <p className="footer-copy">{copy.footer.copy}</p>
+    <footer className="site-footer">
+      <div className="tiles">
+        <div className="tile tile-say f-white">
+          <p className="title">{copy.footer.copy}</p>
+          <p className="small">
+            © {year} {copy.footer.rights} · {company.court}, {company.register}
+          </p>
         </div>
 
-        <nav aria-label={copy.footer.navTitle} className="footer-col">
-          <h2 className="footer-title">{copy.footer.navTitle}</h2>
+        <nav aria-label={copy.footer.navTitle} className="tile tile-nav f-plaster">
+          <h2 className="small">
+            <strong>{copy.footer.navTitle}</strong>
+          </h2>
           <ul>
             {copy.navigation.map((item) => (
               <li key={item.href}>
-                <Link className="footer-link" href={localizePath(item.href, locale)}>
-                  {item.label}
-                </Link>
+                <Link href={localizePath(item.href, locale)}>{item.label}</Link>
               </li>
             ))}
-            <li>
-              <Link className="footer-link" href={localizePath("/kontakt", locale)}>
-                {copy.header.contactLabel}
-              </Link>
-            </li>
+            {copy.footer.links.map((item) => (
+              <li key={item.href}>
+                <Link href={localizePath(item.href, locale)}>{item.label}</Link>
+              </li>
+            ))}
           </ul>
         </nav>
 
-        <div className="footer-col">
-          <h2 className="footer-title">{copy.footer.contactTitle}</h2>
-          <address>
-            <a className="footer-link" href={company.phoneHref}>
-              {company.phoneDisplay}
-            </a>
-            <a className="footer-link" href={`mailto:${company.email}`}>
-              {company.email}
-            </a>
-            <span>
-              {company.street}
-              <br />
-              {company.postalCode} {company.city}
-            </span>
+        <div className="tile tile-where f-lime">
+          <h2 className="small">
+            <strong>{content.common.address}</strong>
+          </h2>
+          <address style={{ fontStyle: "normal" }}>
+            {company.name}
+            <br />
+            {company.street}
+            <br />
+            {company.postalCode} {company.city}
           </address>
         </div>
 
-        <nav aria-label={copy.footer.legalTitle} className="footer-col">
-          <h2 className="footer-title">{copy.footer.legalTitle}</h2>
-          <ul>
-            {copy.footer.links.map((item) => (
-              <li key={item.href}>
-                <Link className="footer-link" href={localizePath(item.href, locale)}>
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-            <li>
-              <Link
-                className="footer-link"
-                href={switchLocalePath(pathname, locale === "de" ? "en" : "de")}
-                hrefLang={locale === "de" ? "en" : "de"}
-              >
-                {locale === "de" ? "English" : "Deutsch"}
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </div>
+        <div className="tile tile-mail f-gold">
+          <h2 className="small">
+            <strong>{copy.footer.contactTitle}</strong>
+          </h2>
+          <p>
+            <a href={`mailto:${company.email}`}>{company.email}</a>
+            <br />
+            <a href={company.phoneHref}>{company.phoneDisplay}</a>
+          </p>
+        </div>
 
-      <div className="shell footer-base">
-        <span aria-hidden="true" className="thread thread-full" />
-        <p>
-          © {new Date().getFullYear()} {copy.footer.rights}
-        </p>
+        <div className="tile tile-mark f-white">
+          <img
+            alt="SIFK GmbH – Bridging Germany & Africa"
+            height={400}
+            loading="lazy"
+            src="/logo-horizontal-lg.png"
+            width={1200}
+          />
+        </div>
+
+        <Link className="tile tile-go f-glut" href={localizePath(content.common.firstCall.href, locale)}>
+          <span className="display">{content.common.firstCall.label}</span>
+          <CornerArrow />
+        </Link>
       </div>
     </footer>
   );

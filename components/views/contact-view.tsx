@@ -1,6 +1,5 @@
 import { ContactForm } from "@/components/contact-form";
-import { MailIcon, PhoneIcon, PinIcon } from "@/components/icons";
-import { WovenImage } from "@/components/woven-image";
+import { PageHero } from "@/components/page-parts";
 import { company } from "@/lib/company";
 import { getContent } from "@/lib/content";
 import type { Locale } from "@/lib/locale-routing";
@@ -9,50 +8,63 @@ export function ContactView({ locale }: { locale: Locale }) {
   const { contact, common, places } = getContent(locale);
 
   return (
-    <section className="contact-page">
-      <div className="shell contact-grid">
-        <div className="contact-intro">
-          <h1 className="display-1 intro-title">{contact.intro.title}</h1>
-          <p className="lead">{contact.intro.text}</p>
+    <>
+      <PageHero
+        field="f-gold"
+        side={
+          <aside className="contact-side">
+            <h2 className="title contact-side-title">{contact.direct}</h2>
+            <div className="contact-tiles" data-rv="kids">
+              <div className="tile f-ink">
+                <h3 className="small">
+                  <strong>{common.phone}</strong>
+                </h3>
+                <a href={company.phoneHref}>{company.phoneDisplay}</a>
+              </div>
+              <div className="tile f-glut">
+                <h3 className="small">
+                  <strong>{common.email}</strong>
+                </h3>
+                <a href={`mailto:${company.email}`}>{company.email}</a>
+              </div>
+              <div className="tile f-lime">
+                <h3 className="small">
+                  <strong>{common.address}</strong>
+                </h3>
+                <p>
+                  {company.street}
+                  <br />
+                  {company.postalCode} {company.city}
+                </p>
+              </div>
+            </div>
+          </aside>
+        }
+        text={contact.intro.text}
+        title={contact.intro.title}
+      />
 
-          <div className="contact-direct">
-            <h2 className="display-4">{contact.direct}</h2>
-            <a className="contact-line" href={company.phoneHref}>
-              <PhoneIcon />
-              <span>
-                <span className="contact-line-label">{common.phone}</span>
-                {company.phoneDisplay}
-              </span>
-            </a>
-            <a className="contact-line" href={`mailto:${company.email}`}>
-              <MailIcon />
-              <span>
-                <span className="contact-line-label">{common.email}</span>
-                {company.email}
-              </span>
-            </a>
-            <p className="contact-line">
-              <PinIcon />
-              <span>
-                <span className="contact-line-label">{common.address}</span>
-                {company.name}, {company.street}, {company.postalCode} {company.city}
-              </span>
-            </p>
-          </div>
-
-          <WovenImage
-            alt={places.alt.de}
-            className="contact-photo"
-            position="70% 30%"
-            sizes="(max-width: 960px) 100vw, 40vw"
-            src="/brand/places/de.webp"
-          />
-        </div>
-
-        <div className="contact-panel">
+      <section aria-labelledby="contact-form-title" className="contact sheet field f-plaster">
+        <div className="shell grid contact-in">
+          <h2 className="sr-only" id="contact-form-title">
+            {contact.formTitle}
+          </h2>
           <ContactForm locale={locale} />
+
+          <figure className="contact-place">
+            <img
+              alt={places.alt.de}
+              data-parallax="4"
+              decoding="async"
+              height={900}
+              loading="lazy"
+              src="/world/de.webp"
+              width={900}
+            />
+            <figcaption>{places.hq}</figcaption>
+          </figure>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

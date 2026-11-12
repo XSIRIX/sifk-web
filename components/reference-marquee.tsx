@@ -1,9 +1,3 @@
-"use client";
-
-import { useState } from "react";
-
-import { PauseIcon, PlayIcon } from "@/components/icons";
-
 type ReferenceLogo = { alt: string; src: string };
 
 const LOGOS: ReferenceLogo[] = [
@@ -41,47 +35,54 @@ const LOGOS: ReferenceLogo[] = [
   { alt: "Coffee Beans", src: "/references/coffeebeans.png" }
 ];
 
+const ROWS = 2;
+/** Seconds one row needs for a full round; the second one runs the other way. */
+const ROUND = [72, 84];
+
 type ReferenceMarqueeProps = {
   title: string;
   ariaLabel: string;
-  pauseLabel: string;
-  playLabel: string;
 };
 
-export function ReferenceMarquee({ title, ariaLabel, pauseLabel, playLabel }: ReferenceMarqueeProps) {
-  const [paused, setPaused] = useState(false);
+/**
+ * Clients and partners: a band of our woven ribbons on top, the sentence in
+ * the middle, and below it two rows of logos gliding slowly past each other.
+ */
+export function ReferenceMarquee({ title, ariaLabel }: ReferenceMarqueeProps) {
+  const rows = Array.from({ length: ROWS }, (_unused, row) => LOGOS.filter((_logo, index) => index % ROWS === row));
 
   return (
-    <section aria-labelledby="references-title" className={`references${paused ? " is-paused" : ""}`}>
-      <div className="shell references-head">
-        <h2 className="references-title" id="references-title">
+    <section aria-labelledby="references-title" className="refs sheet field f-white">
+      {/* Our own weave, moving in a soft breeze: the picture of working together. */}
+      <div aria-hidden="true" className="refs-weave">
+        <img alt="" decoding="async" src="/brand/weave-poster.webp" />
+        <video autoPlay loop muted playsInline poster="/brand/weave-poster.webp" preload="metadata">
+          <source media="(max-width: 40rem)" src="/brand/weave-loop-sm.mp4" type="video/mp4" />
+          <source src="/brand/weave-loop.mp4" type="video/mp4" />
+        </video>
+      </div>
+      <div className="shell refs-say">
+        <h2 className="display" data-split id="references-title">
           {title}
         </h2>
-        <button
-          aria-label={paused ? playLabel : pauseLabel}
-          className="media-toggle media-toggle-light"
-          onClick={() => setPaused((value) => !value)}
-          type="button"
-        >
-          {paused ? <PlayIcon /> : <PauseIcon />}
-        </button>
       </div>
-
-      <div className="marquee">
-        <ul aria-label={ariaLabel} className="marquee-track">
-          {LOGOS.map((logo) => (
-            <li className="marquee-item" key={logo.src}>
-              <img alt={logo.alt} decoding="async" loading="lazy" src={logo.src} />
-            </li>
-          ))}
-        </ul>
-        <ul aria-hidden="true" className="marquee-track">
-          {LOGOS.map((logo) => (
-            <li className="marquee-item" key={logo.src}>
-              <img alt="" decoding="async" loading="lazy" src={logo.src} />
-            </li>
-          ))}
-        </ul>
+      <div aria-label={ariaLabel} className="refs-stage" role="group">
+        {rows.map((logos, row) => (
+          <ul
+            className={`refs-run${row % 2 === 1 ? " is-back" : ""}`}
+            key={row}
+            style={{ animationDuration: `${ROUND[row % ROUND.length]}s` }}
+          >
+            {/* Twice in a row, so the loop has no seam. The second set is for the eye only. */}
+            {[false, true].flatMap((copy) =>
+              logos.map((logo) => (
+                <li aria-hidden={copy || undefined} key={`${logo.src}${copy ? "-2" : ""}`}>
+                  <img alt={copy ? "" : logo.alt} decoding="async" src={logo.src} />
+                </li>
+              ))
+            )}
+          </ul>
+        ))}
       </div>
     </section>
   );

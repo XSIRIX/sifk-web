@@ -1,30 +1,29 @@
 # SIFK asset library
 
-This folder contains every visual asset used by the current SIFK website, plus three unused originals kept for a complete handoff.
+This folder holds the masters of every visual asset of the SIFK website: the current white model world and the earlier rounds, kept for a complete handoff.
 
 ## Folder order
 
-1. `01-sifk-brand` — four SIFK logo variants used by the site.
-2. `02-page-images` — six photos and illustrations used on pages.
-3. `03-reference-logos` — 32 customer and partner logos, ordered as they appear in the website source.
-4. `04-parallax-sequence` — 240 ordered frames used by the homepage animation.
-5. `05-icons` — the Cloody Africa/trade icon extracted from the inline website SVG.
-6. `06-revamp-concepts` — generated concept assets for the 2026 revamp (weave key visuals, woven-Africa sculpture, weave loop film, bridge film Frankfurt → Dar es Salaam, energy and Nairobi placeholders). Concepts until approved.
-7. `07-revision-2` — full-resolution originals of the second revision: 1080p weave loop video, before/after company building (energy scene), country photos for Germany (Schriesheim), Ghana, Zambia, Uganda, Kenya, Ethiopia and Tanzania, the Nairobi business scene, the energy team on a solar roof, and the Mombasa container port for Cloody. Web copies live in `public/brand` and `public/brand/places`.
-7. `99-unused-originals` — three image files present in `public` but not referenced by the current website code.
+Used by the current website:
 
-## Counts
+1. `01-sifk-brand` — the SIFK logo variants.
+2. `03-reference-logos` — 32 customer and partner logos, ordered as they appear in the website source.
+3. `08-maquette` — the white model world of the 2026 overhaul: the hero scene and its film, seven country models, the harbour town, the company site before and after with the film that turns one into the other, the container ship. Transparent PNG masters. `PROMPTS.md` in that folder holds the exact prompt of every picture. Web copies live in `public/world`.
 
-- 282 copied files currently used by the website.
-- 1 extracted inline SVG icon currently used by the website.
-- 3 copied image files present in the repo but currently unused.
-- 286 visual asset files in total.
+Earlier rounds, not used by the website any more:
+
+4. `02-page-images` — photos and illustrations of the first site.
+5. `04-parallax-sequence` — 240 frames of the first homepage film.
+6. `05-icons` — the Cloody Africa/trade icon of the first site.
+7. `06-revamp-concepts` — concept assets of the first revamp round.
+8. `07-revision-2` — photographs, building scene and weave film of the second round.
+9. `99-unused-originals` — files that were in `public` without being referenced; `round-3-scene` holds the Frankfurt and Cape Town stills and flight films of the third round.
 
 ## Website-only brand values
 
-These are used in code and are not separate files:
+These are used in code and are not separate files. The full design book is `DESIGN.md` in the project root.
 
-- Typeface: Archivo (variable, with width axis), loaded through `next/font/google`. Wide and heavy for headlines, normal width for reading, condensed for labels.
-- Palette: Ink `#0F0E0E`, Glut `#E03B03`, Gold `#FDB600`, Amber `#F59A05`, Lime `#7CB416`, Laub `#1F7A26`, Kalk `#F6F5F1`.
-- The weave: horizontal threads in ink, glut and gold stand for Germany; vertical threads in gold, lime and green stand for Africa. Used for image reveals, section seams and the oversized type band.
-- Film frames: `public/film` holds 143 frames at 2048 px for landscape screens; `public/film/m` holds 900 × 1600 centre crops for phones. Source: `04-parallax-sequence` (3840 × 2160).
+- Typefaces: Barlow Condensed (display, 600 and 700) and Barlow (reading, 400 to 600), loaded through `next/font/google`.
+- Palette, taken from the logo: Ink `#0F0E0E`, Glut `#E03B03`, Gold `#FDB600`, Amber `#F59A05`, Lime `#7CB416`, Laub `#1F7A26`, on Plaster `#ECEBE9` and White. Each colour is used as a whole flat field, never as a tint or gradient.
+- The weave: horizontal ribbons in ink, glut and gold stand for Germany; vertical ribbons in gold, lime and green stand for Africa. Horizontal motion is the weft, vertical motion is the warp.
+- The logo that weaves itself on the home and about pages is drawn in code (`components/weave-scene.tsx`), traced from the logo file.

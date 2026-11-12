@@ -1,0 +1,602 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-12T00:00:00Z",
+  "title": "Design System: SIFK GmbH",
+  "extensions": {
+    "colorMeta": {
+      "plaster": {
+        "role": "neutral",
+        "displayName": "Plaster",
+        "canonical": "oklch(94.0% 0.003 85)",
+        "tonalRamp": [
+          "oklch(15% 0.002 85)",
+          "oklch(27% 0.002 85)",
+          "oklch(38% 0.003 85)",
+          "oklch(50% 0.003 85)",
+          "oklch(62% 0.003 85)",
+          "oklch(73% 0.003 85)",
+          "oklch(85% 0.002 85)",
+          "oklch(95% 0.002 85)"
+        ]
+      },
+      "white": {
+        "role": "neutral",
+        "displayName": "White",
+        "canonical": "oklch(100% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0.000 90)",
+          "oklch(27% 0.000 90)",
+          "oklch(38% 0.000 90)",
+          "oklch(50% 0.000 90)",
+          "oklch(62% 0.000 90)",
+          "oklch(73% 0.000 90)",
+          "oklch(85% 0.000 90)",
+          "oklch(95% 0.000 90)"
+        ]
+      },
+      "ink": {
+        "role": "primary",
+        "displayName": "Ink",
+        "canonical": "oklch(16.5% 0.002 17)",
+        "tonalRamp": [
+          "oklch(15% 0.001 17)",
+          "oklch(27% 0.002 17)",
+          "oklch(38% 0.002 17)",
+          "oklch(50% 0.002 17)",
+          "oklch(62% 0.002 17)",
+          "oklch(73% 0.002 17)",
+          "oklch(85% 0.002 17)",
+          "oklch(95% 0.001 17)"
+        ]
+      },
+      "glut": {
+        "role": "primary",
+        "displayName": "Glut",
+        "canonical": "oklch(59.8% 0.208 35)",
+        "tonalRamp": [
+          "oklch(15% 0.114 35)",
+          "oklch(27% 0.166 35)",
+          "oklch(38% 0.208 35)",
+          "oklch(50% 0.208 35)",
+          "oklch(62% 0.208 35)",
+          "oklch(73% 0.208 35)",
+          "oklch(85% 0.166 35)",
+          "oklch(95% 0.114 35)"
+        ]
+      },
+      "gold": {
+        "role": "primary",
+        "displayName": "Gold",
+        "canonical": "oklch(82.1% 0.170 80)",
+        "tonalRamp": [
+          "oklch(15% 0.094 80)",
+          "oklch(27% 0.136 80)",
+          "oklch(38% 0.170 80)",
+          "oklch(50% 0.170 80)",
+          "oklch(62% 0.170 80)",
+          "oklch(73% 0.170 80)",
+          "oklch(85% 0.136 80)",
+          "oklch(95% 0.094 80)"
+        ]
+      },
+      "lime": {
+        "role": "primary",
+        "displayName": "Lime",
+        "canonical": "oklch(70.5% 0.181 129)",
+        "tonalRamp": [
+          "oklch(15% 0.100 129)",
+          "oklch(27% 0.145 129)",
+          "oklch(38% 0.181 129)",
+          "oklch(50% 0.181 129)",
+          "oklch(62% 0.181 129)",
+          "oklch(73% 0.181 129)",
+          "oklch(85% 0.145 129)",
+          "oklch(95% 0.100 129)"
+        ]
+      },
+      "laub": {
+        "role": "primary",
+        "displayName": "Laub",
+        "canonical": "oklch(50.9% 0.146 144)",
+        "tonalRamp": [
+          "oklch(15% 0.080 144)",
+          "oklch(27% 0.117 144)",
+          "oklch(38% 0.146 144)",
+          "oklch(50% 0.146 144)",
+          "oklch(62% 0.146 144)",
+          "oklch(73% 0.146 144)",
+          "oklch(85% 0.117 144)",
+          "oklch(95% 0.080 144)"
+        ]
+      },
+      "amber": {
+        "role": "tertiary",
+        "displayName": "Amber (logo only)",
+        "canonical": "oklch(76.1% 0.166 68)",
+        "tonalRamp": [
+          "oklch(15% 0.091 68)",
+          "oklch(27% 0.133 68)",
+          "oklch(38% 0.166 68)",
+          "oklch(50% 0.166 68)",
+          "oklch(62% 0.166 68)",
+          "oklch(73% 0.166 68)",
+          "oklch(85% 0.133 68)",
+          "oklch(95% 0.091 68)"
+        ]
+      },
+      "on-glut": {
+        "role": "neutral",
+        "displayName": "Black on Glut",
+        "canonical": "oklch(0% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0.000 0)",
+          "oklch(27% 0.000 0)",
+          "oklch(38% 0.000 0)",
+          "oklch(50% 0.000 0)",
+          "oklch(62% 0.000 0)",
+          "oklch(73% 0.000 0)",
+          "oklch(85% 0.000 0)",
+          "oklch(95% 0.000 0)"
+        ]
+      },
+      "studio-ground": {
+        "role": "neutral",
+        "displayName": "Studio Ground",
+        "canonical": "oklch(90.1% 0.003 85)",
+        "tonalRamp": [
+          "oklch(15% 0.002 85)",
+          "oklch(27% 0.002 85)",
+          "oklch(38% 0.003 85)",
+          "oklch(50% 0.003 85)",
+          "oklch(62% 0.003 85)",
+          "oklch(73% 0.003 85)",
+          "oklch(85% 0.002 85)",
+          "oklch(95% 0.002 85)"
+        ]
+      },
+      "placeholder": {
+        "role": "neutral",
+        "displayName": "Placeholder",
+        "canonical": "oklch(47.9% 0.005 78)",
+        "tonalRamp": [
+          "oklch(15% 0.003 78)",
+          "oklch(27% 0.004 78)",
+          "oklch(38% 0.005 78)",
+          "oklch(50% 0.005 78)",
+          "oklch(62% 0.005 78)",
+          "oklch(73% 0.005 78)",
+          "oklch(85% 0.004 78)",
+          "oklch(95% 0.003 78)"
+        ]
+      },
+      "error-text": {
+        "role": "neutral",
+        "displayName": "Error Text",
+        "canonical": "oklch(48.3% 0.168 35)",
+        "tonalRamp": [
+          "oklch(15% 0.092 35)",
+          "oklch(27% 0.134 35)",
+          "oklch(38% 0.168 35)",
+          "oklch(50% 0.168 35)",
+          "oklch(62% 0.168 35)",
+          "oklch(73% 0.168 35)",
+          "oklch(85% 0.134 35)",
+          "oklch(95% 0.092 35)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "poster": {
+        "displayName": "Poster",
+        "purpose": "The one big figure, the closing word and team initials."
+      },
+      "hero": {
+        "displayName": "Hero",
+        "purpose": "The home headline only."
+      },
+      "mega": {
+        "displayName": "Mega",
+        "purpose": "Chapter headlines and page titles."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "Section headlines."
+      },
+      "head": {
+        "displayName": "Head",
+        "purpose": "List entries, country names, tallies."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Small headings and captions."
+      },
+      "lead": {
+        "displayName": "Lead",
+        "purpose": "The one sentence under a headline, max 34ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading text, max 44ch."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Names, meta lines, notes. The floor: nothing is smaller."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons, navigation, form labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "model-cast",
+        "value": "drop-shadow(0 2.5rem 2rem rgb(15 14 14 / 0.28))",
+        "purpose": "CSS filter on large cut-out model photographs. The model's own shadow on its field. Not for interface parts."
+      },
+      {
+        "name": "model-cast-film",
+        "value": "drop-shadow(0 1.75rem 1.5rem rgb(15 14 14 / 0.3))",
+        "purpose": "The two stills of the energy film when it stands still (no motion or no script)."
+      },
+      {
+        "name": "model-cast-hero-art",
+        "value": "drop-shadow(0 2rem 1.5rem rgb(15 14 14 / 0.28))",
+        "purpose": "Model beside a page title, and the models inside the two home doors."
+      },
+      {
+        "name": "model-cast-tile",
+        "value": "drop-shadow(0 1.25rem 1rem rgb(15 14 14 / 0.28))",
+        "purpose": "Models inside place cards and step tiles."
+      },
+      {
+        "name": "model-cast-door",
+        "value": "drop-shadow(0 1rem 0.75rem rgb(15 14 14 / 0.25))",
+        "purpose": "Models inside the two service doors."
+      },
+      {
+        "name": "model-cast-small",
+        "value": "drop-shadow(0 0.75rem 0.5rem rgb(15 14 14 / 0.25))",
+        "purpose": "The smallest models, on the team page."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-out",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "--ease-out. Hover wipes, arrows, menu, header."
+      },
+      {
+        "name": "ease-in-out",
+        "value": "cubic-bezier(0.65, 0, 0.35, 1)",
+        "purpose": "--ease-in-out. Declared in :root. No rule uses it since the energy switch was removed."
+      },
+      {
+        "name": "header-adapt",
+        "value": "background-color and color 0.4s ease; transparent over the home hero until 24px of scroll; hides (translateY -101%, 0.6s ease-out) past 480px when scrolling down",
+        "purpose": "The bar takes the field colour of the sheet under its lower edge. The open phone menu makes it gold."
+      },
+      {
+        "name": "weft-wipe",
+        "value": "transform scaleX(0 to 1) from left, 0.5s ease-out",
+        "purpose": "Button hover. Horizontal = weft = Germany."
+      },
+      {
+        "name": "warp-wipe",
+        "value": "transform scaleY(0 to 1) from bottom, 0.5s ease-out",
+        "purpose": "Chapter tab hover. Vertical = warp = Africa."
+      },
+      {
+        "name": "data-split",
+        "value": "lines yPercent 130 to 0, 1.1s expo.out, stagger 0.09s, once at top 90%; each mask padded 0.08em above and 0.17em below",
+        "purpose": "Headline lines rise out of their mask. The padding keeps descenders and umlaut dots uncut."
+      },
+      {
+        "name": "data-rv",
+        "value": "y 36px + fade, 1.1s expo.out, stagger 0.07s (kids), once at top 88%",
+        "purpose": "Blocks and list children rise in."
+      },
+      {
+        "name": "data-rv-weft",
+        "value": "xPercent -14 + fade, 1.1s expo.out, stagger 0.11s",
+        "purpose": "Statement lines slide in from the left."
+      },
+      {
+        "name": "data-grow",
+        "value": "scaleX 0 to 1 from left, 1.3s expo.out",
+        "purpose": "A ribbon bar draws in."
+      },
+      {
+        "name": "data-count",
+        "value": "text set to 0 at once, then 0 to n, 1.8s expo.out, once at top 80%",
+        "purpose": "The team figure waits at zero and counts up once when it is seen."
+      },
+      {
+        "name": "data-parallax / data-shift",
+        "value": "yPercent or xPercent from +n to -n, scrubbed across the section",
+        "purpose": "Models drift vertically; the closing word drifts sideways."
+      },
+      {
+        "name": "sheet-stack",
+        "value": "position: sticky; top: min(0, 100vh - sheet height)",
+        "purpose": "Sheets stack on screens of 1089px and wider with motion allowed. Covered sheets are never dimmed."
+      },
+      {
+        "name": "smooth-scroll",
+        "value": "Lenis lerp 0.11; anchor glide 1.4s; a new page starts at scroll 0, back and forward keep the browser's place, hash links keep their target",
+        "purpose": "Only when motion is allowed."
+      },
+      {
+        "name": "hero-film",
+        "value": "video fades in over the still, opacity 0.45s; seconds 0 to 5 play once, then the film repeats from second 5",
+        "purpose": "The ribbons weave in once. After that only the living scene repeats. Pausable."
+      },
+      {
+        "name": "hero-leave",
+        "value": "media scale 1 to 1.12, copy yPercent -28 and fade, scrubbed over one screen",
+        "purpose": "The hero as the next sheet covers it. Wide screens only."
+      },
+      {
+        "name": "country-track",
+        "value": "pinned 280svh, track x scrubbed 0.5; models rotate ±5deg to ∓3deg",
+        "purpose": "Seven countries pulled sideways by the scroll."
+      },
+      {
+        "name": "weave-scene",
+        "value": "pinned 250svh, progress glided 0.6s power2.out; start state rendered at once, every band outside the screen; horizontal bands from the left and right screen edges (1s, stagger 0.1), vertical bands from below and every third from above (1s, stagger 0.06), coast shapes scale in (0.6s back.out(1.6))",
+        "purpose": "The logo weaves itself beside its sentence. On small screens the bands come only from the sides and from below, and it plays once at 0.8 speed."
+      },
+      {
+        "name": "ship-scene",
+        "value": "ship x from -108vw to 0, 2.6s power3.out, once when the chapter is half a screen away; headline lines yPercent 130 to 0 at 1.15s (1.2s expo.out, stagger 0.1); side text y 28 + fade at 1.45s; then y -10 and 0.35deg, 3.4s sine.inOut yoyo; xPercent -3 to 4 scrubbed",
+        "purpose": "The container ship sails in from the left screen edge, then the words come up. Home Cloody chapter and Cloody page opening."
+      },
+      {
+        "name": "logo-trail",
+        "value": "tile scale 0.5 to 1 (0.35s back.out(1.8)), glides on 1.5s power3.out, scale to 0 (0.45s power2.in); one self-drawn loop of 3.2s before the first mouse move",
+        "purpose": "Mouse and motion allowed only: the cursor leaves the client logos behind as a trail. Elsewhere the marquee runs."
+      },
+      {
+        "name": "energy-film",
+        "value": "61 stills on a canvas, scrubbed 0.5 by the scroll; pinned (wrapper 230svh, sticky 100svh stage) at 1089px wide and 44rem tall with motion allowed, else scrubbed from top 68% to top 8%; track bar scaleX = progress; caption swaps at 0.5 (out 0.2s, in 0.35s after 0.2s); chips fill at 0.36 / 0.56 / 0.8",
+        "purpose": "The company building from today to after the consultation. Runs forwards and backwards. No clip-path on the pictures."
+      },
+      {
+        "name": "marquee",
+        "value": "translateX(-100%), 70s linear infinite, pausable",
+        "purpose": "The row of 32 client logos."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "all durations 0.01ms; no Lenis, no stack, no hero film, no sailing ship, no logo trail; the energy film is two stills; nothing hidden",
+        "purpose": "The still state of every moving part."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "phone",
+        "value": "44rem"
+      },
+      {
+        "name": "menu",
+        "value": "68rem"
+      },
+      {
+        "name": "stack",
+        "value": "1089px"
+      },
+      {
+        "name": "shell-max",
+        "value": "108rem"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Button on Plaster",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "The first-call band on plaster or white: ink band, gold weft wipe on hover.",
+      "html": "<div class=\"ds-f-plaster\"><a class=\"ds-btn\" href=\"#\">Erstgespräch anfragen<svg class=\"ds-icon\" viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"square\" stroke-width=\"1.75\" aria-hidden=\"true\"><path d=\"M3.5 10h12M11 5.5l4.5 4.5-4.5 4.5\"/></svg></a></div>",
+      "css": ".ds-f-plaster{--ds-bg:var(--plaster);--ds-fg:var(--ink);--ds-accent:var(--gold);background:var(--ds-bg);color:var(--ds-fg);padding:1.5rem}.ds-btn{position:relative;display:inline-flex;align-items:center;gap:.875rem;min-height:3.5rem;padding:0 1.5rem;overflow:hidden;isolation:isolate;border:0;border-radius:0;cursor:pointer;background:var(--ds-fg);color:var(--ds-bg);font-family:var(--font-text);font-size:1.0625rem;font-weight:600;line-height:1;white-space:nowrap;text-decoration:none;transition:color .35s var(--ease-out)}.ds-btn::before{content:'';position:absolute;inset:0;z-index:-1;background:var(--ds-accent);transform:scaleX(0);transform-origin:left center;transition:transform .5s var(--ease-out)}.ds-btn:hover::before,.ds-btn:focus-visible::before{transform:scaleX(1)}.ds-btn:hover,.ds-btn:focus-visible{color:var(--ink)}.ds-btn:focus-visible{outline:3px solid var(--ds-fg);outline-offset:3px}.ds-btn:active{transform:scale(.98)}.ds-btn .ds-icon{width:1.25rem;height:1.25rem;flex:none;transition:transform .5s var(--ease-out)}.ds-btn:hover .ds-icon{transform:translateX(.25rem)}"
+    },
+    {
+      "name": "Button on Glut",
+      "kind": "button",
+      "refersTo": "button-on-glut",
+      "description": "On the red field the band is black with a white label, the one exception to the inverse rule; the wipe is white.",
+      "html": "<div class=\"ds-f-glut\"><a class=\"ds-btn\" href=\"#\">Leistungen Afrika im Detail<svg class=\"ds-icon\" viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"square\" stroke-width=\"1.75\" aria-hidden=\"true\"><path d=\"M3.5 10h12M11 5.5l4.5 4.5-4.5 4.5\"/></svg></a></div>",
+      "css": ".ds-f-glut{--ds-bg:var(--glut);--ds-fg:#000;--ds-accent:var(--white);background:var(--ds-bg);color:var(--ds-fg);padding:1.5rem;font-weight:500}.ds-btn{position:relative;display:inline-flex;align-items:center;gap:.875rem;min-height:3.5rem;padding:0 1.5rem;overflow:hidden;isolation:isolate;border:0;border-radius:0;cursor:pointer;background:var(--ds-fg);color:var(--ds-bg);font-family:var(--font-text);font-size:1.0625rem;font-weight:600;line-height:1;white-space:nowrap;text-decoration:none;transition:color .35s var(--ease-out)}.ds-btn::before{content:'';position:absolute;inset:0;z-index:-1;background:var(--ds-accent);transform:scaleX(0);transform-origin:left center;transition:transform .5s var(--ease-out)}.ds-btn:hover::before,.ds-btn:focus-visible::before{transform:scaleX(1)}.ds-btn:hover,.ds-btn:focus-visible{color:var(--ink)}.ds-btn:focus-visible{outline:3px solid var(--ds-fg);outline-offset:3px}.ds-btn:active{transform:scale(.98)}.ds-btn .ds-icon{width:1.25rem;height:1.25rem;flex:none;transition:transform .5s var(--ease-out)}.ds-btn:hover .ds-icon{transform:translateX(.25rem)}.ds-f-glut .ds-btn{color:var(--white)}.ds-f-glut .ds-btn:hover,.ds-f-glut .ds-btn:focus-visible{color:var(--ink)}"
+    },
+    {
+      "name": "Button on Laub",
+      "kind": "button",
+      "refersTo": "button-on-laub",
+      "description": "On the green field the band is white with a green label; the wipe is gold.",
+      "html": "<div class=\"ds-f-laub\"><a class=\"ds-btn\" href=\"#\">Leistungen Energie im Detail<svg class=\"ds-icon\" viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"square\" stroke-width=\"1.75\" aria-hidden=\"true\"><path d=\"M3.5 10h12M11 5.5l4.5 4.5-4.5 4.5\"/></svg></a></div>",
+      "css": ".ds-f-laub{--ds-bg:var(--laub);--ds-fg:var(--white);--ds-accent:var(--gold);background:var(--ds-bg);color:var(--ds-fg);padding:1.5rem}.ds-btn{position:relative;display:inline-flex;align-items:center;gap:.875rem;min-height:3.5rem;padding:0 1.5rem;overflow:hidden;isolation:isolate;border:0;border-radius:0;cursor:pointer;background:var(--ds-fg);color:var(--ds-bg);font-family:var(--font-text);font-size:1.0625rem;font-weight:600;line-height:1;white-space:nowrap;text-decoration:none;transition:color .35s var(--ease-out)}.ds-btn::before{content:'';position:absolute;inset:0;z-index:-1;background:var(--ds-accent);transform:scaleX(0);transform-origin:left center;transition:transform .5s var(--ease-out)}.ds-btn:hover::before,.ds-btn:focus-visible::before{transform:scaleX(1)}.ds-btn:hover,.ds-btn:focus-visible{color:var(--ink)}.ds-btn:focus-visible{outline:3px solid var(--ds-fg);outline-offset:3px}.ds-btn:active{transform:scale(.98)}.ds-btn .ds-icon{width:1.25rem;height:1.25rem;flex:none;transition:transform .5s var(--ease-out)}.ds-btn:hover .ds-icon{transform:translateX(.25rem)}"
+    },
+    {
+      "name": "Chapter Tabs",
+      "kind": "nav",
+      "refersTo": "chapter-tab",
+      "description": "Five ribbon-coloured tabs on the bottom edge of the home hero. Hover is a warp wipe from below.",
+      "html": "<nav class=\"ds-chapters\"><a class=\"ds-tab ds-t-glut\" href=\"#\"><strong>Afrika</strong><span>Markteintritt</span></a><a class=\"ds-tab ds-t-laub\" href=\"#\"><strong>Energie</strong><span>Beratung in Deutschland</span></a><a class=\"ds-tab ds-t-lime\" href=\"#\"><strong>Team</strong><span>13 Menschen, 7 Länder</span></a><a class=\"ds-tab ds-t-ink\" href=\"#\"><strong>Cloody</strong><span>Handelsplattform</span></a><a class=\"ds-tab ds-t-gold\" href=\"#\"><strong>Kontakt</strong><span>Erstgespräch</span></a></nav>",
+      "css": ".ds-chapters{display:grid;grid-template-columns:repeat(5,minmax(0,1fr))}.ds-tab{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:.25rem;height:clamp(4.5rem,11svh,6.5rem);padding:.875rem clamp(.875rem,1.4vw,1.5rem);overflow:hidden;isolation:isolate;background:var(--ds-bg);color:var(--ds-fg);text-decoration:none}.ds-tab::before{content:'';position:absolute;inset:0;z-index:-1;background:var(--ds-fg);transform:scaleY(0);transform-origin:center bottom;transition:transform .5s var(--ease-out)}.ds-tab:hover,.ds-tab:focus-visible{color:var(--ds-bg)}.ds-tab:hover::before,.ds-tab:focus-visible::before{transform:scaleY(1)}.ds-tab:focus-visible{outline:3px solid var(--ink);outline-offset:3px}.ds-tab strong{font-family:var(--font-display);font-size:var(--t-title);font-weight:700;line-height:1}.ds-tab span{font-family:var(--font-text);font-size:1rem;font-weight:500;line-height:1.2}.ds-t-glut{--ds-bg:var(--glut);--ds-fg:#000}.ds-t-laub{--ds-bg:var(--laub);--ds-fg:var(--white)}.ds-t-lime{--ds-bg:var(--lime);--ds-fg:var(--ink)}.ds-t-ink{--ds-bg:var(--ink);--ds-fg:var(--white)}.ds-t-gold{--ds-bg:var(--gold);--ds-fg:var(--ink)}"
+    },
+    {
+      "name": "Adaptive Header",
+      "kind": "nav",
+      "refersTo": "button-header",
+      "description": "The bar takes the colour of the chapter under it. Links, language switch and header button follow: shown on plaster, glut and laub.",
+      "html": "<div class=\"ds-bars\"><div class=\"ds-header ds-on-plaster\"><a class=\"ds-nav-link\" href=\"#\" aria-current=\"page\">Leistungen</a><a class=\"ds-nav-link\" href=\"#\">Team</a><a class=\"ds-nav-link\" href=\"#\">Über uns</a><a class=\"ds-locale\" href=\"#\">EN</a><a class=\"ds-key\" href=\"#\">Erstgespräch anfragen<svg class=\"ds-icon\" viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"square\" stroke-width=\"1.75\" aria-hidden=\"true\"><path d=\"M3.5 10h12M11 5.5l4.5 4.5-4.5 4.5\"/></svg></a></div><div class=\"ds-header ds-on-glut\"><a class=\"ds-nav-link\" href=\"#\" aria-current=\"page\">Leistungen</a><a class=\"ds-nav-link\" href=\"#\">Team</a><a class=\"ds-nav-link\" href=\"#\">Über uns</a><a class=\"ds-locale\" href=\"#\">EN</a><a class=\"ds-key\" href=\"#\">Erstgespräch anfragen<svg class=\"ds-icon\" viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"square\" stroke-width=\"1.75\" aria-hidden=\"true\"><path d=\"M3.5 10h12M11 5.5l4.5 4.5-4.5 4.5\"/></svg></a></div><div class=\"ds-header ds-on-laub\"><a class=\"ds-nav-link\" href=\"#\" aria-current=\"page\">Leistungen</a><a class=\"ds-nav-link\" href=\"#\">Team</a><a class=\"ds-nav-link\" href=\"#\">Über uns</a><a class=\"ds-locale\" href=\"#\">EN</a><a class=\"ds-key\" href=\"#\">Erstgespräch anfragen<svg class=\"ds-icon\" viewBox=\"0 0 20 20\" fill=\"none\" stroke=\"currentColor\" stroke-linecap=\"square\" stroke-width=\"1.75\" aria-hidden=\"true\"><path d=\"M3.5 10h12M11 5.5l4.5 4.5-4.5 4.5\"/></svg></a></div></div>",
+      "css": ".ds-bars{display:grid}.ds-header{--ds-bar:var(--plaster);--ds-bar-ink:var(--ink);--ds-bar-key:var(--ink);--ds-bar-key-ink:var(--white);--ds-bar-wipe:var(--gold);display:flex;align-items:center;gap:2rem;padding:.875rem 1.5rem;background:var(--ds-bar);color:var(--ds-bar-ink);font-family:var(--font-text);transition:background-color .4s ease,color .4s ease}.ds-on-glut{--ds-bar:var(--glut);--ds-bar-ink:#000;--ds-bar-key:#000;--ds-bar-wipe:var(--white)}.ds-on-laub{--ds-bar:var(--laub);--ds-bar-ink:var(--white);--ds-bar-key:var(--white);--ds-bar-key-ink:var(--ink)}.ds-nav-link{position:relative;padding-block:.5rem;font-size:1.0625rem;font-weight:500;color:inherit;text-decoration:none}.ds-nav-link::after{content:'';position:absolute;inset:auto 0 0;height:.1875rem;background:currentColor;transform:scaleX(0);transform-origin:left center;transition:transform .45s var(--ease-out)}.ds-nav-link:hover::after,.ds-nav-link[aria-current=page]::after{transform:scaleX(1)}.ds-nav-link:focus-visible,.ds-locale:focus-visible,.ds-key:focus-visible{outline:3px solid var(--ds-bar-ink);outline-offset:3px}.ds-locale{display:inline-grid;place-items:center;min-width:2.75rem;height:2.75rem;margin-left:auto;font-weight:600;font-size:1.0625rem;color:inherit;text-decoration:none}.ds-locale:hover{background:var(--ds-bar-ink);color:var(--ds-bar)}.ds-key{position:relative;display:inline-flex;align-items:center;gap:.875rem;min-height:2.75rem;padding:0 1.125rem;overflow:hidden;isolation:isolate;background:var(--ds-bar-key);color:var(--ds-bar-key-ink);font-size:1.0625rem;font-weight:600;line-height:1;white-space:nowrap;text-decoration:none;transition:color .35s var(--ease-out),background-color .4s ease}.ds-key::before{content:'';position:absolute;inset:0;z-index:-1;background:var(--ds-bar-wipe);transform:scaleX(0);transform-origin:left center;transition:transform .5s var(--ease-out)}.ds-key:hover::before,.ds-key:focus-visible::before{transform:scaleX(1)}.ds-key:hover,.ds-key:focus-visible{color:var(--ink)}.ds-key .ds-icon{width:1.25rem;height:1.25rem;flex:none;transition:transform .5s var(--ease-out)}.ds-key:hover .ds-icon{transform:translateX(.25rem)}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "White box with an ink bar at the bottom. The bar turns Glut on focus and on error.",
+      "html": "<label class=\"ds-field\"><span class=\"ds-field-label\">E-Mail</span><input class=\"ds-input\" type=\"email\" placeholder=\"name@firma.de\"></label>",
+      "css": ".ds-field{display:grid;gap:.5rem;padding:1.5rem;background:var(--plaster);color:var(--ink);font-family:var(--font-text)}.ds-field-label{font-weight:600;font-size:1.0625rem}.ds-input{width:100%;padding:1rem 1.125rem;border:0;border-bottom:.25rem solid var(--ink);border-radius:0;background:var(--white);color:var(--ink);font:inherit;font-size:1.0625rem;caret-color:var(--glut);transition:border-color .25s ease}.ds-input::placeholder{color:#5f5d5a}.ds-input:focus-visible{outline:none;border-color:var(--glut)}"
+    },
+    {
+      "name": "Topic Choice",
+      "kind": "chip",
+      "refersTo": "topic-option",
+      "description": "Square radio options: white at rest, gold on hover, ink when chosen.",
+      "html": "<div class=\"ds-topics\"><label class=\"ds-topic\"><input type=\"radio\" name=\"ds-topic\" checked><span>Markteintritt Afrika</span></label><label class=\"ds-topic\"><input type=\"radio\" name=\"ds-topic\"><span>Energieberatung</span></label><label class=\"ds-topic\"><input type=\"radio\" name=\"ds-topic\"><span>Cloody</span></label></div>",
+      "css": ".ds-topics{display:flex;flex-wrap:wrap;gap:.5rem;padding:1.5rem;background:var(--plaster);font-family:var(--font-text)}.ds-topic{position:relative;cursor:pointer}.ds-topic input{position:absolute;opacity:0;inset:0}.ds-topic span{display:inline-flex;align-items:center;min-height:3rem;padding:0 1.125rem;background:var(--white);color:var(--ink);font-weight:600;font-size:1.0625rem;transition:background .25s ease,color .25s ease}.ds-topic:hover span{background:var(--gold)}.ds-topic input:checked+span{background:var(--ink);color:var(--white)}.ds-topic input:focus-visible+span{outline:3px solid var(--ink);outline-offset:3px}"
+    },
+    {
+      "name": "Place Card",
+      "kind": "card",
+      "refersTo": "place-card",
+      "description": "A country model on its ribbon field, with the country name and the people there on white below.",
+      "html": "<div class=\"ds-place-wrap\"><div class=\"ds-place\"><div class=\"ds-place-tile\"><span class=\"ds-model\"></span></div><div class=\"ds-place-info\"><h3>Sambia</h3><p><strong>Fachperson vor Ort</strong></p></div></div></div>",
+      "css": ".ds-place-wrap{padding:1.5rem;background:var(--plaster)}.ds-place{width:clamp(16.5rem,25vw,26rem);background:var(--white);color:var(--ink);font-family:var(--font-text)}.ds-place-tile{display:grid;place-items:center;aspect-ratio:5/4;background:var(--glut);overflow:hidden}.ds-model{display:block;width:52%;aspect-ratio:3/2;background:var(--white);filter:drop-shadow(0 1.25rem 1rem rgb(15 14 14 / .28));transition:transform .9s var(--ease-out)}.ds-place:hover .ds-model{transform:scale(1.05) rotate(-1.5deg)}.ds-place-info{display:grid;gap:.375rem;padding:1rem 1.125rem 1.25rem}.ds-place-info h3{margin:0;font-family:var(--font-display);font-size:var(--t-head);font-weight:700;line-height:1}.ds-place-info p{margin:0;font-size:1rem;line-height:1.45}"
+    },
+    {
+      "name": "Two Doors",
+      "kind": "card",
+      "refersTo": "door-tile",
+      "description": "The home intro: two portrait tiles of equal size, Glut for Africa and Laub for Germany. Label and corner arrow on top, a model in the middle, a claim below.",
+      "html": "<div class=\"ds-duo\"><a class=\"ds-door ds-door-glut\" href=\"#\"><span class=\"ds-door-top\">Afrika<svg class=\"ds-corner\" viewBox=\"0 0 48 48\" fill=\"none\" aria-hidden=\"true\"><path d=\"M10 38 38 10M16 10h22v22\" stroke=\"currentColor\" stroke-linecap=\"square\" stroke-width=\"5\"/></svg></span><span class=\"ds-door-pic\"><span class=\"ds-door-model\"></span></span><strong>Wir öffnen Märkte in Afrika.</strong></a><a class=\"ds-door ds-door-laub\" href=\"#\"><span class=\"ds-door-top\">Deutschland<svg class=\"ds-corner\" viewBox=\"0 0 48 48\" fill=\"none\" aria-hidden=\"true\"><path d=\"M10 38 38 10M16 10h22v22\" stroke=\"currentColor\" stroke-linecap=\"square\" stroke-width=\"5\"/></svg></span><span class=\"ds-door-pic\"><span class=\"ds-door-model\"></span></span><strong>Wir sparen Energie in Deutschland.</strong></a></div>",
+      "css": ".ds-duo{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;padding:1.5rem;background:var(--gold)}.ds-door{display:grid;grid-template-rows:auto minmax(0,1fr) auto;gap:clamp(.75rem,1.4vw,1.5rem);min-height:22rem;padding:clamp(1rem,1.6vw,1.75rem);overflow:hidden;background:var(--ds-bg);color:var(--ds-fg);text-decoration:none}.ds-door-glut{--ds-bg:var(--glut);--ds-fg:#000}.ds-door-laub{--ds-bg:var(--laub);--ds-fg:var(--white)}.ds-door-top{display:flex;align-items:center;justify-content:space-between;gap:1rem;font-family:var(--font-display);font-size:var(--t-title);font-weight:700;line-height:1}.ds-door-top .ds-corner{width:clamp(2rem,3vw,3.25rem);height:clamp(2rem,3vw,3.25rem);flex:none;transition:transform .6s var(--ease-out)}.ds-door:hover .ds-corner,.ds-door:focus-visible .ds-corner{transform:translate(.375rem,-.375rem)}.ds-door-pic{display:grid;place-items:center;min-height:0}.ds-door-model{display:block;width:62%;aspect-ratio:1;background:var(--white);filter:drop-shadow(0 2rem 1.5rem rgb(15 14 14 / .28));transition:transform .9s var(--ease-out)}.ds-door:hover .ds-door-model,.ds-door:focus-visible .ds-door-model{transform:scale(1.05) rotate(-1.5deg)}.ds-door strong{font-family:var(--font-display);font-size:clamp(2rem,3.5vw,4rem);font-weight:700;line-height:.94;letter-spacing:-.012em;text-wrap:balance}.ds-door:focus-visible{outline:3px solid var(--ink);outline-offset:3px}"
+    },
+    {
+      "name": "Energy Film Track",
+      "kind": "chip",
+      "refersTo": "measure-chip",
+      "description": "Beside the energy film on Laub: a track bar that fills from today to after the consultation, and measure chips that wait as outlines and fill in when their measure shows up.",
+      "html": "<div class=\"ds-energy\"><p class=\"ds-track\"><span>Heute</span><b><i></i></b><span>Nach der Beratung</span></p><ul class=\"ds-hot\"><li data-on=\"true\">Photovoltaik auf dem Hallendach</li><li data-on=\"true\">Wärmepumpe statt Gaskessel</li><li>Ladepunkte für die Flotte</li></ul></div>",
+      "css": ".ds-energy{display:grid;gap:1.5rem;padding:1.5rem;background:var(--laub);color:var(--white);font-family:var(--font-text)}.ds-track{display:grid;grid-template-columns:auto minmax(2rem,1fr) auto;align-items:center;gap:.75rem;margin:0;font-weight:600;line-height:1.1}.ds-track b{display:block;height:.75rem;border:.125rem solid currentColor}.ds-track i{display:block;height:100%;background:var(--gold);transform:scaleX(.6);transform-origin:left center}.ds-hot{display:flex;flex-wrap:wrap;gap:.5rem;margin:0;padding:0;list-style:none}.ds-hot li{padding:.5rem .75rem;border:.125rem solid var(--white);background:transparent;color:inherit;font-size:1rem;font-weight:600;line-height:1;transition:background-color .2s ease,color .2s ease}.ds-hot li[data-on=true]{background:var(--white);color:var(--ink)}"
+    },
+    {
+      "name": "Tally with Flags",
+      "kind": "custom",
+      "refersTo": "flag",
+      "description": "Country, round flag, number. The flag is the one round shape on the site and keeps its own colours.",
+      "html": "<ul class=\"ds-tally\"><li><span class=\"ds-tally-name\">Deutschland<svg class=\"ds-flag\" viewBox=\"0 0 512 512\" aria-hidden=\"true\"><defs><clipPath id=\"ds-flag-de\"><circle cx=\"256\" cy=\"256\" r=\"256\"/></clipPath></defs><g clip-path=\"url(#ds-flag-de)\"><path fill=\"#ffda44\" d=\"M0 345h512v167H0z\"/><path fill=\"#333\" d=\"M0 0h512v167H0z\"/><path fill=\"#d80027\" d=\"M0 167h512v178H0z\"/></g></svg></span><span>4</span></li></ul>",
+      "css": ".ds-tally{margin:0;padding:1.5rem;list-style:none;background:var(--lime);color:var(--ink)}.ds-tally li{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;padding-block:.3125rem;font-family:var(--font-display);font-size:var(--t-head);font-weight:700;line-height:1}.ds-tally li span:last-child{font-variant-numeric:tabular-nums lining-nums}.ds-tally-name{display:inline-flex;align-items:center;gap:.75rem}.ds-flag{flex:none;width:.9em;height:.9em;border:.125rem solid var(--white);border-radius:50%;background:var(--white)}"
+    },
+    {
+      "name": "Ledger",
+      "kind": "custom",
+      "refersTo": "tile",
+      "description": "A ruled list: one entry per line between solid 0.25rem bars in the text colour.",
+      "html": "<ul class=\"ds-ledger\"><li><h3>Markteintritt und Marktvalidierung</h3><p>Lohnt sich der Markt? Wir liefern Zahlen, Wettbewerb und Regeln.</p></li><li><h3>Strategische Partnerschaften</h3><p>Wir finden Händler, Lieferanten und Behörden.</p></li></ul>",
+      "css": ".ds-ledger{display:grid;margin:0;padding:1.5rem;list-style:none;background:var(--glut);color:#000;font-family:var(--font-text)}.ds-ledger li{display:grid;gap:.375rem;padding-block:clamp(.875rem,1.4vw,1.375rem);border-top:.25rem solid currentColor}.ds-ledger li:last-child{border-bottom:.25rem solid currentColor}.ds-ledger h3{margin:0;font-family:var(--font-display);font-size:var(--t-head);font-weight:700;line-height:1}.ds-ledger p{margin:0;max-width:46ch;font-size:var(--t-body);line-height:1.5}"
+    },
+    {
+      "name": "Closing Band",
+      "kind": "custom",
+      "refersTo": "cta-band",
+      "description": "The last sheet of a page is one link with a page-sized word. The whole band inverts on hover.",
+      "html": "<a class=\"ds-cta\" href=\"#\"><span class=\"ds-cta-top\"><span class=\"ds-cta-title\">Erzählen Sie uns von Ihrem Vorhaben.</span><svg class=\"ds-corner\" viewBox=\"0 0 48 48\" fill=\"none\" aria-hidden=\"true\"><path d=\"M10 38 38 10M16 10h22v22\" stroke=\"currentColor\" stroke-linecap=\"square\" stroke-width=\"5\"/></svg></span><span class=\"ds-cta-word\" aria-hidden=\"true\">Kontakt</span></a>",
+      "css": ".ds-cta{display:flex;flex-direction:column;justify-content:space-between;gap:2rem;min-height:18rem;padding:clamp(1.5rem,3vw,3rem) var(--gutter) 0;overflow:hidden;background:var(--gold);color:var(--ink);text-decoration:none}.ds-cta:hover,.ds-cta:focus-visible{background:var(--ink);color:var(--gold)}.ds-cta:focus-visible{outline:3px solid var(--ink);outline-offset:3px}.ds-cta-top{display:flex;align-items:flex-start;justify-content:space-between;gap:2rem}.ds-cta-title{font-family:var(--font-display);font-size:var(--t-display);font-weight:700;line-height:.94;letter-spacing:-.012em}.ds-corner{flex:none;width:clamp(2.5rem,5vw,4.5rem);height:clamp(2.5rem,5vw,4.5rem);transition:transform .6s var(--ease-out)}.ds-cta:hover .ds-corner{transform:translate(.5rem,-.5rem)}.ds-cta-word{display:block;margin-bottom:-.06em;font-family:var(--font-display);font-size:27cqw;font-size:clamp(6rem,27vw,20rem);font-weight:700;line-height:.8;letter-spacing:-.03em;white-space:nowrap}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Weißes Modell, fünf Bänder (white model, five ribbons)",
+    "overview": "The SIFK world is a matte-white scale model, like the card-and-plaster models architects build. The only colour in it is the five ribbons of the woven logo: ink, red-orange, gold, lime and green. A ribbon never decorates. It is a whole flat field that owns a chapter of the page.\n\nPages are built like sheets of coloured paper on a model-maker's table. Each section is one full-width field. On wide screens the next sheet slides over the one before it. Pictures are photographs of white models with paper ribbons in exactly those five colours. They are cut out and stand directly on a field.",
+    "keyCharacteristics": [
+      "Flat full-bleed colour fields, one per chapter.",
+      "White model photographs standing on those fields, with only their own cast shadow.",
+      "Very large condensed headlines in Barlow Condensed 700.",
+      "Square corners everywhere (radius 0). The only round shape is a country flag.",
+      "Motion taken from the logo: sideways is the weft (Germany), up-and-down is the warp (Africa).",
+      "One next step on every page: request a first call."
+    ],
+    "rules": [
+      {
+        "name": "The Whole Field Rule",
+        "body": "A ribbon colour is a whole flat surface: a section, a tile, a band or a solid ribbon bar. It is never a tint, a gradient, a glow or a coloured icon box.",
+        "section": "colors"
+      },
+      {
+        "name": "The Black On Red Rule",
+        "body": "Text on Glut is always `#000`. Ink on Glut is about 4.4:1 and fails AA for normal text. Black is about 4.8:1 and passes. Running text on Glut is weight 500, not 400, so the black letters keep their outline on red. Headlines and labels keep their own weight.",
+        "section": "colors"
+      },
+      {
+        "name": "The Inverse Button Rule",
+        "body": "A button takes its field's text colour as background and its field's colour as label. Never give a button its own colour. One exception: on Glut the label is white, because red on black is too dim to read.",
+        "section": "colors"
+      },
+      {
+        "name": "The Guest Colours Rule",
+        "body": "Two guests keep their own colours. The 32 client logos stand only on the white field, as one moving row or as the cursor trail. The seven round country flags stand only next to a country name or on a person tile. Both are signs to be recognised, not decoration. Nothing else brings its own colours.",
+        "section": "colors"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "No uppercase styling and no wide letter-spacing anywhere. Headlines are sentences with a full stop.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Rem Floor Rule",
+        "body": "No text is smaller than 1rem.",
+        "section": "typography"
+      },
+      {
+        "name": "The Balance Rule",
+        "body": "Headlines use `text-wrap: balance`. Reading text uses `text-wrap: pretty` and a line-length cap in `ch`.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Field Per Chapter Rule",
+        "body": "A section is one colour from edge to edge. Change the colour only when the chapter changes.",
+        "section": "layout"
+      },
+      {
+        "name": "The Never Dimmed Rule",
+        "body": "A sheet that is being covered keeps its full colour. No overlay, no fade, no blur on covered sheets.",
+        "section": "layout"
+      },
+      {
+        "name": "The Model Shadow Only Rule",
+        "body": "Only a model photograph casts a shadow. Buttons, cards, tiles, the header and the menu never do.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Still First Rule",
+        "body": "Every moving part has a complete still state. With reduced motion there is no smooth scroll, no film, no stacking, no sailing ship, no logo trail, the energy film is two stills, and the logo stands finished.",
+        "section": "components"
+      },
+      {
+        "name": "The Hide Only When Moving Rule",
+        "body": "Content is hidden before its reveal only inside `@media (prefers-reduced-motion: no-preference)`, and only until the motion layer is ready. A timer shows everything after 3.5s if the script never starts.",
+        "section": "components"
+      },
+      {
+        "name": "The Pause Rule",
+        "body": "Whatever keeps moving by itself gets a visible pause button.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do give each chapter one whole flat field from the seven field classes.",
+      "Do set text on Glut in `#000` and weight 500, on Ink and Laub in white, on Gold, Lime, Plaster and White in ink.",
+      "Do keep every corner square (radius 0). The round country flags are the one exception.",
+      "Do give every section a field class, so the header can take its colour.",
+      "Do stand model photographs directly on a field with only their cast `drop-shadow`.",
+      "Do move sideways for weft and Germany, and up-and-down for warp and Africa.",
+      "Do give every motion a still fallback and every loop a pause button.",
+      "Do keep headlines large: Mega for chapters, Display for sections, in Barlow Condensed 700.",
+      "Do keep the desktop first viewport and the full-bleed ribbon fields with model photographs as they are.",
+      "Do log the prompt of every new picture in `asset-library/08-maquette/PROMPTS.md` and in a `.webp.json` next to the file."
+    ],
+    "donts": [
+      "Don't use a ribbon colour as a tint, a gradient, a glow or a coloured icon box.",
+      "Don't add `box-shadow` to any interface part. Only models cast shadows.",
+      "Don't round corners, soften colours or shrink type. Only a country flag is round.",
+      "Don't use a flag as decoration or put one in a model picture. A flag stands next to a country name or on a person tile.",
+      "Don't dim, fade or blur a sheet while the next one covers it.",
+      "Don't hide content before a reveal when reduced motion is on.",
+      "Don't use Amber outside the logo drawing.",
+      "Don't use stock photographs, golden-hour photos, pattern strips or dark consulting layouts.",
+      "Don't invent team portraits, clients, quotes or figures. People are shown as initials on their country's colour.",
+      "Don't touch the SEO layer: `lib/seo.ts`, `app/sitemap.ts`, `app/robots.ts`, `lib/structured-data.ts`, `lib/locale-routing.ts`, any `app//page.tsx`, the 16 routes, or the anchors `#internationale-geschaeftsentwicklung` and `#energieberatung-deutschland`."
+    ]
+  }
+}

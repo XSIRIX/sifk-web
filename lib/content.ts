@@ -61,13 +61,13 @@ const de = {
     person: "Fachperson vor Ort",
     people: "Fachleute vor Ort",
     alt: {
-      de: "Burgruine über den Weinbergen der Bergstraße bei Schriesheim",
-      gh: "Hände halten eine geöffnete Kakaofrucht auf einer Plantage in Ghana",
-      zm: "Die Victoriafälle mit Regenbogen, von Sambia aus gesehen",
-      ug: "Kampala im Abendlicht, verteilt über grüne Hügel",
-      ke: "Giraffen im Nairobi-Nationalpark vor der Skyline von Nairobi",
-      et: "Reife Kaffeekirschen im äthiopischen Hochland",
-      tz: "Elefanten in der Savanne vor dem Kilimandscharo"
+      de: "Weißes Modell der Bergstraße bei Schriesheim: Burgruine über Weinbergen",
+      gh: "Weißes Modell einer Kakaofarm in Ghana: Kakaobäume mit Früchten, ein Trockentisch und ein kleines Haus",
+      zm: "Weißes Modell der Victoriafälle in Sambia mit der Bogenbrücke über der Schlucht",
+      ug: "Weißes Modell von Kampala: Häuser auf runden Hügeln, davor ein Kronenkranich",
+      ke: "Weißes Modell von Nairobi: zwei Giraffen und eine Akazie vor den Türmen der Stadt",
+      et: "Weißes Modell des äthiopischen Kaffeehochlands: Terrassen mit Kaffeesträuchern, davor eine Kaffeekanne",
+      tz: "Weißes Modell der Savanne in Tansania: Elefanten und Akazien vor dem Kilimandscharo"
     } as Record<CountryCode, string>
   },
   map: {
@@ -90,14 +90,66 @@ const de = {
         { value: 13, label: "Fachleute im Team" },
         { value: 7, label: "Länder" },
         { value: 32, label: "Kunden und Partner" }
+      ],
+      switchLabel: "Geschäftsfeld wählen",
+      places: {
+        africa: {
+          place: "Afrika",
+          field: "Markteintritt",
+          caption: "Kapstadt, Tafelberg",
+          alt: "Der Tafelberg über Kapstadt, davor goldene Savanne im Abendlicht",
+          sceneAlt:
+            "Weißes Architekturmodell: links ein deutscher Betrieb mit Solardach unter einer Burgruine, rechts Tafelberg, Akazien und ein Hafen. Bänder in Schwarz, Rot, Gold und Grün verweben sich dazwischen."
+        },
+        germany: {
+          place: "Deutschland",
+          field: "Energieberatung",
+          caption: "Frankfurt am Main",
+          alt: "Die Skyline von Frankfurt am Main bei Sonnenuntergang über dem Fluss"
+        }
+      },
+      more: { href: "/leistungen", label: "Alle Leistungen ansehen" } as Link,
+      pauseScene: "Bildbewegung anhalten",
+      playScene: "Bildbewegung fortsetzen"
+    },
+    index: {
+      label: "Kapitel dieser Seite",
+      items: [
+        { href: "#afrika", label: "Afrika", text: "Markteintritt" },
+        { href: "#energie", label: "Energie", text: "Beratung in Deutschland" },
+        { href: "#team", label: "Team", text: "13 Menschen, 7 Länder" },
+        { href: "#cloody", label: "Cloody", text: "Handelsplattform" },
+        { href: "#kontakt", label: "Kontakt", text: "Erstgespräch" }
       ]
     },
+    intro: {
+      title: "Eine Beratung.\nZwei Felder.",
+      lead: "SIFK ist eine Beratung aus Schriesheim bei Heidelberg.",
+      africaClaim: "Wir öffnen Märkte in Afrika.",
+      germanyClaim: "Wir sparen Energie in Deutschland.",
+      note: "13 Fachleute in 7 Ländern. 32 Kunden und Partner.",
+      germany: "Deutschland",
+      africa: "Afrika",
+      germanyAlt: "Weißes Modell der Bergstraße: Burgruine über Weinbergen, ein Band in Schwarz, Rot und Gold führt den Hang hinauf",
+      africaAlt: "Weißes Modell der Savanne in Tansania: Elefanten und Akazien vor dem Kilimandscharo, ein grünes Band führt zum Berg"
+    },
+    figure: {
+      claim: "Ein Team in sieben Ländern.",
+      unit: "Fachleute"
+    },
+    weave: {
+      link: { href: "/ueber-uns", label: "Über SIFK" } as Link,
+      germany: "Waagerecht: Deutschland",
+      africa: "Senkrecht: Afrika",
+      markAlt: "Das SIFK-Zeichen: der afrikanische Kontinent, gewebt aus waagerechten und senkrechten Bändern"
+    },
+    closeWord: "Kontakt",
     references: {
       title: "Kunden und Partner, die mit uns arbeiten.",
       ariaLabel: "Logos von Kunden und Partnern"
     },
     africa: {
-      title: "Markteintritt in Afrika. Mit Menschen, die vor Ort sind.",
+      title: "Markteintritt in Afrika, mit Menschen vor Ort.",
       text:
         "Wir prüfen Ihren Zielmarkt, finden belastbare Partner und begleiten Ihr Projekt bis zur Umsetzung. Unser Team lebt in Uganda, Kenia, Tansania, Ghana, Äthiopien und Sambia, nicht in einer Datenbank.",
       services: [
@@ -115,7 +167,7 @@ const de = {
         }
       ] as ServiceItem[],
       link: { href: "/leistungen#internationale-geschaeftsentwicklung", label: "Leistungen Afrika im Detail" } as Link,
-      imageAlt: "Eine deutsche Beraterin und ein kenianischer Geschäftspartner im Gespräch auf einer Dachterrasse in Nairobi"
+      imageAlt: "Weißes Modell einer afrikanischen Hafen- und Marktstadt mit Kran, Containern und Akazien, durchzogen von gelben und grünen Bändern"
     },
     statement: {
       label: "Deutschland und Afrika, verbunden durch ein Team in Ghana, Sambia, Uganda, Kenia, Äthiopien und Tansania"
@@ -140,7 +192,7 @@ const de = {
         "Hinweise zu passenden Förderprogrammen"
       ],
       link: { href: "/leistungen#energieberatung-deutschland", label: "Leistungen Energie im Detail" } as Link,
-      imageAlt: "Energieberater und Unternehmerin besprechen Messwerte auf einem Hallendach mit Photovoltaik"
+      imageAlt: "Weißes Modell eines Betriebs mit Solardach, Wärmepumpen und Ladepunkten"
     },
     people: {
       title: "13 Menschen. 7 Länder. Ein Team.",
@@ -160,7 +212,6 @@ const de = {
     }
   },
   energyScene: {
-    toggleLabel: "Gebäude vergleichen",
     before: "Heute",
     after: "Nach der Beratung",
     beforeTitle: "Wo verliert Ihr Betrieb Energie?",
@@ -172,12 +223,12 @@ const de = {
       { id: "heat", label: "Wärmepumpe statt Gaskessel" },
       { id: "charge", label: "Ladepunkte für die Flotte" }
     ],
-    beforeAlt: "Mittelständischer Betrieb mit Produktionshalle und Bürogebäude, das Dach ist ungenutzt",
-    afterAlt: "Derselbe Betrieb nach der Modernisierung mit Photovoltaik auf dem Dach, Wärmepumpen und Ladepunkten"
+    beforeAlt: "Weißes Modell eines Betriebs mit Halle und Büro. Rote Bänder strömen aus Dach, Tor und Fenstern: Hier geht Energie verloren.",
+    afterAlt: "Derselbe Betrieb mit Solardach, Wärmepumpen und Ladepunkten. Ein goldenes Band führt vom Dach in die Halle."
   },
   services: {
     intro: {
-      title: "Was wir für Sie tun, in Afrika und in Deutschland.",
+      title: "Leistungen in Afrika und Deutschland.",
       text:
         "Zwei Geschäftsfelder, ein Anspruch: Wir klären die Lage, rechnen ehrlich und bleiben bis zur Umsetzung an Bord."
     },
@@ -236,7 +287,7 @@ const de = {
       }
     ] as ServiceField[],
     process: {
-      title: "So arbeiten wir: vom Erstgespräch bis zur Umsetzung.",
+      title: "Vom Erstgespräch bis zur Umsetzung.",
       steps: [
         {
           title: "Erstgespräch",
@@ -263,9 +314,9 @@ const de = {
   },
   about: {
     intro: {
-      title: "Wir bringen deutsche Unternehmen nach Afrika und helfen, in Deutschland Energie zu sparen.",
+      title: "Wir verbinden Deutschland und Afrika.",
       text:
-        "SIFK ist eine Beratung aus Schriesheim bei Heidelberg. Zwei Felder, die auf den ersten Blick wenig gemeinsam haben und doch dieselbe Arbeitsweise brauchen: genau hinsehen, ehrlich rechnen, verlässlich umsetzen."
+        "Wir bringen deutsche Unternehmen nach Afrika und helfen, in Deutschland Energie zu sparen. SIFK ist eine Beratung aus Schriesheim bei Heidelberg. Zwei Felder, die auf den ersten Blick wenig gemeinsam haben und doch dieselbe Arbeitsweise brauchen: genau hinsehen, ehrlich rechnen, verlässlich umsetzen."
     },
     mark: {
       title: "Unser Zeichen ist ein Gewebe.",
@@ -273,6 +324,7 @@ const de = {
         "Die waagerechten Fäden stehen für Deutschland, die senkrechten für Afrika. Wo sie sich kreuzen, entsteht etwas, das hält. So verstehen wir unsere Arbeit.",
       imageAlt: "Das SIFK-Zeichen als Skulptur: der afrikanische Kontinent aus gewebten, farbigen Bändern"
     },
+    principlesTitle: "Drei Dinge, an die wir uns halten.",
     principles: [
       {
         title: "Klartext statt Folien",
@@ -311,7 +363,7 @@ const de = {
   },
   team: {
     intro: {
-      title: "13 Menschen. 7 Länder. Ein Team für Ihr Projekt.",
+      title: "13 Menschen. 7 Länder.\nEin Team.",
       text:
         "In Schriesheim sitzen Geschäftsführung, Energieberatung und Vertrieb. In sechs afrikanischen Ländern arbeiten Fachleute, die ihre Märkte von innen kennen."
     },
@@ -451,7 +503,7 @@ const de = {
     },
     emailTo: "E-Mail an",
     close: {
-      title: "Sprechen Sie direkt mit der Person, die Ihr Projekt betreut.",
+      title: "Direkt zur richtigen Person.",
       text: "Jede Person im Team ist per E-Mail erreichbar. Oder Sie schreiben uns, und wir stellen den Kontakt her."
     }
   },
@@ -461,22 +513,19 @@ const de = {
       text:
         "Beschreiben Sie kurz, worum es geht. Wir melden uns persönlich, mit einer ehrlichen Einschätzung und einem Vorschlag für den nächsten Schritt."
     },
+    formTitle: "Kontaktformular",
     direct: "Lieber direkt?"
   },
   cloody: {
-    imageAlt: "Containerhafen von Mombasa bei Sonnenaufgang mit Kran und Frachtschiff",
+    imageAlt: "Weißes Modell eines Containerschiffs, beladen mit Containern in Schwarz, Rot, Gold und Grün",
     intro: {
       title: "Cloody: direkter Handel mit Afrika.",
       text:
         "Cloody soll Käufer in Europa direkt mit Anbietern in Afrika verbinden, für Privatpersonen und Unternehmen. Die Plattform soll die Zollabwicklung übernehmen und Sendungen bündeln, damit Handel einfacher und günstiger wird.",
-      facts: [
-        { value: "54", label: "Länder in Afrika" },
-        { value: "1,4 Mrd.", label: "Menschen auf dem Kontinent" },
-        { value: "3", label: "Zielgruppen: Privatkunden, Unternehmen, Anbieter" }
-      ]
+      statement: ["Afrika hat 54 Länder", "und 1,4 Milliarden Menschen.", "Cloody soll den Handel", "mit ihnen einfach machen."]
     },
     vision: {
-      title: "Handel mit Afrika, so einfach wie ein Online-Einkauf.",
+      title: "So einfach wie ein Online-Einkauf.",
       text:
         "Heute scheitern viele Geschäfte an Zwischenhändlern, Zollformularen und teurem Einzelversand. Cloody soll diese Hürden aus dem Weg räumen.",
       points: [
@@ -573,13 +622,13 @@ const en: SiteContent = {
     person: "specialist on the ground",
     people: "specialists on the ground",
     alt: {
-      de: "Castle ruin above the vineyards of the Bergstrasse near Schriesheim",
-      gh: "Hands holding an opened cocoa pod on a plantation in Ghana",
-      zm: "Victoria Falls with a rainbow, seen from Zambia",
-      ug: "Kampala in evening light, spread across green hills",
-      ke: "Giraffes in Nairobi National Park in front of the Nairobi skyline",
-      et: "Ripe coffee cherries in the Ethiopian highlands",
-      tz: "Elephants in the savanna below Mount Kilimanjaro"
+      de: "White model of the Bergstrasse near Schriesheim: a castle ruin above vineyards",
+      gh: "White model of a cocoa farm in Ghana: cocoa trees with pods, a drying table and a small house",
+      zm: "White model of Victoria Falls in Zambia with the arch bridge across the gorge",
+      ug: "White model of Kampala: houses on rounded hills, a crowned crane in front",
+      ke: "White model of Nairobi: two giraffes and an acacia in front of the city towers",
+      et: "White model of the Ethiopian coffee highlands: terraces of coffee bushes, a coffee pot in front",
+      tz: "White model of the savanna in Tanzania: elephants and acacias below Mount Kilimanjaro"
     } as Record<CountryCode, string>
   },
   map: {
@@ -602,14 +651,66 @@ const en: SiteContent = {
         { value: 13, label: "specialists" },
         { value: 7, label: "countries" },
         { value: 32, label: "clients and partners" }
+      ],
+      switchLabel: "Choose a line of business",
+      places: {
+        africa: {
+          place: "Africa",
+          field: "Market entry",
+          caption: "Cape Town, Table Mountain",
+          alt: "Table Mountain above Cape Town, with golden savanna in evening light in front",
+          sceneAlt:
+            "White architectural model: a German company with a solar roof below a castle ruin on the left, Table Mountain, acacias and a harbour on the right. Ribbons in black, red, gold and green weave together in between."
+        },
+        germany: {
+          place: "Germany",
+          field: "Energy consulting",
+          caption: "Frankfurt am Main",
+          alt: "The Frankfurt am Main skyline at sunset above the river"
+        }
+      },
+      more: { href: "/leistungen", label: "See all services" },
+      pauseScene: "Pause image motion",
+      playScene: "Resume image motion"
+    },
+    index: {
+      label: "Chapters on this page",
+      items: [
+        { href: "#afrika", label: "Africa", text: "Market entry" },
+        { href: "#energie", label: "Energy", text: "Consulting in Germany" },
+        { href: "#team", label: "Team", text: "13 people, 7 countries" },
+        { href: "#cloody", label: "Cloody", text: "Trade platform" },
+        { href: "#kontakt", label: "Contact", text: "First call" }
       ]
     },
+    intro: {
+      title: "One firm.\nTwo fields.",
+      lead: "SIFK is a consultancy from Schriesheim near Heidelberg.",
+      africaClaim: "We open markets in Africa.",
+      germanyClaim: "We save energy in Germany.",
+      note: "13 specialists in 7 countries. 32 clients and partners.",
+      germany: "Germany",
+      africa: "Africa",
+      germanyAlt: "White model of the Bergstrasse: a castle ruin above vineyards, a ribbon in black, red and gold winding up the hill",
+      africaAlt: "White model of the savanna in Tanzania: elephants and acacias in front of Kilimanjaro, a green ribbon running to the mountain"
+    },
+    figure: {
+      claim: "One team in seven countries.",
+      unit: "specialists"
+    },
+    weave: {
+      link: { href: "/ueber-uns", label: "About SIFK" },
+      germany: "Horizontal: Germany",
+      africa: "Vertical: Africa",
+      markAlt: "The SIFK mark: the African continent woven from horizontal and vertical ribbons"
+    },
+    closeWord: "Contact",
     references: {
       title: "Clients and partners who work with us.",
       ariaLabel: "Client and partner logos"
     },
     africa: {
-      title: "Market entry in Africa. With people on the ground.",
+      title: "Market entry in Africa, with people on site.",
       text:
         "We test your target market, find reliable partners and support your project through to delivery. Our team lives in Uganda, Kenya, Tanzania, Ghana, Ethiopia and Zambia, not in a database.",
       services: [
@@ -627,7 +728,7 @@ const en: SiteContent = {
         }
       ],
       link: { href: "/leistungen#internationale-geschaeftsentwicklung", label: "Africa services in detail" },
-      imageAlt: "A German consultant and a Kenyan business partner talking on a rooftop terrace in Nairobi"
+      imageAlt: "White model of an African harbour and market town with a crane, containers and acacias, crossed by yellow and green ribbons"
     },
     statement: {
       label: "Germany and Africa, connected by one team in Ghana, Zambia, Uganda, Kenya, Ethiopia and Tanzania"
@@ -652,7 +753,7 @@ const en: SiteContent = {
         "Guidance on suitable funding programmes"
       ],
       link: { href: "/leistungen#energieberatung-deutschland", label: "Energy services in detail" },
-      imageAlt: "Energy consultant and business owner reviewing figures on a factory roof with solar panels"
+      imageAlt: "White model of a company site with a solar roof, heat pumps and charging points"
     },
     people: {
       title: "13 people. 7 countries. One team.",
@@ -672,7 +773,6 @@ const en: SiteContent = {
     }
   },
   energyScene: {
-    toggleLabel: "Compare the building",
     before: "Today",
     after: "After our advice",
     beforeTitle: "Where does your site lose energy?",
@@ -684,12 +784,12 @@ const en: SiteContent = {
       { id: "heat", label: "Heat pumps instead of a gas boiler" },
       { id: "charge", label: "Charging points for the fleet" }
     ],
-    beforeAlt: "Mid-sized company with a production hall and office block, the roof is unused",
-    afterAlt: "The same company after modernisation with solar panels on the roof, heat pumps and charging points"
+    beforeAlt: "White model of a company with a hall and an office. Red ribbons pour out of the roof, a gate and the windows: this is where energy is lost.",
+    afterAlt: "The same company with a solar roof, heat pumps and charging points. A golden ribbon runs from the roof into the hall."
   },
   services: {
     intro: {
-      title: "What we do for you, in Africa and in Germany.",
+      title: "Services in Africa and Germany.",
       text:
         "Two lines of business, one standard: we get the facts straight, do the maths honestly and stay on board until it's done."
     },
@@ -748,7 +848,7 @@ const en: SiteContent = {
       }
     ],
     process: {
-      title: "How we work: from first call to delivery.",
+      title: "From first call to delivery.",
       steps: [
         {
           title: "First call",
@@ -775,9 +875,9 @@ const en: SiteContent = {
   },
   about: {
     intro: {
-      title: "We take German companies to Africa and help businesses in Germany save energy.",
+      title: "We connect Germany and Africa.",
       text:
-        "SIFK is a consultancy based in Schriesheim near Heidelberg. Two fields that seem to have little in common, yet need the same way of working: look closely, calculate honestly, deliver reliably."
+        "We take German companies to Africa and help businesses in Germany save energy. SIFK is a consultancy based in Schriesheim near Heidelberg. Two fields that seem to have little in common, yet need the same way of working: look closely, calculate honestly, deliver reliably."
     },
     mark: {
       title: "Our mark is a weave.",
@@ -785,6 +885,7 @@ const en: SiteContent = {
         "The horizontal threads stand for Germany, the vertical ones for Africa. Where they cross, something holds. That is how we see our work.",
       imageAlt: "The SIFK mark as a sculpture: the African continent woven from coloured ribbons"
     },
+    principlesTitle: "Three things we hold ourselves to.",
     principles: [
       {
         title: "Plain words, not slides",
@@ -823,7 +924,7 @@ const en: SiteContent = {
   },
   team: {
     intro: {
-      title: "13 people. 7 countries. One team for your project.",
+      title: "13 people. 7 countries.\nOne team.",
       text:
         "Management, energy consulting and sales are based in Schriesheim. In six African countries, specialists work who know their markets from the inside."
     },
@@ -870,7 +971,7 @@ const en: SiteContent = {
           countries: ["de"],
           location: "Germany",
           text:
-            "More than 30 years of experience in account management, acquisition and robust market analysis."
+            "More than 30 years of experience in account management, acquisition and well-founded market analysis."
         },
         {
           name: "Haulie Tembo-Schäfer",
@@ -963,7 +1064,7 @@ const en: SiteContent = {
     },
     emailTo: "Email",
     close: {
-      title: "Talk directly to the person who runs your project.",
+      title: "Straight to the right person.",
       text: "Everyone on the team can be reached by email. Or write to us and we'll connect you."
     }
   },
@@ -973,22 +1074,19 @@ const en: SiteContent = {
       text:
         "Tell us briefly what it's about. We'll reply personally, with an honest assessment and a suggestion for the next step."
     },
+    formTitle: "Contact form",
     direct: "Prefer to reach us directly?"
   },
   cloody: {
-    imageAlt: "The container port of Mombasa at sunrise with a crane and cargo ship",
+    imageAlt: "White model of a container ship loaded with containers in black, red, gold and green",
     intro: {
       title: "Cloody: direct trade with Africa.",
       text:
         "Cloody is designed to connect buyers in Europe directly with suppliers in Africa, for individuals and companies. The platform is meant to handle customs and bundle shipments, so trade becomes simpler and cheaper.",
-      facts: [
-        { value: "54", label: "countries in Africa" },
-        { value: "1.4 bn", label: "people on the continent" },
-        { value: "3", label: "audiences: consumers, companies, suppliers" }
-      ]
+      statement: ["Africa has 54 countries", "and 1.4 billion people.", "Cloody is meant to make", "trading with them simple."]
     },
     vision: {
-      title: "Trade with Africa, as simple as shopping online.",
+      title: "As simple as shopping online.",
       text:
         "Today, many deals fail because of middlemen, customs forms and expensive single shipments. Cloody aims to clear these hurdles away.",
       points: [

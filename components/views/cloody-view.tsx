@@ -1,109 +1,128 @@
-import Image from "next/image";
-
-import { CloseBand } from "@/components/page-parts";
-import { Reveal } from "@/components/reveal";
-import { WovenImage } from "@/components/woven-image";
+import { CtaBand, Statement } from "@/components/page-parts";
+import { ShipScene } from "@/components/ship-scene";
 import { getContent } from "@/lib/content";
-import type { Locale } from "@/lib/locale-routing";
+import { localizePath, type Locale } from "@/lib/locale-routing";
+
+// Four promises, four ribbons side by side.
+const RIBBON_FIELDS = ["f-ink", "f-gold", "f-lime", "f-laub"];
+const TRIO_FIELDS = ["f-white", "f-ink", "f-gold"];
 
 export function CloodyView({ locale }: { locale: Locale }) {
-  const { cloody, common, places } = getContent(locale);
+  const { cloody, common, home, places } = getContent(locale);
+  // Where each step happens: at the grower, in the harbour, at the buyer's door.
+  const stepArt = [
+    { src: "/world/gh.webp", alt: places.alt.gh, field: "f-ink", width: 900, height: 900 },
+    { src: "/world/africa.webp", alt: home.africa.imageAlt, field: "f-glut", width: 1600, height: 1200 },
+    { src: "/world/de.webp", alt: places.alt.de, field: "f-laub", width: 900, height: 900 }
+  ];
 
   return (
     <>
-      <section className="cloody-hero" data-tone="dark">
-        <div className="cloody-hero-media">
-          <Image alt={cloody.imageAlt} fill priority sizes="100vw" src="/brand/cloody-port.webp" />
-        </div>
-        <div className="shell cloody-hero-inner">
-          <h1 className="display-1">{cloody.intro.title}</h1>
-          <p className="status-pill status-pill-dark">
-            <span aria-hidden="true" />
-            {common.inDevelopment}
-          </p>
-          <p className="lead">{cloody.intro.text}</p>
-          <dl className="fact-row">
-            {cloody.intro.facts.map((fact) => (
-              <div key={fact.label}>
-                <dt>{fact.label}</dt>
-                <dd>{fact.value}</dd>
-              </div>
-            ))}
-          </dl>
+      <ShipScene alt={cloody.imageAlt} as="h1" tag={common.inDevelopment} text={cloody.intro.text} title={cloody.intro.title} top />
+
+      <section className="stair is-solo sheet field f-gold">
+        <div className="shell stair-in">
+          <Statement lines={cloody.intro.statement} />
         </div>
       </section>
 
-      <section className="section">
-        <div className="shell vision-grid">
-          <div>
-            <h2 className="display-2">{cloody.vision.title}</h2>
-            <p className="lead">{cloody.vision.text}</p>
-            <WovenImage
-              alt={places.alt.gh}
-              className="vision-photo"
-              sizes="(max-width: 960px) 100vw, 45vw"
-              src="/brand/places/gh.webp"
-            />
-          </div>
-          <dl className="vision-points">
-            {cloody.vision.points.map((point, index) => (
-              <Reveal index={index} key={point.title}>
-                <dt>{point.title}</dt>
-                <dd>{point.text}</dd>
-              </Reveal>
-            ))}
-          </dl>
-        </div>
-      </section>
-
-      <section className="concept-band" data-tone="dark">
+      <section className="band has-ribbons sheet field f-plaster">
         <div className="shell">
-          <h2 className="concept-title">{cloody.concept.title}</h2>
-          <p className="lead">{cloody.concept.text}</p>
-          <ul className="concept-pillars">
-            {cloody.concept.pillars.map((pillar, index) => (
-              <Reveal as="li" index={index} key={pillar.title}>
-                <span aria-hidden="true" className="thread" />
+          <div className="band-head">
+            <h2 className="mega" data-split>
+              {cloody.vision.title}
+            </h2>
+            <p className="lead" data-rv>
+              {cloody.vision.text}
+            </p>
+          </div>
+        </div>
+        <ul className="ribbons" data-rv="kids">
+          {cloody.vision.points.map((point, index) => (
+            <li className={`ribbon ${RIBBON_FIELDS[index % RIBBON_FIELDS.length]}`} key={point.title}>
+              <h3>{point.title}</h3>
+              <p>{point.text}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="band sheet field f-glut">
+        <div className="shell">
+          <div className="band-head">
+            <h2 className="mega" data-split lang="en">
+              {cloody.concept.title}
+            </h2>
+            <p className="lead" data-rv>
+              {cloody.concept.text}
+            </p>
+          </div>
+          <ul className="ledger is-wide" data-rv="kids">
+            {cloody.concept.pillars.map((pillar) => (
+              <li key={pillar.title}>
                 <h3>{pillar.title}</h3>
                 <p>{pillar.text}</p>
-              </Reveal>
+              </li>
             ))}
           </ul>
         </div>
       </section>
 
-      <section className="section">
+      <section className="process sheet field f-white">
         <div className="shell">
-          <h2 className="display-2 section-title">{cloody.how.title}</h2>
-          <ol className="process process-three">
-            {cloody.how.steps.map((step, index) => (
-              <Reveal as="li" className="process-step" index={index} key={step.title}>
-                <span aria-hidden="true" className="process-index">
-                  {index + 1}
-                </span>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-              </Reveal>
-            ))}
-          </ol>
+          <h2 className="display" data-split>
+            {cloody.how.title}
+          </h2>
+          <div className="steps-wrap">
+            <div aria-hidden="true" className="steps-bar">
+              <i data-grow />
+            </div>
+            <ol className="steps is-three" data-rv="kids">
+              {cloody.how.steps.map((step, index) => (
+                <li className="step" key={step.title}>
+                  <div className={`step-pic ${stepArt[index].field}`}>
+                    <img
+                      alt={stepArt[index].alt}
+                      decoding="async"
+                      height={stepArt[index].height}
+                      loading="lazy"
+                      src={stepArt[index].src}
+                      width={stepArt[index].width}
+                    />
+                  </div>
+                  <h3 className="display">{step.title}</h3>
+                  <p className="copy">{step.text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </section>
 
-      <section className="section section-tight">
+      <section className="band sheet field f-lime">
         <div className="shell">
-          <h2 className="display-2 section-title">{cloody.audience.title}</h2>
-          <ul className="audience">
+          <div className="band-head">
+            <h2 className="display" data-split>
+              {cloody.audience.title}
+            </h2>
+          </div>
+          <ul className="trio" data-rv="kids">
             {cloody.audience.groups.map((group, index) => (
-              <Reveal as="li" index={index} key={group.title}>
-                <h3 className="display-4">{group.title}</h3>
+              <li className={`tile ${TRIO_FIELDS[index % TRIO_FIELDS.length]}`} key={group.title}>
+                <h3>{group.title}</h3>
                 <p>{group.text}</p>
-              </Reveal>
+              </li>
             ))}
           </ul>
         </div>
       </section>
 
-      <CloseBand locale={locale} text={cloody.close.text} title={cloody.close.title} />
+      <CtaBand
+        href={localizePath(common.contact.href, locale)}
+        text={cloody.close.text}
+        title={cloody.close.title}
+        word={home.closeWord}
+      />
     </>
   );
 }

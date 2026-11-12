@@ -1,124 +1,153 @@
-import Image from "next/image";
 import Link from "next/link";
 
-import { EnergyScene } from "@/components/energy-scene";
+import { EnergyFilm } from "@/components/energy-film";
 import { ArrowIcon } from "@/components/icons";
-import { CloseBand } from "@/components/page-parts";
-import { Reveal } from "@/components/reveal";
+import { CtaBand, PageHero } from "@/components/page-parts";
 import { StructuredData } from "@/components/structured-data";
-import { WeaveBand } from "@/components/weave-band";
-import { WovenImage } from "@/components/woven-image";
 import { getContent } from "@/lib/content";
-import type { Locale } from "@/lib/locale-routing";
+import { localizePath, type Locale } from "@/lib/locale-routing";
 import { serviceStructuredData } from "@/lib/structured-data";
 
 export function ServicesView({ locale }: { locale: Locale }) {
-  const { services, home } = getContent(locale);
+  const { services, home, common, energyScene } = getContent(locale);
   const [africa, energy] = services.fields;
-  const panels = [
-    { field: africa, image: "/brand/africa-business.webp", alt: home.africa.imageAlt, tone: "africa" },
-    { field: energy, image: "/brand/energy-team.webp", alt: home.energy.imageAlt, tone: "energy" }
-  ];
 
   return (
     <>
       <StructuredData data={serviceStructuredData(locale)} />
 
-      <section className="split-hero" data-tone="dark">
-        <div className="shell split-hero-head">
-          <h1 className="display-1">{services.intro.title}</h1>
-          <p className="lead">{services.intro.text}</p>
-        </div>
-        <nav aria-label={locale === "de" ? "Geschäftsfelder" : "Lines of business"} className="split-panels">
-          {panels.map(({ field, image, alt, tone }) => (
-            <Link className={`split-panel split-panel-${tone}`} href={`#${field.id}`} key={field.id}>
-              <Image alt={alt} fill priority sizes="(max-width: 720px) 100vw, 60vw" src={image} />
-              <span aria-hidden="true" className="split-panel-shade" />
-              <span className="split-panel-copy">
-                <span className="split-panel-label">{field.label}</span>
-                <span className="split-panel-title">{field.title}</span>
-                <span className="split-panel-lead">{field.lead}</span>
+      <PageHero
+        field="f-gold"
+        side={
+          <nav aria-label={services.intro.title} className="doors" data-rv="kids">
+            <a className="door f-glut" href={`#${africa.id}`}>
+              <img alt="" height={900} src="/world/tz.webp" width={900} />
+              <span>
+                {africa.label}
+                <ArrowIcon />
               </span>
-              <ArrowIcon className="split-panel-arrow" />
+            </a>
+            <a className="door f-laub" href={`#${energy.id}`}>
+              <img alt="" height={900} src="/world/de.webp" width={900} />
+              <span>
+                {energy.label}
+                <ArrowIcon />
+              </span>
+            </a>
+          </nav>
+        }
+        text={services.intro.text}
+        title={services.intro.title}
+      />
+
+      <section className="chapter sheet field f-glut" id={africa.id}>
+        <div className="shell">
+          <h2 className="mega is-long chapter-head" data-split>
+            {africa.title}
+          </h2>
+          <div className="grid chapter-body">
+            <div className="chapter-copy">
+              <p className="lead" data-rv>
+                {africa.lead}
+              </p>
+              <p className="copy" data-rv>
+                {africa.text}
+              </p>
+              <ul className="ledger" data-rv="kids">
+                {africa.services.map((service) => (
+                  <li key={service.title}>
+                    <h3>{service.title}</h3>
+                    <p>{service.text}</p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="chapter-art">
+              <img
+                alt={home.africa.imageAlt}
+                data-parallax="5"
+                decoding="async"
+                height={1200}
+                loading="lazy"
+                src="/world/africa.webp"
+                width={1600}
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="chapter sheet field f-laub" id={energy.id}>
+        <div className="shell">
+          <h2 className="mega is-long chapter-head" data-split>
+            {energy.title}
+          </h2>
+          <div className="grid film-intro">
+            <div>
+              <p className="lead" data-rv>
+                {energy.lead}
+              </p>
+              <p className="copy" data-rv>
+                {energy.text}
+              </p>
+            </div>
+            <ul className="ledger" data-rv="kids">
+              {energy.services.map((service) => (
+                <li key={service.title}>
+                  <h3>{service.title}</h3>
+                  <p>{service.text}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+        <EnergyFilm
+          after={energyScene.after}
+          afterAlt={energyScene.afterAlt}
+          afterText={energyScene.afterText}
+          afterTitle={energyScene.afterTitle}
+          before={energyScene.before}
+          beforeAlt={energyScene.beforeAlt}
+          beforeText={energyScene.beforeText}
+          beforeTitle={energyScene.beforeTitle}
+          hotspots={energyScene.hotspots}
+        />
+      </section>
+
+      <section className="process sheet field f-plaster">
+        <div className="shell">
+          <h2 className="display" data-split>
+            {services.process.title}
+          </h2>
+          <div className="steps-wrap">
+            <div aria-hidden="true" className="steps-bar">
+              <i data-grow />
+            </div>
+            <ol className="steps" data-rv="kids">
+              {services.process.steps.map((step) => (
+                <li className="step" key={step.title}>
+                  <h3 className="display">{step.title}</h3>
+                  <p className="copy">{step.text}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
+          <p className="process-foot" data-rv>
+            <Link className="link" href={localizePath(common.firstCall.href, locale)}>
+              {common.firstCall.label}
+              <ArrowIcon />
             </Link>
-          ))}
-        </nav>
-        <WeaveBand className="page-hero-band" />
-      </section>
-
-      <section className="field-block field-block-africa" id={africa.id}>
-        <div className="shell field-grid">
-          <div className="field-copy">
-            <p className="field-label">{africa.label}</p>
-            <h2 className="display-2">{africa.title}</h2>
-            <p className="field-lead">{africa.lead}</p>
-            <p>{africa.text}</p>
-          </div>
-          <WovenImage
-            alt={home.africa.imageAlt}
-            className="field-photo"
-            sizes="(max-width: 960px) 100vw, 45vw"
-            src="/brand/africa-business.webp"
-          />
-        </div>
-        <div className="shell">
-          <ol className="service-rows">
-            {africa.services.map((service, index) => (
-              <Reveal as="li" index={index} key={service.title}>
-                <h3>{service.title}</h3>
-                <p>{service.text}</p>
-              </Reveal>
-            ))}
-          </ol>
+          </p>
         </div>
       </section>
 
-      <section className="field-block field-block-energy" data-tone="dark" id={energy.id}>
-        <div className="shell field-grid">
-          <div className="field-copy">
-            <p className="field-label">{energy.label}</p>
-            <h2 className="display-2">{energy.title}</h2>
-            <p className="field-lead">{energy.lead}</p>
-            <p>{energy.text}</p>
-          </div>
-          <WovenImage
-            alt={home.energy.imageAlt}
-            className="field-photo"
-            sizes="(max-width: 960px) 100vw, 45vw"
-            src="/brand/energy-team.webp"
-          />
-        </div>
-        <div className="shell">
-          <EnergyScene locale={locale} />
-          <ol className="service-rows">
-            {energy.services.map((service, index) => (
-              <Reveal as="li" index={index} key={service.title}>
-                <h3>{service.title}</h3>
-                <p>{service.text}</p>
-              </Reveal>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <section className="section process-section">
-        <div className="shell">
-          <h2 className="display-2 section-title">{services.process.title}</h2>
-          <ol className="process process-woven">
-            {services.process.steps.map((step, index) => (
-              <Reveal as="li" className="process-step" index={index} key={step.title}>
-                <span aria-hidden="true" className="process-index">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-              </Reveal>
-            ))}
-          </ol>
-        </div>
-      </section>
-
-      <CloseBand locale={locale} text={services.close.text} title={services.close.title} />
+      <CtaBand
+        field="f-ink"
+        href={localizePath(common.firstCall.href, locale)}
+        text={services.close.text}
+        title={services.close.title}
+        word={home.closeWord}
+      />
     </>
   );
 }

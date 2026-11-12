@@ -1,25 +1,31 @@
 import type { Metadata, Viewport } from "next";
-import { Archivo } from "next/font/google";
+import { Barlow, Barlow_Condensed } from "next/font/google";
 
 import { HashScrollController } from "@/components/hash-scroll-controller";
 import { LocaleDocumentController } from "@/components/locale-document-controller";
+import { MotionRoot } from "@/components/motion-root";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { SmoothScroll } from "@/components/smooth-scroll";
 import { StructuredData } from "@/components/structured-data";
-import { ThemeColorController } from "@/components/theme-color-controller";
 import { getContent } from "@/lib/content";
 import { siteUrl } from "@/lib/seo";
 import { companyStructuredData } from "@/lib/structured-data";
 
 import "./globals.css";
 
-// One variable family carries the whole voice: wide for headlines,
-// normal width for reading, condensed for labels and data.
-const brandFont = Archivo({
+// DIN-style family: the condensed cut sets headlines (long German compounds
+// stay on two lines), the regular cut sets everything that is read.
+const textFont = Barlow({
   subsets: ["latin"],
-  variable: "--font-archivo",
-  axes: ["wdth"],
+  weight: ["400", "500", "600"],
+  variable: "--font-barlow",
+  display: "swap"
+});
+
+const displayFont = Barlow_Condensed({
+  subsets: ["latin"],
+  weight: ["600", "700"],
+  variable: "--font-barlow-condensed",
   display: "swap"
 });
 
@@ -55,8 +61,12 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#F6F5F1"
+  themeColor: "#ECEBE9"
 };
+
+// Runs before paint: marks the document as scripted, switches the stacked
+// chapters on for wide screens, and guarantees content shows if motion never starts.
+const bootScript = `(function(){var d=document.documentElement;d.classList.add("js");try{if(matchMedia("(min-width: 1089px) and (prefers-reduced-motion: no-preference)").matches){d.classList.add("stack")}}catch(e){}setTimeout(function(){d.classList.add("motion-ready")},3500)})();`;
 
 export default function RootLayout({
   children
@@ -64,7 +74,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className={brandFont.variable} lang="de">
+    <html className={`${textFont.variable} ${displayFont.variable}`} lang="de" suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: bootScript }} />
+      </head>
       <body>
         <a className="skip-link" href="#main">
           Zum Inhalt / Skip to content
@@ -72,8 +85,7 @@ export default function RootLayout({
         <StructuredData data={companyStructuredData} />
         <LocaleDocumentController />
         <HashScrollController />
-        <SmoothScroll />
-        <ThemeColorController />
+        <MotionRoot />
         <SiteHeader />
         <main id="main" tabIndex={-1}>
           {children}

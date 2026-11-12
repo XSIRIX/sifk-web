@@ -1,144 +1,248 @@
-import Image from "next/image";
-
-import { BridgeFilm } from "@/components/bridge-film";
-import { CountryRail } from "@/components/country-rail";
-import { EnergyScene } from "@/components/energy-scene";
-import { Monogram } from "@/components/monogram";
-import { CloseBand, TextLink } from "@/components/page-parts";
+import Link from "next/link";
+import { CountryTrack, type CountryPlace } from "@/components/country-track";
+import { EnergyFilm } from "@/components/energy-film";
+import { HeroScene } from "@/components/hero-scene";
+import { ArrowIcon } from "@/components/icons";
+import { CornerArrow, CtaBand } from "@/components/page-parts";
 import { ReferenceMarquee } from "@/components/reference-marquee";
-import { Reveal } from "@/components/reveal";
-import { WeaveBand } from "@/components/weave-band";
-import { WeaveHero } from "@/components/weave-hero";
-import { WovenImage } from "@/components/woven-image";
-import { WovenStatement } from "@/components/woven-statement";
-import { getContent } from "@/lib/content";
-import type { Locale } from "@/lib/locale-routing";
+import { ShipScene } from "@/components/ship-scene";
+import { WeaveScene } from "@/components/weave-scene";
+import { getContent, type CountryCode } from "@/lib/content";
+import { localizePath, type Locale } from "@/lib/locale-routing";
+
+const PLACE_ORDER: CountryCode[] = ["de", "gh", "zm", "ug", "ke", "et", "tz"];
+
+// The ground each model stands on. Picked so its own ribbon stays visible.
+export const PLACE_FIELD: Record<CountryCode, string> = {
+  de: "f-laub",
+  gh: "f-ink",
+  zm: "f-glut",
+  ug: "f-gold",
+  ke: "f-lime",
+  et: "f-laub",
+  tz: "f-ink"
+};
 
 export function HomeView({ locale }: { locale: Locale }) {
-  const { home, common, team, cloody } = getContent(locale);
-  const people = [...team.leadership.members, ...team.africaDesk.members, ...team.onSite.members];
+  const { home, common, countries, places, team, energyScene, cloody } = getContent(locale);
+  const to = (href: string) => localizePath(href, locale);
+
+  // Everyone is counted once, in the country they work from first.
+  const everyone = [...team.leadership.members, ...team.africaDesk.members, ...team.onSite.members];
+  const byCountry = new Map<CountryCode, string[]>();
+  for (const member of everyone) {
+    const code = member.countries[0];
+    byCountry.set(code, [...(byCountry.get(code) ?? []), member.name]);
+  }
+
+  const trackPlaces: CountryPlace[] = PLACE_ORDER.map((code) => {
+    const people = byCountry.get(code) ?? [];
+    return {
+      code,
+      name: countries[code],
+      alt: places.alt[code],
+      label: code === "de" ? places.hq : people.length === 1 ? places.person : places.people,
+      people,
+      field: PLACE_FIELD[code]
+    };
+  });
+
+  const tally = [...byCountry.entries()].sort((a, b) => b[1].length - a[1].length);
 
   return (
     <>
-      <WeaveHero locale={locale} />
+      <HeroScene
+        index={home.index.items}
+        indexLabel={home.index.label}
+        pauseLabel={common.pauseVideo}
+        playLabel={common.playVideo}
+        primary={{ href: to(common.firstCall.href), label: common.firstCall.label }}
+        sceneAlt={home.hero.places.africa.sceneAlt}
+        secondary={{ href: to(home.hero.more.href), label: home.hero.more.label }}
+        text={home.hero.text}
+        title={home.hero.title}
+      />
 
       <ReferenceMarquee
         ariaLabel={home.references.ariaLabel}
-        pauseLabel={common.pauseLogos}
-        playLabel={common.playLogos}
         title={home.references.title}
       />
 
-      <BridgeFilm locale={locale} />
-
-      <WovenStatement locale={locale} />
-
-      <section className="chapter chapter-africa" data-tone="dark" id="afrika">
-        <div className="shell chapter-head">
-          <h2 className="display-2">{home.africa.title}</h2>
-          <p className="lead">{home.africa.text}</p>
-        </div>
-
-        <CountryRail locale={locale} />
-
-        <div className="shell chapter-split">
-          <WovenImage
-            alt={home.africa.imageAlt}
-            className="chapter-photo"
-            sizes="(max-width: 960px) 100vw, 50vw"
-            src="/brand/africa-business.webp"
-          />
-
-          <div className="chapter-services">
-            <ol className="numbered-list">
-              {home.africa.services.map((service, index) => (
-                <Reveal as="li" index={index} key={service.title}>
-                  <h3>{service.title}</h3>
-                  <p>{service.text}</p>
-                </Reveal>
-              ))}
-            </ol>
-            <TextLink href={home.africa.link.href} locale={locale}>
-              {home.africa.link.label}
-            </TextLink>
+      <section className="duo sheet field f-gold">
+        <div className="shell duo-in">
+          <div className="duo-head">
+            <div className="duo-say">
+              <h2 className="display" data-split>
+                {home.intro.title.split("\n").map((line) => (
+                  <span key={line}>{line} </span>
+                ))}
+              </h2>
+              <p className="lead" data-rv>
+                {home.intro.lead}
+              </p>
+            </div>
+            <p className="duo-note">{home.intro.note}</p>
+          </div>
+          <div className="duo-doors" data-rv="kids">
+            <a className="duo-door f-glut" href="#afrika">
+              <span className="duo-top">
+                {home.intro.africa}
+                <CornerArrow />
+              </span>
+              <span className="duo-pic">
+                <img alt={home.intro.africaAlt} decoding="async" height={900} loading="lazy" src="/world/tz.webp" width={900} />
+              </span>
+              <strong>{home.intro.africaClaim}</strong>
+            </a>
+            <a className="duo-door f-laub" href="#energie">
+              <span className="duo-top">
+                {home.intro.germany}
+                <CornerArrow />
+              </span>
+              <span className="duo-pic">
+                <img alt={home.intro.germanyAlt} decoding="async" height={900} loading="lazy" src="/world/de.webp" width={900} />
+              </span>
+              <strong>{home.intro.germanyClaim}</strong>
+            </a>
           </div>
         </div>
       </section>
 
-      <WeaveBand className="seam seam-africa" />
-
-      <section className="chapter chapter-energy" data-tone="dark" id="energie">
-        <div className="shell chapter-head">
-          <h2 className="display-2">{home.energy.title}</h2>
-          <p className="lead">{home.energy.text}</p>
-        </div>
-
+      <section className="chapter sheet field f-glut" id="afrika">
         <div className="shell">
-          <EnergyScene locale={locale} />
+          <h2 className="mega chapter-head" data-split>
+            {home.africa.title}
+          </h2>
+          <div className="grid chapter-body">
+            <div className="chapter-copy">
+              <p className="lead" data-rv>
+                {home.africa.text}
+              </p>
+              <ul className="ledger" data-rv="kids">
+                {home.africa.services.map((service) => (
+                  <li key={service.title}>
+                    <h3>{service.title}</h3>
+                    <p>{service.text}</p>
+                  </li>
+                ))}
+              </ul>
+              <Link className="btn" href={to(home.africa.link.href)}>
+                {home.africa.link.label}
+                <ArrowIcon />
+              </Link>
+            </div>
+            <div className="chapter-art">
+              <img
+                alt={home.africa.imageAlt}
+                data-parallax="5"
+                decoding="async"
+                height={1200}
+                loading="lazy"
+                src="/world/africa.webp"
+                width={1600}
+              />
+            </div>
+          </div>
         </div>
+      </section>
 
-        <div className="shell chapter-split chapter-split-reverse">
-          <div className="chapter-services">
-            <ul className="check-list check-list-large">
-              {home.energy.deliverables.map((item, index) => (
-                <Reveal as="li" index={index} key={item}>
-                  {item}
-                </Reveal>
+      <CountryTrack places={trackPlaces} text={places.text} title={places.title} />
+
+      <section className="chapter sheet field f-laub" id="energie">
+        <div className="shell">
+          <h2 className="mega is-long chapter-head" data-split>
+            {home.energy.title}
+          </h2>
+          <div className="grid film-intro">
+            <div>
+              <p className="lead" data-rv>
+                {home.energy.text}
+              </p>
+            </div>
+            <div>
+              <ul className="ticks" data-rv="kids">
+                {home.energy.deliverables.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+              <Link className="btn" href={to(home.energy.link.href)}>
+                {home.energy.link.label}
+                <ArrowIcon />
+              </Link>
+            </div>
+          </div>
+        </div>
+        <EnergyFilm
+          after={energyScene.after}
+          afterAlt={energyScene.afterAlt}
+          afterText={energyScene.afterText}
+          afterTitle={energyScene.afterTitle}
+          before={energyScene.before}
+          beforeAlt={energyScene.beforeAlt}
+          beforeText={energyScene.beforeText}
+          beforeTitle={energyScene.beforeTitle}
+          hotspots={energyScene.hotspots}
+        />
+      </section>
+
+      <WeaveScene africa={home.weave.africa} germany={home.weave.germany} markAlt={home.weave.markAlt}>
+        <h2 className="display" data-split>
+          {home.bridge.statement}
+        </h2>
+        <Link className="link" href={to(home.weave.link.href)}>
+          {home.weave.link.label}
+          <ArrowIcon />
+        </Link>
+      </WeaveScene>
+
+      <section className="figure sheet field f-lime" id="team">
+        <div className="shell figure-in">
+          <h2 className="display figure-claim" data-split>
+            {home.figure.claim}
+          </h2>
+          <div className="figure-num">
+            <b data-count={everyone.length}>{everyone.length}</b>
+            <p className="title">{home.figure.unit}</p>
+          </div>
+          <div className="figure-list">
+            <ul className="tally" data-rv="kids">
+              {tally.map(([code, names]) => (
+                <li key={code}>
+                  <span className="tally-name">
+                    {countries[code]}
+                    <img alt="" className="flag" decoding="async" height={512} loading="lazy" src={`/flags/${code}.svg`} width={512} />
+                  </span>
+                  <span>{names.length}</span>
+                </li>
               ))}
             </ul>
-            <TextLink href={home.energy.link.href} locale={locale}>
-              {home.energy.link.label}
-            </TextLink>
-          </div>
-          <WovenImage
-            alt={home.energy.imageAlt}
-            className="chapter-photo"
-            sizes="(max-width: 960px) 100vw, 50vw"
-            src="/brand/energy-team.webp"
-          />
-        </div>
-      </section>
-
-      <section className="section people">
-        <div className="shell people-grid">
-          <div className="people-copy">
-            <h2 className="display-2">{home.people.title}</h2>
-            <p className="lead">{home.people.text}</p>
-            <TextLink href={home.people.link.href} locale={locale}>
+            <p className="copy" data-rv>
+              {home.people.text}
+            </p>
+            <Link className="btn" href={to(home.people.link.href)}>
               {home.people.link.label}
-            </TextLink>
+              <ArrowIcon />
+            </Link>
           </div>
-          <ul className="people-wall">
-            {people.map((person, index) => (
-              <Reveal as="li" className="people-wall-item" index={index % 4} key={person.name}>
-                <Monogram countries={person.countries} name={person.name} />
-                <span className="people-wall-name">{person.name}</span>
-                <span className="people-wall-place">{person.location}</span>
-              </Reveal>
-            ))}
-          </ul>
         </div>
       </section>
 
-      <section className="cloody-teaser" data-tone="dark">
-        <div className="cloody-teaser-media">
-          <Image alt={cloody.imageAlt} fill sizes="100vw" src="/brand/cloody-port.webp" />
-        </div>
-        <div aria-hidden="true" className="cloody-teaser-shade" />
-        <div className="shell cloody-teaser-inner">
-          <p className="status-pill status-pill-dark">
-            <span aria-hidden="true" />
-            {common.inDevelopment}
-          </p>
-          <h2 className="display-2">{home.cloody.title}</h2>
-          <p className="lead">{home.cloody.text}</p>
-          <TextLink href={home.cloody.link.href} locale={locale}>
-            {home.cloody.link.label}
-          </TextLink>
-        </div>
-      </section>
+      <ShipScene
+        alt={cloody.imageAlt}
+        id="cloody"
+        link={{ href: to(home.cloody.link.href), label: home.cloody.link.label }}
+        tag={common.inDevelopment}
+        text={home.cloody.text}
+        title={home.cloody.title}
+      />
 
-      <CloseBand locale={locale} text={home.close.text} title={home.close.title} />
+      <CtaBand
+        href={to(common.firstCall.href)}
+        id="kontakt"
+        text={home.close.text}
+        title={home.close.title}
+        word={home.closeWord}
+      />
     </>
   );
 }
