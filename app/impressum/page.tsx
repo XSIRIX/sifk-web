@@ -3,10 +3,9 @@ export const metadata = createPageMetadata("/impressum", "de");
 
 export default function LegalNoticePage() {
   return (
-    <section className="page-intro page-single">
+    <section className="legal">
       <div className="shell legal-copy">
-        <p className="eyebrow">Impressum</p>
-        <h1>Angaben gemäß § 5 TMG</h1>
+        <h1 className="display-2">Angaben gemäß § 5 DDG</h1>
 
         <h2>Unternehmensangaben</h2>
         <p>
@@ -29,7 +28,7 @@ export default function LegalNoticePage() {
         </p>
         <p>Registergericht: Amtsgericht Mannheim<br />Handelsregisternummer: HRB 750493</p>
 
-        <h2>Verantwortlich für den Inhalt gemäß § 55 Abs. 2 RStV</h2>
+        <h2>Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
         <p>
           Pheeraphon Karch
           <br />
@@ -43,8 +42,8 @@ export default function LegalNoticePage() {
         <p>
           Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit,
           Vollständigkeit und Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen.
-          Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten
-          nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
+          Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten
+          nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als
           Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde
           Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige
           Tätigkeit hinweisen.

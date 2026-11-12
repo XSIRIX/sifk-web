@@ -124,7 +124,9 @@ export function createPageMetadata(path: SeoPagePath, locale: Locale): Metadata 
   const { title, description } = seoPages[path][locale];
   const fullTitle = `${title} | SIFK GmbH`;
   const image = {
-    url: `${siteUrl}/logo-horizontal.png`,
+    url: `${siteUrl}/brand/og.jpg`,
+    width: 1200,
+    height: 630,
     alt: "SIFK GmbH"
   };
 

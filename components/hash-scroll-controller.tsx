@@ -4,10 +4,9 @@ import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
 function getHeaderOffset() {
-  const rootStyles = window.getComputedStyle(document.documentElement);
-  const headerOffset = Number.parseFloat(rootStyles.getPropertyValue("--header-offset"));
+  const header = document.querySelector<HTMLElement>(".site-header");
 
-  return Number.isFinite(headerOffset) ? headerOffset + 240 : 336;
+  return (header?.offsetHeight ?? 72) + 24;
 }
 
 function scrollToHashTarget() {

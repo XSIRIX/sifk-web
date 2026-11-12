@@ -1,90 +1,113 @@
 import type { Locale } from "@/lib/locale-routing";
 
-export const sharedCopy: Record<
-  Locale,
-  {
-    navigation: Array<{ href: string; label: string }>;
-    header: {
-      contactLabel: string;
-      navAriaLabel: string;
-      toggleLabel: string;
-      localeLabel: string;
+type TopicOption = { value: string; label: string };
+
+export type SharedCopy = {
+  navigation: Array<{ href: string; label: string }>;
+  header: {
+    contactLabel: string;
+    navAriaLabel: string;
+    openMenu: string;
+    closeMenu: string;
+    localeLabel: string;
+    localeAriaLabel: string;
+    homeLabel: string;
+  };
+  footer: {
+    copy: string;
+    navTitle: string;
+    contactTitle: string;
+    legalTitle: string;
+    links: Array<{ href: string; label: string }>;
+    rights: string;
+  };
+  contactForm: {
+    fields: {
+      name: string;
+      namePlaceholder: string;
+      company: string;
+      companyPlaceholder: string;
+      email: string;
+      emailPlaceholder: string;
+      topic: string;
+      message: string;
+      messagePlaceholder: string;
+      optional: string;
     };
-    footer: {
-      kicker: string;
-      copy: string;
-      links: Array<{ href: string; label: string }>;
-    };
-    contactForm: {
-      fields: {
-        name: string;
-        namePlaceholder: string;
-        company: string;
-        companyPlaceholder: string;
-        email: string;
-        emailPlaceholder: string;
-        topic: string;
-        message: string;
-        messagePlaceholder: string;
-      };
-      options: Array<{ value: string; label: string }>;
-      submit: string;
-      sending: string;
-      disclaimer: string;
-      success: string;
-      error: string;
-    };
-  }
-> = {
+    options: TopicOption[];
+    submit: string;
+    sending: string;
+    disclaimer: string;
+    privacyLink: string;
+    successTitle: string;
+    successText: string;
+    successAgain: string;
+    error: string;
+    invalidEmail: string;
+    required: string;
+  };
+};
+
+export const sharedCopy: Record<Locale, SharedCopy> = {
   de: {
     navigation: [
       { href: "/leistungen", label: "Leistungen" },
-      { href: "/unser-team", label: "Unser Team" },
+      { href: "/unser-team", label: "Team" },
       { href: "/ueber-uns", label: "Über uns" },
       { href: "/cloody", label: "Cloody" }
     ],
     header: {
       contactLabel: "Kontakt",
       navAriaLabel: "Hauptnavigation",
-      toggleLabel: "Navigation umschalten",
-      localeLabel: "ENGLISH"
+      openMenu: "Menü öffnen",
+      closeMenu: "Menü schließen",
+      localeLabel: "EN",
+      localeAriaLabel: "Switch to English",
+      homeLabel: "SIFK GmbH, zur Startseite"
     },
     footer: {
-      kicker: "SIFK GmbH",
       copy:
-        "Internationale Geschäftsentwicklung mit Fokus auf Afrika und Energieberatung für Unternehmen in Deutschland.",
+        "Markteintritt in Afrika und Energieberatung in Deutschland. Mit eigenem Team in sieben Ländern.",
+      navTitle: "Seiten",
+      contactTitle: "Kontakt",
+      legalTitle: "Rechtliches",
       links: [
-        { href: "/kontakt", label: "Kontakt" },
         { href: "/impressum", label: "Impressum" },
         { href: "/datenschutz", label: "Datenschutz" }
-      ]
+      ],
+      rights: "SIFK GmbH"
     },
     contactForm: {
       fields: {
         name: "Name",
-        namePlaceholder: "Ihr Name",
+        namePlaceholder: "Vor- und Nachname",
         company: "Unternehmen",
-        companyPlaceholder: "Organisation oder Firma",
+        companyPlaceholder: "Firma oder Organisation",
         email: "E-Mail",
         emailPlaceholder: "name@unternehmen.de",
-        topic: "Anliegen",
-        message: "Projekt oder Fragestellung",
+        topic: "Worum geht es?",
+        message: "Ihr Vorhaben",
         messagePlaceholder:
-          "Beschreiben Sie kurz Ihr Vorhaben, den Kontext und den gewünschten nächsten Schritt."
+          "Was haben Sie vor, bis wann, und wobei sollen wir helfen?",
+        optional: "optional"
       },
       options: [
-        { value: "international", label: "Internationale Geschäftsentwicklung" },
-        { value: "energie", label: "Energieberatung Deutschland" },
-        { value: "allgemein", label: "Allgemeine Anfrage" }
+        { value: "international", label: "Markteintritt Afrika" },
+        { value: "energie", label: "Energieberatung" },
+        { value: "cloody", label: "Cloody und Kooperationen" },
+        { value: "allgemein", label: "Etwas anderes" }
       ],
-      submit: "Anfrage senden",
+      submit: "Nachricht senden",
       sending: "Wird gesendet …",
-      disclaimer:
-        "Ihre Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.",
-      success:
-        "Vielen Dank für Ihre Nachricht. Wir melden uns in Kürze bei Ihnen.",
+      disclaimer: "Wir nutzen Ihre Angaben nur, um Ihre Anfrage zu beantworten.",
+      privacyLink: "Datenschutz",
+      successTitle: "Danke, Ihre Nachricht ist angekommen.",
+      successText: "Wir melden uns persönlich bei Ihnen.",
+      successAgain: "Weitere Nachricht schreiben",
       error:
-        "Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut."
+        "Die Nachricht wurde nicht gesendet. Bitte versuchen Sie es erneut oder schreiben Sie direkt an info@sifk.de.",
+      invalidEmail: "Bitte prüfen Sie die E-Mail-Adresse, zum Beispiel name@firma.de.",
+      required: "Bitte füllen Sie dieses Feld aus."
     }
   },
   en: {
@@ -92,50 +115,59 @@ export const sharedCopy: Record<
       { href: "/leistungen", label: "Services" },
       { href: "/unser-team", label: "Team" },
       { href: "/ueber-uns", label: "About" },
-      { href: "/en/cloody", label: "Cloody" }
+      { href: "/cloody", label: "Cloody" }
     ],
     header: {
       contactLabel: "Contact",
       navAriaLabel: "Main navigation",
-      toggleLabel: "Toggle navigation",
-      localeLabel: "DEUTSCH"
+      openMenu: "Open menu",
+      closeMenu: "Close menu",
+      localeLabel: "DE",
+      localeAriaLabel: "Auf Deutsch wechseln",
+      homeLabel: "SIFK GmbH, home"
     },
     footer: {
-      kicker: "SIFK GmbH",
       copy:
-        "International business development with a focus on Africa and energy consulting for companies in Germany.",
+        "Market entry in Africa and energy consulting in Germany. With our own team in seven countries.",
+      navTitle: "Pages",
+      contactTitle: "Contact",
+      legalTitle: "Legal",
       links: [
-        { href: "/kontakt", label: "Contact" },
         { href: "/impressum", label: "Legal notice" },
         { href: "/datenschutz", label: "Privacy" }
-      ]
+      ],
+      rights: "SIFK GmbH"
     },
     contactForm: {
       fields: {
         name: "Name",
-        namePlaceholder: "Your name",
+        namePlaceholder: "First and last name",
         company: "Company",
-        companyPlaceholder: "Organisation or company",
+        companyPlaceholder: "Company or organisation",
         email: "Email",
         emailPlaceholder: "name@company.com",
-        topic: "Topic",
-        message: "Project or request",
-        messagePlaceholder:
-          "Briefly describe your project, the context, and the next step you want to take."
+        topic: "What is it about?",
+        message: "Your project",
+        messagePlaceholder: "What are you planning, by when, and where should we help?",
+        optional: "optional"
       },
       options: [
-        { value: "international", label: "International business development" },
-        { value: "energie", label: "Energy consulting Germany" },
-        { value: "allgemein", label: "General inquiry" }
+        { value: "international", label: "Market entry Africa" },
+        { value: "energie", label: "Energy consulting" },
+        { value: "cloody", label: "Cloody and partnerships" },
+        { value: "allgemein", label: "Something else" }
       ],
-      submit: "Send inquiry",
+      submit: "Send message",
       sending: "Sending …",
-      disclaimer:
-        "Your data will only be used to process your inquiry.",
-      success:
-        "Thank you for your message. We will get back to you shortly.",
+      disclaimer: "We only use your details to answer your inquiry.",
+      privacyLink: "Privacy",
+      successTitle: "Thank you, your message has arrived.",
+      successText: "We'll get back to you personally.",
+      successAgain: "Write another message",
       error:
-        "Something went wrong. Please try again."
+        "Your message was not sent. Please try again or email us directly at info@sifk.de.",
+      invalidEmail: "Please check the email address, for example name@company.com.",
+      required: "Please fill in this field."
     }
   }
 };

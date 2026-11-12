@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect } from "react";
 import Lenis from "lenis";
+import { useEffect } from "react";
 
 export function SmoothScroll() {
   useEffect(() => {
@@ -9,24 +9,22 @@ export function SmoothScroll() {
       return;
     }
 
-    const lenis = new Lenis({
-      duration: 1.15,
-      smoothWheel: true,
-      syncTouch: false,
-      touchMultiplier: 1.05
+    const lenis = new Lenis({ lerp: 0.1, autoRaf: true, smoothWheel: true, syncTouch: false });
+    const root = document.documentElement;
+
+    // Freeze page scroll while the mobile menu is open.
+    const observer = new MutationObserver(() => {
+      if (root.dataset.menu === "open") {
+        lenis.stop();
+      } else {
+        lenis.start();
+      }
     });
 
-    let frame = 0;
-
-    const raf = (time: number) => {
-      lenis.raf(time);
-      frame = window.requestAnimationFrame(raf);
-    };
-
-    frame = window.requestAnimationFrame(raf);
+    observer.observe(root, { attributes: true, attributeFilter: ["data-menu"] });
 
     return () => {
-      window.cancelAnimationFrame(frame);
+      observer.disconnect();
       lenis.destroy();
     };
   }, []);

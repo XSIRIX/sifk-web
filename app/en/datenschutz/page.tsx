@@ -3,10 +3,9 @@ export const metadata = createPageMetadata("/datenschutz", "en");
 
 export default function PrivacyPageEn() {
   return (
-    <section className="page-intro page-single">
+    <section className="legal">
       <div className="shell legal-copy">
-        <p className="eyebrow">Privacy</p>
-        <h1>Privacy Policy</h1>
+        <h1 className="display-2">Privacy Policy</h1>
 
         <h2>1. Controller</h2>
         <p>The controller responsible for data processing on this website is:</p>
@@ -53,6 +52,13 @@ export default function PrivacyPageEn() {
           and in case of follow-up questions. We do not share this data without your consent. The
           legal basis is Art. 6 para. 1 lit. b GDPR.
         </p>
+        <p>
+          To deliver form messages to our inbox we use the email service Resend (Resend, Inc., USA)
+          as a processor under Art. 28 GDPR. The form details are transmitted to Resend and processed
+          there only for delivery. For the transfer to the USA we rely on appropriate safeguards under
+          Art. 44 et seq. GDPR, in particular the European Commission&apos;s standard contractual
+          clauses.
+        </p>
 
         <h2>4. Your Rights</h2>
         <p>You have the following rights with respect to your personal data:</p>
@@ -78,13 +84,14 @@ export default function PrivacyPageEn() {
 
         <h2>6. Analytics and Third-Party Services</h2>
         <p>
-          This website currently does not use any analytics tools or third-party services that
-          process personal data.
+          This website does not use analytics or tracking tools. Fonts are served from our own
+          server, not from third parties. The only third-party service is the email service for the
+          contact form named in section 3.
         </p>
 
         <h2>7. Updates to This Privacy Policy</h2>
         <p>
-          This privacy policy is currently valid (as of April 2026). Due to the further development
+          This privacy policy is currently valid (as of November 2026). Due to the further development
           of our website or changes in legal requirements, it may become necessary to update this
           privacy policy.
         </p>

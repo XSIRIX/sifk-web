@@ -3,10 +3,9 @@ export const metadata = createPageMetadata("/impressum", "en");
 
 export default function LegalNoticePageEn() {
   return (
-    <section className="page-intro page-single">
+    <section className="legal">
       <div className="shell legal-copy">
-        <p className="eyebrow">Legal Notice</p>
-        <h1>Information pursuant to § 5 TMG</h1>
+        <h1 className="display-2">Information pursuant to § 5 DDG</h1>
 
         <h2>Company Information</h2>
         <p>
@@ -29,7 +28,7 @@ export default function LegalNoticePageEn() {
         </p>
         <p>Register Court: Amtsgericht Mannheim<br />Commercial Register: HRB 750493</p>
 
-        <h2>Responsible for Content (§ 55 para. 2 RStV)</h2>
+        <h2>Responsible for Content (§ 18 para. 2 MStV)</h2>
         <p>
           Pheeraphon Karch
           <br />
@@ -43,8 +42,8 @@ export default function LegalNoticePageEn() {
         <p>
           The contents of our pages have been created with the utmost care. However, we cannot
           guarantee the accuracy, completeness, or timeliness of the content. As a service provider,
-          we are responsible for our own content on these pages in accordance with § 7 para. 1 TMG.
-          According to §§ 8 to 10 TMG, however, we are not obligated to monitor transmitted or
+          we are responsible for our own content on these pages in accordance with § 7 para. 1 DDG.
+          According to §§ 8 to 10 DDG, however, we are not obligated to monitor transmitted or
           stored third-party information or to investigate circumstances indicating illegal activity.
         </p>
 

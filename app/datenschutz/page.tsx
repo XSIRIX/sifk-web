@@ -3,10 +3,9 @@ export const metadata = createPageMetadata("/datenschutz", "de");
 
 export default function PrivacyPage() {
   return (
-    <section className="page-intro page-single">
+    <section className="legal">
       <div className="shell legal-copy">
-        <p className="eyebrow">Datenschutz</p>
-        <h1>Datenschutzerklärung</h1>
+        <h1 className="display-2">Datenschutzerklärung</h1>
 
         <h2>1. Verantwortlicher</h2>
         <p>
@@ -57,6 +56,13 @@ export default function PrivacyPage() {
           wir nicht ohne Ihre Einwilligung weiter. Die Rechtsgrundlage ist Art. 6 Abs. 1 lit. b
           DSGVO.
         </p>
+        <p>
+          Für den Versand der Formularnachricht an unser Postfach nutzen wir den E-Mail-Dienst
+          Resend (Resend, Inc., USA) als Auftragsverarbeiter nach Art. 28 DSGVO. Dabei werden die
+          Formularangaben an Resend übermittelt und dort nur für die Zustellung verarbeitet. Für die
+          Übermittlung in die USA stützen wir uns auf geeignete Garantien nach Art. 44 ff. DSGVO,
+          insbesondere die Standardvertragsklauseln der EU-Kommission.
+        </p>
 
         <h2>4. Ihre Rechte</h2>
         <p>Sie haben gegenüber uns folgende Rechte hinsichtlich Ihrer personenbezogenen Daten:</p>
@@ -82,13 +88,14 @@ export default function PrivacyPage() {
 
         <h2>6. Analyse-Tools und Drittanbieter</h2>
         <p>
-          Auf dieser Website werden derzeit keine Analyse-Tools oder Dienste von Drittanbietern
-          eingesetzt, die personenbezogene Daten verarbeiten.
+          Auf dieser Website werden keine Analyse- oder Tracking-Tools eingesetzt. Schriften werden
+          von unserem eigenen Server geladen, nicht von Drittanbietern. Der einzige Drittanbieter
+          ist der unter Punkt 3 genannte E-Mail-Dienst für das Kontaktformular.
         </p>
 
         <h2>7. Aktualität und Änderung dieser Datenschutzerklärung</h2>
         <p>
-          Diese Datenschutzerklärung ist aktuell gültig (Stand: April 2026). Durch die
+          Diese Datenschutzerklärung ist aktuell gültig (Stand: November 2026). Durch die
           Weiterentwicklung unserer Website oder aufgrund geänderter gesetzlicher Vorgaben kann es
           notwendig werden, diese Datenschutzerklärung zu ändern.
         </p>

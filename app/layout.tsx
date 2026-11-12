@@ -1,58 +1,53 @@
 import type { Metadata, Viewport } from "next";
-import { Inter } from "next/font/google";
+import { Archivo } from "next/font/google";
 
 import { HashScrollController } from "@/components/hash-scroll-controller";
 import { LocaleDocumentController } from "@/components/locale-document-controller";
-import { SmoothScroll } from "@/components/smooth-scroll";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { SmoothScroll } from "@/components/smooth-scroll";
 import { StructuredData } from "@/components/structured-data";
 import { ThemeColorController } from "@/components/theme-color-controller";
+import { getContent } from "@/lib/content";
 import { siteUrl } from "@/lib/seo";
-import { siteMeta } from "@/lib/site-content";
 import { companyStructuredData } from "@/lib/structured-data";
 
 import "./globals.css";
 
-const displayFont = Inter({
+// One variable family carries the whole voice: wide for headlines,
+// normal width for reading, condensed for labels and data.
+const brandFont = Archivo({
   subsets: ["latin"],
-  variable: "--font-display",
-  weight: ["400", "500", "600", "700", "800"]
+  variable: "--font-archivo",
+  axes: ["wdth"],
+  display: "swap"
 });
 
-const bodyFont = Inter({
-  subsets: ["latin"],
-  variable: "--font-body",
-  weight: ["400", "500", "600", "700", "800"]
-});
+const meta = getContent("de").meta;
+const ogImage = { url: "/brand/og.jpg", width: 1200, height: 630, alt: "SIFK GmbH" };
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: siteMeta.name,
-    template: `%s | ${siteMeta.name}`
+    default: meta.name,
+    template: `%s | ${meta.name}`
   },
-  description: siteMeta.description,
+  description: meta.description,
   icons: {
     icon: { url: "/favicon.png", type: "image/png", sizes: "512x512" },
     shortcut: "/favicon.png",
     apple: { url: "/favicon.png", sizes: "512x512" }
   },
   openGraph: {
-    title: siteMeta.name,
-    description: siteMeta.description,
-    images: [
-      {
-        url: "/logo-horizontal.png",
-        alt: `${siteMeta.name} logo`
-      }
-    ]
+    title: meta.name,
+    description: meta.description,
+    images: [ogImage]
   },
   twitter: {
     card: "summary_large_image",
-    title: siteMeta.name,
-    description: siteMeta.description,
-    images: ["/logo-horizontal.png"]
+    title: meta.name,
+    description: meta.description,
+    images: [ogImage.url]
   }
 };
 
@@ -60,7 +55,7 @@ export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
   viewportFit: "cover",
-  themeColor: "#f6f1e7"
+  themeColor: "#F6F5F1"
 };
 
 export default function RootLayout({
@@ -69,18 +64,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className={`${displayFont.variable} ${bodyFont.variable}`} lang="de">
+    <html className={brandFont.variable} lang="de">
       <body>
+        <a className="skip-link" href="#main">
+          Zum Inhalt / Skip to content
+        </a>
         <StructuredData data={companyStructuredData} />
         <LocaleDocumentController />
         <HashScrollController />
         <SmoothScroll />
         <ThemeColorController />
-        <div className="page-frame">
-          <SiteHeader />
-          <main>{children}</main>
-          <SiteFooter />
-        </div>
+        <SiteHeader />
+        <main id="main" tabIndex={-1}>
+          {children}
+        </main>
+        <SiteFooter />
       </body>
     </html>
   );

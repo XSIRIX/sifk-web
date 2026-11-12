@@ -1,51 +1,23 @@
-"use client";
-
-import { ReactNode, useEffect, useRef, useState } from "react";
+import type { CSSProperties, ElementType, ReactNode } from "react";
 
 type RevealProps = {
   children: ReactNode;
   className?: string;
-  delay?: number;
+  /** Position in a group. Each step shifts the entrance slightly; capped so groups settle fast. */
+  index?: number;
+  as?: ElementType;
+  variant?: "rise" | "clip";
 };
 
-export function Reveal({ children, className = "", delay = 0 }: RevealProps) {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const node = ref.current;
-
-    if (!node) {
-      return;
-    }
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
-
-        setIsVisible(true);
-        observer.disconnect();
-      },
-      {
-        rootMargin: "0px 0px -12% 0px",
-        threshold: 0.18
-      }
-    );
-
-    observer.observe(node);
-
-    return () => observer.disconnect();
-  }, []);
-
+// Visible by default. Browsers with scroll-driven animations add a short entrance;
+// everyone else, and anyone who prefers reduced motion, simply sees the content.
+export function Reveal({ children, className = "", index = 0, as: Tag = "div", variant = "rise" }: RevealProps) {
   return (
-    <div
-      className={`reveal${isVisible ? " is-visible" : ""}${className ? ` ${className}` : ""}`}
-      ref={ref}
-      style={{ transitionDelay: `${delay}ms` }}
+    <Tag
+      className={`reveal reveal-${variant}${className ? ` ${className}` : ""}`}
+      style={{ "--i": Math.min(index, 6) } as CSSProperties}
     >
       {children}
-    </div>
+    </Tag>
   );
 }

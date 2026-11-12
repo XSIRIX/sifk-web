@@ -1,26 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-type ReferenceLogo = {
-  alt: string;
-  src: string;
-};
+import { PauseIcon, PlayIcon } from "@/components/icons";
 
-type ReferenceMarqueeProps = {
-  eyebrow?: string;
-  title?: string;
-  ariaLabel?: string;
-};
+type ReferenceLogo = { alt: string; src: string };
 
-const PRIORITY_LOGOS: ReferenceLogo[] = [
+const LOGOS: ReferenceLogo[] = [
   { alt: "BackWerk", src: "/references/backwerk.png" },
   { alt: "Eichbaum", src: "/references/eichbaum.svg" },
-  { alt: "Back Factory", src: "/references/backfactory.jpg" },
-];
-
-const OTHER_LOGOS: ReferenceLogo[] = [
-  { alt: "TIA", src: "/references/tia.png" },
+  { alt: "Back-Factory", src: "/references/backfactory.jpg" },
+  { alt: "Top Image Africa", src: "/references/tia.png" },
   { alt: "Pharmatek", src: "/references/pharmatek.svg" },
   { alt: "Horn", src: "/references/horn.jpg" },
   { alt: "Proland", src: "/references/proland.png" },
@@ -31,81 +21,67 @@ const OTHER_LOGOS: ReferenceLogo[] = [
   { alt: "Multimatic", src: "/references/multimatic.png" },
   { alt: "Walther", src: "/references/walther.webp" },
   { alt: "Just Property", src: "/references/justproperty.png" },
-  { alt: "Sport", src: "/references/sport.png" },
-  { alt: "Keninvest", src: "/references/keninvest.jpg" },
-  { alt: "Naburi", src: "/references/naburi.png" },
+  { alt: "Sport Mix Team", src: "/references/sport.png" },
+  { alt: "KenInvest", src: "/references/keninvest.jpg" },
+  { alt: "Naburi Fashion House", src: "/references/naburi.png" },
   { alt: "JD Hahn", src: "/references/jdhahn.png" },
   { alt: "Best Western", src: "/references/best-western.jpg" },
-  { alt: "Banange", src: "/references/banange.png" },
-  { alt: "Fairquer", src: "/references/fairquer.jpeg" },
+  { alt: "Banange Brewing Company", src: "/references/banange.png" },
+  { alt: "Fair & Quer", src: "/references/fairquer.jpeg" },
   { alt: "MVZ", src: "/references/mvz.png" },
   { alt: "Weingut", src: "/references/weingut.png" },
-  { alt: "Axel", src: "/references/axel.jpeg" },
+  { alt: "Präzisionstechnik Axel Stadel", src: "/references/axel.jpeg" },
   { alt: "Motsch", src: "/references/motsch.gif" },
   { alt: "Landry", src: "/references/landry.png" },
   { alt: "NYC Pizza", src: "/references/nycpizza.png" },
-  { alt: "SMS", src: "/references/sms.jpg" },
-  { alt: "African", src: "/references/african.jpeg" },
+  { alt: "SMS Media", src: "/references/sms.jpg" },
+  { alt: "The African Way Coffee Shop", src: "/references/african.jpeg" },
   { alt: "Ecolo", src: "/references/ecolo.webp" },
   { alt: "Hensel", src: "/references/hensel.jpg" },
-  { alt: "Coffee Beans", src: "/references/coffeebeans.png" },
+  { alt: "Coffee Beans", src: "/references/coffeebeans.png" }
 ];
 
-function shuffleLogos(logos: ReferenceLogo[]) {
-  const shuffled = [...logos];
+type ReferenceMarqueeProps = {
+  title: string;
+  ariaLabel: string;
+  pauseLabel: string;
+  playLabel: string;
+};
 
-  for (let index = shuffled.length - 1; index > 0; index -= 1) {
-    const randomIndex = Math.floor(Math.random() * (index + 1));
-    [shuffled[index], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[index]];
-  }
-
-  return shuffled;
-}
-
-export function ReferenceMarquee({
-  eyebrow = "Referenzen",
-  title = "Kunden und Partner, die auf unsere Arbeit vertrauen.",
-  ariaLabel = "Referenzlogos"
-}: ReferenceMarqueeProps) {
-  const [logos, setLogos] = useState(() => [...PRIORITY_LOGOS, ...OTHER_LOGOS]);
-
-  useEffect(() => {
-    setLogos([...PRIORITY_LOGOS, ...shuffleLogos(OTHER_LOGOS)]);
-  }, []);
-
-  const leadLogos = logos.slice(0, PRIORITY_LOGOS.length);
-  const trailingLogos = logos.slice(PRIORITY_LOGOS.length);
-  const loopedLogos = [...trailingLogos, ...leadLogos, ...trailingLogos, ...leadLogos];
+export function ReferenceMarquee({ title, ariaLabel, pauseLabel, playLabel }: ReferenceMarqueeProps) {
+  const [paused, setPaused] = useState(false);
 
   return (
-    <section className="reference-band" aria-labelledby="references-title">
-      <div className="reference-band-copy">
-        <p className="eyebrow">{eyebrow}</p>
-        <p className="reference-band-title" id="references-title">
+    <section aria-labelledby="references-title" className={`references${paused ? " is-paused" : ""}`}>
+      <div className="shell references-head">
+        <h2 className="references-title" id="references-title">
           {title}
-        </p>
+        </h2>
+        <button
+          aria-label={paused ? playLabel : pauseLabel}
+          className="media-toggle media-toggle-light"
+          onClick={() => setPaused((value) => !value)}
+          type="button"
+        >
+          {paused ? <PlayIcon /> : <PauseIcon />}
+        </button>
       </div>
 
-      <div className="reference-band-inner">
-        <div className="reference-marquee" aria-label={ariaLabel}>
-          <div className="reference-marquee-track">
-            {loopedLogos.map((logo, index) => (
-              <div
-                className="reference-logo-chip"
-                key={`${logo.src}-${index}`}
-              >
-                <img
-                  alt={logo.alt}
-                  className="reference-logo-image"
-                  decoding="async"
-                  fetchPriority={index < 8 ? "high" : "auto"}
-                  loading={index < 8 ? "eager" : "lazy"}
-                  src={logo.src}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+      <div className="marquee">
+        <ul aria-label={ariaLabel} className="marquee-track">
+          {LOGOS.map((logo) => (
+            <li className="marquee-item" key={logo.src}>
+              <img alt={logo.alt} decoding="async" loading="lazy" src={logo.src} />
+            </li>
+          ))}
+        </ul>
+        <ul aria-hidden="true" className="marquee-track">
+          {LOGOS.map((logo) => (
+            <li className="marquee-item" key={logo.src}>
+              <img alt="" decoding="async" loading="lazy" src={logo.src} />
+            </li>
+          ))}
+        </ul>
       </div>
     </section>
   );

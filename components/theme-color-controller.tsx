@@ -3,8 +3,8 @@
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 
-const HERO_THEME_COLOR = "#f6f1e7";
-const DEFAULT_THEME_COLOR = "#f6f1e7";
+const LIGHT = "#F6F5F1";
+const DARK = "#0F0E0E";
 
 function setThemeColor(color: string) {
   let meta = document.querySelector('meta[name="theme-color"]');
@@ -20,51 +20,34 @@ function setThemeColor(color: string) {
   }
 }
 
+// Browser chrome follows the section at the top of the screen.
 export function ThemeColorController() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (pathname !== "/" && pathname !== "/en") {
-      setThemeColor(DEFAULT_THEME_COLOR);
-      return;
-    }
-
-    const hero = document.querySelector<HTMLElement>(".parallax-hero");
-
-    if (!hero) {
-      setThemeColor(DEFAULT_THEME_COLOR);
-      return;
-    }
-
     let frame = 0;
 
-    const updateThemeColor = () => {
-      const heroBottom = hero.getBoundingClientRect().bottom;
-      const nextColor = heroBottom > 0 ? HERO_THEME_COLOR : DEFAULT_THEME_COLOR;
-      setThemeColor(nextColor);
+    const update = () => {
       frame = 0;
+      const overDark = Array.from(document.querySelectorAll<HTMLElement>('[data-tone="dark"]')).some((section) => {
+        const rect = section.getBoundingClientRect();
+        return rect.top <= 1 && rect.bottom > 1;
+      });
+      setThemeColor(overDark ? DARK : LIGHT);
     };
 
-    const requestUpdate = () => {
-      if (frame) {
-        return;
-      }
-
-      frame = window.requestAnimationFrame(updateThemeColor);
+    const request = () => {
+      if (!frame) frame = requestAnimationFrame(update);
     };
 
-    requestUpdate();
-    window.addEventListener("scroll", requestUpdate, { passive: true });
-    window.addEventListener("resize", requestUpdate);
+    update();
+    window.addEventListener("scroll", request, { passive: true });
+    window.addEventListener("resize", request);
 
     return () => {
-      if (frame) {
-        window.cancelAnimationFrame(frame);
-      }
-
-      window.removeEventListener("scroll", requestUpdate);
-      window.removeEventListener("resize", requestUpdate);
-      setThemeColor(DEFAULT_THEME_COLOR);
+      if (frame) cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", request);
+      window.removeEventListener("resize", request);
     };
   }, [pathname]);
 

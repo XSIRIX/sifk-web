@@ -1,7 +1,9 @@
+import { company } from "@/lib/company";
+import { getContent } from "@/lib/content";
 import type { Locale } from "@/lib/locale-routing";
 import { organizationId, pageUrl, siteUrl } from "@/lib/seo";
-import { pillars, siteMeta } from "@/lib/site-content";
-import { pillarsEn } from "@/lib/site-content-en";
+
+const de = getContent("de");
 
 // Company facts are already published in the site's legal notice.
 export const companyStructuredData = {
@@ -10,26 +12,26 @@ export const companyStructuredData = {
     {
       "@type": "Organization",
       "@id": organizationId,
-      name: siteMeta.name,
-      legalName: siteMeta.name,
+      name: company.name,
+      legalName: company.name,
       url: `${siteUrl}/`,
       logo: `${siteUrl}/logo-horizontal.png`,
-      description: siteMeta.description,
-      email: "info@sifk.de",
-      telephone: "+49 6203 9375175",
+      description: de.meta.description,
+      email: company.email,
+      telephone: company.phoneInternational,
       address: {
         "@type": "PostalAddress",
-        streetAddress: "Carl-Benz-Straße 4",
-        postalCode: "69198",
-        addressLocality: "Schriesheim",
-        addressCountry: "DE"
+        streetAddress: company.street,
+        postalCode: company.postalCode,
+        addressLocality: company.city,
+        addressCountry: company.country
       }
     },
     {
       "@type": "WebSite",
       "@id": `${siteUrl}/#website`,
       url: `${siteUrl}/`,
-      name: siteMeta.name,
+      name: company.name,
       inLanguage: ["de", "en"],
       publisher: { "@id": organizationId }
     }
@@ -37,17 +39,17 @@ export const companyStructuredData = {
 };
 
 export function serviceStructuredData(locale: Locale) {
-  const content = locale === "de" ? pillars : pillarsEn;
+  const { services } = getContent(locale);
 
   return {
     "@context": "https://schema.org",
-    "@graph": content.map((pillar) => ({
+    "@graph": services.fields.map((field) => ({
       "@type": "Service",
-      "@id": `${pageUrl("/leistungen", locale)}#${pillar.id}`,
-      name: pillar.title,
-      description: pillar.description,
-      serviceType: pillar.services,
-      url: `${pageUrl("/leistungen", locale)}#${pillar.id}`,
+      "@id": `${pageUrl("/leistungen", locale)}#${field.id}`,
+      name: field.title.replace(/\u00AD/g, ""),
+      description: field.text,
+      serviceType: field.services.map((service) => service.title),
+      url: `${pageUrl("/leistungen", locale)}#${field.id}`,
       provider: { "@id": organizationId }
     }))
   };
