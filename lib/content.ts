@@ -87,9 +87,9 @@ const de = {
         { href: "/leistungen#energieberatung-deutschland", label: "Energieberatung" }
       ] as Link[],
       proof: [
-        { value: 13, label: "Fachleute im Team" },
-        { value: 7, label: "Länder" },
-        { value: 32, label: "Kunden und Partner" }
+        { value: "15", label: "Fachleute im Team" },
+        { value: "7", label: "Länder" },
+        { value: "32+", label: "Kunden und Partner" }
       ],
       switchLabel: "Geschäftsfeld wählen",
       places: {
@@ -116,7 +116,7 @@ const de = {
       items: [
         { href: "#afrika", label: "Afrika", text: "Markteintritt" },
         { href: "#energie", label: "Energie", text: "Beratung in Deutschland" },
-        { href: "#team", label: "Team", text: "13 Menschen, 7 Länder" },
+        { href: "#team", label: "Team", text: "15 Menschen, 7 Länder" },
         { href: "#cloody", label: "Cloody", text: "Handelsplattform" },
         { href: "#kontakt", label: "Kontakt", text: "Erstgespräch" }
       ]
@@ -126,7 +126,7 @@ const de = {
       lead: "SIFK ist eine Beratung aus Schriesheim bei Heidelberg.",
       africaClaim: "Wir öffnen Märkte in Afrika.",
       germanyClaim: "Wir sparen Energie in Deutschland.",
-      note: "13 Fachleute in 7 Ländern. 32 Kunden und Partner.",
+      note: "15 Fachleute in 7 Ländern. Über 32 Kunden und Partner.",
       germany: "Deutschland",
       africa: "Afrika",
       germanyAlt: "Weißes Modell der Bergstraße: Burgruine über Weinbergen, ein Band in Schwarz, Rot und Gold führt den Hang hinauf",
@@ -134,7 +134,9 @@ const de = {
     },
     figure: {
       claim: "Ein Team in sieben Ländern.",
-      unit: "Fachleute"
+      unit: "Fachleute",
+      size: 15,
+      more: "Weitere Mitarbeitende"
     },
     weave: {
       link: { href: "/ueber-uns", label: "Über SIFK" } as Link,
@@ -194,7 +196,7 @@ const de = {
       imageAlt: "Weißes Modell eines Betriebs mit Solardach, Wärmepumpen und Ladepunkten"
     },
     people: {
-      title: "13 Menschen. 7 Länder. Ein Team.",
+      title: "15 Menschen. 7 Länder. Ein Team.",
       text:
         "Ingenieure, Energieauditoren, Ökonominnen und Projektmanager. Sie sprechen direkt mit der Person, die Ihr Projekt betreut.",
       link: { href: "/unser-team", label: "Team kennenlernen" } as Link
@@ -343,7 +345,7 @@ const de = {
       items: [
         { label: "Sitz", value: "Schriesheim, Baden-Württemberg" },
         { label: "Geschäftsführung", value: "Pheeraphon Karch, seit 2022" },
-        { label: "Team", value: "13 Fachleute in 7 Ländern" },
+        { label: "Team", value: "15 Fachleute in 7 Ländern" },
         { label: "Register", value: "Amtsgericht Mannheim, HRB 750493" }
       ]
     },
@@ -362,7 +364,7 @@ const de = {
   },
   team: {
     intro: {
-      title: "13 Menschen. 7 Länder.\nEin Team.",
+      title: "15 Menschen. 7 Länder.\nEin Team.",
       photoAlt: "Fünf Menschen arbeiten gemeinsam an einem Tisch mit Laptops und Unterlagen (Symbolbild)",
       text:
         "In Schriesheim sitzen Geschäftsführung, Energieberatung und Vertrieb. In sechs afrikanischen Ländern arbeiten Fachleute, die ihre Märkte von innen kennen."
@@ -500,6 +502,10 @@ const de = {
             "Erfahrung in Disposition, Fuhrparkmanagement, internationalem Versand und Bahnlogistik. Engagiert in der deutsch-tansanischen Bildungsarbeit."
         }
       ] as TeamMember[]
+    },
+    more: {
+      title: "Und viele mehr.",
+      text: "Neben den Menschen oben arbeiten weitere Mitarbeitende für SIFK, im Büro in Schriesheim und in Projekten vor Ort. Dazu kommt ein Netzwerk aus Fachleuten, das wir je nach Auftrag dazuholen."
     },
     emailTo: "E-Mail an",
     close: {
@@ -648,9 +654,9 @@ const en: SiteContent = {
         { href: "/leistungen#energieberatung-deutschland", label: "Energy consulting" }
       ],
       proof: [
-        { value: 13, label: "specialists" },
-        { value: 7, label: "countries" },
-        { value: 32, label: "clients and partners" }
+        { value: "15", label: "specialists" },
+        { value: "7", label: "countries" },
+        { value: "32+", label: "clients and partners" }
       ],
       switchLabel: "Choose a line of business",
       places: {
@@ -677,7 +683,7 @@ const en: SiteContent = {
       items: [
         { href: "#afrika", label: "Africa", text: "Market entry" },
         { href: "#energie", label: "Energy", text: "Consulting in Germany" },
-        { href: "#team", label: "Team", text: "13 people, 7 countries" },
+        { href: "#team", label: "Team", text: "15 people, 7 countries" },
         { href: "#cloody", label: "Cloody", text: "Trade platform" },
         { href: "#kontakt", label: "Contact", text: "First call" }
       ]
@@ -687,7 +693,7 @@ const en: SiteContent = {
       lead: "SIFK is a consultancy from Schriesheim near Heidelberg.",
       africaClaim: "We open markets in Africa.",
       germanyClaim: "We save energy in Germany.",
-      note: "13 specialists in 7 countries. 32 clients and partners.",
+      note: "15 specialists in 7 countries. More than 32 clients and partners.",
       germany: "Germany",
       africa: "Africa",
       germanyAlt: "White model of the Bergstrasse: a castle ruin above vineyards, a ribbon in black, red and gold winding up the hill",
@@ -695,7 +701,9 @@ const en: SiteContent = {
     },
     figure: {
       claim: "One team in seven countries.",
-      unit: "specialists"
+      unit: "specialists",
+      size: 15,
+      more: "More staff"
     },
     weave: {
       link: { href: "/ueber-uns", label: "About SIFK" },
@@ -755,7 +763,7 @@ const en: SiteContent = {
       imageAlt: "White model of a company site with a solar roof, heat pumps and charging points"
     },
     people: {
-      title: "13 people. 7 countries. One team.",
+      title: "15 people. 7 countries. One team.",
       text:
         "Engineers, energy auditors, economists and project managers. You talk directly to the person who runs your project.",
       link: { href: "/unser-team", label: "Meet the team" }
@@ -904,7 +912,7 @@ const en: SiteContent = {
       items: [
         { label: "Head office", value: "Schriesheim, Baden-Württemberg" },
         { label: "Managing director", value: "Pheeraphon Karch, since 2022" },
-        { label: "Team", value: "13 specialists in 7 countries" },
+        { label: "Team", value: "15 specialists in 7 countries" },
         { label: "Register", value: "Mannheim Local Court, HRB 750493" }
       ]
     },
@@ -923,7 +931,7 @@ const en: SiteContent = {
   },
   team: {
     intro: {
-      title: "13 people. 7 countries.\nOne team.",
+      title: "15 people. 7 countries.\nOne team.",
       photoAlt: "Five people working together at a table with laptops and papers (stock photo)",
       text:
         "Management, energy consulting and sales are based in Schriesheim. In six African countries, specialists work who know their markets from the inside."
@@ -1061,6 +1069,10 @@ const en: SiteContent = {
             "Experience in dispatch, fleet management, international shipping and rail logistics. Active in German–Tanzanian education projects."
         }
       ]
+    },
+    more: {
+      title: "And many more.",
+      text: "Beyond the people above, more employees work for SIFK, in the Schriesheim office and on projects on the ground. On top of that we bring in a network of specialists as each project needs."
     },
     emailTo: "Email",
     close: {

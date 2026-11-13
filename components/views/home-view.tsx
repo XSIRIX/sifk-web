@@ -198,7 +198,7 @@ export function HomeView({ locale }: { locale: Locale }) {
             {home.figure.claim}
           </h2>
           <div className="figure-num">
-            <b data-count={everyone.length}>{everyone.length}</b>
+            <b data-count={home.figure.size}>{home.figure.size}</b>
             <p className="title">{home.figure.unit}</p>
           </div>
           <div className="figure-list">
@@ -212,6 +212,12 @@ export function HomeView({ locale }: { locale: Locale }) {
                   <span>{names.length}</span>
                 </li>
               ))}
+              {home.figure.size > everyone.length ? (
+                <li>
+                  <span className="tally-name">{home.figure.more}</span>
+                  <span>{home.figure.size - everyone.length}</span>
+                </li>
+              ) : null}
             </ul>
             <p className="copy" data-rv>
               {home.people.text}

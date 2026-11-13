@@ -126,6 +126,21 @@ export function TeamView({ locale }: { locale: Locale }) {
         </div>
       </section>
 
+      <section className="team-group sheet field f-plaster">
+        <div className="shell">
+          <div className="team-head">
+            <div className="team-say">
+              <h2 className="display" data-split>
+                {team.more.title}
+              </h2>
+              <p className="lead" data-rv>
+                {team.more.text}
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <CtaBand
         field="f-glut"
         href={localizePath("/kontakt", locale)}
