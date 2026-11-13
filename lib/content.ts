@@ -88,8 +88,7 @@ const de = {
       ] as Link[],
       proof: [
         { value: "15", label: "Fachleute im Team" },
-        { value: "7", label: "Länder" },
-        { value: "32+", label: "Kunden und Partner" }
+        { value: "7", label: "Länder" }
       ],
       switchLabel: "Geschäftsfeld wählen",
       places: {
@@ -126,7 +125,7 @@ const de = {
       lead: "SIFK ist eine Beratung aus Schriesheim bei Heidelberg.",
       africaClaim: "Wir öffnen Märkte in Afrika.",
       germanyClaim: "Wir sparen Energie in Deutschland.",
-      note: "15 Fachleute in 7 Ländern. Über 32 Kunden und Partner.",
+      note: "15 Fachleute in 7 Ländern. Zahlreiche Kunden und Partner in Deutschland und Afrika.",
       germany: "Deutschland",
       africa: "Afrika",
       germanyAlt: "Weißes Modell der Bergstraße: Burgruine über Weinbergen, ein Band in Schwarz, Rot und Gold führt den Hang hinauf",
@@ -655,8 +654,7 @@ const en: SiteContent = {
       ],
       proof: [
         { value: "15", label: "specialists" },
-        { value: "7", label: "countries" },
-        { value: "32+", label: "clients and partners" }
+        { value: "7", label: "countries" }
       ],
       switchLabel: "Choose a line of business",
       places: {
@@ -693,7 +691,7 @@ const en: SiteContent = {
       lead: "SIFK is a consultancy from Schriesheim near Heidelberg.",
       africaClaim: "We open markets in Africa.",
       germanyClaim: "We save energy in Germany.",
-      note: "15 specialists in 7 countries. More than 32 clients and partners.",
+      note: "15 specialists in 7 countries. Many clients and partners across Germany and Africa.",
       germany: "Germany",
       africa: "Africa",
       germanyAlt: "White model of the Bergstrasse: a castle ruin above vineyards, a ribbon in black, red and gold winding up the hill",
