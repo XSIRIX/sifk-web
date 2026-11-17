@@ -160,4 +160,6 @@ Where a fact is missing, the website leaves the claim out. Nothing is guessed.
 
 Voucher page: every row of `docs/seo/claims.md` was approved on 17.11.2026. You can now add the BAFA sentence to the Google profile description (step 1.8).
 
-**Still open:** the energy page (rows E1–E18), the Africa page (rows A1–A13) and the new wording on home and Kontakt (rows S1–S2) in `docs/seo/claims.md`. They go live only after your yes. Please also check the office pin: open the Kontakt page's "In Google Maps öffnen" link and say whether it points at the right building.
+Energy page, Africa page and the new home and Kontakt wording: every row (E1–E18, A1–A13, S1–S2) was approved on 18.11.2026.
+
+**Still open:** check the office pin. Open the Kontakt page's "In Google Maps öffnen" link and say whether it points at the right building.
