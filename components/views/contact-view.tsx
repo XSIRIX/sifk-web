@@ -4,7 +4,19 @@ import { company } from "@/lib/company";
 import { getContent } from "@/lib/content";
 import type { Locale } from "@/lib/locale-routing";
 
+const HOURS: Record<Locale, { title: string; days: Record<string, string> }> = {
+  de: {
+    title: "Öffnungszeiten",
+    days: { Monday: "Mo", Tuesday: "Di", Wednesday: "Mi", Thursday: "Do", Friday: "Fr", Saturday: "Sa", Sunday: "So" }
+  },
+  en: {
+    title: "Opening hours",
+    days: { Monday: "Mon", Tuesday: "Tue", Wednesday: "Wed", Thursday: "Thu", Friday: "Fri", Saturday: "Sat", Sunday: "Sun" }
+  }
+};
+
 export function ContactView({ locale }: { locale: Locale }) {
+  const hours = HOURS[locale];
   const { contact, common, places } = getContent(locale);
 
   return (
@@ -44,6 +56,17 @@ export function ContactView({ locale }: { locale: Locale }) {
               </div>
             </div>
             <p className="copy">{contact.area}</p>
+            {/* Only once the owner gives the hours (lib/company.ts). */}
+            {company.openingHours ? (
+              <p className="copy">
+                <strong>{hours.title}</strong>
+                {company.openingHours.map((slot) => (
+                  <span key={slot.days.join()} style={{ display: "block" }}>
+                    {slot.days.map((day) => hours.days[day] ?? day).join(", ")}: {slot.opens}–{slot.closes}
+                  </span>
+                ))}
+              </p>
+            ) : null}
           </aside>
         }
         text={contact.intro.text}

@@ -80,13 +80,14 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": "ProfessionalService",
             "@id": "https://www.sifk.de/#organization",
             "name": "SIFK GmbH",
             "legalName": "SIFK GmbH",
             "url": "https://www.sifk.de/",
             "logo": "https://www.sifk.de/logo-horizontal.png",
-            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "image": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und bietet Energieberatung und Energieaudits für Betriebe und Gebäude in Deutschland.",
             "email": "info@sifk.de",
             "telephone": "+49 6203 9375175",
             "address": {
@@ -94,8 +95,24 @@
               "streetAddress": "Carl-Benz-Straße 4",
               "postalCode": "69198",
               "addressLocality": "Schriesheim",
+              "addressRegion": "BW",
               "addressCountry": "DE"
-            }
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 49.466327,
+              "longitude": 8.663783
+            },
+            "areaServed": [
+              {
+                "@type": "AdministrativeArea",
+                "name": "Metropolregion Rhein-Neckar"
+              },
+              {
+                "@type": "Country",
+                "name": "Deutschland"
+              }
+            ]
           },
           {
             "@type": "WebSite",
@@ -195,13 +212,14 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": "ProfessionalService",
             "@id": "https://www.sifk.de/#organization",
             "name": "SIFK GmbH",
             "legalName": "SIFK GmbH",
             "url": "https://www.sifk.de/",
             "logo": "https://www.sifk.de/logo-horizontal.png",
-            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "image": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und bietet Energieberatung und Energieaudits für Betriebe und Gebäude in Deutschland.",
             "email": "info@sifk.de",
             "telephone": "+49 6203 9375175",
             "address": {
@@ -209,8 +227,24 @@
               "streetAddress": "Carl-Benz-Straße 4",
               "postalCode": "69198",
               "addressLocality": "Schriesheim",
+              "addressRegion": "BW",
               "addressCountry": "DE"
-            }
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 49.466327,
+              "longitude": 8.663783
+            },
+            "areaServed": [
+              {
+                "@type": "AdministrativeArea",
+                "name": "Metropolregion Rhein-Neckar"
+              },
+              {
+                "@type": "Country",
+                "name": "Deutschland"
+              }
+            ]
           },
           {
             "@type": "WebSite",
@@ -347,13 +381,14 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": "ProfessionalService",
             "@id": "https://www.sifk.de/#organization",
             "name": "SIFK GmbH",
             "legalName": "SIFK GmbH",
             "url": "https://www.sifk.de/",
             "logo": "https://www.sifk.de/logo-horizontal.png",
-            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "image": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und bietet Energieberatung und Energieaudits für Betriebe und Gebäude in Deutschland.",
             "email": "info@sifk.de",
             "telephone": "+49 6203 9375175",
             "address": {
@@ -361,8 +396,24 @@
               "streetAddress": "Carl-Benz-Straße 4",
               "postalCode": "69198",
               "addressLocality": "Schriesheim",
+              "addressRegion": "BW",
               "addressCountry": "DE"
-            }
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 49.466327,
+              "longitude": 8.663783
+            },
+            "areaServed": [
+              {
+                "@type": "AdministrativeArea",
+                "name": "Metropolregion Rhein-Neckar"
+              },
+              {
+                "@type": "Country",
+                "name": "Deutschland"
+              }
+            ]
           },
           {
             "@type": "WebSite",
@@ -462,13 +513,14 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": "ProfessionalService",
             "@id": "https://www.sifk.de/#organization",
             "name": "SIFK GmbH",
             "legalName": "SIFK GmbH",
             "url": "https://www.sifk.de/",
             "logo": "https://www.sifk.de/logo-horizontal.png",
-            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "image": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und bietet Energieberatung und Energieaudits für Betriebe und Gebäude in Deutschland.",
             "email": "info@sifk.de",
             "telephone": "+49 6203 9375175",
             "address": {
@@ -476,8 +528,24 @@
               "streetAddress": "Carl-Benz-Straße 4",
               "postalCode": "69198",
               "addressLocality": "Schriesheim",
+              "addressRegion": "BW",
               "addressCountry": "DE"
-            }
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 49.466327,
+              "longitude": 8.663783
+            },
+            "areaServed": [
+              {
+                "@type": "AdministrativeArea",
+                "name": "Metropolregion Rhein-Neckar"
+              },
+              {
+                "@type": "Country",
+                "name": "Deutschland"
+              }
+            ]
           },
           {
             "@type": "WebSite",
@@ -577,13 +645,14 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": "ProfessionalService",
             "@id": "https://www.sifk.de/#organization",
             "name": "SIFK GmbH",
             "legalName": "SIFK GmbH",
             "url": "https://www.sifk.de/",
             "logo": "https://www.sifk.de/logo-horizontal.png",
-            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "image": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und bietet Energieberatung und Energieaudits für Betriebe und Gebäude in Deutschland.",
             "email": "info@sifk.de",
             "telephone": "+49 6203 9375175",
             "address": {
@@ -591,8 +660,24 @@
               "streetAddress": "Carl-Benz-Straße 4",
               "postalCode": "69198",
               "addressLocality": "Schriesheim",
+              "addressRegion": "BW",
               "addressCountry": "DE"
-            }
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 49.466327,
+              "longitude": 8.663783
+            },
+            "areaServed": [
+              {
+                "@type": "AdministrativeArea",
+                "name": "Metropolregion Rhein-Neckar"
+              },
+              {
+                "@type": "Country",
+                "name": "Deutschland"
+              }
+            ]
           },
           {
             "@type": "WebSite",
@@ -692,13 +777,14 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": "ProfessionalService",
             "@id": "https://www.sifk.de/#organization",
             "name": "SIFK GmbH",
             "legalName": "SIFK GmbH",
             "url": "https://www.sifk.de/",
             "logo": "https://www.sifk.de/logo-horizontal.png",
-            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "image": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und bietet Energieberatung und Energieaudits für Betriebe und Gebäude in Deutschland.",
             "email": "info@sifk.de",
             "telephone": "+49 6203 9375175",
             "address": {
@@ -706,8 +792,24 @@
               "streetAddress": "Carl-Benz-Straße 4",
               "postalCode": "69198",
               "addressLocality": "Schriesheim",
+              "addressRegion": "BW",
               "addressCountry": "DE"
-            }
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 49.466327,
+              "longitude": 8.663783
+            },
+            "areaServed": [
+              {
+                "@type": "AdministrativeArea",
+                "name": "Metropolregion Rhein-Neckar"
+              },
+              {
+                "@type": "Country",
+                "name": "Deutschland"
+              }
+            ]
           },
           {
             "@type": "WebSite",
@@ -807,13 +909,14 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": "ProfessionalService",
             "@id": "https://www.sifk.de/#organization",
             "name": "SIFK GmbH",
             "legalName": "SIFK GmbH",
             "url": "https://www.sifk.de/",
             "logo": "https://www.sifk.de/logo-horizontal.png",
-            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "image": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und bietet Energieberatung und Energieaudits für Betriebe und Gebäude in Deutschland.",
             "email": "info@sifk.de",
             "telephone": "+49 6203 9375175",
             "address": {
@@ -821,8 +924,24 @@
               "streetAddress": "Carl-Benz-Straße 4",
               "postalCode": "69198",
               "addressLocality": "Schriesheim",
+              "addressRegion": "BW",
               "addressCountry": "DE"
-            }
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 49.466327,
+              "longitude": 8.663783
+            },
+            "areaServed": [
+              {
+                "@type": "AdministrativeArea",
+                "name": "Metropolregion Rhein-Neckar"
+              },
+              {
+                "@type": "Country",
+                "name": "Deutschland"
+              }
+            ]
           },
           {
             "@type": "WebSite",
@@ -922,13 +1041,14 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": "ProfessionalService",
             "@id": "https://www.sifk.de/#organization",
             "name": "SIFK GmbH",
             "legalName": "SIFK GmbH",
             "url": "https://www.sifk.de/",
             "logo": "https://www.sifk.de/logo-horizontal.png",
-            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "image": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und bietet Energieberatung und Energieaudits für Betriebe und Gebäude in Deutschland.",
             "email": "info@sifk.de",
             "telephone": "+49 6203 9375175",
             "address": {
@@ -936,8 +1056,24 @@
               "streetAddress": "Carl-Benz-Straße 4",
               "postalCode": "69198",
               "addressLocality": "Schriesheim",
+              "addressRegion": "BW",
               "addressCountry": "DE"
-            }
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 49.466327,
+              "longitude": 8.663783
+            },
+            "areaServed": [
+              {
+                "@type": "AdministrativeArea",
+                "name": "Metropolregion Rhein-Neckar"
+              },
+              {
+                "@type": "Country",
+                "name": "Deutschland"
+              }
+            ]
           },
           {
             "@type": "WebSite",
@@ -1037,13 +1173,14 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": "ProfessionalService",
             "@id": "https://www.sifk.de/#organization",
             "name": "SIFK GmbH",
             "legalName": "SIFK GmbH",
             "url": "https://www.sifk.de/",
             "logo": "https://www.sifk.de/logo-horizontal.png",
-            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "image": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK supports companies entering African markets and provides energy consulting and energy audits for businesses and buildings in Germany.",
             "email": "info@sifk.de",
             "telephone": "+49 6203 9375175",
             "address": {
@@ -1051,8 +1188,24 @@
               "streetAddress": "Carl-Benz-Straße 4",
               "postalCode": "69198",
               "addressLocality": "Schriesheim",
+              "addressRegion": "BW",
               "addressCountry": "DE"
-            }
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 49.466327,
+              "longitude": 8.663783
+            },
+            "areaServed": [
+              {
+                "@type": "AdministrativeArea",
+                "name": "Metropolregion Rhein-Neckar"
+              },
+              {
+                "@type": "Country",
+                "name": "Deutschland"
+              }
+            ]
           },
           {
             "@type": "WebSite",
@@ -1152,13 +1305,14 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": "ProfessionalService",
             "@id": "https://www.sifk.de/#organization",
             "name": "SIFK GmbH",
             "legalName": "SIFK GmbH",
             "url": "https://www.sifk.de/",
             "logo": "https://www.sifk.de/logo-horizontal.png",
-            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "image": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK supports companies entering African markets and provides energy consulting and energy audits for businesses and buildings in Germany.",
             "email": "info@sifk.de",
             "telephone": "+49 6203 9375175",
             "address": {
@@ -1166,8 +1320,24 @@
               "streetAddress": "Carl-Benz-Straße 4",
               "postalCode": "69198",
               "addressLocality": "Schriesheim",
+              "addressRegion": "BW",
               "addressCountry": "DE"
-            }
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 49.466327,
+              "longitude": 8.663783
+            },
+            "areaServed": [
+              {
+                "@type": "AdministrativeArea",
+                "name": "Metropolregion Rhein-Neckar"
+              },
+              {
+                "@type": "Country",
+                "name": "Deutschland"
+              }
+            ]
           },
           {
             "@type": "WebSite",
@@ -1304,13 +1474,14 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": "ProfessionalService",
             "@id": "https://www.sifk.de/#organization",
             "name": "SIFK GmbH",
             "legalName": "SIFK GmbH",
             "url": "https://www.sifk.de/",
             "logo": "https://www.sifk.de/logo-horizontal.png",
-            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "image": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK supports companies entering African markets and provides energy consulting and energy audits for businesses and buildings in Germany.",
             "email": "info@sifk.de",
             "telephone": "+49 6203 9375175",
             "address": {
@@ -1318,8 +1489,24 @@
               "streetAddress": "Carl-Benz-Straße 4",
               "postalCode": "69198",
               "addressLocality": "Schriesheim",
+              "addressRegion": "BW",
               "addressCountry": "DE"
-            }
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 49.466327,
+              "longitude": 8.663783
+            },
+            "areaServed": [
+              {
+                "@type": "AdministrativeArea",
+                "name": "Metropolregion Rhein-Neckar"
+              },
+              {
+                "@type": "Country",
+                "name": "Deutschland"
+              }
+            ]
           },
           {
             "@type": "WebSite",
@@ -1419,13 +1606,14 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": "ProfessionalService",
             "@id": "https://www.sifk.de/#organization",
             "name": "SIFK GmbH",
             "legalName": "SIFK GmbH",
             "url": "https://www.sifk.de/",
             "logo": "https://www.sifk.de/logo-horizontal.png",
-            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "image": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK supports companies entering African markets and provides energy consulting and energy audits for businesses and buildings in Germany.",
             "email": "info@sifk.de",
             "telephone": "+49 6203 9375175",
             "address": {
@@ -1433,8 +1621,24 @@
               "streetAddress": "Carl-Benz-Straße 4",
               "postalCode": "69198",
               "addressLocality": "Schriesheim",
+              "addressRegion": "BW",
               "addressCountry": "DE"
-            }
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 49.466327,
+              "longitude": 8.663783
+            },
+            "areaServed": [
+              {
+                "@type": "AdministrativeArea",
+                "name": "Metropolregion Rhein-Neckar"
+              },
+              {
+                "@type": "Country",
+                "name": "Deutschland"
+              }
+            ]
           },
           {
             "@type": "WebSite",
@@ -1534,13 +1738,14 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": "ProfessionalService",
             "@id": "https://www.sifk.de/#organization",
             "name": "SIFK GmbH",
             "legalName": "SIFK GmbH",
             "url": "https://www.sifk.de/",
             "logo": "https://www.sifk.de/logo-horizontal.png",
-            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "image": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK supports companies entering African markets and provides energy consulting and energy audits for businesses and buildings in Germany.",
             "email": "info@sifk.de",
             "telephone": "+49 6203 9375175",
             "address": {
@@ -1548,8 +1753,24 @@
               "streetAddress": "Carl-Benz-Straße 4",
               "postalCode": "69198",
               "addressLocality": "Schriesheim",
+              "addressRegion": "BW",
               "addressCountry": "DE"
-            }
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 49.466327,
+              "longitude": 8.663783
+            },
+            "areaServed": [
+              {
+                "@type": "AdministrativeArea",
+                "name": "Metropolregion Rhein-Neckar"
+              },
+              {
+                "@type": "Country",
+                "name": "Deutschland"
+              }
+            ]
           },
           {
             "@type": "WebSite",
@@ -1649,13 +1870,14 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": "ProfessionalService",
             "@id": "https://www.sifk.de/#organization",
             "name": "SIFK GmbH",
             "legalName": "SIFK GmbH",
             "url": "https://www.sifk.de/",
             "logo": "https://www.sifk.de/logo-horizontal.png",
-            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "image": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK supports companies entering African markets and provides energy consulting and energy audits for businesses and buildings in Germany.",
             "email": "info@sifk.de",
             "telephone": "+49 6203 9375175",
             "address": {
@@ -1663,8 +1885,24 @@
               "streetAddress": "Carl-Benz-Straße 4",
               "postalCode": "69198",
               "addressLocality": "Schriesheim",
+              "addressRegion": "BW",
               "addressCountry": "DE"
-            }
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 49.466327,
+              "longitude": 8.663783
+            },
+            "areaServed": [
+              {
+                "@type": "AdministrativeArea",
+                "name": "Metropolregion Rhein-Neckar"
+              },
+              {
+                "@type": "Country",
+                "name": "Deutschland"
+              }
+            ]
           },
           {
             "@type": "WebSite",
@@ -1764,13 +2002,14 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": "ProfessionalService",
             "@id": "https://www.sifk.de/#organization",
             "name": "SIFK GmbH",
             "legalName": "SIFK GmbH",
             "url": "https://www.sifk.de/",
             "logo": "https://www.sifk.de/logo-horizontal.png",
-            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "image": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK supports companies entering African markets and provides energy consulting and energy audits for businesses and buildings in Germany.",
             "email": "info@sifk.de",
             "telephone": "+49 6203 9375175",
             "address": {
@@ -1778,8 +2017,24 @@
               "streetAddress": "Carl-Benz-Straße 4",
               "postalCode": "69198",
               "addressLocality": "Schriesheim",
+              "addressRegion": "BW",
               "addressCountry": "DE"
-            }
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 49.466327,
+              "longitude": 8.663783
+            },
+            "areaServed": [
+              {
+                "@type": "AdministrativeArea",
+                "name": "Metropolregion Rhein-Neckar"
+              },
+              {
+                "@type": "Country",
+                "name": "Deutschland"
+              }
+            ]
           },
           {
             "@type": "WebSite",
@@ -1879,13 +2134,14 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
+            "@type": "ProfessionalService",
             "@id": "https://www.sifk.de/#organization",
             "name": "SIFK GmbH",
             "legalName": "SIFK GmbH",
             "url": "https://www.sifk.de/",
             "logo": "https://www.sifk.de/logo-horizontal.png",
-            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "image": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK supports companies entering African markets and provides energy consulting and energy audits for businesses and buildings in Germany.",
             "email": "info@sifk.de",
             "telephone": "+49 6203 9375175",
             "address": {
@@ -1893,8 +2149,24 @@
               "streetAddress": "Carl-Benz-Straße 4",
               "postalCode": "69198",
               "addressLocality": "Schriesheim",
+              "addressRegion": "BW",
               "addressCountry": "DE"
-            }
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": 49.466327,
+              "longitude": 8.663783
+            },
+            "areaServed": [
+              {
+                "@type": "AdministrativeArea",
+                "name": "Metropolregion Rhein-Neckar"
+              },
+              {
+                "@type": "Country",
+                "name": "Deutschland"
+              }
+            ]
           },
           {
             "@type": "WebSite",

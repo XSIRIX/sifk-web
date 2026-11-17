@@ -4,40 +4,65 @@ import type { ServicePageContent } from "@/lib/content-services";
 import { localizePath, type Locale } from "@/lib/locale-routing";
 import { organizationId, pageUrl, siteUrl } from "@/lib/seo";
 
-const de = getContent("de");
+const dayUrl = (day: string) => `https://schema.org/${day}`;
 
-// Company facts are already published in the site's legal notice.
-export const companyStructuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": organizationId,
-      name: company.name,
-      legalName: company.name,
-      url: `${siteUrl}/`,
-      logo: `${siteUrl}/logo-horizontal.png`,
-      description: de.meta.description,
-      email: company.email,
-      telephone: company.phoneInternational,
-      address: {
-        "@type": "PostalAddress",
-        streetAddress: company.street,
-        postalCode: company.postalCode,
-        addressLocality: company.city,
-        addressCountry: company.country
+/** Company and website, in the page's language. Owner facts appear only once they are set. */
+export function companyStructuredData(locale: Locale) {
+  const { home } = getContent(locale);
+  const sameAs = [company.googleProfileUrl, company.linkedinUrl].filter((url): url is string => Boolean(url));
+  const logo = `${siteUrl}/logo-horizontal.png`;
+
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": organizationId,
+        name: company.name,
+        legalName: company.name,
+        url: `${siteUrl}/`,
+        logo,
+        image: logo,
+        // The plain-words line from the home page, in the page's language.
+        description: home.hero.text,
+        email: company.email,
+        telephone: company.phoneInternational,
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: company.street,
+          postalCode: company.postalCode,
+          addressLocality: company.city,
+          addressRegion: company.region,
+          addressCountry: company.country
+        },
+        geo: { "@type": "GeoCoordinates", latitude: company.geo.latitude, longitude: company.geo.longitude },
+        areaServed: [
+          { "@type": "AdministrativeArea", name: "Metropolregion Rhein-Neckar" },
+          { "@type": "Country", name: "Deutschland" }
+        ],
+        ...(company.openingHours
+          ? {
+              openingHoursSpecification: company.openingHours.map((slot) => ({
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: slot.days.map(dayUrl),
+                opens: slot.opens,
+                closes: slot.closes
+              }))
+            }
+          : {}),
+        ...(sameAs.length > 0 ? { sameAs } : {})
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${siteUrl}/#website`,
+        url: `${siteUrl}/`,
+        name: company.name,
+        inLanguage: ["de", "en"],
+        publisher: { "@id": organizationId }
       }
-    },
-    {
-      "@type": "WebSite",
-      "@id": `${siteUrl}/#website`,
-      url: `${siteUrl}/`,
-      name: company.name,
-      inLanguage: ["de", "en"],
-      publisher: { "@id": organizationId }
-    }
-  ]
-};
+    ]
+  };
+}
 
 export function serviceStructuredData(locale: Locale) {
   const { services } = getContent(locale);

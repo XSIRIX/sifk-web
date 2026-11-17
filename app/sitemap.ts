@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return (Object.keys(seoPages) as SeoPagePath[]).flatMap((path) =>
     pageLocales(path).map((locale) => ({
       url: pageUrl(path, locale),
+      lastModified: seoPages[path].updated,
       alternates: { languages: languageAlternates(path) }
     }))
   );

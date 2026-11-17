@@ -8,10 +8,12 @@ export const organizationId = `${siteUrl}/#organization`;
 type PageCopy = { title: string; description: string };
 
 // German is required. A page without `en` exists in German only.
-type SeoEntry = { de: PageCopy; en?: PageCopy };
+// `updated` is the day the page's copy last changed (YYYY-MM-DD). The sitemap reports it.
+type SeoEntry = { updated: string; de: PageCopy; en?: PageCopy };
 
 export const seoPages = {
   "/": {
+    updated: "2026-11-17",
     de: {
       title: "Afrika-Geschäftsentwicklung & Energieberatung",
       description:
@@ -24,6 +26,7 @@ export const seoPages = {
     }
   },
   "/leistungen": {
+    updated: "2026-11-17",
     de: {
       title: "Leistungen: Markteintritt Afrika & Energieberatung",
       description:
@@ -36,6 +39,7 @@ export const seoPages = {
     }
   },
   "/unser-team": {
+    updated: "2026-11-17",
     de: {
       title: "Unser Team für Afrika-Geschäftsentwicklung & Energie",
       description:
@@ -48,6 +52,7 @@ export const seoPages = {
     }
   },
   "/ueber-uns": {
+    updated: "2026-11-14",
     de: {
       title: "Über uns: Verbindungen zwischen Deutschland & Afrika",
       description:
@@ -60,6 +65,7 @@ export const seoPages = {
     }
   },
   "/cloody": {
+    updated: "2026-11-14",
     de: {
       title: "Cloody: Handelsplattform für Europa & Afrika",
       description:
@@ -72,6 +78,7 @@ export const seoPages = {
     }
   },
   "/kontakt": {
+    updated: "2026-11-17",
     de: {
       title: "Kontakt für Afrika-Projekte & Energieberatung",
       description:
@@ -84,6 +91,7 @@ export const seoPages = {
     }
   },
   "/impressum": {
+    updated: "2026-11-14",
     de: {
       title: "Impressum",
       description:
@@ -96,6 +104,7 @@ export const seoPages = {
     }
   },
   "/datenschutz": {
+    updated: "2026-11-14",
     de: {
       title: "Datenschutzerklärung",
       description:
@@ -108,6 +117,7 @@ export const seoPages = {
     }
   },
   "/leistungen/energieberatung": {
+    updated: "2026-11-17",
     de: {
       title: "Energieaudit & Energieberatung für Unternehmen",
       description:
@@ -120,6 +130,7 @@ export const seoPages = {
     }
   },
   "/leistungen/markteintritt-afrika": {
+    updated: "2026-11-17",
     de: {
       title: "Markteintritt Afrika: Beratung für Unternehmen",
       description:
@@ -132,6 +143,7 @@ export const seoPages = {
     }
   },
   "/beratungsgutscheine-afrika": {
+    updated: "2026-11-17",
     de: {
       title: "Beratungsgutscheine Afrika: Förderung & Beratung",
       description:

@@ -3,6 +3,7 @@
 //   SIFK_APP_DIR=<base checkout>/.next/server/app node tests/build/make-baseline-extra.mjs
 // Release 2 changes some of these on purpose (lang on /en, company data); update them then, deliberately.
 // Done for lang: /en pages are "en" since the two root layouts (release 2, Task 1).
+// Done for company data: ProfessionalService with region, geo and area, description in the page language (release 2, Task 5).
 import { writeFileSync } from "node:fs";
 import { EXISTING_ROUTES, readPage, head, socialMeta, jsonLd } from "./helpers.mjs";
 

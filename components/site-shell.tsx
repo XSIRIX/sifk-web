@@ -46,7 +46,7 @@ export function SiteShell({ locale, children }: { locale: Locale; children: Reac
         <a className="skip-link" href="#main">
           {sharedCopy[locale].skipLink}
         </a>
-        <StructuredData data={companyStructuredData} />
+        <StructuredData data={companyStructuredData(locale)} />
         <HashScrollController />
         <MotionRoot />
         <SiteHeader />
