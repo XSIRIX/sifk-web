@@ -3,6 +3,7 @@ import { PageHero } from "@/components/page-parts";
 import { company } from "@/lib/company";
 import { getContent } from "@/lib/content";
 import type { Locale } from "@/lib/locale-routing";
+import { sharedCopy } from "@/lib/shared-copy";
 
 const HOURS: Record<Locale, { title: string; days: Record<string, string> }> = {
   de: {
@@ -18,6 +19,7 @@ const HOURS: Record<Locale, { title: string; days: Record<string, string> }> = {
 export function ContactView({ locale }: { locale: Locale }) {
   const hours = HOURS[locale];
   const { contact, common, places } = getContent(locale);
+  const formCopy = sharedCopy[locale].contactForm;
 
   return (
     <>
@@ -78,6 +80,14 @@ export function ContactView({ locale }: { locale: Locale }) {
           <h2 className="sr-only" id="contact-form-title">
             {contact.formTitle}
           </h2>
+          {/* Shown only after a form post without JavaScript, through the address fragment. */}
+          <div className="form-success" id="gesendet" role="status" tabIndex={-1}>
+            <p className="form-success-title">{formCopy.successTitle}</p>
+            <p>{formCopy.successText}</p>
+          </div>
+          <p className="form-error" id="fehler" role="alert" tabIndex={-1}>
+            {formCopy.error}
+          </p>
           <ContactForm locale={locale} />
 
           <figure className="contact-place">

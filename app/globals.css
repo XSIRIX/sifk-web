@@ -2669,6 +2669,16 @@ html.stack .tabsheets .tabsheet {
   outline: none;
 }
 
+/* Notes after a form post without JavaScript: /kontakt#gesendet and /kontakt#fehler. */
+#gesendet:not(:target),
+#fehler:not(:target) {
+  display: none;
+}
+
+#fehler {
+  grid-column: 1 / span 7;
+}
+
 .form-success-title {
   font-family: var(--font-display);
   font-size: var(--t-display);
@@ -2999,6 +3009,7 @@ html.stack .tabsheets .tabsheet {
 
   .contact-form,
   .form-success,
+  #fehler,
   .contact-side {
     grid-column: 1 / -1;
   }

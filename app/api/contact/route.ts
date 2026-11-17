@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
+import { enquirySubject, formRedirectPath } from "@/lib/contact-mail";
+
 type ContactBody = {
   name?: unknown;
   company?: unknown;
@@ -8,6 +10,7 @@ type ContactBody = {
   topic?: unknown;
   message?: unknown;
   website?: unknown;
+  locale?: unknown;
 };
 
 const TOPIC_LABELS: Record<string, string> = {
@@ -16,6 +19,8 @@ const TOPIC_LABELS: Record<string, string> = {
   cloody: "Cloody und Kooperationen",
   allgemein: "Allgemeine Anfrage"
 };
+
+const LANGUAGE_NAMES: Record<string, string> = { de: "Deutsch", en: "Englisch" };
 
 // Until a sender on the sifk.de domain is verified in Resend, the test sender is used.
 // Set CONTACT_FROM, e.g. "SIFK Website <kontakt@sifk.de>", once the domain is verified.
@@ -26,19 +31,17 @@ function text(value: unknown, max: number) {
   return typeof value === "string" ? value.trim().slice(0, max) : "";
 }
 
-export async function POST(request: Request) {
-  let body: ContactBody;
+type Outcome = "sent" | "invalid" | "unconfigured" | "failed";
 
-  try {
-    body = (await request.json()) as ContactBody;
-  } catch {
-    return NextResponse.json({ error: "Invalid request." }, { status: 400 });
-  }
+const STATUS: Record<Exclude<Outcome, "sent">, { status: number; error: string }> = {
+  invalid: { status: 400, error: "Name, a valid email and a message are required." },
+  unconfigured: { status: 500, error: "Mail is not configured." },
+  failed: { status: 502, error: "Failed to send message." }
+};
 
-  // Honeypot: real visitors never see or fill this field.
-  if (text(body.website, 200)) {
-    return NextResponse.json({ success: true });
-  }
+async function send(body: ContactBody): Promise<Outcome> {
+  // Honeypot: real visitors never see or fill this field. Bots are told it worked.
+  if (text(body.website, 200)) return "sent";
 
   const name = text(body.name, 200);
   const company = text(body.company, 200);
@@ -46,20 +49,16 @@ export async function POST(request: Request) {
   const message = text(body.message, 5000);
   const topicKey = text(body.topic, 40);
   const topicLabel = TOPIC_LABELS[topicKey] ?? TOPIC_LABELS.allgemein;
+  const locale = text(body.locale, 5);
 
-  if (!name || !message || !EMAIL_PATTERN.test(email)) {
-    return NextResponse.json(
-      { error: "Name, a valid email and a message are required." },
-      { status: 400 }
-    );
-  }
+  if (!name || !message || !EMAIL_PATTERN.test(email)) return "invalid";
 
   const apiKey = process.env.RESEND_API_KEY;
   const to = process.env.CONTACT_EMAIL;
 
   if (!apiKey || !to) {
     console.error("Contact form: RESEND_API_KEY or CONTACT_EMAIL is not set.");
-    return NextResponse.json({ error: "Mail is not configured." }, { status: 500 });
+    return "unconfigured";
   }
 
   try {
@@ -67,12 +66,13 @@ export async function POST(request: Request) {
       from: process.env.CONTACT_FROM || FALLBACK_FROM,
       to,
       replyTo: email,
-      subject: `Neue Anfrage: ${topicLabel}${company ? ` (${company})` : ""}`,
+      subject: enquirySubject({ topicLabel, company, locale }),
       text: [
         `Name: ${name}`,
         company ? `Unternehmen: ${company}` : null,
         `E-Mail: ${email}`,
         `Anliegen: ${topicLabel}`,
+        `Sprache: ${LANGUAGE_NAMES[locale] ?? LANGUAGE_NAMES.de}`,
         "",
         message
       ]
@@ -82,12 +82,40 @@ export async function POST(request: Request) {
 
     if (error) {
       console.error("Contact form: Resend rejected the message.", error);
-      return NextResponse.json({ error: "Failed to send message." }, { status: 502 });
+      return "failed";
     }
-
-    return NextResponse.json({ success: true });
+    return "sent";
   } catch (error) {
     console.error("Contact form: sending failed.", error);
-    return NextResponse.json({ error: "Failed to send message." }, { status: 500 });
+    return "failed";
   }
+}
+
+export async function POST(request: Request) {
+  const isJson = (request.headers.get("content-type") ?? "").includes("application/json");
+
+  // A plain form post: the visitor has no JavaScript. Answer with a page, not with JSON.
+  if (!isJson) {
+    let body: ContactBody = {};
+    try {
+      body = Object.fromEntries(await request.formData()) as ContactBody;
+    } catch {
+      // Unreadable body: treated as invalid input below.
+    }
+    const outcome = await send(body);
+    const target = new URL(formRedirectPath(text(body.locale, 5), outcome === "sent"), request.url);
+    return NextResponse.redirect(target, 303);
+  }
+
+  let body: ContactBody;
+  try {
+    body = (await request.json()) as ContactBody;
+  } catch {
+    return NextResponse.json({ error: "Invalid request." }, { status: 400 });
+  }
+
+  const outcome = await send(body);
+  if (outcome === "sent") return NextResponse.json({ success: true });
+  const { status, error } = STATUS[outcome];
+  return NextResponse.json({ error }, { status });
 }

@@ -92,7 +92,9 @@ export function ContactForm({ locale = "de" }: { locale?: Locale }) {
     ) : null;
 
   return (
-    <form className="contact-form" data-rv="kids" noValidate onSubmit={handleSubmit}>
+    // method and action make the form work without JavaScript: the route then answers with a redirect.
+    <form action="/api/contact" className="contact-form" data-rv="kids" method="post" noValidate onSubmit={handleSubmit}>
+      <input name="locale" type="hidden" value={locale} />
       <fieldset className="topic-field">
         <legend className="field-label">{copy.fields.topic}</legend>
         <div className="topic-options">
