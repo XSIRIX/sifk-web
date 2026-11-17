@@ -42,7 +42,16 @@ test("language switch says where it really goes", () => {
   assert.match(html(), /aria-label="Diese Seite gibt es nur auf Deutsch\. Zur englischen Leistungsseite, Bereich Afrika"/);
   assert.match(readPage("/leistungen"), /aria-label="Switch to English"/);
 });
-test("a cached open page carries its end date for the refresh guard", () => {
-  assert.match(html(), /data-dated-until="2027-02-28"/);
-  assert.match(html(), /data-dated-ended="false"/);
+test("no automatic switch: the page has no end-date marker and no ended copy", () => {
+  assert.doesNotMatch(html(), /data-dated/);
+  assert.doesNotMatch(html(), /Das Programm ist beendet/);
+});
+
+// Visitors reach the page from the Africa sections, not only from the footer.
+const links = (route) => (readPage(route).match(/href="\/beratungsgutscheine-afrika"/g) ?? []).length;
+test("home and services pages link to the voucher page in their Africa section", () => {
+  assert.equal(links("/"), 2, "footer + Africa section on /");
+  assert.equal(links("/leistungen"), 2, "footer + Africa section on /leistungen");
+  assert.equal(links("/en"), 0);
+  assert.equal(links("/en/leistungen"), 0);
 });

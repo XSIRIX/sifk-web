@@ -1,4 +1,4 @@
-import { voucherDe, type VoucherContent } from "@/lib/content-voucher";
+import { voucherDe, voucherTeaserDe, type VoucherContent, type VoucherTeaser } from "@/lib/content-voucher";
 import type { Locale } from "@/lib/locale-routing";
 
 export type CountryCode = "de" | "zm" | "et" | "ug" | "gh" | "ke" | "tz";
@@ -591,7 +591,9 @@ const de = {
     }
   },
   // German only: the page /beratungsgutscheine-afrika has no English version.
-  voucher: voucherDe as VoucherContent | null
+  voucher: voucherDe as VoucherContent | null,
+  // Funding note in the Africa sections of the home and services pages. German only, like the page.
+  voucherTeaser: voucherTeaserDe as VoucherTeaser | null
 };
 
 export type SiteContent = typeof de;
@@ -1158,7 +1160,8 @@ const en: SiteContent = {
       text: "Cloody is in development. If you want to be there from the start, talk to us."
     }
   },
-  voucher: null
+  voucher: null,
+  voucherTeaser: null
 };
 
 export const content: Record<Locale, SiteContent> = { de, en };

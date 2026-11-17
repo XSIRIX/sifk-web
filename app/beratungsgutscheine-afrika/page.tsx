@@ -6,9 +6,6 @@ import { breadcrumbStructuredData } from "@/lib/structured-data";
 
 export const metadata = createPageMetadata("/beratungsgutscheine-afrika", "de");
 
-// Re-render hourly, so the page switches to its "ended" copy after the deadline without a redeploy.
-export const revalidate = 3600;
-
 export default function VoucherPage() {
   const crumb = getContent("de").voucher?.crumb ?? "Beratungsgutscheine Afrika";
 
@@ -20,7 +17,7 @@ export default function VoucherPage() {
           { name: crumb, url: pageUrl("/beratungsgutscheine-afrika", "de") }
         ])}
       />
-      <VoucherView now={new Date()} />
+      <VoucherView />
     </>
   );
 }

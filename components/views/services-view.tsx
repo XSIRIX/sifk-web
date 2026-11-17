@@ -9,7 +9,7 @@ import { localizePath, type Locale } from "@/lib/locale-routing";
 import { serviceStructuredData } from "@/lib/structured-data";
 
 export function ServicesView({ locale }: { locale: Locale }) {
-  const { services, home, common, energyScene } = getContent(locale);
+  const { services, home, common, energyScene, voucherTeaser } = getContent(locale);
   const [africa, energy] = services.fields;
 
   return (
@@ -61,6 +61,17 @@ export function ServicesView({ locale }: { locale: Locale }) {
                   </li>
                 ))}
               </ul>
+              {voucherTeaser ? (
+                <>
+                  <p className="copy" data-rv>
+                    {voucherTeaser.text}
+                  </p>
+                  <Link className="link" data-rv href={voucherTeaser.link.href}>
+                    {voucherTeaser.link.label}
+                    <ArrowIcon />
+                  </Link>
+                </>
+              ) : null}
             </div>
             <div className="chapter-art">
               <img

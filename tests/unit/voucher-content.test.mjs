@@ -1,13 +1,16 @@
 // tests/unit/voucher-content.test.mjs
 import test from "node:test";
 import assert from "node:assert/strict";
-import { voucherDe } from "../../lib/content-voucher.ts";
-import { formatStand, resolveText } from "../../lib/dated.ts";
+import { voucherDe, voucherTeaserDe } from "../../lib/content-voucher.ts";
 
-test("end date is a full YYYY-MM-DD date", () => assert.match(voucherDe.until, /^\d{4}-\d{2}-\d{2}$/));
-test("each state has its own Stand date", () => {
-  assert.equal(typeof voucherDe.stand, "object");
-  assert.equal(formatStand(resolveText(voucherDe.stand, new Date("2026-11-17T12:00:00Z")), "de"), "Stand: 17.11.2026");
+test("one version only: the page never switches copy on its own", () => {
+  assert.equal("until" in voucherDe, false);
+  assert.equal("ended" in voucherDe, false);
+  assert.equal(voucherDe.stand, "Stand: 17.11.2026");
+});
+test("the funding note repeats the approved hero sentences word for word", () => {
+  assert.equal(voucherTeaserDe.text, voucherDe.hero.lead);
+  assert.equal(voucherTeaserDe.link.href, "/beratungsgutscheine-afrika");
 });
 test("no sentence uses a short form of BAFA's listing wording", () => {
   const all = JSON.stringify(voucherDe);

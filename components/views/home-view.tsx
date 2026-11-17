@@ -24,7 +24,7 @@ export const PLACE_FIELD: Record<CountryCode, string> = {
 };
 
 export function HomeView({ locale }: { locale: Locale }) {
-  const { home, common, countries, places, team, energyScene, cloody } = getContent(locale);
+  const { home, common, countries, places, team, energyScene, cloody, voucherTeaser } = getContent(locale);
   const to = (href: string) => localizePath(href, locale);
 
   // Everyone is counted once, in the country they work from first.
@@ -123,6 +123,17 @@ export function HomeView({ locale }: { locale: Locale }) {
                   </li>
                 ))}
               </ul>
+              {voucherTeaser ? (
+                <>
+                  <p className="copy" data-rv>
+                    {voucherTeaser.text}
+                  </p>
+                  <Link className="link" data-rv href={voucherTeaser.link.href}>
+                    {voucherTeaser.link.label}
+                    <ArrowIcon />
+                  </Link>
+                </>
+              ) : null}
               <Link className="btn" href={to(home.africa.link.href)}>
                 {home.africa.link.label}
                 <ArrowIcon />
