@@ -3,6 +3,8 @@ import type { Locale } from "@/lib/locale-routing";
 type TopicOption = { value: string; label: string };
 
 export type SharedCopy = {
+  skipLink: string;
+  notFound: { title: string; text: string; home: string };
   navigation: Array<{ href: string; label: string }>;
   header: {
     contactLabel: string;
@@ -54,6 +56,12 @@ export type SharedCopy = {
 
 export const sharedCopy: Record<Locale, SharedCopy> = {
   de: {
+    skipLink: "Zum Inhalt springen",
+    notFound: {
+      title: "Diese Seite gibt es nicht.",
+      text: "Vielleicht hat sich die Adresse geändert.",
+      home: "Zur Startseite"
+    },
     navigation: [
       { href: "/leistungen", label: "Leistungen" },
       { href: "/unser-team", label: "Team" },
@@ -118,6 +126,12 @@ export const sharedCopy: Record<Locale, SharedCopy> = {
     }
   },
   en: {
+    skipLink: "Skip to content",
+    notFound: {
+      title: "This page does not exist.",
+      text: "The address may have changed.",
+      home: "Back to the home page"
+    },
     navigation: [
       { href: "/leistungen", label: "Services" },
       { href: "/unser-team", label: "Team" },
