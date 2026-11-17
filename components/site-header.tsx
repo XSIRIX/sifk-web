@@ -99,7 +99,7 @@ export function SiteHeader() {
       >
         <div className="shell header-in">
           <Link aria-label={copy.header.homeLabel} className="brand" href={localizePath("/", locale)}>
-            <img alt="SIFK GmbH – Bridging Germany & Africa" height={80} src="/logo-horizontal.png" width={240} />
+            <img alt={copy.header.logoAlt} height={80} src="/logo-horizontal.png" width={240} />
           </Link>
 
           <nav aria-label={copy.header.navAriaLabel} className="nav">

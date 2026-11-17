@@ -13,6 +13,8 @@ export type SharedCopy = {
     closeMenu: string;
     localeLabel: string;
     localeAriaLabel: string;
+    /** Alt text of the logo image in header and footer. */
+    logoAlt: string;
     /** Used when this page has no version in the other language and the switch goes elsewhere. */
     localeFallbackAriaLabel: string;
     homeLabel: string;
@@ -76,7 +78,8 @@ export const sharedCopy: Record<Locale, SharedCopy> = {
       localeLabel: "EN",
       localeAriaLabel: "Switch to English",
       localeFallbackAriaLabel: "Diese Seite gibt es nur auf Deutsch. Zur englischen Seite Markteintritt Afrika",
-      homeLabel: "SIFK GmbH, zur Startseite"
+      homeLabel: "SIFK GmbH, zur Startseite",
+      logoAlt: "SIFK GmbH Logo: Afrika, aus Bändern gewebt"
     },
     footer: {
       copy:
@@ -85,7 +88,11 @@ export const sharedCopy: Record<Locale, SharedCopy> = {
       contactTitle: "Kontakt",
       legalTitle: "Rechtliches",
       // Soft hyphen: the long compound must break in the narrow footer tile on phones.
-      services: [{ href: "/beratungsgutscheine-afrika", label: "Beratungs­gutscheine Afrika" }],
+      services: [
+        { href: "/leistungen/energieberatung", label: "Energie\u00ADberatung" },
+        { href: "/leistungen/markteintritt-afrika", label: "Markteintritt Afrika" },
+        { href: "/beratungsgutscheine-afrika", label: "Beratungs\u00ADgutscheine Afrika" }
+      ],
       links: [
         { href: "/impressum", label: "Impressum" },
         { href: "/datenschutz", label: "Datenschutz" }
@@ -146,7 +153,8 @@ export const sharedCopy: Record<Locale, SharedCopy> = {
       localeLabel: "DE",
       localeAriaLabel: "Auf Deutsch wechseln",
       localeFallbackAriaLabel: "This page exists in English only. Go to the German page",
-      homeLabel: "SIFK GmbH, home"
+      homeLabel: "SIFK GmbH, home",
+      logoAlt: "SIFK GmbH logo: Africa woven from ribbons"
     },
     footer: {
       copy:
@@ -154,7 +162,10 @@ export const sharedCopy: Record<Locale, SharedCopy> = {
       navTitle: "Pages",
       contactTitle: "Contact",
       legalTitle: "Legal",
-      services: [],
+      services: [
+        { href: "/leistungen/energieberatung", label: "Energy consulting" },
+        { href: "/leistungen/markteintritt-afrika", label: "Africa market entry" }
+      ],
       links: [
         { href: "/impressum", label: "Legal notice" },
         { href: "/datenschutz", label: "Privacy" }

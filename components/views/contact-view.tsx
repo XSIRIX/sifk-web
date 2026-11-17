@@ -35,9 +35,15 @@ export function ContactView({ locale }: { locale: Locale }) {
                   {company.street}
                   <br />
                   {company.postalCode} {company.city}
+                  <br />
+                  {/* Small, under the address: the tile keeps its two columns. */}
+                  <a href={company.mapUrl}>
+                    <span className="small">{contact.mapLabel}</span>
+                  </a>
                 </p>
               </div>
             </div>
+            <p className="copy">{contact.area}</p>
           </aside>
         }
         text={contact.intro.text}

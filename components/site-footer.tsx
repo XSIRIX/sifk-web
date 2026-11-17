@@ -75,7 +75,7 @@ export function SiteFooter() {
 
         <div className="tile tile-mark f-white">
           <img
-            alt="SIFK GmbH – Bridging Germany & Africa"
+            alt={copy.header.logoAlt}
             height={400}
             loading="lazy"
             src="/logo-horizontal-lg.png"

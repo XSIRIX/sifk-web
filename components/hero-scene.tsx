@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 
 import { ArrowIcon } from "@/components/icons";
 import { MOTION_QUERY, STACK_QUERY } from "@/components/motion-root";
@@ -117,10 +117,14 @@ export function HeroScene({
 
       <div className="shell hero-copy">
         <h1 className="hero-title">
-          {title.map((line) => (
-            <span key={line} style={{ overflow: "clip", paddingBottom: "0.08em", marginBottom: "-0.08em" }}>
-              <span>{line}</span>
-            </span>
+          {title.map((line, index) => (
+            <Fragment key={line}>
+              {/* A space between the lines, so the raw text reads "Afrika. Effizienz". */}
+              {index > 0 ? " " : null}
+              <span style={{ overflow: "clip", paddingBottom: "0.08em", marginBottom: "-0.08em" }}>
+                <span>{line}</span>
+              </span>
+            </Fragment>
           ))}
         </h1>
         <p className="hero-text">{text}</p>

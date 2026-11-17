@@ -114,6 +114,13 @@ English rows are faithful translations. Most rows describe SIFK's own work; seve
 
 **Re-check by hand:** A6 and A12 in early February 2027, with the voucher page. If the programme ends, reword or remove them.
 
+## Existing pages: new wording (home, Kontakt)
+
+| # | Claim, as it ships | Source | Checked | Owner yes |
+|---|---|---|---|---|
+| S1 | Home: „SIFK begleitet Unternehmen beim Markteintritt in Afrika und bietet Energieberatung und Energieaudits für Betriebe und Gebäude in Deutschland.“ English: „SIFK supports companies entering African markets and provides energy consulting and energy audits for businesses and buildings in Germany.“ | SIFK | 17.11.2026 | no |
+| S2 | Kontakt: „Wir arbeiten für Unternehmen in Schriesheim, Heidelberg, Mannheim, Weinheim, Ladenburg und der ganzen Region Rhein-Neckar, und deutschlandweit.“ English: „We work for companies in Schriesheim, Heidelberg, Mannheim, Weinheim, Ladenburg and the whole Rhine-Neckar region, and across Germany.“ | SIFK | 17.11.2026 | no |
+
 ## Left out, and why
 
 | Fact | Why it is not on the page |

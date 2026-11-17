@@ -25,6 +25,8 @@ export type ServiceField = {
   lead: string;
   text: string;
   services: ServiceItem[];
+  /** The service's own page. */
+  more: { href: string; label: string };
 };
 
 type Link = { href: string; label: string };
@@ -83,7 +85,7 @@ const de = {
     hero: {
       title: ["Wachstum in Afrika.", "Effizienz in Deutschland."],
       text:
-        "SIFK begleitet Unternehmen beim Markteintritt in afrikanischen Ländern und senkt den Energieverbrauch von Betrieben und Gebäuden in Deutschland.",
+        "SIFK begleitet Unternehmen beim Markteintritt in Afrika und bietet Energieberatung und Energieaudits für Betriebe und Gebäude in Deutschland.",
       actions: [
         { href: "/leistungen#internationale-geschaeftsentwicklung", label: "Markteintritt Afrika" },
         { href: "/leistungen#energieberatung-deutschland", label: "Energieberatung" }
@@ -100,7 +102,7 @@ const de = {
           caption: "Kapstadt, Tafelberg",
           alt: "Der Tafelberg über Kapstadt, davor goldene Savanne im Abendlicht",
           sceneAlt:
-            "Weißes Architekturmodell: links ein deutscher Betrieb mit Solardach unter einer Burgruine, rechts Tafelberg, Akazien und ein Hafen. Bänder in Schwarz, Rot, Gold und Grün verweben sich dazwischen."
+            "Weißes Architekturmodell: links ein Betrieb mit Solardach und Lastwagen unter einem Weinberg mit Burgruine, rechts Tafelberg, Akazien, Hochhäuser und ein Hafen mit Kränen und Containerschiffen."
         },
         germany: {
           place: "Deutschland",
@@ -168,7 +170,7 @@ const de = {
           text: "Wir koordinieren Beteiligte, Termine und Dokumente, damit Ihr Projekt nicht an der Entfernung scheitert."
         }
       ] as ServiceItem[],
-      link: { href: "/leistungen#internationale-geschaeftsentwicklung", label: "Leistungen Afrika im Detail" } as Link,
+      link: { href: "/leistungen/markteintritt-afrika", label: "Markteintritt Afrika" } as Link,
       imageAlt: "Weißes Modell einer afrikanischen Hafen- und Marktstadt mit Kran, Containern und Akazien, durchzogen von gelben und grünen Bändern"
     },
     statement: {
@@ -193,7 +195,7 @@ const de = {
         "Maßnahmenplan mit Kosten, Einsparung und Amortisation",
         "Hinweise zu passenden Förderprogrammen"
       ],
-      link: { href: "/leistungen#energieberatung-deutschland", label: "Leistungen Energie im Detail" } as Link,
+      link: { href: "/leistungen/energieberatung", label: "Energieberatung für Unternehmen" } as Link,
       imageAlt: "Weißes Modell eines Betriebs mit Solardach, Wärmepumpen und Ladepunkten"
     },
     people: {
@@ -237,6 +239,7 @@ const de = {
     fields: [
       {
         id: "internationale-geschaeftsentwicklung",
+        more: { href: "/leistungen/markteintritt-afrika", label: "Markteintritt Afrika" },
         label: "Afrika",
         title: "Internationale Geschäfts\u00ADentwicklung",
         lead: "Märkte prüfen, Partner finden, Projekte vor Ort begleiten.",
@@ -263,6 +266,7 @@ const de = {
       },
       {
         id: "energieberatung-deutschland",
+        more: { href: "/leistungen/energieberatung", label: "Energieberatung für Unternehmen" },
         label: "Energie",
         title: "Energie\u00ADberatung Deutschland",
         lead: "Verbrauch messen, Maßnahmen rechnen, Kosten senken.",
@@ -372,6 +376,7 @@ const de = {
     },
     leadership: {
       title: "Geschäftsführung und Leitung Energie",
+      link: { href: "/leistungen/energieberatung", label: "Energieberatung für Unternehmen" } as Link,
       members: [
         {
           name: "Pheeraphon Karch",
@@ -398,6 +403,7 @@ const de = {
     africaDesk: {
       title: "Bereich Afrika",
       text: "Markterschließung, Partnerschaften und Projektsteuerung für afrikanische Märkte.",
+      link: { href: "/leistungen/markteintritt-afrika", label: "Markteintritt Afrika" } as Link,
       members: [
         {
           name: "Patience Bauer",
@@ -521,7 +527,10 @@ const de = {
         "Beschreiben Sie kurz, worum es geht. Wir melden uns persönlich, mit einer ehrlichen Einschätzung und einem Vorschlag für den nächsten Schritt."
     },
     formTitle: "Kontaktformular",
-    direct: "Lieber direkt?"
+    direct: "Lieber direkt?",
+    area:
+      "Wir arbeiten für Unternehmen in Schriesheim, Heidelberg, Mannheim, Weinheim, Ladenburg und der ganzen Region Rhein-Neckar, und deutschlandweit.",
+    mapLabel: "In Google Maps öffnen"
   },
   cloody: {
     imageAlt: "Weißes Modell eines Containerschiffs, beladen mit Containern in Schwarz, Rot, Gold und Grün",
@@ -654,7 +663,7 @@ const en: SiteContent = {
     hero: {
       title: ["Growth in Africa.", "Efficiency in Germany."],
       text:
-        "SIFK helps companies enter African markets and cuts the energy use of businesses and buildings in Germany.",
+        "SIFK supports companies entering African markets and provides energy consulting and energy audits for businesses and buildings in Germany.",
       actions: [
         { href: "/leistungen#internationale-geschaeftsentwicklung", label: "Market entry Africa" },
         { href: "/leistungen#energieberatung-deutschland", label: "Energy consulting" }
@@ -671,7 +680,7 @@ const en: SiteContent = {
           caption: "Cape Town, Table Mountain",
           alt: "Table Mountain above Cape Town, with golden savanna in evening light in front",
           sceneAlt:
-            "White architectural model: a German company with a solar roof below a castle ruin on the left, Table Mountain, acacias and a harbour on the right. Ribbons in black, red, gold and green weave together in between."
+            "White architectural model: on the left a company with a solar roof and lorries below a vineyard hill with a castle ruin; on the right Table Mountain, acacias, high-rises and a harbour with cranes and container ships."
         },
         germany: {
           place: "Germany",
@@ -739,7 +748,7 @@ const en: SiteContent = {
           text: "We coordinate stakeholders, schedules and paperwork so distance doesn't stall your project."
         }
       ],
-      link: { href: "/leistungen#internationale-geschaeftsentwicklung", label: "Africa services in detail" },
+      link: { href: "/leistungen/markteintritt-afrika", label: "Africa market entry" },
       imageAlt: "White model of an African harbour and market town with a crane, containers and acacias, crossed by yellow and green ribbons"
     },
     statement: {
@@ -764,7 +773,7 @@ const en: SiteContent = {
         "Action plan with cost, savings and payback",
         "Guidance on suitable funding programmes"
       ],
-      link: { href: "/leistungen#energieberatung-deutschland", label: "Energy services in detail" },
+      link: { href: "/leistungen/energieberatung", label: "Energy consulting for companies" },
       imageAlt: "White model of a company site with a solar roof, heat pumps and charging points"
     },
     people: {
@@ -808,6 +817,7 @@ const en: SiteContent = {
     fields: [
       {
         id: "internationale-geschaeftsentwicklung",
+        more: { href: "/leistungen/markteintritt-afrika", label: "Africa market entry" },
         label: "Africa",
         title: "International Business Development",
         lead: "Test markets, find partners, support projects on the ground.",
@@ -834,6 +844,7 @@ const en: SiteContent = {
       },
       {
         id: "energieberatung-deutschland",
+        more: { href: "/leistungen/energieberatung", label: "Energy consulting for companies" },
         label: "Energy",
         title: "Energy Consulting Germany",
         lead: "Measure consumption, cost out measures, cut bills.",
@@ -943,6 +954,7 @@ const en: SiteContent = {
     },
     leadership: {
       title: "Management and head of energy",
+      link: { href: "/leistungen/energieberatung", label: "Energy consulting for companies" },
       members: [
         {
           name: "Pheeraphon Karch",
@@ -969,6 +981,7 @@ const en: SiteContent = {
     africaDesk: {
       title: "Africa business unit",
       text: "Market development, partnerships and project management for African markets.",
+      link: { href: "/leistungen/markteintritt-afrika", label: "Africa market entry" },
       members: [
         {
           name: "Patience Bauer",
@@ -1092,7 +1105,10 @@ const en: SiteContent = {
         "Tell us briefly what it's about. We'll reply personally, with an honest assessment and a suggestion for the next step."
     },
     formTitle: "Contact form",
-    direct: "Prefer to reach us directly?"
+    direct: "Prefer to reach us directly?",
+    area:
+      "We work for companies in Schriesheim, Heidelberg, Mannheim, Weinheim, Ladenburg and the whole Rhine-Neckar region, and across Germany.",
+    mapLabel: "Open in Google Maps"
   },
   cloody: {
     imageAlt: "White model of a container ship loaded with containers in black, red, gold and green",

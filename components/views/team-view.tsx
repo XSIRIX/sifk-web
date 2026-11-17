@@ -1,3 +1,6 @@
+import Link from "next/link";
+
+import { ArrowIcon } from "@/components/icons";
 import { CtaBand, PageHero } from "@/components/page-parts";
 import { PLACE_FIELD } from "@/components/views/home-view";
 import { getContent, type CountryCode, type TeamMember } from "@/lib/content";
@@ -79,6 +82,10 @@ export function TeamView({ locale }: { locale: Locale }) {
               <h2 className="display" data-split>
                 {team.leadership.title}
               </h2>
+              <Link className="link" href={localizePath(team.leadership.link.href, locale)}>
+                {team.leadership.link.label}
+                <ArrowIcon />
+              </Link>
             </div>
             {groupPlaces(team.leadership.members)}
           </div>
@@ -98,6 +105,10 @@ export function TeamView({ locale }: { locale: Locale }) {
               <p className="lead" data-rv>
                 {team.africaDesk.text}
               </p>
+              <Link className="link" href={localizePath(team.africaDesk.link.href, locale)}>
+                {team.africaDesk.link.label}
+                <ArrowIcon />
+              </Link>
             </div>
             {groupPlaces(team.africaDesk.members)}
           </div>

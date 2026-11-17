@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { CSSProperties, ReactNode } from "react";
+import { Fragment, type CSSProperties, type ReactNode } from "react";
 
 type CtaBandProps = {
   href: string;
@@ -79,10 +79,11 @@ export function PageHero({ title, text, field = "f-plaster", art, photo, side, b
           {before}
           <h1 className="mega" data-split>
             {title.includes("\n")
-              ? title.split("\n").map((line) => (
-                  <span key={line} style={{ display: "block" }}>
-                    {line}
-                  </span>
+              ? title.split("\n").map((line, index) => (
+                  <Fragment key={line}>
+                    {index > 0 ? " " : null}
+                    <span style={{ display: "block" }}>{line}</span>
+                  </Fragment>
                 ))
               : title}
           </h1>

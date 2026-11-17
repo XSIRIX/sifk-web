@@ -12,5 +12,7 @@ export const company = {
   managingDirector: "Pheeraphon Karch",
   court: "Amtsgericht Mannheim",
   register: "HRB 750493",
-  url: "https://www.sifk.de"
+  url: "https://www.sifk.de",
+  // A plain search link: no embedded map, so no consent is needed.
+  mapUrl: "https://www.google.com/maps/search/?api=1&query=SIFK+GmbH%2C+Carl-Benz-Stra%C3%9Fe+4%2C+69198+Schriesheim"
 } as const;

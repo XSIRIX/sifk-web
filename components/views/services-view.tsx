@@ -72,6 +72,10 @@ export function ServicesView({ locale }: { locale: Locale }) {
                   </Link>
                 </>
               ) : null}
+              <Link className="btn" href={localizePath(africa.more.href, locale)}>
+                {africa.more.label}
+                <ArrowIcon />
+              </Link>
             </div>
             <div className="chapter-art">
               <img
@@ -102,14 +106,20 @@ export function ServicesView({ locale }: { locale: Locale }) {
                 {energy.text}
               </p>
             </div>
-            <ul className="ledger" data-rv="kids">
-              {energy.services.map((service) => (
-                <li key={service.title}>
-                  <h3>{service.title}</h3>
-                  <p>{service.text}</p>
-                </li>
-              ))}
-            </ul>
+            <div>
+              <ul className="ledger" data-rv="kids">
+                {energy.services.map((service) => (
+                  <li key={service.title}>
+                    <h3>{service.title}</h3>
+                    <p>{service.text}</p>
+                  </li>
+                ))}
+              </ul>
+              <Link className="btn" href={localizePath(energy.more.href, locale)}>
+                {energy.more.label}
+                <ArrowIcon />
+              </Link>
+            </div>
           </div>
         </div>
         <EnergyFilm
