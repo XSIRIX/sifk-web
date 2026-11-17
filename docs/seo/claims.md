@@ -58,6 +58,40 @@ There is one version of the page. It does not change on its own after 28.02.2027
 
 Not claims: the breadcrumb, section titles that only name a topic („Häufige Fragen.“), the link label „Liste der gelisteten Beratungsunternehmen (BAFA, PDF)“, the footer link „Beratungsgutscheine Afrika“ and the link „Mehr zu den Beratungsgutscheinen Afrika“ on `/` and `/leistungen`.
 
+## Energy page: `/leistungen/energieberatung` and `/en/leistungen/energieberatung`
+
+English rows are faithful translations of the German row. Sources read on 17.11.2026:
+
+- **EDLG**: Energiedienstleistungsgesetz, §§ 1, 2 Nr. 17, 8, 8a, https://www.gesetze-im-internet.de/edl-g/
+- **BT**: Bundestag, Drucksache 21/8027 (text, Art. on the EDL-G: § 1 Nr. 4 new) and its record in DIP, „Beratungsstand: Überwiesen“, last step 24.09.2026, https://dip.bundestag.de/ ; first reading: https://www.bundestag.de/dokumente/textarchiv/2026/kw39-de-energieeffizienzrichtlinie-1211306
+- **EBN**: Förderrichtlinie „Energieberatung für Nichtwohngebäude, Anlagen und Systeme“ vom 13.12.2024 (BAnz AT 23.12.2024 B2), Nr. 3.1, 5, 6.2.1, 8.1 (read as published text), and BAFA's Modul 1 page, https://www.bafa.de/DE/Energie/Energieberatung/Nichtwohngebaeude_Anlagen_Systeme/Modul1_Energieaudit/modul1_energieaudit_node.html
+- **BEG**: BAFA, https://www.bafa.de/DE/Energie/Effiziente_Gebaeude/effiziente_gebaeude_node.html
+- **EEW5**: BAFA, Modul 5 Transformationspläne, https://www.bafa.de/DE/Energie/Energieeffizienz/Energieeffizienz_und_Prozesswaerme/Modul5_Transformationsplaene/modul5_transformationsplaene_node.html
+- **SIFK**: a statement about SIFK's own work.
+
+| # | Exact text (German) | Source | Checked on | Owner approved |
+|---|---|---|---|---|
+| E1 | Title „Energieaudit & Energieberatung für Unternehmen \| SIFK GmbH“; description „Energieaudit nach DIN EN 16247-1 und Energieberatung für Nichtwohngebäude nach DIN V 18599. Für Unternehmen in Heidelberg, Mannheim und der Region Rhein-Neckar.“ | SIFK | 17.11.2026 | no |
+| E2 | „Energieaudit und Energieberatung für Unternehmen.“ „Wir prüfen den Energieverbrauch von Betrieben und Nichtwohngebäuden und zeigen, welche Maßnahme sich zuerst lohnt. Für Unternehmen in Heidelberg, Mannheim und der Region Rhein-Neckar.“ | SIFK | 17.11.2026 | no |
+| E3 | „Heute gilt: Jedes Unternehmen, das kein kleines oder mittleres Unternehmen ist, muss ein Energieaudit nach DIN EN 16247-1 machen und es mindestens alle vier Jahre wiederholen. Wer ein Energiemanagementsystem nach DIN EN ISO 50001 oder ein Umweltmanagementsystem nach EMAS eingerichtet oder mit der Einrichtung begonnen hat, ist davon befreit.“ | EDLG §§ 1 Nr. 4, 2 Nr. 17, 8 Abs. 1 and 3, 8a Abs. 1 | 17.11.2026 | no |
+| E4 | „Ein Gesetzentwurf der Bundesregierung (Drucksache 21/8027) würde die Pflicht neu fassen: Entscheidend wäre dann nicht mehr die Größe des Unternehmens, sondern ein durchschnittlicher Energieverbrauch von mehr als 2,77 Gigawattstunden im Jahr, gerechnet über die letzten drei Kalenderjahre. Der Bundestag hat den Entwurf am 24.09.2026 an den Ausschuss überwiesen. Beschlossen ist er noch nicht.“ | BT | 17.11.2026 | no |
+| E5 | „Was Sie bekommen.“ Energieaudit nach DIN EN 16247-1: „Wir erfassen Verbräuche, Anlagen, Gebäude und Prozesse und dokumentieren das Audit so, wie die Norm es verlangt.“ Nichtwohngebäude nach DIN V 18599: „Wir bewerten Gebäudehülle, Heizung, Lüftung, Kühlung und Beleuchtung nach dem Rechenverfahren der Norm.“ Maßnahmenplan: „Jede Empfehlung mit Investition, jährlicher Einsparung und Amortisationszeit, sortiert nach Wirkung.“ Förderung: „Wir zeigen, welche Förderprogramme für Ihre Maßnahmen in Frage kommen und was dafür nötig ist.“ | SIFK (extends the approved `/leistungen` copy) | 17.11.2026 | no |
+| E6 | „So läuft ein Energieaudit ab.“ Erstgespräch: „Wir klären, welche Standorte, Gebäude und Anlagen das Audit umfasst und welche Daten schon vorliegen.“ Daten und Begehung: „Wir sammeln Verbrauchsdaten und sehen uns Gebäude, Anlagen und Abläufe vor Ort an.“ Analyse: „Wir werten Verbräuche aus, finden die größten Verbraucher und rechnen Maßnahmen durch.“ Bericht und Maßnahmenplan: „Sie erhalten den Auditbericht und einen Maßnahmenplan, mit dem Sie entscheiden können.“ | SIFK | 17.11.2026 | no |
+| E7 | „Das BAFA fördert Energieaudits nach DIN EN 16247 mit 50 % des Beratungshonorars, höchstens 3.000 Euro, bei jährlichen Energiekosten bis 10.000 Euro netto höchstens 600 Euro. Auch Energieberatungen für Nichtwohngebäude nach DIN V 18599 sind förderfähig. Die Beratung muss eine Person durchführen, die in der Energieeffizienz-Expertenliste gelistet ist. Die Förderrichtlinie endet am 31.12.2026.“ | EBN Nr. 3.1, 3.2, 5, 6.2.1, 8.1; BAFA Modul 1 page | 17.11.2026 | no |
+| E8 | „Für die Sanierung von Nichtwohngebäuden gibt es die Bundesförderung für effiziente Gebäude.“ | BEG | 17.11.2026 | no |
+| E9 | „Gefördert werden Pläne, mit denen ein Unternehmen seinen Weg zur Treibhausgasneutralität plant. Den Antrag stellen Sie beim Projektträger VDI/VDE Innovation + Technik.“ | EEW5 | 17.11.2026 | no |
+| E10 | „Unser Sitz ist in Schriesheim. Wir beraten Unternehmen in der Region und deutschlandweit.“ Places: Schriesheim, Heidelberg, Mannheim, Weinheim, Ladenburg, Rhein-Neckar. | SIFK; address in the Impressum | 17.11.2026 | no |
+| E11 | „Muss unser Unternehmen ein Energieaudit machen?“ „Nach heutigem Recht ja, wenn Ihr Unternehmen kein kleines oder mittleres Unternehmen im Sinne der Empfehlung 2003/361/EG der EU-Kommission ist und kein Energie- oder Umweltmanagementsystem eingerichtet hat.“ | EDLG §§ 1 Nr. 4, 8 Abs. 3 | 17.11.2026 | no |
+| E12 | „Wie oft ist ein Energieaudit fällig?“ „Mindestens alle vier Jahre, gerechnet vom Abschluss des letzten Energieaudits.“ | EDLG § 8 Abs. 1 | 17.11.2026 | no |
+| E13 | „Energieaudit oder Energiemanagementsystem?“ „Ein Energieaudit ist eine Bestandsaufnahme, die alle vier Jahre wiederholt wird. Ein Energiemanagementsystem nach DIN EN ISO 50001 ist ein dauerhafter Prozess. Wer eines einrichtet, ist von der Auditpflicht befreit.“ | EDLG §§ 2 Nr. 17, 8 Abs. 1 and 3 | 17.11.2026 | no |
+| E14 | „Was bestimmt die Kosten eines Energieaudits?“ „Vor allem die Zahl der Standorte und Gebäude, die Zahl der Anlagen und wie vollständig die Verbrauchsdaten schon vorliegen. Im Erstgespräch klären wir, wo wir ansetzen und was es kostet.“ | SIFK | 17.11.2026 | no |
+| E15 | „Gibt es Förderung für kleinere Unternehmen?“ „Das BAFA fördert Energieaudits und Energieberatungen für Nichtwohngebäude mit 50 % des Beratungshonorars. Die Förderrichtlinie endet am 31.12.2026.“ | EBN Nr. 3, 6.2, 8.1 | 17.11.2026 | no |
+| E16 | „Was unterscheidet DIN EN 16247 von DIN V 18599?“ „DIN EN 16247-1 regelt Energieaudits: Sie betrachten den gesamten Energieeinsatz eines Unternehmens, mit Gebäuden, Anlagen, Abläufen und Transport. DIN V 18599 ist das Rechenverfahren für die Energiebilanz von Gebäuden. Damit bewerten wir Nichtwohngebäude und planen ihre Sanierung.“ | EDLG § 8a Abs. 1 Nr. 3; EBN Nr. 3.2 | 17.11.2026 | no |
+| E17 | „Energieverbrauch prüfen lassen.“ „Im Erstgespräch klären wir, ob ein Audit Pflicht ist, wo wir ansetzen und was es kostet.“ | SIFK | 17.11.2026 | no |
+| E18 | „Stand: 17.11.2026“ (rows E3, E4, E7) | Date of this check | 17.11.2026 | no |
+
+**Re-check by hand** (nothing changes on its own): E4 whenever the Bundestag votes on 21/8027; E7 and E15 before 31.12.2026, and in any case in early January 2027, when the guideline has ended or been replaced.
+
 ## Left out, and why
 
 | Fact | Why it is not on the page |
@@ -68,6 +102,10 @@ Not claims: the breadcrumb, section titles that only name a topic („Häufige F
 | Madagaskar, Nigeria, Senegal (on the list) and Ghana, Sambia, Tansania (on the site) | Owner default: only Uganda, Kenia, Äthiopien plus Ostafrika and Subsahara. |
 | BAFA or BMWE logo | Not allowed for listed advisers (BAFA-W rule 2). |
 | How long BAFA takes to decide | BAFA-P gives no time ("schnellstmöglich"). |
+| Energy page: "Modul 1 only for companies not obliged to audit" | Found only on a consultant's website, not in the guideline text or on BAFA's pages. |
+| Energy page: EEW Transformationsplan funding rates and caps | The programme site (wettbewerb-energieeffizienz.de) blocks automated reading with a CAPTCHA; BAFA's page gives no figures. |
+| Energy page: BEG rates for non-residential buildings | The plan notes sources disagreed; named without figures. |
+| Energy page: any credential (BAFA-registered auditor, dena Expertenliste) | Not supplied by the owner. The page says the expert-list rule exists, not that SIFK meets it. |
 
 ## Notes for the owner
 

@@ -1,6 +1,7 @@
 import { company } from "@/lib/company";
 import { getContent } from "@/lib/content";
-import type { Locale } from "@/lib/locale-routing";
+import type { ServicePageContent } from "@/lib/content-services";
+import { localizePath, type Locale } from "@/lib/locale-routing";
 import { organizationId, pageUrl, siteUrl } from "@/lib/seo";
 
 const de = getContent("de");
@@ -66,5 +67,20 @@ export function breadcrumbStructuredData(items: Array<{ name: string; url: strin
       name: item.name,
       item: item.url
     }))
+  };
+}
+
+/** One Service node for a service page, pointing at the company node. */
+export function servicePageStructuredData(page: ServicePageContent, locale: Locale, description: string) {
+  const url = new URL(localizePath(page.path, locale), siteUrl).href;
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${url}#service`,
+    name: page.schema.name,
+    description,
+    serviceType: page.schema.serviceTypes,
+    url,
+    provider: { "@id": organizationId }
   };
 }

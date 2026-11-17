@@ -107,6 +107,18 @@ export const seoPages = {
         "Learn how SIFK GmbH processes personal data when you visit this website or send an inquiry, and find information about your privacy rights."
     }
   },
+  "/leistungen/energieberatung": {
+    de: {
+      title: "Energieaudit & Energieberatung für Unternehmen",
+      description:
+        "Energieaudit nach DIN EN 16247-1 und Energieberatung für Nichtwohngebäude nach DIN V 18599. Für Unternehmen in Heidelberg, Mannheim und der Region Rhein-Neckar."
+    },
+    en: {
+      title: "Energy Audits & Energy Consulting for Companies",
+      description:
+        "Energy audits to DIN EN 16247-1 and energy consulting for non-residential buildings to DIN V 18599, for companies in Heidelberg, Mannheim and the Rhine-Neckar region."
+    }
+  },
   "/beratungsgutscheine-afrika": {
     de: {
       title: "Beratungsgutscheine Afrika: Förderung & Beratung",

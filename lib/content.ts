@@ -1,3 +1,4 @@
+import { servicePagesDe, servicePagesEn, type ServicePages } from "@/lib/content-services";
 import { voucherDe, voucherTeaserDe, type VoucherContent, type VoucherTeaser } from "@/lib/content-voucher";
 import type { Locale } from "@/lib/locale-routing";
 
@@ -593,7 +594,8 @@ const de = {
   // German only: the page /beratungsgutscheine-afrika has no English version.
   voucher: voucherDe as VoucherContent | null,
   // Funding note in the Africa sections of the home and services pages. German only, like the page.
-  voucherTeaser: voucherTeaserDe as VoucherTeaser | null
+  voucherTeaser: voucherTeaserDe as VoucherTeaser | null,
+  servicePages: servicePagesDe as ServicePages
 };
 
 export type SiteContent = typeof de;
@@ -1161,7 +1163,8 @@ const en: SiteContent = {
     }
   },
   voucher: null,
-  voucherTeaser: null
+  voucherTeaser: null,
+  servicePages: servicePagesEn
 };
 
 export const content: Record<Locale, SiteContent> = { de, en };
