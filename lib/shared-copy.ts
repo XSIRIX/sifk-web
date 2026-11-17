@@ -11,6 +11,8 @@ export type SharedCopy = {
     closeMenu: string;
     localeLabel: string;
     localeAriaLabel: string;
+    /** Used when this page has no version in the other language and the switch goes elsewhere. */
+    localeFallbackAriaLabel: string;
     homeLabel: string;
   };
   footer: {
@@ -65,6 +67,7 @@ export const sharedCopy: Record<Locale, SharedCopy> = {
       closeMenu: "Menü schließen",
       localeLabel: "EN",
       localeAriaLabel: "Switch to English",
+      localeFallbackAriaLabel: "Diese Seite gibt es nur auf Deutsch. Zur englischen Leistungsseite, Bereich Afrika",
       homeLabel: "SIFK GmbH, zur Startseite"
     },
     footer: {
@@ -128,6 +131,7 @@ export const sharedCopy: Record<Locale, SharedCopy> = {
       closeMenu: "Close menu",
       localeLabel: "DE",
       localeAriaLabel: "Auf Deutsch wechseln",
+      localeFallbackAriaLabel: "This page exists in English only. Go to the German page",
       homeLabel: "SIFK GmbH, home"
     },
     footer: {

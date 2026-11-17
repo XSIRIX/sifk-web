@@ -29,3 +29,20 @@ test("footer of a German page links to the voucher page, an English page does no
   assert.match(readPage("/"), /href="\/beratungsgutscheine-afrika"/);
   assert.doesNotMatch(readPage("/en"), /beratungsgutscheine-afrika/);
 });
+
+// Review fixes.
+const DESCRIPTION =
+  "Beratungsgutscheine Afrika: das Förderprogramm des Bundes für Beratung zu Geschäftsvorhaben in Afrika, und wie SIFK Unternehmen beim Markteintritt berät.";
+
+test("description stays true after the programme ends and makes no listing claim", () => {
+  assert.equal(head(html()).description, DESCRIPTION);
+  assert.doesNotMatch(html(), /gelistetes Beratungsunternehmen Sie begleitet/);
+});
+test("language switch says where it really goes", () => {
+  assert.match(html(), /aria-label="Diese Seite gibt es nur auf Deutsch\. Zur englischen Leistungsseite, Bereich Afrika"/);
+  assert.match(readPage("/leistungen"), /aria-label="Switch to English"/);
+});
+test("a cached open page carries its end date for the refresh guard", () => {
+  assert.match(html(), /data-dated-until="2027-02-28"/);
+  assert.match(html(), /data-dated-ended="false"/);
+});

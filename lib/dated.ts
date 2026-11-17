@@ -8,16 +8,35 @@ export type Dated<T> = {
   ended: T;
 };
 
-const berlinDay = new Intl.DateTimeFormat("en-CA", {
+const berlinDay = new Intl.DateTimeFormat("en-GB", {
   timeZone: "Europe/Berlin",
   year: "numeric",
   month: "2-digit",
   day: "2-digit"
 });
 
+const ISO_DAY = /^\d{4}-\d{2}-\d{2}$/;
+
+/** Today's calendar day in German time, as `YYYY-MM-DD`. */
+function germanToday(now: Date): string {
+  const parts = Object.fromEntries(berlinDay.formatToParts(now).map((part) => [part.type, part.value]));
+  return `${parts.year}-${parts.month}-${parts.day}`;
+}
+
 /** True once the German calendar day is later than `until`. */
 export function isEnded(until: string, now: Date): boolean {
-  return berlinDay.format(now) > until;
+  if (!ISO_DAY.test(until)) {
+    throw new Error(`End date must be written YYYY-MM-DD, got "${until}"`);
+  }
+  return germanToday(now) > until;
+}
+
+/**
+ * True when a page was rendered in one state but the date says the other.
+ * A cached page rendered before the end date uses this to fetch the ended version.
+ */
+export function needsRefresh(until: string, renderedEnded: boolean, now: Date): boolean {
+  return isEnded(until, now) !== renderedEnded;
 }
 
 export function resolveDated<T>(block: Dated<T>, now: Date): T {

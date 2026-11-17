@@ -4,7 +4,8 @@ import { fileURLToPath } from "node:url";
 import path from "node:path";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../..");
-const appDir = path.join(root, ".next/server/app");
+// SIFK_APP_DIR points the helpers at another build, used once to record the baseline from the base branch.
+const appDir = process.env.SIFK_APP_DIR ?? path.join(root, ".next/server/app");
 
 const PAGES = ["/", "/leistungen", "/unser-team", "/ueber-uns", "/cloody", "/kontakt", "/impressum", "/datenschutz"];
 
@@ -58,5 +59,13 @@ export function sitemapUrls() {
 export function jsonLd(html) {
   return [...html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)].map(([, body]) =>
     JSON.parse(body)
+  );
+}
+
+/** Every Open Graph and Twitter meta tag in the head, in order, as [key, content] pairs. */
+export function socialMeta(html) {
+  const headPart = html.match(/<head>([\s\S]*?)<\/head>/)?.[1] ?? html;
+  return [...headPart.matchAll(/<meta (?:property|name)="((?:og|twitter):[^"]*)" content="([^"]*)"\/?>/g)].map(
+    ([, key, content]) => [key, content]
   );
 }

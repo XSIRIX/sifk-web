@@ -17,7 +17,11 @@ export type VoucherBody = {
   close: { title: string; text: string };
 };
 
-export type VoucherContent = Dated<VoucherBody> & { stand: string; crumb: string };
+/** `stand` is the day the copy was last checked against its sources; each state keeps its own. */
+export type VoucherContent = Dated<VoucherBody> & { stand: string | Dated<string>; crumb: string };
+
+// Last day applications are possible, in German time.
+const until = "2027-02-28";
 
 const bafaList =
   "https://www.bafa.de/SharedDocs/Downloads/DE/Wirtschaft/bga_liste_beratungsunternehmen_beratungsorganisationen.pdf?__blob=publicationFile";
@@ -36,8 +40,9 @@ const listedTopics = [
 ];
 
 export const voucherDe: VoucherContent = {
-  until: "2027-02-28",
-  stand: "2026-11-17",
+  until,
+  // Set `ended` to the day the ended copy is re-checked, before the switch.
+  stand: { until, open: "2026-11-17", ended: "2026-11-17" },
   crumb: "Beratungsgutscheine Afrika",
   open: {
     hero: {
@@ -48,7 +53,7 @@ export const voucherDe: VoucherContent = {
     programme: {
       title: "Was das Programm fördert.",
       text:
-        "Mit den Beratungsgutscheinen Afrika fördert das Bundesministerium für Wirtschaft und Energie (BMWE) externe Beratung für kleine und mittlere Unternehmen, die ein Geschäftsvorhaben in Afrika vorbereiten oder umsetzen. Die Anträge prüft das BAFA.",
+        "Mit den Beratungsgutscheinen Afrika fördert das Bundesministerium für Wirtschaft und Energie (BMWE) externe Beratung für kleine und mittlere Unternehmen, die ein Geschäftsvorhaben in Afrika vorbereiten oder umsetzen.",
       facts: [
         {
           label: "Zuschuss",
@@ -57,7 +62,7 @@ export const voucherDe: VoucherContent = {
         {
           label: "Wer gefördert wird",
           value:
-            "Kleine und mittlere Unternehmen der gewerblichen Wirtschaft und des Handwerks mit Betriebsstätte oder Niederlassung in Deutschland. Auch Mittelständler mit weniger als 500 Beschäftigten und bis zu 100\u00A0Mio. Euro Jahresumsatz, verbundene Unternehmen eingerechnet."
+            "Rechtlich selbständige kleine und mittlere Unternehmen der gewerblichen Wirtschaft und des Handwerks mit Betriebsstätte oder Niederlassung in Deutschland und substanziellem Interesse am Markteintritt in Afrika. Auch Mittelständler mit weniger als 500 Beschäftigten und bis zu 100\u00A0Mio. Euro Jahresumsatz, verbundene Unternehmen eingerechnet."
         },
         {
           label: "Umfang",
@@ -66,7 +71,7 @@ export const voucherDe: VoucherContent = {
         },
         {
           label: "Antragsfrist",
-          value: "Anträge sind bis zum 28.02.2027 möglich."
+          value: "Anträge stellen Sie elektronisch beim BAFA, bis zum 28.02.2027."
         },
         {
           label: "Erst Antrag, dann Vertrag",
@@ -109,7 +114,7 @@ export const voucherDe: VoucherContent = {
       items: [
         {
           q: "Wer kann die Beratungsgutscheine nutzen?",
-          a: "Kleine und mittlere Unternehmen der gewerblichen Wirtschaft und des Handwerks mit Betriebsstätte oder Niederlassung in Deutschland. Wo der Hauptsitz liegt, spielt keine Rolle. Start-ups können den Gutschein nutzen, wenn sie diese Bedingungen erfüllen."
+          a: "Rechtlich selbständige kleine und mittlere Unternehmen der gewerblichen Wirtschaft und des Handwerks mit Betriebsstätte oder Niederlassung in Deutschland und substanziellem Interesse am Markteintritt in Afrika. Wo der Hauptsitz liegt, spielt keine Rolle. Start-ups können den Gutschein nutzen, wenn sie diese Bedingungen erfüllen."
         },
         {
           q: "Wie hoch ist die Förderung?",
@@ -133,7 +138,7 @@ export const voucherDe: VoucherContent = {
         },
         {
           q: "Dürfen wir den Beratungsvertrag schon vorher schließen?",
-          a: "Nein. Der Vertrag darf erst nach der Bewilligung geschlossen werden. Wer vorher unterschreibt oder mit der Beratung beginnt, verliert die Förderung."
+          a: "Nein. Der Vertrag darf erst nach der Bewilligung geschlossen werden. Wer vorher unterschreibt oder mit der Beratung beginnt, erhält keine Förderung."
         }
       ]
     },
@@ -150,10 +155,10 @@ export const voucherDe: VoucherContent = {
     programme: {
       title: "Was das Programm war.",
       text:
-        "Mit den Beratungsgutscheinen Afrika förderte das Bundesministerium für Wirtschaft und Energie (BMWE) externe Beratung für kleine und mittlere Unternehmen mit Geschäftsvorhaben in Afrika. Die Anträge prüfte das BAFA.",
+        "Mit den Beratungsgutscheinen Afrika förderte das Bundesministerium für Wirtschaft und Energie (BMWE) externe Beratung für kleine und mittlere Unternehmen mit Geschäftsvorhaben in Afrika.",
       facts: [
         { label: "Zuschuss", value: "Zuletzt 75\u00A0% der förderfähigen Beratungskosten." },
-        { label: "Laufzeit", value: "Anträge waren bis zum 28.02.2027 möglich." },
+        { label: "Laufzeit", value: "Anträge beim BAFA waren bis zum 28.02.2027 möglich." },
         { label: "Heute", value: "Neue Beratungsgutscheine können nicht mehr beantragt werden." }
       ]
     },

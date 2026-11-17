@@ -1,0 +1,1916 @@
+{
+  "/": {
+    "lang": "de",
+    "social": [
+      [
+        "og:title",
+        "Afrika-Geschäftsentwicklung &amp; Energieberatung | SIFK GmbH"
+      ],
+      [
+        "og:description",
+        "SIFK begleitet Unternehmen beim Markteintritt in Afrika, beim Aufbau von Partnerschaften und mit Energieberatung für Unternehmen in Deutschland."
+      ],
+      [
+        "og:url",
+        "https://www.sifk.de"
+      ],
+      [
+        "og:site_name",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale",
+        "de_DE"
+      ],
+      [
+        "og:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale:alternate",
+        "en_GB"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "twitter:card",
+        "summary_large_image"
+      ],
+      [
+        "twitter:title",
+        "Afrika-Geschäftsentwicklung &amp; Energieberatung | SIFK GmbH"
+      ],
+      [
+        "twitter:description",
+        "SIFK begleitet Unternehmen beim Markteintritt in Afrika, beim Aufbau von Partnerschaften und mit Energieberatung für Unternehmen in Deutschland."
+      ],
+      [
+        "twitter:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "twitter:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "twitter:image:width",
+        "1200"
+      ],
+      [
+        "twitter:image:height",
+        "630"
+      ]
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.sifk.de/#organization",
+            "name": "SIFK GmbH",
+            "legalName": "SIFK GmbH",
+            "url": "https://www.sifk.de/",
+            "logo": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "email": "info@sifk.de",
+            "telephone": "+49 6203 9375175",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Carl-Benz-Straße 4",
+              "postalCode": "69198",
+              "addressLocality": "Schriesheim",
+              "addressCountry": "DE"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.sifk.de/#website",
+            "url": "https://www.sifk.de/",
+            "name": "SIFK GmbH",
+            "inLanguage": [
+              "de",
+              "en"
+            ],
+            "publisher": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/leistungen": {
+    "lang": "de",
+    "social": [
+      [
+        "og:title",
+        "Leistungen: Markteintritt Afrika &amp; Energieberatung | SIFK GmbH"
+      ],
+      [
+        "og:description",
+        "Markteintritt, Marktvalidierung und Partnerschaften in Afrika sowie Energieaudits nach DIN EN 16247 und Beratung für Nichtwohngebäude in Deutschland."
+      ],
+      [
+        "og:url",
+        "https://www.sifk.de/leistungen"
+      ],
+      [
+        "og:site_name",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale",
+        "de_DE"
+      ],
+      [
+        "og:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale:alternate",
+        "en_GB"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "twitter:card",
+        "summary_large_image"
+      ],
+      [
+        "twitter:title",
+        "Leistungen: Markteintritt Afrika &amp; Energieberatung | SIFK GmbH"
+      ],
+      [
+        "twitter:description",
+        "Markteintritt, Marktvalidierung und Partnerschaften in Afrika sowie Energieaudits nach DIN EN 16247 und Beratung für Nichtwohngebäude in Deutschland."
+      ],
+      [
+        "twitter:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "twitter:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "twitter:image:width",
+        "1200"
+      ],
+      [
+        "twitter:image:height",
+        "630"
+      ]
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.sifk.de/#organization",
+            "name": "SIFK GmbH",
+            "legalName": "SIFK GmbH",
+            "url": "https://www.sifk.de/",
+            "logo": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "email": "info@sifk.de",
+            "telephone": "+49 6203 9375175",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Carl-Benz-Straße 4",
+              "postalCode": "69198",
+              "addressLocality": "Schriesheim",
+              "addressCountry": "DE"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.sifk.de/#website",
+            "url": "https://www.sifk.de/",
+            "name": "SIFK GmbH",
+            "inLanguage": [
+              "de",
+              "en"
+            ],
+            "publisher": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Service",
+            "@id": "https://www.sifk.de/leistungen#internationale-geschaeftsentwicklung",
+            "name": "Internationale Geschäftsentwicklung",
+            "description": "Für Unternehmen, die in afrikanischen Ländern verkaufen, einkaufen oder investieren wollen. Wir arbeiten mit eigenem Team in sechs Ländern und kennen Märkte, Regeln und Menschen.",
+            "serviceType": [
+              "Markteintritt und Marktvalidierung",
+              "Strategische Partnerschaften",
+              "Projektbegleitung und Stakeholder-Koordination",
+              "Interkulturelle Abstimmung"
+            ],
+            "url": "https://www.sifk.de/leistungen#internationale-geschaeftsentwicklung",
+            "provider": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          },
+          {
+            "@type": "Service",
+            "@id": "https://www.sifk.de/leistungen#energieberatung-deutschland",
+            "name": "Energieberatung Deutschland",
+            "description": "Für Unternehmen und Nichtwohngebäude in Deutschland. Wir verbinden technische Analyse mit wirtschaftlicher Priorisierung, damit Sie wissen, welche Maßnahme sich zuerst lohnt.",
+            "serviceType": [
+              "Energieaudit nach DIN EN 16247",
+              "Nichtwohngebäude nach DIN V 18599",
+              "Maßnahmenplan mit Kosten, Einsparung und Amortisation",
+              "Hinweise zu Förderprogrammen"
+            ],
+            "url": "https://www.sifk.de/leistungen#energieberatung-deutschland",
+            "provider": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/unser-team": {
+    "lang": "de",
+    "social": [
+      [
+        "og:title",
+        "Unser Team für Afrika-Geschäftsentwicklung &amp; Energie | SIFK GmbH"
+      ],
+      [
+        "og:description",
+        "Lernen Sie das SIFK-Team kennen: Fachkräfte für afrikanische Märkte, internationale Projektbegleitung und Energieberatung in Deutschland."
+      ],
+      [
+        "og:url",
+        "https://www.sifk.de/unser-team"
+      ],
+      [
+        "og:site_name",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale",
+        "de_DE"
+      ],
+      [
+        "og:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale:alternate",
+        "en_GB"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "twitter:card",
+        "summary_large_image"
+      ],
+      [
+        "twitter:title",
+        "Unser Team für Afrika-Geschäftsentwicklung &amp; Energie | SIFK GmbH"
+      ],
+      [
+        "twitter:description",
+        "Lernen Sie das SIFK-Team kennen: Fachkräfte für afrikanische Märkte, internationale Projektbegleitung und Energieberatung in Deutschland."
+      ],
+      [
+        "twitter:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "twitter:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "twitter:image:width",
+        "1200"
+      ],
+      [
+        "twitter:image:height",
+        "630"
+      ]
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.sifk.de/#organization",
+            "name": "SIFK GmbH",
+            "legalName": "SIFK GmbH",
+            "url": "https://www.sifk.de/",
+            "logo": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "email": "info@sifk.de",
+            "telephone": "+49 6203 9375175",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Carl-Benz-Straße 4",
+              "postalCode": "69198",
+              "addressLocality": "Schriesheim",
+              "addressCountry": "DE"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.sifk.de/#website",
+            "url": "https://www.sifk.de/",
+            "name": "SIFK GmbH",
+            "inLanguage": [
+              "de",
+              "en"
+            ],
+            "publisher": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/ueber-uns": {
+    "lang": "de",
+    "social": [
+      [
+        "og:title",
+        "Über uns: Verbindungen zwischen Deutschland &amp; Afrika | SIFK GmbH"
+      ],
+      [
+        "og:description",
+        "SIFK verbindet Märkte, Partner und Projekte. Erfahren Sie mehr über unseren Ansatz für Geschäftsentwicklung in Afrika und Energieeffizienz in Deutschland."
+      ],
+      [
+        "og:url",
+        "https://www.sifk.de/ueber-uns"
+      ],
+      [
+        "og:site_name",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale",
+        "de_DE"
+      ],
+      [
+        "og:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale:alternate",
+        "en_GB"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "twitter:card",
+        "summary_large_image"
+      ],
+      [
+        "twitter:title",
+        "Über uns: Verbindungen zwischen Deutschland &amp; Afrika | SIFK GmbH"
+      ],
+      [
+        "twitter:description",
+        "SIFK verbindet Märkte, Partner und Projekte. Erfahren Sie mehr über unseren Ansatz für Geschäftsentwicklung in Afrika und Energieeffizienz in Deutschland."
+      ],
+      [
+        "twitter:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "twitter:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "twitter:image:width",
+        "1200"
+      ],
+      [
+        "twitter:image:height",
+        "630"
+      ]
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.sifk.de/#organization",
+            "name": "SIFK GmbH",
+            "legalName": "SIFK GmbH",
+            "url": "https://www.sifk.de/",
+            "logo": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "email": "info@sifk.de",
+            "telephone": "+49 6203 9375175",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Carl-Benz-Straße 4",
+              "postalCode": "69198",
+              "addressLocality": "Schriesheim",
+              "addressCountry": "DE"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.sifk.de/#website",
+            "url": "https://www.sifk.de/",
+            "name": "SIFK GmbH",
+            "inLanguage": [
+              "de",
+              "en"
+            ],
+            "publisher": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/cloody": {
+    "lang": "de",
+    "social": [
+      [
+        "og:title",
+        "Cloody: Handelsplattform für Europa &amp; Afrika | SIFK GmbH"
+      ],
+      [
+        "og:description",
+        "Cloody ist die Handelsplattform von SIFK in Entwicklung: direkter Handel zwischen Europa und Afrika, integrierte Zollabwicklung und Community-Logistik."
+      ],
+      [
+        "og:url",
+        "https://www.sifk.de/cloody"
+      ],
+      [
+        "og:site_name",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale",
+        "de_DE"
+      ],
+      [
+        "og:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale:alternate",
+        "en_GB"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "twitter:card",
+        "summary_large_image"
+      ],
+      [
+        "twitter:title",
+        "Cloody: Handelsplattform für Europa &amp; Afrika | SIFK GmbH"
+      ],
+      [
+        "twitter:description",
+        "Cloody ist die Handelsplattform von SIFK in Entwicklung: direkter Handel zwischen Europa und Afrika, integrierte Zollabwicklung und Community-Logistik."
+      ],
+      [
+        "twitter:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "twitter:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "twitter:image:width",
+        "1200"
+      ],
+      [
+        "twitter:image:height",
+        "630"
+      ]
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.sifk.de/#organization",
+            "name": "SIFK GmbH",
+            "legalName": "SIFK GmbH",
+            "url": "https://www.sifk.de/",
+            "logo": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "email": "info@sifk.de",
+            "telephone": "+49 6203 9375175",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Carl-Benz-Straße 4",
+              "postalCode": "69198",
+              "addressLocality": "Schriesheim",
+              "addressCountry": "DE"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.sifk.de/#website",
+            "url": "https://www.sifk.de/",
+            "name": "SIFK GmbH",
+            "inLanguage": [
+              "de",
+              "en"
+            ],
+            "publisher": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/kontakt": {
+    "lang": "de",
+    "social": [
+      [
+        "og:title",
+        "Kontakt für Afrika-Projekte &amp; Energieberatung | SIFK GmbH"
+      ],
+      [
+        "og:description",
+        "Kontaktieren Sie SIFK zu Markteintritt, Partnerschaften und Projekten in Afrika oder zu Energieaudits und Energieberatung für Unternehmen in Deutschland."
+      ],
+      [
+        "og:url",
+        "https://www.sifk.de/kontakt"
+      ],
+      [
+        "og:site_name",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale",
+        "de_DE"
+      ],
+      [
+        "og:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale:alternate",
+        "en_GB"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "twitter:card",
+        "summary_large_image"
+      ],
+      [
+        "twitter:title",
+        "Kontakt für Afrika-Projekte &amp; Energieberatung | SIFK GmbH"
+      ],
+      [
+        "twitter:description",
+        "Kontaktieren Sie SIFK zu Markteintritt, Partnerschaften und Projekten in Afrika oder zu Energieaudits und Energieberatung für Unternehmen in Deutschland."
+      ],
+      [
+        "twitter:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "twitter:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "twitter:image:width",
+        "1200"
+      ],
+      [
+        "twitter:image:height",
+        "630"
+      ]
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.sifk.de/#organization",
+            "name": "SIFK GmbH",
+            "legalName": "SIFK GmbH",
+            "url": "https://www.sifk.de/",
+            "logo": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "email": "info@sifk.de",
+            "telephone": "+49 6203 9375175",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Carl-Benz-Straße 4",
+              "postalCode": "69198",
+              "addressLocality": "Schriesheim",
+              "addressCountry": "DE"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.sifk.de/#website",
+            "url": "https://www.sifk.de/",
+            "name": "SIFK GmbH",
+            "inLanguage": [
+              "de",
+              "en"
+            ],
+            "publisher": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/impressum": {
+    "lang": "de",
+    "social": [
+      [
+        "og:title",
+        "Impressum | SIFK GmbH"
+      ],
+      [
+        "og:description",
+        "Unternehmensangaben der SIFK GmbH in Schriesheim: Anschrift, Geschäftsführung, Kontakt und Handelsregisterinformationen."
+      ],
+      [
+        "og:url",
+        "https://www.sifk.de/impressum"
+      ],
+      [
+        "og:site_name",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale",
+        "de_DE"
+      ],
+      [
+        "og:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale:alternate",
+        "en_GB"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "twitter:card",
+        "summary_large_image"
+      ],
+      [
+        "twitter:title",
+        "Impressum | SIFK GmbH"
+      ],
+      [
+        "twitter:description",
+        "Unternehmensangaben der SIFK GmbH in Schriesheim: Anschrift, Geschäftsführung, Kontakt und Handelsregisterinformationen."
+      ],
+      [
+        "twitter:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "twitter:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "twitter:image:width",
+        "1200"
+      ],
+      [
+        "twitter:image:height",
+        "630"
+      ]
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.sifk.de/#organization",
+            "name": "SIFK GmbH",
+            "legalName": "SIFK GmbH",
+            "url": "https://www.sifk.de/",
+            "logo": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "email": "info@sifk.de",
+            "telephone": "+49 6203 9375175",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Carl-Benz-Straße 4",
+              "postalCode": "69198",
+              "addressLocality": "Schriesheim",
+              "addressCountry": "DE"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.sifk.de/#website",
+            "url": "https://www.sifk.de/",
+            "name": "SIFK GmbH",
+            "inLanguage": [
+              "de",
+              "en"
+            ],
+            "publisher": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/datenschutz": {
+    "lang": "de",
+    "social": [
+      [
+        "og:title",
+        "Datenschutzerklärung | SIFK GmbH"
+      ],
+      [
+        "og:description",
+        "Informationen der SIFK GmbH zur Verarbeitung personenbezogener Daten bei Website-Besuchen und Kontaktanfragen sowie zu Ihren Datenschutzrechten."
+      ],
+      [
+        "og:url",
+        "https://www.sifk.de/datenschutz"
+      ],
+      [
+        "og:site_name",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale",
+        "de_DE"
+      ],
+      [
+        "og:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale:alternate",
+        "en_GB"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "twitter:card",
+        "summary_large_image"
+      ],
+      [
+        "twitter:title",
+        "Datenschutzerklärung | SIFK GmbH"
+      ],
+      [
+        "twitter:description",
+        "Informationen der SIFK GmbH zur Verarbeitung personenbezogener Daten bei Website-Besuchen und Kontaktanfragen sowie zu Ihren Datenschutzrechten."
+      ],
+      [
+        "twitter:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "twitter:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "twitter:image:width",
+        "1200"
+      ],
+      [
+        "twitter:image:height",
+        "630"
+      ]
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.sifk.de/#organization",
+            "name": "SIFK GmbH",
+            "legalName": "SIFK GmbH",
+            "url": "https://www.sifk.de/",
+            "logo": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "email": "info@sifk.de",
+            "telephone": "+49 6203 9375175",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Carl-Benz-Straße 4",
+              "postalCode": "69198",
+              "addressLocality": "Schriesheim",
+              "addressCountry": "DE"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.sifk.de/#website",
+            "url": "https://www.sifk.de/",
+            "name": "SIFK GmbH",
+            "inLanguage": [
+              "de",
+              "en"
+            ],
+            "publisher": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/en": {
+    "lang": "de",
+    "social": [
+      [
+        "og:title",
+        "Africa Business Development &amp; Energy Consulting | SIFK GmbH"
+      ],
+      [
+        "og:description",
+        "SIFK supports companies with market entry in Africa, strategic partnerships and project coordination, alongside energy consulting in Germany."
+      ],
+      [
+        "og:url",
+        "https://www.sifk.de/en"
+      ],
+      [
+        "og:site_name",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale",
+        "en_GB"
+      ],
+      [
+        "og:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale:alternate",
+        "de_DE"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "twitter:card",
+        "summary_large_image"
+      ],
+      [
+        "twitter:title",
+        "Africa Business Development &amp; Energy Consulting | SIFK GmbH"
+      ],
+      [
+        "twitter:description",
+        "SIFK supports companies with market entry in Africa, strategic partnerships and project coordination, alongside energy consulting in Germany."
+      ],
+      [
+        "twitter:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "twitter:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "twitter:image:width",
+        "1200"
+      ],
+      [
+        "twitter:image:height",
+        "630"
+      ]
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.sifk.de/#organization",
+            "name": "SIFK GmbH",
+            "legalName": "SIFK GmbH",
+            "url": "https://www.sifk.de/",
+            "logo": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "email": "info@sifk.de",
+            "telephone": "+49 6203 9375175",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Carl-Benz-Straße 4",
+              "postalCode": "69198",
+              "addressLocality": "Schriesheim",
+              "addressCountry": "DE"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.sifk.de/#website",
+            "url": "https://www.sifk.de/",
+            "name": "SIFK GmbH",
+            "inLanguage": [
+              "de",
+              "en"
+            ],
+            "publisher": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/en/leistungen": {
+    "lang": "de",
+    "social": [
+      [
+        "og:title",
+        "Services: Africa Market Entry &amp; Energy Consulting | SIFK GmbH"
+      ],
+      [
+        "og:description",
+        "Explore market validation, partnerships and project support in Africa, plus DIN EN 16247 energy audits and non-residential building consulting in Germany."
+      ],
+      [
+        "og:url",
+        "https://www.sifk.de/en/leistungen"
+      ],
+      [
+        "og:site_name",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale",
+        "en_GB"
+      ],
+      [
+        "og:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale:alternate",
+        "de_DE"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "twitter:card",
+        "summary_large_image"
+      ],
+      [
+        "twitter:title",
+        "Services: Africa Market Entry &amp; Energy Consulting | SIFK GmbH"
+      ],
+      [
+        "twitter:description",
+        "Explore market validation, partnerships and project support in Africa, plus DIN EN 16247 energy audits and non-residential building consulting in Germany."
+      ],
+      [
+        "twitter:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "twitter:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "twitter:image:width",
+        "1200"
+      ],
+      [
+        "twitter:image:height",
+        "630"
+      ]
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.sifk.de/#organization",
+            "name": "SIFK GmbH",
+            "legalName": "SIFK GmbH",
+            "url": "https://www.sifk.de/",
+            "logo": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "email": "info@sifk.de",
+            "telephone": "+49 6203 9375175",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Carl-Benz-Straße 4",
+              "postalCode": "69198",
+              "addressLocality": "Schriesheim",
+              "addressCountry": "DE"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.sifk.de/#website",
+            "url": "https://www.sifk.de/",
+            "name": "SIFK GmbH",
+            "inLanguage": [
+              "de",
+              "en"
+            ],
+            "publisher": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          }
+        ]
+      },
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Service",
+            "@id": "https://www.sifk.de/en/leistungen#internationale-geschaeftsentwicklung",
+            "name": "International Business Development",
+            "description": "For companies that want to sell, source or invest in African countries. We work with our own team in six countries and know the markets, the rules and the people.",
+            "serviceType": [
+              "Market entry and validation",
+              "Strategic partnerships",
+              "Project support and stakeholder coordination",
+              "Cross-cultural alignment"
+            ],
+            "url": "https://www.sifk.de/en/leistungen#internationale-geschaeftsentwicklung",
+            "provider": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          },
+          {
+            "@type": "Service",
+            "@id": "https://www.sifk.de/en/leistungen#energieberatung-deutschland",
+            "name": "Energy Consulting Germany",
+            "description": "For companies and non-residential buildings in Germany. We combine technical analysis with commercial priorities so you know which measure pays off first.",
+            "serviceType": [
+              "Energy audit to DIN EN 16247",
+              "Non-residential buildings to DIN V 18599",
+              "Action plan with cost, savings and payback",
+              "Guidance on funding programmes"
+            ],
+            "url": "https://www.sifk.de/en/leistungen#energieberatung-deutschland",
+            "provider": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/en/unser-team": {
+    "lang": "de",
+    "social": [
+      [
+        "og:title",
+        "Our Team: Africa Business Development &amp; Energy | SIFK GmbH"
+      ],
+      [
+        "og:description",
+        "Meet the SIFK team and explore its expertise in African markets, international project coordination and energy consulting in Germany."
+      ],
+      [
+        "og:url",
+        "https://www.sifk.de/en/unser-team"
+      ],
+      [
+        "og:site_name",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale",
+        "en_GB"
+      ],
+      [
+        "og:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale:alternate",
+        "de_DE"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "twitter:card",
+        "summary_large_image"
+      ],
+      [
+        "twitter:title",
+        "Our Team: Africa Business Development &amp; Energy | SIFK GmbH"
+      ],
+      [
+        "twitter:description",
+        "Meet the SIFK team and explore its expertise in African markets, international project coordination and energy consulting in Germany."
+      ],
+      [
+        "twitter:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "twitter:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "twitter:image:width",
+        "1200"
+      ],
+      [
+        "twitter:image:height",
+        "630"
+      ]
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.sifk.de/#organization",
+            "name": "SIFK GmbH",
+            "legalName": "SIFK GmbH",
+            "url": "https://www.sifk.de/",
+            "logo": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "email": "info@sifk.de",
+            "telephone": "+49 6203 9375175",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Carl-Benz-Straße 4",
+              "postalCode": "69198",
+              "addressLocality": "Schriesheim",
+              "addressCountry": "DE"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.sifk.de/#website",
+            "url": "https://www.sifk.de/",
+            "name": "SIFK GmbH",
+            "inLanguage": [
+              "de",
+              "en"
+            ],
+            "publisher": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/en/ueber-uns": {
+    "lang": "de",
+    "social": [
+      [
+        "og:title",
+        "About Us: Connecting Germany &amp; Africa | SIFK GmbH"
+      ],
+      [
+        "og:description",
+        "SIFK connects markets, partners and projects. Learn about our approach to business development in Africa and energy efficiency in Germany."
+      ],
+      [
+        "og:url",
+        "https://www.sifk.de/en/ueber-uns"
+      ],
+      [
+        "og:site_name",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale",
+        "en_GB"
+      ],
+      [
+        "og:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale:alternate",
+        "de_DE"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "twitter:card",
+        "summary_large_image"
+      ],
+      [
+        "twitter:title",
+        "About Us: Connecting Germany &amp; Africa | SIFK GmbH"
+      ],
+      [
+        "twitter:description",
+        "SIFK connects markets, partners and projects. Learn about our approach to business development in Africa and energy efficiency in Germany."
+      ],
+      [
+        "twitter:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "twitter:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "twitter:image:width",
+        "1200"
+      ],
+      [
+        "twitter:image:height",
+        "630"
+      ]
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.sifk.de/#organization",
+            "name": "SIFK GmbH",
+            "legalName": "SIFK GmbH",
+            "url": "https://www.sifk.de/",
+            "logo": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "email": "info@sifk.de",
+            "telephone": "+49 6203 9375175",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Carl-Benz-Straße 4",
+              "postalCode": "69198",
+              "addressLocality": "Schriesheim",
+              "addressCountry": "DE"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.sifk.de/#website",
+            "url": "https://www.sifk.de/",
+            "name": "SIFK GmbH",
+            "inLanguage": [
+              "de",
+              "en"
+            ],
+            "publisher": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/en/cloody": {
+    "lang": "de",
+    "social": [
+      [
+        "og:title",
+        "Cloody: Trading Platform for Europe &amp; Africa | SIFK GmbH"
+      ],
+      [
+        "og:description",
+        "Discover Cloody, SIFK’s trading platform in development, connecting Europe and Africa through direct trade, customs processing and community logistics."
+      ],
+      [
+        "og:url",
+        "https://www.sifk.de/en/cloody"
+      ],
+      [
+        "og:site_name",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale",
+        "en_GB"
+      ],
+      [
+        "og:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale:alternate",
+        "de_DE"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "twitter:card",
+        "summary_large_image"
+      ],
+      [
+        "twitter:title",
+        "Cloody: Trading Platform for Europe &amp; Africa | SIFK GmbH"
+      ],
+      [
+        "twitter:description",
+        "Discover Cloody, SIFK’s trading platform in development, connecting Europe and Africa through direct trade, customs processing and community logistics."
+      ],
+      [
+        "twitter:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "twitter:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "twitter:image:width",
+        "1200"
+      ],
+      [
+        "twitter:image:height",
+        "630"
+      ]
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.sifk.de/#organization",
+            "name": "SIFK GmbH",
+            "legalName": "SIFK GmbH",
+            "url": "https://www.sifk.de/",
+            "logo": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "email": "info@sifk.de",
+            "telephone": "+49 6203 9375175",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Carl-Benz-Straße 4",
+              "postalCode": "69198",
+              "addressLocality": "Schriesheim",
+              "addressCountry": "DE"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.sifk.de/#website",
+            "url": "https://www.sifk.de/",
+            "name": "SIFK GmbH",
+            "inLanguage": [
+              "de",
+              "en"
+            ],
+            "publisher": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/en/kontakt": {
+    "lang": "de",
+    "social": [
+      [
+        "og:title",
+        "Contact Us for Africa Projects &amp; Energy Consulting | SIFK GmbH"
+      ],
+      [
+        "og:description",
+        "Contact SIFK about market entry, partnerships and projects in Africa, or energy audits and energy consulting for companies in Germany."
+      ],
+      [
+        "og:url",
+        "https://www.sifk.de/en/kontakt"
+      ],
+      [
+        "og:site_name",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale",
+        "en_GB"
+      ],
+      [
+        "og:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale:alternate",
+        "de_DE"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "twitter:card",
+        "summary_large_image"
+      ],
+      [
+        "twitter:title",
+        "Contact Us for Africa Projects &amp; Energy Consulting | SIFK GmbH"
+      ],
+      [
+        "twitter:description",
+        "Contact SIFK about market entry, partnerships and projects in Africa, or energy audits and energy consulting for companies in Germany."
+      ],
+      [
+        "twitter:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "twitter:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "twitter:image:width",
+        "1200"
+      ],
+      [
+        "twitter:image:height",
+        "630"
+      ]
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.sifk.de/#organization",
+            "name": "SIFK GmbH",
+            "legalName": "SIFK GmbH",
+            "url": "https://www.sifk.de/",
+            "logo": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "email": "info@sifk.de",
+            "telephone": "+49 6203 9375175",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Carl-Benz-Straße 4",
+              "postalCode": "69198",
+              "addressLocality": "Schriesheim",
+              "addressCountry": "DE"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.sifk.de/#website",
+            "url": "https://www.sifk.de/",
+            "name": "SIFK GmbH",
+            "inLanguage": [
+              "de",
+              "en"
+            ],
+            "publisher": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/en/impressum": {
+    "lang": "de",
+    "social": [
+      [
+        "og:title",
+        "Legal Notice | SIFK GmbH"
+      ],
+      [
+        "og:description",
+        "Company information for SIFK GmbH in Schriesheim, Germany: address, management, contact details and commercial register information."
+      ],
+      [
+        "og:url",
+        "https://www.sifk.de/en/impressum"
+      ],
+      [
+        "og:site_name",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale",
+        "en_GB"
+      ],
+      [
+        "og:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale:alternate",
+        "de_DE"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "twitter:card",
+        "summary_large_image"
+      ],
+      [
+        "twitter:title",
+        "Legal Notice | SIFK GmbH"
+      ],
+      [
+        "twitter:description",
+        "Company information for SIFK GmbH in Schriesheim, Germany: address, management, contact details and commercial register information."
+      ],
+      [
+        "twitter:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "twitter:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "twitter:image:width",
+        "1200"
+      ],
+      [
+        "twitter:image:height",
+        "630"
+      ]
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.sifk.de/#organization",
+            "name": "SIFK GmbH",
+            "legalName": "SIFK GmbH",
+            "url": "https://www.sifk.de/",
+            "logo": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "email": "info@sifk.de",
+            "telephone": "+49 6203 9375175",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Carl-Benz-Straße 4",
+              "postalCode": "69198",
+              "addressLocality": "Schriesheim",
+              "addressCountry": "DE"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.sifk.de/#website",
+            "url": "https://www.sifk.de/",
+            "name": "SIFK GmbH",
+            "inLanguage": [
+              "de",
+              "en"
+            ],
+            "publisher": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "/en/datenschutz": {
+    "lang": "de",
+    "social": [
+      [
+        "og:title",
+        "Privacy Policy | SIFK GmbH"
+      ],
+      [
+        "og:description",
+        "Learn how SIFK GmbH processes personal data when you visit this website or send an inquiry, and find information about your privacy rights."
+      ],
+      [
+        "og:url",
+        "https://www.sifk.de/en/datenschutz"
+      ],
+      [
+        "og:site_name",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale",
+        "en_GB"
+      ],
+      [
+        "og:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "og:image:width",
+        "1200"
+      ],
+      [
+        "og:image:height",
+        "630"
+      ],
+      [
+        "og:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "og:locale:alternate",
+        "de_DE"
+      ],
+      [
+        "og:type",
+        "website"
+      ],
+      [
+        "twitter:card",
+        "summary_large_image"
+      ],
+      [
+        "twitter:title",
+        "Privacy Policy | SIFK GmbH"
+      ],
+      [
+        "twitter:description",
+        "Learn how SIFK GmbH processes personal data when you visit this website or send an inquiry, and find information about your privacy rights."
+      ],
+      [
+        "twitter:image",
+        "https://www.sifk.de/brand/og.jpg"
+      ],
+      [
+        "twitter:image:alt",
+        "SIFK GmbH"
+      ],
+      [
+        "twitter:image:width",
+        "1200"
+      ],
+      [
+        "twitter:image:height",
+        "630"
+      ]
+    ],
+    "jsonLd": [
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://www.sifk.de/#organization",
+            "name": "SIFK GmbH",
+            "legalName": "SIFK GmbH",
+            "url": "https://www.sifk.de/",
+            "logo": "https://www.sifk.de/logo-horizontal.png",
+            "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika und berät Unternehmen und Nichtwohngebäude in Deutschland zur Energieeffizienz.",
+            "email": "info@sifk.de",
+            "telephone": "+49 6203 9375175",
+            "address": {
+              "@type": "PostalAddress",
+              "streetAddress": "Carl-Benz-Straße 4",
+              "postalCode": "69198",
+              "addressLocality": "Schriesheim",
+              "addressCountry": "DE"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://www.sifk.de/#website",
+            "url": "https://www.sifk.de/",
+            "name": "SIFK GmbH",
+            "inLanguage": [
+              "de",
+              "en"
+            ],
+            "publisher": {
+              "@id": "https://www.sifk.de/#organization"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

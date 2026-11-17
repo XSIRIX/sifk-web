@@ -1,10 +1,11 @@
 import Link from "next/link";
 
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { DatedRefresh } from "@/components/dated-refresh";
 import { ArrowIcon } from "@/components/icons";
 import { CtaBand, PageHero } from "@/components/page-parts";
 import { getContent } from "@/lib/content";
-import { formatStand, resolveDated } from "@/lib/dated";
+import { formatStand, isEnded, resolveDated, resolveText } from "@/lib/dated";
 
 const contactHref = "/kontakt?thema=international";
 
@@ -15,10 +16,11 @@ export function VoucherView({ now }: { now: Date }) {
     throw new Error("The voucher page needs German copy");
   }
   const body = resolveDated(voucher, now);
-  const stand = formatStand(voucher.stand, "de");
+  const stand = formatStand(resolveText(voucher.stand, now), "de");
 
   return (
     <>
+      <DatedRefresh ended={isEnded(voucher.until, now)} until={voucher.until} />
       <PageHero
         art={{ src: "/world/africa.webp", alt: home.africa.imageAlt, width: 1600, height: 1200 }}
         before={<Breadcrumbs items={[{ label: "Start", href: "/" }, { label: voucher.crumb }]} />}

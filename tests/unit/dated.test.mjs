@@ -23,3 +23,15 @@ test("stand date reads naturally", () => {
   assert.equal(formatStand("2026-11-17", "de"), "Stand: 17.11.2026");
   assert.equal(formatStand("2026-11-17", "en"), "As of 17 November 2026");
 });
+
+// Review fixes.
+import { needsRefresh } from "../../lib/dated.ts";
+
+test("a badly written end date throws instead of never ending", () => {
+  assert.throws(() => isEnded("2027-2-28", new Date("2027-03-01T12:00:00Z")), /YYYY-MM-DD/);
+});
+test("a page rendered before the end date needs a refresh after it", () => {
+  assert.equal(needsRefresh("2027-02-28", false, new Date("2027-02-28T22:59:00Z")), false);
+  assert.equal(needsRefresh("2027-02-28", false, new Date("2027-02-28T23:00:00Z")), true);
+  assert.equal(needsRefresh("2027-02-28", true, new Date("2027-03-05T10:00:00Z")), false);
+});

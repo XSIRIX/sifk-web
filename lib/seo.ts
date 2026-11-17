@@ -111,7 +111,7 @@ export const seoPages = {
     de: {
       title: "Beratungsgutscheine Afrika: Förderung & Beratung",
       description:
-        "Beratungsgutscheine Afrika: Was das Förderprogramm des Bundes abdeckt, wer es nutzen kann und wie SIFK als gelistetes Beratungsunternehmen Sie begleitet."
+        "Beratungsgutscheine Afrika: das Förderprogramm des Bundes für Beratung zu Geschäftsvorhaben in Afrika, und wie SIFK Unternehmen beim Markteintritt berät."
     }
   }
 } satisfies Record<string, SeoEntry>;

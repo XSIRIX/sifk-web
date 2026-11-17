@@ -117,7 +117,11 @@ export function SiteHeader() {
 
           <div className="header-side">
             <Link
-              aria-label={copy.header.localeAriaLabel}
+              aria-label={
+                switchLocalePath(pathname, otherLocale) === localizePath(pathname, otherLocale)
+                  ? copy.header.localeAriaLabel
+                  : copy.header.localeFallbackAriaLabel
+              }
               className="locale"
               href={switchLocalePath(pathname, otherLocale)}
               hrefLang={otherLocale}
