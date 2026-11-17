@@ -147,4 +147,4 @@ Where a fact is missing, the website leaves the claim out. Nothing is guessed.
 | Google profile URL and LinkedIn URL, once they exist | Company data | Left out |
 | Search Console and Bing verification codes | Measurement | No tag rendered |
 
-Also: a yes or no on each row of `docs/seo/claims.md`. The voucher page does not go live until every row is a yes.
+Done: every row of `docs/seo/claims.md` was approved on 17.11.2026. You can now add the BAFA sentence to the Google profile description (step 1.8).
