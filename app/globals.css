@@ -1918,6 +1918,35 @@ html.stack main:has(> .cta:last-child) + .site-footer {
   overflow-wrap: anywhere;
 }
 
+/* ---------- Breadcrumbs ---------- */
+
+/* One wrapping line in the Small size, in the field's own text colour. */
+.crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+}
+
+.crumbs li {
+  display: inline-flex;
+  gap: 0.5rem;
+}
+
+.crumbs li + li::before {
+  content: "›";
+  content: "›" / "";
+}
+
+.crumbs a {
+  text-decoration: underline;
+  text-decoration-thickness: 0.1em;
+  text-underline-offset: 0.25em;
+}
+
+.crumbs [aria-current="page"] {
+  font-weight: 600;
+}
+
 /* ---------- Page hero ---------- */
 
 .page-hero {

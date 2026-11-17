@@ -1,3 +1,4 @@
+import { voucherDe, type VoucherContent } from "@/lib/content-voucher";
 import type { Locale } from "@/lib/locale-routing";
 
 export type CountryCode = "de" | "zm" | "et" | "ug" | "gh" | "ke" | "tz";
@@ -588,7 +589,9 @@ const de = {
       title: "Partner, Anbieter oder früher Nutzer?",
       text: "Cloody ist in Entwicklung. Wenn Sie von Anfang an dabei sein wollen, sprechen Sie mit uns."
     }
-  }
+  },
+  // German only: the page /beratungsgutscheine-afrika has no English version.
+  voucher: voucherDe as VoucherContent | null
 };
 
 export type SiteContent = typeof de;
@@ -1154,7 +1157,8 @@ const en: SiteContent = {
       title: "Partner, supplier or early user?",
       text: "Cloody is in development. If you want to be there from the start, talk to us."
     }
-  }
+  },
+  voucher: null
 };
 
 export const content: Record<Locale, SiteContent> = { de, en };

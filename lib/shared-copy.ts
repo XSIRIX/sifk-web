@@ -18,6 +18,8 @@ export type SharedCopy = {
     navTitle: string;
     contactTitle: string;
     legalTitle: string;
+    /** Service pages listed after the navigation items. A page may exist in one language only. */
+    services: Array<{ href: string; label: string }>;
     links: Array<{ href: string; label: string }>;
     rights: string;
   };
@@ -71,6 +73,8 @@ export const sharedCopy: Record<Locale, SharedCopy> = {
       navTitle: "Seiten",
       contactTitle: "Kontakt",
       legalTitle: "Rechtliches",
+      // Soft hyphen: the long compound must break in the narrow footer tile on phones.
+      services: [{ href: "/beratungsgutscheine-afrika", label: "Beratungs­gutscheine Afrika" }],
       links: [
         { href: "/impressum", label: "Impressum" },
         { href: "/datenschutz", label: "Datenschutz" }
@@ -132,6 +136,7 @@ export const sharedCopy: Record<Locale, SharedCopy> = {
       navTitle: "Pages",
       contactTitle: "Contact",
       legalTitle: "Legal",
+      services: [],
       links: [
         { href: "/impressum", label: "Legal notice" },
         { href: "/datenschutz", label: "Privacy" }

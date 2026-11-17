@@ -66,14 +66,17 @@ type PageHeroProps = {
   photo?: { src: string; alt: string; width: number; height: number };
   /** Anything else that should stand in the right-hand columns instead of a picture. */
   side?: ReactNode;
+  /** A small line above the headline, such as a breadcrumb. */
+  before?: ReactNode;
   children?: ReactNode;
 };
 
-export function PageHero({ title, text, field = "f-plaster", art, photo, side, children }: PageHeroProps) {
+export function PageHero({ title, text, field = "f-plaster", art, photo, side, before, children }: PageHeroProps) {
   return (
     <section className={`page-hero sheet field ${field}${art || photo || side ? "" : " is-wide"}`}>
       <div className="shell grid page-hero-in">
         <div className="page-hero-copy">
+          {before}
           <h1 className="mega" data-split>
             {title.includes("\n")
               ? title.split("\n").map((line) => (

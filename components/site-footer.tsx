@@ -36,6 +36,11 @@ export function SiteFooter() {
                 <Link href={localizePath(item.href, locale)}>{item.label}</Link>
               </li>
             ))}
+            {copy.footer.services.map((item) => (
+              <li key={item.href}>
+                <Link href={localizePath(item.href, locale)}>{item.label}</Link>
+              </li>
+            ))}
             {copy.footer.links.map((item) => (
               <li key={item.href}>
                 <Link href={localizePath(item.href, locale)}>{item.label}</Link>
