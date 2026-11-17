@@ -218,7 +218,7 @@ The system refuses the dark consulting template, the golden-hour stock photo and
 
 **Reviewer's keep list.** Do not change the desktop first viewport. Do not change the flat full-bleed ribbon fields with real model photographs. Do not soften colours, round corners or shrink type.
 
-**Do not touch: the SEO layer.** It is frozen and is not part of this design system: `lib/seo.ts`, `app/sitemap.ts`, `app/robots.ts`, `lib/structured-data.ts`, `lib/locale-routing.ts`, every `app/**/page.tsx`, the 16 routes (8 pages, each in German and under `/en`), and the anchors `#internationale-geschaeftsentwicklung` and `#energieberatung-deutschland`.
+**Do not touch: the SEO layer.** It is frozen and is not part of this design system: `lib/seo.ts`, `app/sitemap.ts`, `app/robots.ts`, `lib/structured-data.ts`, `lib/locale-routing.ts`, every `app/**/page.tsx`, the 17 routes (8 pages, each in German and under `/en`, plus `/beratungsgutscheine-afrika`, which is German only), and the anchors `#internationale-geschaeftsentwicklung` and `#energieberatung-deutschland`.
 
 ## Colors
 
@@ -352,6 +352,10 @@ All parts are flat, square and take their colours from the field they stand on.
 - **Link tiles:** the "first call" tile is Glut and switches to Gold on hover. Its corner arrow moves up and right.
 - **Person tiles:** a square tile on the field of the person's country. It holds the initials (Poster), the country name at the bottom right, and the round country flag in the top right corner. In the two-column phone grid the country name is hidden; the flag stays.
 
+### Breadcrumbs
+- **Style:** one wrapping line in Small (`.crumbs`), in the field's text colour, above a page hero headline. Links are underlined; a `›` separates the items; the current page has no link and is weight 600.
+- **Where:** pages that sit below the home page outside the main navigation. Today only `/beratungsgutscheine-afrika`. It matches the page's `BreadcrumbList` data.
+
 ### Place card
 - **Style:** a white card `clamp(16.5rem, 25vw, 26rem)` wide. On top a colour tile with one country model. Below it the country name (Head) and the people there (Small).
 - **Hover:** the model grows to 1.05 and turns -1.5 degrees.
@@ -464,7 +468,7 @@ The motion grammar comes from the logo. **Horizontal is the weft and stands for 
 - **Don't** use Amber outside the logo drawing.
 - **Don't** use stock photographs, golden-hour photos, pattern strips or dark consulting layouts.
 - **Don't** invent team portraits, clients, quotes or figures. People are shown as initials on their country's colour.
-- **Don't** touch the SEO layer: `lib/seo.ts`, `app/sitemap.ts`, `app/robots.ts`, `lib/structured-data.ts`, `lib/locale-routing.ts`, any `app/**/page.tsx`, the 16 routes, or the anchors `#internationale-geschaeftsentwicklung` and `#energieberatung-deutschland`.
+- **Don't** touch the SEO layer: `lib/seo.ts`, `app/sitemap.ts`, `app/robots.ts`, `lib/structured-data.ts`, `lib/locale-routing.ts`, any `app/**/page.tsx`, the 17 routes (including the German-only `/beratungsgutscheine-afrika`), or the anchors `#internationale-geschaeftsentwicklung` and `#energieberatung-deutschland`.
 
 ### Open ideas, deliberately not built
 These were noted in the finish review as ways to go further. They are not part of the system yet.

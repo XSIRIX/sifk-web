@@ -29,6 +29,7 @@ One consultancy, two places. SIFK has its own people living in the markets it ad
   2. Energy consulting in Germany for companies and non-residential buildings: energy audits to DIN EN 16247 and DIN V 18599, action plans with cost, savings and payback, guidance on funding programmes.
 - Cloody: a trade platform connecting Europe and Africa, still in development.
 - Pages: `/`, `/leistungen`, `/unser-team`, `/ueber-uns`, `/kontakt`, `/cloody`, `/impressum`, `/datenschutz`, each also under `/en`. German is primary.
+- `/beratungsgutscheine-afrika`: German only. The Beratungsgutscheine Afrika programme and SIFK as a listed adviser. It switches on its own to an "ended" version after 28.02.2027. Its claims and sources are in `docs/seo/claims.md`.
 
 ## Capabilities and Constraints
 
