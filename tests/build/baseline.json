@@ -1,0 +1,162 @@
+{
+  "/": {
+    "title": "Afrika-Geschäftsentwicklung &amp; Energieberatung | SIFK GmbH",
+    "description": "SIFK begleitet Unternehmen beim Markteintritt in Afrika, beim Aufbau von Partnerschaften und mit Energieberatung für Unternehmen in Deutschland.",
+    "canonical": "https://www.sifk.de",
+    "alternates": {
+      "de": "https://www.sifk.de",
+      "en": "https://www.sifk.de/en",
+      "x-default": "https://www.sifk.de"
+    }
+  },
+  "/leistungen": {
+    "title": "Leistungen: Markteintritt Afrika &amp; Energieberatung | SIFK GmbH",
+    "description": "Markteintritt, Marktvalidierung und Partnerschaften in Afrika sowie Energieaudits nach DIN EN 16247 und Beratung für Nichtwohngebäude in Deutschland.",
+    "canonical": "https://www.sifk.de/leistungen",
+    "alternates": {
+      "de": "https://www.sifk.de/leistungen",
+      "en": "https://www.sifk.de/en/leistungen",
+      "x-default": "https://www.sifk.de/leistungen"
+    }
+  },
+  "/unser-team": {
+    "title": "Unser Team für Afrika-Geschäftsentwicklung &amp; Energie | SIFK GmbH",
+    "description": "Lernen Sie das SIFK-Team kennen: Fachkräfte für afrikanische Märkte, internationale Projektbegleitung und Energieberatung in Deutschland.",
+    "canonical": "https://www.sifk.de/unser-team",
+    "alternates": {
+      "de": "https://www.sifk.de/unser-team",
+      "en": "https://www.sifk.de/en/unser-team",
+      "x-default": "https://www.sifk.de/unser-team"
+    }
+  },
+  "/ueber-uns": {
+    "title": "Über uns: Verbindungen zwischen Deutschland &amp; Afrika | SIFK GmbH",
+    "description": "SIFK verbindet Märkte, Partner und Projekte. Erfahren Sie mehr über unseren Ansatz für Geschäftsentwicklung in Afrika und Energieeffizienz in Deutschland.",
+    "canonical": "https://www.sifk.de/ueber-uns",
+    "alternates": {
+      "de": "https://www.sifk.de/ueber-uns",
+      "en": "https://www.sifk.de/en/ueber-uns",
+      "x-default": "https://www.sifk.de/ueber-uns"
+    }
+  },
+  "/cloody": {
+    "title": "Cloody: Handelsplattform für Europa &amp; Afrika | SIFK GmbH",
+    "description": "Cloody ist die Handelsplattform von SIFK in Entwicklung: direkter Handel zwischen Europa und Afrika, integrierte Zollabwicklung und Community-Logistik.",
+    "canonical": "https://www.sifk.de/cloody",
+    "alternates": {
+      "de": "https://www.sifk.de/cloody",
+      "en": "https://www.sifk.de/en/cloody",
+      "x-default": "https://www.sifk.de/cloody"
+    }
+  },
+  "/kontakt": {
+    "title": "Kontakt für Afrika-Projekte &amp; Energieberatung | SIFK GmbH",
+    "description": "Kontaktieren Sie SIFK zu Markteintritt, Partnerschaften und Projekten in Afrika oder zu Energieaudits und Energieberatung für Unternehmen in Deutschland.",
+    "canonical": "https://www.sifk.de/kontakt",
+    "alternates": {
+      "de": "https://www.sifk.de/kontakt",
+      "en": "https://www.sifk.de/en/kontakt",
+      "x-default": "https://www.sifk.de/kontakt"
+    }
+  },
+  "/impressum": {
+    "title": "Impressum | SIFK GmbH",
+    "description": "Unternehmensangaben der SIFK GmbH in Schriesheim: Anschrift, Geschäftsführung, Kontakt und Handelsregisterinformationen.",
+    "canonical": "https://www.sifk.de/impressum",
+    "alternates": {
+      "de": "https://www.sifk.de/impressum",
+      "en": "https://www.sifk.de/en/impressum",
+      "x-default": "https://www.sifk.de/impressum"
+    }
+  },
+  "/datenschutz": {
+    "title": "Datenschutzerklärung | SIFK GmbH",
+    "description": "Informationen der SIFK GmbH zur Verarbeitung personenbezogener Daten bei Website-Besuchen und Kontaktanfragen sowie zu Ihren Datenschutzrechten.",
+    "canonical": "https://www.sifk.de/datenschutz",
+    "alternates": {
+      "de": "https://www.sifk.de/datenschutz",
+      "en": "https://www.sifk.de/en/datenschutz",
+      "x-default": "https://www.sifk.de/datenschutz"
+    }
+  },
+  "/en": {
+    "title": "Africa Business Development &amp; Energy Consulting | SIFK GmbH",
+    "description": "SIFK supports companies with market entry in Africa, strategic partnerships and project coordination, alongside energy consulting in Germany.",
+    "canonical": "https://www.sifk.de/en",
+    "alternates": {
+      "de": "https://www.sifk.de",
+      "en": "https://www.sifk.de/en",
+      "x-default": "https://www.sifk.de"
+    }
+  },
+  "/en/leistungen": {
+    "title": "Services: Africa Market Entry &amp; Energy Consulting | SIFK GmbH",
+    "description": "Explore market validation, partnerships and project support in Africa, plus DIN EN 16247 energy audits and non-residential building consulting in Germany.",
+    "canonical": "https://www.sifk.de/en/leistungen",
+    "alternates": {
+      "de": "https://www.sifk.de/leistungen",
+      "en": "https://www.sifk.de/en/leistungen",
+      "x-default": "https://www.sifk.de/leistungen"
+    }
+  },
+  "/en/unser-team": {
+    "title": "Our Team: Africa Business Development &amp; Energy | SIFK GmbH",
+    "description": "Meet the SIFK team and explore its expertise in African markets, international project coordination and energy consulting in Germany.",
+    "canonical": "https://www.sifk.de/en/unser-team",
+    "alternates": {
+      "de": "https://www.sifk.de/unser-team",
+      "en": "https://www.sifk.de/en/unser-team",
+      "x-default": "https://www.sifk.de/unser-team"
+    }
+  },
+  "/en/ueber-uns": {
+    "title": "About Us: Connecting Germany &amp; Africa | SIFK GmbH",
+    "description": "SIFK connects markets, partners and projects. Learn about our approach to business development in Africa and energy efficiency in Germany.",
+    "canonical": "https://www.sifk.de/en/ueber-uns",
+    "alternates": {
+      "de": "https://www.sifk.de/ueber-uns",
+      "en": "https://www.sifk.de/en/ueber-uns",
+      "x-default": "https://www.sifk.de/ueber-uns"
+    }
+  },
+  "/en/cloody": {
+    "title": "Cloody: Trading Platform for Europe &amp; Africa | SIFK GmbH",
+    "description": "Discover Cloody, SIFK’s trading platform in development, connecting Europe and Africa through direct trade, customs processing and community logistics.",
+    "canonical": "https://www.sifk.de/en/cloody",
+    "alternates": {
+      "de": "https://www.sifk.de/cloody",
+      "en": "https://www.sifk.de/en/cloody",
+      "x-default": "https://www.sifk.de/cloody"
+    }
+  },
+  "/en/kontakt": {
+    "title": "Contact Us for Africa Projects &amp; Energy Consulting | SIFK GmbH",
+    "description": "Contact SIFK about market entry, partnerships and projects in Africa, or energy audits and energy consulting for companies in Germany.",
+    "canonical": "https://www.sifk.de/en/kontakt",
+    "alternates": {
+      "de": "https://www.sifk.de/kontakt",
+      "en": "https://www.sifk.de/en/kontakt",
+      "x-default": "https://www.sifk.de/kontakt"
+    }
+  },
+  "/en/impressum": {
+    "title": "Legal Notice | SIFK GmbH",
+    "description": "Company information for SIFK GmbH in Schriesheim, Germany: address, management, contact details and commercial register information.",
+    "canonical": "https://www.sifk.de/en/impressum",
+    "alternates": {
+      "de": "https://www.sifk.de/impressum",
+      "en": "https://www.sifk.de/en/impressum",
+      "x-default": "https://www.sifk.de/impressum"
+    }
+  },
+  "/en/datenschutz": {
+    "title": "Privacy Policy | SIFK GmbH",
+    "description": "Learn how SIFK GmbH processes personal data when you visit this website or send an inquiry, and find information about your privacy rights.",
+    "canonical": "https://www.sifk.de/en/datenschutz",
+    "alternates": {
+      "de": "https://www.sifk.de/datenschutz",
+      "en": "https://www.sifk.de/en/datenschutz",
+      "x-default": "https://www.sifk.de/datenschutz"
+    }
+  }
+}

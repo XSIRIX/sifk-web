@@ -5,7 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test:unit": "node --test \"tests/unit/*.test.mjs\"",
+    "test:build": "node --test \"tests/build/*.test.mjs\"",
+    "check": "next build && npm run test:build"
   },
   "dependencies": {
     "@gsap/react": "^2.1.2",
