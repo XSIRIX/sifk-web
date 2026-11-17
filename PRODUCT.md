@@ -28,8 +28,9 @@ One consultancy, two places. SIFK has its own people living in the markets it ad
   1. Market entry in Africa: market validation, partner search, on-site project support.
   2. Energy consulting in Germany for companies and non-residential buildings: energy audits to DIN EN 16247 and DIN V 18599, action plans with cost, savings and payback, guidance on funding programmes.
 - Cloody: a trade platform connecting Europe and Africa, still in development.
-- Pages: `/`, `/leistungen`, `/unser-team`, `/ueber-uns`, `/kontakt`, `/cloody`, `/impressum`, `/datenschutz`, each also under `/en`. German is primary.
-- `/beratungsgutscheine-afrika`: German only. The Beratungsgutscheine Afrika programme and SIFK as a listed adviser. It does not change on its own: applications close on 28.02.2027, so the copy is re-checked and updated by hand in early February 2027. The home and services pages link to it from their Africa sections. Its claims and sources are in `docs/seo/claims.md`.
+- Pages: `/`, `/leistungen`, `/leistungen/energieberatung`, `/leistungen/markteintritt-afrika`, `/unser-team`, `/ueber-uns`, `/kontakt`, `/cloody`, `/impressum`, `/datenschutz`, each also under `/en`. German is primary. 21 URLs in all.
+- `/leistungen/energieberatung`: energy consulting for companies, in plain words: energy audits under the EDL-G, DIN EN 16247 and ISO 50001, non-residential buildings, funding (EBN until 31.12.2026), and the Rhein-Neckar area. `/leistungen/markteintritt-afrika`: Africa market entry, the six countries with SIFK's own people, and the vouchers. Both are linked from home, `/leistungen`, the team page and the footer. Their claims and sources are in `docs/seo/claims.md`; the EBN dates are checked by hand before 31.12.2026.
+- `/beratungsgutscheine-afrika`: German only. The Beratungsgutscheine Afrika programme and SIFK as a listed adviser. It does not change on its own: applications close on 28.02.2027, so the copy is re-checked and updated by hand in early February 2027. The home and services pages link to it from their Africa sections, the Africa page from its funding section, and the German footer. Its claims and sources are in `docs/seo/claims.md`.
 
 ## Capabilities and Constraints
 
@@ -53,7 +54,7 @@ One consultancy, two places. SIFK has its own people living in the markets it ad
 
 ## Evidence on Hand
 
-- 13 people, 7 countries, 32 clients and partners. The 32 logos are in `public/references` and run in `components/reference-marquee.tsx`.
+- 15 people, 7 countries, 32 clients and partners. The 32 logos are in `public/references` and run in `components/reference-marquee.tsx`.
 - Team members, roles and locations: `lib/content.ts` (`team`).
 - Pictures and hero film: `public/world` (white model scenes, seven country models, company site before and after, harbour town, container ship). Masters and every generation prompt: `asset-library/08-maquette` (`PROMPTS.md`).
 - Social share image: `public/brand/og.jpg`.

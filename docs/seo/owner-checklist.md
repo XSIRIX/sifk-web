@@ -104,9 +104,20 @@ sifk.de and sifk.eu forward to https://www.sifk.de with a temporary redirect tod
 
 1. Google Search Console: confirm you can open the property for https://www.sifk.de. If not, verify it.
 2. Export the "Performance" report for the last three months as a baseline. Keep the file.
-3. Submit the new page: URL inspection → `https://www.sifk.de/beratungsgutscheine-afrika` → "Request indexing".
-4. Run the live URL test on three pages: `https://www.sifk.de/`, `https://www.sifk.de/leistungen` and `https://www.sifk.de/beratungsgutscheine-afrika`. Open "View tested page" → screenshot and HTML. The headlines and text must be visible. They fade in with animation, so this confirms Google sees them. Tell me if any text is missing.
+3. Submit the new pages, one by one: URL inspection → paste the address → "Request indexing".
+   - `https://www.sifk.de/beratungsgutscheine-afrika`
+   - `https://www.sifk.de/leistungen/energieberatung`
+   - `https://www.sifk.de/leistungen/markteintritt-afrika`
+   - `https://www.sifk.de/en/leistungen/energieberatung`
+   - `https://www.sifk.de/en/leistungen/markteintritt-afrika`
+4. Run the live URL test on four pages: `https://www.sifk.de/`, `https://www.sifk.de/leistungen`, `https://www.sifk.de/beratungsgutscheine-afrika` and `https://www.sifk.de/leistungen/energieberatung`. Open "View tested page" → screenshot and HTML. The headlines and text must be visible. They fade in with animation, so this confirms Google sees them. Tell me if any text is missing.
 5. Bing Webmaster Tools: https://www.bing.com/webmasters. Use "Import from Google Search Console". Then submit `https://www.sifk.de/sitemap.xml`.
+6. If either tool asks for a "HTML tag" instead, copy only the code inside `content="…"` and put it in Vercel → Project → Settings → Environment Variables, then redeploy:
+   - Google: `GOOGLE_SITE_VERIFICATION`
+   - Bing: `BING_SITE_VERIFICATION`
+
+   Empty or missing means no tag; nothing else changes.
+7. **Counting enquiries.** Every message from the contact form arrives with the subject `Neue Anfrage [DE]: …` or `Neue Anfrage [EN]: …`, and a `Sprache:` line in the text. To count them, search the inbox for `Neue Anfrage [DE]` and `Neue Anfrage [EN]` and note both numbers each month next to the table in step 10.
 
 ## 8. Official energy lists
 
@@ -147,4 +158,6 @@ Where a fact is missing, the website leaves the claim out. Nothing is guessed.
 | Google profile URL and LinkedIn URL, once they exist | Company data | Left out |
 | Search Console and Bing verification codes | Measurement | No tag rendered |
 
-Done: every row of `docs/seo/claims.md` was approved on 17.11.2026. You can now add the BAFA sentence to the Google profile description (step 1.8).
+Voucher page: every row of `docs/seo/claims.md` was approved on 17.11.2026. You can now add the BAFA sentence to the Google profile description (step 1.8).
+
+**Still open:** the energy page (rows E1–E18), the Africa page (rows A1–A13) and the new wording on home and Kontakt (rows S1–S2) in `docs/seo/claims.md`. They go live only after your yes. Please also check the office pin: open the Kontakt page's "In Google Maps öffnen" link and say whether it points at the right building.

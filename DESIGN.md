@@ -218,7 +218,7 @@ The system refuses the dark consulting template, the golden-hour stock photo and
 
 **Reviewer's keep list.** Do not change the desktop first viewport. Do not change the flat full-bleed ribbon fields with real model photographs. Do not soften colours, round corners or shrink type.
 
-**Do not touch: the SEO layer.** It is frozen and is not part of this design system: `lib/seo.ts`, `app/sitemap.ts`, `app/robots.ts`, `lib/structured-data.ts`, `lib/locale-routing.ts`, every `app/**/page.tsx`, the 17 routes (8 pages, each in German and under `/en`, plus `/beratungsgutscheine-afrika`, which is German only), and the anchors `#internationale-geschaeftsentwicklung` and `#energieberatung-deutschland`.
+**Do not touch: the SEO layer.** It is frozen and is not part of this design system: `lib/seo.ts`, `app/sitemap.ts`, `app/robots.ts`, `lib/structured-data.ts`, `lib/locale-routing.ts`, `lib/root-metadata.ts`, every `app/**/page.tsx`, the 21 routes (10 pages, each in German and under `/en`, plus `/beratungsgutscheine-afrika`, which is German only), and the anchors `#internationale-geschaeftsentwicklung` and `#energieberatung-deutschland`. The 10 pages are the 8 original ones plus `/leistungen/energieberatung` and `/leistungen/markteintritt-afrika`. Page files live in two route groups: German pages in `app/(de)`, English pages in `app/(en)/en`. Each group has its own root layout, so `<html lang>` is right on the server. The freeze covers all of it.
 
 ## Colors
 
@@ -468,7 +468,7 @@ The motion grammar comes from the logo. **Horizontal is the weft and stands for 
 - **Don't** use Amber outside the logo drawing.
 - **Don't** use stock photographs, golden-hour photos, pattern strips or dark consulting layouts.
 - **Don't** invent team portraits, clients, quotes or figures. People are shown as initials on their country's colour.
-- **Don't** touch the SEO layer: `lib/seo.ts`, `app/sitemap.ts`, `app/robots.ts`, `lib/structured-data.ts`, `lib/locale-routing.ts`, any `app/**/page.tsx`, the 17 routes (including the German-only `/beratungsgutscheine-afrika`), or the anchors `#internationale-geschaeftsentwicklung` and `#energieberatung-deutschland`.
+- **Don't** touch the SEO layer: `lib/seo.ts`, `app/sitemap.ts`, `app/robots.ts`, `lib/structured-data.ts`, `lib/locale-routing.ts`, `lib/root-metadata.ts`, any `app/**/page.tsx` in `app/(de)` or `app/(en)/en`, the 21 routes (including the German-only `/beratungsgutscheine-afrika` and the two service pages), or the anchors `#internationale-geschaeftsentwicklung` and `#energieberatung-deutschland`.
 
 ### Open ideas, deliberately not built
 These were noted in the finish review as ways to go further. They are not part of the system yet.
