@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { type SubmitEvent, useRef, useState } from "react";
+import { type SubmitEvent, useEffect, useRef, useState } from "react";
 
 import { ArrowIcon } from "@/components/icons";
+import { topicFromQuery } from "@/lib/contact-topic";
 import { localizePath, type Locale } from "@/lib/locale-routing";
 import { sharedCopy } from "@/lib/shared-copy";
 
@@ -16,7 +17,19 @@ export function ContactForm({ locale = "de" }: { locale?: Locale }) {
   const copy = sharedCopy[locale].contactForm;
   const [status, setStatus] = useState<FormStatus>("idle");
   const [errors, setErrors] = useState<FieldErrors>({});
+  const firstTopic = copy.options[0].value;
+  const [topic, setTopic] = useState(firstTopic);
   const successRef = useRef<HTMLDivElement | null>(null);
+
+  // A link such as /kontakt?thema=energie preselects its topic. Read after mount, so the
+  // page stays static and needs no Suspense boundary.
+  useEffect(() => {
+    const preset = topicFromQuery(
+      window.location.search,
+      copy.options.map((option) => option.value)
+    );
+    if (preset) setTopic(preset);
+  }, [copy]);
 
   const validate = (data: Record<string, FormDataEntryValue>) => {
     const next: FieldErrors = {};
@@ -51,6 +64,7 @@ export function ContactForm({ locale = "de" }: { locale?: Locale }) {
       if (!response.ok) throw new Error(String(response.status));
 
       form.reset();
+      setTopic(firstTopic);
       setStatus("sent");
       requestAnimationFrame(() => successRef.current?.focus());
     } catch {
@@ -82,9 +96,15 @@ export function ContactForm({ locale = "de" }: { locale?: Locale }) {
       <fieldset className="topic-field">
         <legend className="field-label">{copy.fields.topic}</legend>
         <div className="topic-options">
-          {copy.options.map((option, index) => (
+          {copy.options.map((option) => (
             <label className="topic-option" key={option.value}>
-              <input defaultChecked={index === 0} name="topic" type="radio" value={option.value} />
+              <input
+                checked={topic === option.value}
+                name="topic"
+                onChange={() => setTopic(option.value)}
+                type="radio"
+                value={option.value}
+              />
               <span>{option.label}</span>
             </label>
           ))}
