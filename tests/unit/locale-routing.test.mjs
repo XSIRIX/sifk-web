@@ -6,7 +6,7 @@ import { switchLocalePath } from "../../lib/locale-routing.ts";
 test("one-language page falls back to a real English page", () => {
   assert.equal(
     switchLocalePath("/beratungsgutscheine-afrika", "en"),
-    "/en/leistungen#internationale-geschaeftsentwicklung"
+    "/en/leistungen/markteintritt-afrika"
   );
 });
 test("two-language pages switch as before", () => {

@@ -75,7 +75,7 @@ export const sharedCopy: Record<Locale, SharedCopy> = {
       closeMenu: "Menü schließen",
       localeLabel: "EN",
       localeAriaLabel: "Switch to English",
-      localeFallbackAriaLabel: "Diese Seite gibt es nur auf Deutsch. Zur englischen Leistungsseite, Bereich Afrika",
+      localeFallbackAriaLabel: "Diese Seite gibt es nur auf Deutsch. Zur englischen Seite Markteintritt Afrika",
       homeLabel: "SIFK GmbH, zur Startseite"
     },
     footer: {

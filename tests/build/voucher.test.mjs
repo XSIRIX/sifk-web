@@ -23,7 +23,7 @@ test("contact link preselects the topic", () => {
   assert.match(html(), /href="\/kontakt\?thema=international"/);
 });
 test("English switch points at a real page", () => {
-  assert.match(html(), /href="\/en\/leistungen#internationale-geschaeftsentwicklung"/);
+  assert.match(html(), /href="\/en\/leistungen\/markteintritt-afrika"/);
 });
 test("footer of a German page links to the voucher page, an English page does not", () => {
   assert.match(readPage("/"), /href="\/beratungsgutscheine-afrika"/);
@@ -39,7 +39,7 @@ test("description stays true after the programme ends and makes no listing claim
   assert.doesNotMatch(html(), /gelistetes Beratungsunternehmen Sie begleitet/);
 });
 test("language switch says where it really goes", () => {
-  assert.match(html(), /aria-label="Diese Seite gibt es nur auf Deutsch\. Zur englischen Leistungsseite, Bereich Afrika"/);
+  assert.match(html(), /aria-label="Diese Seite gibt es nur auf Deutsch\. Zur englischen Seite Markteintritt Afrika"/);
   assert.match(readPage("/leistungen"), /aria-label="Switch to English"/);
 });
 test("no automatic switch: the page has no end-date marker and no ended copy", () => {

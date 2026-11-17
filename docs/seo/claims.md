@@ -92,6 +92,28 @@ English rows are faithful translations of the German row. Sources read on 17.11.
 
 **Re-check by hand** (nothing changes on its own): E4 whenever the Bundestag votes on 21/8027; E7 and E15 before 31.12.2026, and in any case in early January 2027, when the guideline has ended or been replaced.
 
+## Africa page: `/leistungen/markteintritt-afrika` and `/en/leistungen/markteintritt-afrika`
+
+English rows are faithful translations. Most rows describe SIFK's own work; several reuse sentences already on the site (`/leistungen`, home) or already approved for the voucher page (rows 4, 5, 23).
+
+| # | Exact text (German) | Source | Checked on | Owner approved |
+|---|---|---|---|---|
+| A1 | Title „Markteintritt Afrika: Beratung für Unternehmen \| SIFK GmbH“; description „Beratung für den Markteintritt in Afrika: Marktprüfung, Partnersuche und Projektbegleitung vor Ort, mit eigenem Team in sechs afrikanischen Ländern.“ English title „Africa Market Entry Consulting for German Companies“. | SIFK | 17.11.2026 | no |
+| A2 | „Markteintritt Afrika. Beratung mit Menschen vor Ort.“ „Wir beraten Unternehmen, die in afrikanischen Ländern verkaufen, einkaufen oder investieren wollen: von der Marktprüfung bis zur Umsetzung, mit eigenem Team in sechs Ländern.“ | SIFK | 17.11.2026 | no |
+| A3 | „Für wen.“ „Für Unternehmen, die in afrikanischen Ländern verkaufen, einkaufen oder investieren wollen, und für Unternehmen, deren Projekt dort schon läuft und die Partner und Begleitung vor Ort brauchen.“ „Wir helfen, bevor viel Geld fließt: mit Zahlen zum Markt, geprüften Partnern und einem Team, das vor Ort lebt.“ | SIFK | 17.11.2026 | no |
+| A4 | „Was wir für Sie tun.“ The four services word for word as on `/leistungen` (Markteintritt und Marktvalidierung; Strategische Partnerschaften; Projektbegleitung und Stakeholder-Koordination; Interkulturelle Abstimmung). | SIFK (already on the site) | 17.11.2026 | no |
+| A5 | „Unser Team vor Ort.“ „Unsere Kolleginnen und Kollegen leben in sechs afrikanischen Ländern. Sie kennen Märkte, Regeln und Menschen.“ Ghana, Sambia, Uganda, Kenia, Äthiopien, Tansania. | SIFK (countries already on the home page) | 17.11.2026 | no |
+| A6 | „Förderung.“ „Der Bund fördert Beratung zu Ihrem Geschäftsvorhaben in Afrika mit bis zu 75 % der Beratungskosten. Anträge sind bis einschließlich 28.02.2027 möglich.“ Link to `/beratungsgutscheine-afrika`; English label „Details (in German)“. | Voucher rows 4 and 23 (BAFA-P) | 17.11.2026 | no |
+| A7 | „So arbeiten wir.“ Erstgespräch (word for word as on `/leistungen`); Marktprüfung: „Wir sammeln Marktdaten und prüfen Annahmen, bevor Entscheidungen fallen.“; Plan (as on `/leistungen`); Umsetzung vor Ort: „Wir begleiten die Umsetzung vor Ort in Afrika, bis das Ergebnis steht.“ | SIFK | 17.11.2026 | no |
+| A8 | „In welchen Ländern sind Sie vor Ort?“ „Unser Team lebt in Ghana, Sambia, Uganda, Kenia, Äthiopien und Tansania. Für andere Länder klären wir im Erstgespräch, ob und wie wir helfen können.“ | SIFK | 17.11.2026 | no |
+| A9 | „Wie prüfen Sie Geschäftspartner?“ „Wir sprechen mit möglichen Partnern vor Ort, prüfen ihre Angaben und begleiten die ersten Gespräche, bevor Sie sich festlegen.“ | SIFK | 17.11.2026 | no |
+| A10 | „Was kostet die Beratung?“ „Das hängt vor allem vom Land, vom Umfang der Marktprüfung und davon ab, wie viel Arbeit vor Ort nötig ist. Im Erstgespräch klären wir, wo wir ansetzen und was es kostet.“ | SIFK | 17.11.2026 | no |
+| A11 | „Begleiten Sie auch Projekte, die schon laufen?“ „Ja. Wir koordinieren Beteiligte, Termine und Dokumente vor Ort, auch wenn Ihr Projekt schon begonnen hat.“ | SIFK | 17.11.2026 | no |
+| A12 | „Gibt es Förderung?“ Same two sentences as A6, then „SIFK ist ein vom BAFA gelistetes Beratungsunternehmen im Rahmen der Beratungsgutscheine Afrika.“ | Voucher rows 4, 5, 23 | 17.11.2026 | no |
+| A13 | „Markteintritt in Afrika planen.“ „Im Erstgespräch klären wir, wo wir ansetzen und was es kostet.“ | SIFK (same as the voucher page's former closing text) | 17.11.2026 | no |
+
+**Re-check by hand:** A6 and A12 in early February 2027, with the voucher page. If the programme ends, reword or remove them.
+
 ## Left out, and why
 
 | Fact | Why it is not on the page |

@@ -4,7 +4,10 @@ import assert from "node:assert/strict";
 import { readPage, head, jsonLd } from "./helpers.mjs";
 
 const SITE = "https://www.sifk.de";
-export const PAGES = [{ path: "/leistungen/energieberatung", topic: "energie" }];
+export const PAGES = [
+  { path: "/leistungen/energieberatung", topic: "energie" },
+  { path: "/leistungen/markteintritt-afrika", topic: "international" }
+];
 
 for (const { path, topic } of PAGES) {
   for (const locale of ["de", "en"]) {
@@ -27,3 +30,9 @@ for (const { path, topic } of PAGES) {
     });
   }
 }
+
+test("English Africa page links to the German voucher page, unlocalized", () => {
+  const html = readPage("/en/leistungen/markteintritt-afrika");
+  assert.ok(html.includes('href="/beratungsgutscheine-afrika"'));
+  assert.ok(!html.includes("/en/beratungsgutscheine-afrika"));
+});

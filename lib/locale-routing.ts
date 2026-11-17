@@ -29,7 +29,7 @@ export function localizePath(path: string, locale: Locale) {
 // Pages that exist in one language only. The language switch sends visitors to the
 // closest real page in the other language instead of a 404.
 const localeFallbacks: Record<string, Partial<Record<Locale, string>>> = {
-  "/beratungsgutscheine-afrika": { en: "/en/leistungen#internationale-geschaeftsentwicklung" }
+  "/beratungsgutscheine-afrika": { en: "/en/leistungen/markteintritt-afrika" }
 };
 
 export function switchLocalePath(pathname: string, locale: Locale) {

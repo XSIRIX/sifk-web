@@ -119,6 +119,18 @@ export const seoPages = {
         "Energy audits to DIN EN 16247-1 and energy consulting for non-residential buildings to DIN V 18599, for companies in Heidelberg, Mannheim and the Rhine-Neckar region."
     }
   },
+  "/leistungen/markteintritt-afrika": {
+    de: {
+      title: "Markteintritt Afrika: Beratung für Unternehmen",
+      description:
+        "Beratung für den Markteintritt in Afrika: Marktprüfung, Partnersuche und Projektbegleitung vor Ort, mit eigenem Team in sechs afrikanischen Ländern."
+    },
+    en: {
+      title: "Africa Market Entry Consulting for German Companies",
+      description:
+        "Africa market entry consulting for German companies: market validation, partner search and on-the-ground project support, with our own team in six African countries."
+    }
+  },
   "/beratungsgutscheine-afrika": {
     de: {
       title: "Beratungsgutscheine Afrika: Förderung & Beratung",

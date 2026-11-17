@@ -5,7 +5,7 @@ import { sitemapUrls } from "./helpers.mjs";
 
 const VOUCHER = "https://www.sifk.de/beratungsgutscheine-afrika";
 
-test("sitemap lists 19 URLs", () => assert.equal(sitemapUrls().length, 19));
+test("sitemap lists 21 URLs", () => assert.equal(sitemapUrls().length, 21));
 test("voucher page has German and x-default only", () => {
   const entry = sitemapUrls().find((u) => u.loc === VOUCHER);
   assert.deepEqual(entry.alternates, { de: VOUCHER, "x-default": VOUCHER });

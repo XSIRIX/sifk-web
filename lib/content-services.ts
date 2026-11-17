@@ -313,12 +313,259 @@ const energyEn: ServicePageContent = {
   }
 };
 
-// Filled by the Africa page task. No route renders it until then.
-const africaStub = (base: ServicePageContent): ServicePageContent => ({
-  ...base,
-  path: "/leistungen/markteintritt-afrika",
-  topic: "international"
-});
+const africaArt = { src: "/world/africa.webp", width: 1600, height: 1200 };
+const africaCountriesDe = ["Ghana", "Sambia", "Uganda", "Kenia", "Äthiopien", "Tansania"];
 
-export const servicePagesDe: ServicePages = { energy: energyDe, africa: africaStub(energyDe) };
-export const servicePagesEn: ServicePages = { energy: energyEn, africa: africaStub(energyEn) };
+const africaDe: ServicePageContent = {
+  path: "/leistungen/markteintritt-afrika",
+  topic: "international",
+  crumbs: { services: "Leistungen", page: "Markteintritt Afrika" },
+  schema: {
+    name: "Beratung zum Markteintritt in Afrika",
+    serviceTypes: [
+      "Markteintritt und Marktvalidierung",
+      "Strategische Partnerschaften",
+      "Projektbegleitung und Stakeholder-Koordination",
+      "Interkulturelle Abstimmung"
+    ]
+  },
+  stand: "Stand: 17.11.2026",
+  hero: {
+    title: "Markteintritt Afrika. Beratung mit Menschen vor Ort.",
+    lead:
+      "Wir beraten Unternehmen, die in afrikanischen Ländern verkaufen, einkaufen oder investieren wollen: von der Marktprüfung bis zur Umsetzung, mit eigenem Team in sechs Ländern.",
+    art: {
+      ...africaArt,
+      alt: "Weißes Modell einer afrikanischen Hafen- und Marktstadt mit Kran, Containern und Akazien, durchzogen von gelben und grünen Bändern"
+    }
+  },
+  sections: [
+    {
+      kind: "prose",
+      title: "Für wen.",
+      paragraphs: [
+        "Für Unternehmen, die in afrikanischen Ländern verkaufen, einkaufen oder investieren wollen, und für Unternehmen, deren Projekt dort schon läuft und die Partner und Begleitung vor Ort brauchen.",
+        "Wir helfen, bevor viel Geld fließt: mit Zahlen zum Markt, geprüften Partnern und einem Team, das vor Ort lebt."
+      ]
+    },
+    {
+      kind: "ledger",
+      title: "Was wir für Sie tun.",
+      items: [
+        {
+          title: "Markteintritt und Marktvalidierung",
+          text: "Marktgröße, Wettbewerb, Zölle und Vorschriften. Sie entscheiden auf Basis von Fakten, nicht von Hoffnung."
+        },
+        {
+          title: "Strategische Partnerschaften",
+          text: "Wir suchen und prüfen Händler, Lieferanten und Behörden und begleiten die ersten Gespräche."
+        },
+        {
+          title: "Projektbegleitung und Stakeholder-Koordination",
+          text: "Termine, Dokumente, Beteiligte: Wir halten Ihr Projekt vor Ort zusammen."
+        },
+        {
+          title: "Interkulturelle Abstimmung",
+          text: "Wir übersetzen nicht nur Sprache, sondern Erwartungen, damit Verhandlungen auf beiden Seiten funktionieren."
+        }
+      ]
+    },
+    {
+      kind: "places",
+      title: "Unser Team vor Ort.",
+      text: "Unsere Kolleginnen und Kollegen leben in sechs afrikanischen Ländern. Sie kennen Märkte, Regeln und Menschen.",
+      places: africaCountriesDe
+    },
+    {
+      kind: "funding",
+      title: "Förderung.",
+      items: [
+        {
+          title: "Beratungsgutscheine Afrika",
+          text: "Der Bund fördert Beratung zu Ihrem Geschäftsvorhaben in Afrika mit bis zu 75\u00A0% der Beratungskosten. Anträge sind bis einschließlich 28.02.2027 möglich.",
+          link: { href: "/beratungsgutscheine-afrika", label: "Beratungs\u00ADgutscheine Afrika" }
+        }
+      ]
+    },
+    {
+      kind: "steps",
+      title: "So arbeiten wir.",
+      items: [
+        {
+          title: "Erstgespräch",
+          text: "Sie schildern Ihr Vorhaben. Wir sagen offen, ob wir passen und was ein sinnvoller erster Schritt ist."
+        },
+        {
+          title: "Marktprüfung",
+          text: "Wir sammeln Marktdaten und prüfen Annahmen, bevor Entscheidungen fallen."
+        },
+        {
+          title: "Plan",
+          text: "Sie bekommen klare Empfehlungen mit Prioritäten, Kosten und Zuständigkeiten."
+        },
+        {
+          title: "Umsetzung vor Ort",
+          text: "Wir begleiten die Umsetzung vor Ort in Afrika, bis das Ergebnis steht."
+        }
+      ]
+    }
+  ],
+  faq: {
+    title: "Häufige Fragen.",
+    items: [
+      {
+        q: "In welchen Ländern sind Sie vor Ort?",
+        a: "Unser Team lebt in Ghana, Sambia, Uganda, Kenia, Äthiopien und Tansania. Für andere Länder klären wir im Erstgespräch, ob und wie wir helfen können."
+      },
+      {
+        q: "Wie prüfen Sie Geschäftspartner?",
+        a: "Wir sprechen mit möglichen Partnern vor Ort, prüfen ihre Angaben und begleiten die ersten Gespräche, bevor Sie sich festlegen."
+      },
+      {
+        q: "Was kostet die Beratung?",
+        a: "Das hängt vor allem vom Land, vom Umfang der Marktprüfung und davon ab, wie viel Arbeit vor Ort nötig ist. Im Erstgespräch klären wir, wo wir ansetzen und was es kostet."
+      },
+      {
+        q: "Begleiten Sie auch Projekte, die schon laufen?",
+        a: "Ja. Wir koordinieren Beteiligte, Termine und Dokumente vor Ort, auch wenn Ihr Projekt schon begonnen hat."
+      },
+      {
+        q: "Gibt es Förderung?",
+        a: "Mit den Beratungsgutscheinen Afrika fördert der Bund Beratung zu Geschäftsvorhaben in Afrika mit bis zu 75\u00A0% der Beratungskosten. Anträge sind bis einschließlich 28.02.2027 möglich. SIFK ist ein vom BAFA gelistetes Beratungsunternehmen im Rahmen der Beratungsgutscheine Afrika."
+      }
+    ]
+  },
+  close: {
+    title: "Markteintritt in Afrika planen.",
+    text: "Im Erstgespräch klären wir, wo wir ansetzen und was es kostet."
+  }
+};
+
+const africaEn: ServicePageContent = {
+  path: "/leistungen/markteintritt-afrika",
+  topic: "international",
+  crumbs: { services: "Services", page: "Africa market entry" },
+  schema: {
+    name: "Africa market entry consulting",
+    serviceTypes: [
+      "Market entry and validation",
+      "Strategic partnerships",
+      "Project support and stakeholder coordination",
+      "Cross-cultural alignment"
+    ]
+  },
+  stand: "As of 17 November 2026",
+  hero: {
+    title: "Africa market entry. Consulting with people on the ground.",
+    lead:
+      "We advise companies that want to sell, buy or invest in African countries: from market validation to delivery, with our own team in six countries.",
+    art: {
+      ...africaArt,
+      alt: "White model of an African port and market town with a crane, containers and acacias, crossed by yellow and green ribbons"
+    }
+  },
+  sections: [
+    {
+      kind: "prose",
+      title: "Who it is for.",
+      paragraphs: [
+        "For companies that want to sell, buy or invest in African countries, and for companies whose project there is already running and who need partners and support on the ground.",
+        "We help before much money is spent: with market figures, vetted partners and a team that lives on the ground."
+      ]
+    },
+    {
+      kind: "ledger",
+      title: "What we do for you.",
+      items: [
+        {
+          title: "Market entry and validation",
+          text: "Market size, competition, tariffs and regulations. You decide on facts, not on hope."
+        },
+        {
+          title: "Strategic partnerships",
+          text: "We find and vet distributors, suppliers and authorities and support the first conversations."
+        },
+        {
+          title: "Project support and stakeholder coordination",
+          text: "Meetings, documents, stakeholders: we keep your project together on the ground."
+        },
+        {
+          title: "Cross-cultural alignment",
+          text: "We translate expectations, not just language, so negotiations work on both sides."
+        }
+      ]
+    },
+    {
+      kind: "places",
+      title: "Our team on the ground.",
+      text: "Our colleagues live in six African countries. They know the markets, the rules and the people.",
+      places: ["Ghana", "Zambia", "Uganda", "Kenya", "Ethiopia", "Tanzania"]
+    },
+    {
+      kind: "funding",
+      title: "Funding.",
+      items: [
+        {
+          title: "Beratungsgutscheine Afrika (Africa consulting vouchers)",
+          text: "The German federal government funds consulting on your business project in Africa with up to 75\u00A0% of the consulting costs. Applications are possible until and including 28 February 2027.",
+          // The voucher page exists in German only. Never localize this link.
+          link: { href: "/beratungsgutscheine-afrika", label: "Details (in German)", hrefLang: "de" }
+        }
+      ]
+    },
+    {
+      kind: "steps",
+      title: "How we work.",
+      items: [
+        {
+          title: "First call",
+          text: "You describe your project. We say openly whether we are the right fit and what a sensible first step is."
+        },
+        {
+          title: "Market validation",
+          text: "We collect market data and test assumptions before decisions are made."
+        },
+        {
+          title: "Plan",
+          text: "You get clear recommendations with priorities, costs and responsibilities."
+        },
+        {
+          title: "Delivery on the ground",
+          text: "We support delivery on the ground in Africa until the result is in place."
+        }
+      ]
+    }
+  ],
+  faq: {
+    title: "Common questions.",
+    items: [
+      {
+        q: "In which countries are you on the ground?",
+        a: "Our team lives in Ghana, Zambia, Uganda, Kenya, Ethiopia and Tanzania. For other countries we clarify in a first call whether and how we can help."
+      },
+      {
+        q: "How do you vet business partners?",
+        a: "We talk to potential partners on the ground, check what they tell us and support the first conversations before you commit."
+      },
+      {
+        q: "What does the consulting cost?",
+        a: "It depends mainly on the country, the scope of the market validation and how much work is needed on the ground. In a first call we work out where to start and what it costs."
+      },
+      {
+        q: "Do you also support projects that are already running?",
+        a: "Yes. We coordinate stakeholders, meetings and documents on the ground, even when your project has already started."
+      },
+      {
+        q: "Is there funding?",
+        a: "Through the Beratungsgutscheine Afrika, the German federal government funds consulting on business projects in Africa with up to 75\u00A0% of the consulting costs. Applications are possible until and including 28 February 2027. SIFK is a consulting firm listed by BAFA under the Beratungsgutscheine Afrika programme."
+      }
+    ]
+  },
+  close: {
+    title: "Plan your market entry in Africa.",
+    text: "In a first call we work out where to start and what it costs."
+  }
+};
+
+export const servicePagesDe: ServicePages = { energy: energyDe, africa: africaDe };
+export const servicePagesEn: ServicePages = { energy: energyEn, africa: africaEn };
