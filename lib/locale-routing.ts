@@ -26,6 +26,13 @@ export function localizePath(path: string, locale: Locale) {
   return normalized === "/" ? "/en" : `/en${normalized}`;
 }
 
+// Pages that exist in one language only. The language switch sends visitors to the
+// closest real page in the other language instead of a 404.
+const localeFallbacks: Record<string, Partial<Record<Locale, string>>> = {
+  "/beratungsgutscheine-afrika": { en: "/en/leistungen#internationale-geschaeftsentwicklung" }
+};
+
 export function switchLocalePath(pathname: string, locale: Locale) {
-  return localizePath(pathname, locale);
+  const normalized = localizePath(pathname, "de");
+  return localeFallbacks[normalized]?.[locale] ?? localizePath(pathname, locale);
 }

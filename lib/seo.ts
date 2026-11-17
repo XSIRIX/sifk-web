@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 
-import { localizePath, type Locale } from "@/lib/locale-routing";
+import { localizePath, locales, type Locale } from "@/lib/locale-routing";
 
 export const siteUrl = "https://www.sifk.de";
 export const organizationId = `${siteUrl}/#organization`;
 
 type PageCopy = { title: string; description: string };
+
+// German is required. A page without `en` exists in German only.
+type SeoEntry = { de: PageCopy; en?: PageCopy };
 
 export const seoPages = {
   "/": {
@@ -103,8 +106,15 @@ export const seoPages = {
       description:
         "Learn how SIFK GmbH processes personal data when you visit this website or send an inquiry, and find information about your privacy rights."
     }
+  },
+  "/beratungsgutscheine-afrika": {
+    de: {
+      title: "Beratungsgutscheine Afrika: Förderung & Beratung",
+      description:
+        "Beratungsgutscheine Afrika: Was das Förderprogramm des Bundes abdeckt, wer es nutzen kann und wie SIFK als gelistetes Beratungsunternehmen Sie begleitet."
+    }
   }
-} satisfies Record<string, Record<Locale, PageCopy>>;
+} satisfies Record<string, SeoEntry>;
 
 export type SeoPagePath = keyof typeof seoPages;
 
@@ -112,16 +122,29 @@ export function pageUrl(path: SeoPagePath, locale: Locale) {
   return new URL(localizePath(path, locale), siteUrl).href;
 }
 
+/** The languages a page exists in, German first. */
+export function pageLocales(path: SeoPagePath): Locale[] {
+  const entry: SeoEntry = seoPages[path];
+  return locales.filter((locale) => entry[locale] !== undefined);
+}
+
 export function languageAlternates(path: SeoPagePath) {
-  return {
-    de: pageUrl(path, "de"),
-    en: pageUrl(path, "en"),
-    "x-default": pageUrl(path, "de")
-  };
+  const languages: Partial<Record<Locale | "x-default", string>> = {};
+  for (const locale of pageLocales(path)) {
+    languages[locale] = pageUrl(path, locale);
+  }
+  languages["x-default"] = pageUrl(path, "de");
+  return languages;
 }
 
 export function createPageMetadata(path: SeoPagePath, locale: Locale): Metadata {
-  const { title, description } = seoPages[path][locale];
+  const entry: SeoEntry = seoPages[path];
+  const copy = entry[locale];
+  if (!copy) {
+    throw new Error(`No ${locale} copy for ${path}`);
+  }
+  const { title, description } = copy;
+  const otherLocale: Locale = locale === "de" ? "en" : "de";
   const fullTitle = `${title} | SIFK GmbH`;
   const image = {
     url: `${siteUrl}/brand/og.jpg`,
@@ -144,7 +167,7 @@ export function createPageMetadata(path: SeoPagePath, locale: Locale): Metadata 
       description,
       url: pageUrl(path, locale),
       locale: locale === "de" ? "de_DE" : "en_GB",
-      alternateLocale: locale === "de" ? "en_GB" : "de_DE",
+      ...(entry[otherLocale] ? { alternateLocale: otherLocale === "de" ? "de_DE" : "en_GB" } : {}),
       images: [image]
     },
     twitter: {
