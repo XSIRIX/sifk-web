@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-import { enquirySubject, formRedirectPath } from "@/lib/contact-mail";
+import { enquirySubject, formRedirectUrl } from "@/lib/contact-mail";
 
 type ContactBody = {
   name?: unknown;
@@ -103,8 +103,7 @@ export async function POST(request: Request) {
       // Unreadable body: treated as invalid input below.
     }
     const outcome = await send(body);
-    const target = new URL(formRedirectPath(text(body.locale, 5), outcome === "sent"), request.url);
-    return NextResponse.redirect(target, 303);
+    return NextResponse.redirect(formRedirectUrl(body, outcome === "sent", request.url), 303);
   }
 
   let body: ContactBody;

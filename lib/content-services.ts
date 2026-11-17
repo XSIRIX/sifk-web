@@ -120,7 +120,7 @@ const energyDe: ServicePageContent = {
       items: [
         {
           title: "Energieberatung für Nichtwohngebäude, Anlagen und Systeme (BAFA)",
-          text: "Das BAFA fördert Energieaudits nach DIN EN 16247 mit 50 % des Beratungshonorars, höchstens 3.000 Euro, bei jährlichen Energiekosten bis 10.000 Euro netto höchstens 600 Euro. Auch Energieberatungen für Nichtwohngebäude nach DIN V 18599 sind förderfähig. Die Beratung muss eine Person durchführen, die in der Energieeffizienz-Expertenliste gelistet ist. Die Förderrichtlinie endet am 31.12.2026."
+          text: "Bis 31.12.2026 fördert das BAFA Energieaudits nach DIN EN 16247 mit 50 % des Beratungshonorars, höchstens 3.000 Euro, bei jährlichen Energiekosten bis 10.000 Euro netto höchstens 600 Euro. Auch Energieberatungen für Nichtwohngebäude nach DIN V 18599 sind bis dahin förderfähig. Die Beratung muss eine Person durchführen, die in der Energieeffizienz-Expertenliste gelistet ist."
         },
         {
           title: "Bundesförderung für effiziente Gebäude (BEG)",
@@ -160,7 +160,7 @@ const energyDe: ServicePageContent = {
       },
       {
         q: "Gibt es Förderung für kleinere Unternehmen?",
-        a: "Das BAFA fördert Energieaudits und Energieberatungen für Nichtwohngebäude mit 50 % des Beratungshonorars. Die Förderrichtlinie endet am 31.12.2026."
+        a: "Bis 31.12.2026 fördert das BAFA Energieaudits und Energieberatungen für Nichtwohngebäude mit 50 % des Beratungshonorars."
       },
       {
         q: "Was unterscheidet DIN EN 16247 von DIN V 18599?",
@@ -259,7 +259,7 @@ const energyEn: ServicePageContent = {
       items: [
         {
           title: "Energy consulting for non-residential buildings, equipment and systems (BAFA)",
-          text: "BAFA funds energy audits to DIN EN 16247 with 50 % of the consulting fee, up to 3,000 euros, or up to 600 euros where annual energy costs are 10,000 euros net or less. Energy consulting for non-residential buildings to DIN V 18599 is also eligible. The consulting must be done by a person on the Energieeffizienz-Expertenliste. The funding guideline ends on 31 December 2026."
+          text: "Until 31 December 2026, BAFA funds energy audits to DIN EN 16247 with 50 % of the consulting fee, up to 3,000 euros, or up to 600 euros where annual energy costs are 10,000 euros net or less. Until then, energy consulting for non-residential buildings to DIN V 18599 is also eligible. The consulting must be done by a person on the Energieeffizienz-Expertenliste."
         },
         {
           title: "Federal funding for efficient buildings (BEG)",
@@ -299,7 +299,7 @@ const energyEn: ServicePageContent = {
       },
       {
         q: "Is there funding for smaller companies?",
-        a: "BAFA funds energy audits and energy consulting for non-residential buildings with 50 % of the consulting fee. The funding guideline ends on 31 December 2026."
+        a: "Until 31 December 2026, BAFA funds energy audits and energy consulting for non-residential buildings with 50 % of the consulting fee."
       },
       {
         q: "How does DIN EN 16247 differ from DIN V 18599?",
@@ -382,7 +382,7 @@ const africaDe: ServicePageContent = {
       items: [
         {
           title: "Beratungsgutscheine Afrika",
-          text: "Der Bund fördert Beratung zu Ihrem Geschäftsvorhaben in Afrika mit bis zu 75\u00A0% der Beratungskosten. Anträge sind bis einschließlich 28.02.2027 möglich.",
+          text: "Für Anträge bis einschließlich 28.02.2027 fördert der Bund Beratung zu Ihrem Geschäftsvorhaben in Afrika mit bis zu 75\u00A0% der Beratungskosten.",
           link: { href: "/beratungsgutscheine-afrika", label: "Beratungs\u00ADgutscheine Afrika" }
         }
       ]
@@ -431,7 +431,7 @@ const africaDe: ServicePageContent = {
       },
       {
         q: "Gibt es Förderung?",
-        a: "Mit den Beratungsgutscheinen Afrika fördert der Bund Beratung zu Geschäftsvorhaben in Afrika mit bis zu 75\u00A0% der Beratungskosten. Anträge sind bis einschließlich 28.02.2027 möglich. SIFK ist ein vom BAFA gelistetes Beratungsunternehmen im Rahmen der Beratungsgutscheine Afrika."
+        a: "Für Anträge bis einschließlich 28.02.2027 fördert der Bund mit den Beratungsgutscheinen Afrika Beratung zu Geschäftsvorhaben in Afrika mit bis zu 75\u00A0% der Beratungskosten. SIFK ist ein vom BAFA gelistetes Beratungsunternehmen im Rahmen der Beratungsgutscheine Afrika."
       }
     ]
   },
@@ -507,7 +507,7 @@ const africaEn: ServicePageContent = {
       items: [
         {
           title: "Beratungsgutscheine Afrika (Africa consulting vouchers)",
-          text: "The German federal government funds consulting on your business project in Africa with up to 75\u00A0% of the consulting costs. Applications are possible until and including 28 February 2027.",
+          text: "For applications made until and including 28 February 2027, the German federal government funds consulting on your business project in Africa with up to 75\u00A0% of the consulting costs.",
           // The voucher page exists in German only. Never localize this link.
           link: { href: "/beratungsgutscheine-afrika", label: "Details (in German)", hrefLang: "de" }
         }
@@ -557,7 +557,7 @@ const africaEn: ServicePageContent = {
       },
       {
         q: "Is there funding?",
-        a: "Through the Beratungsgutscheine Afrika, the German federal government funds consulting on business projects in Africa with up to 75\u00A0% of the consulting costs. Applications are possible until and including 28 February 2027. SIFK is a consulting firm listed by BAFA under the Beratungsgutscheine Afrika programme."
+        a: "For applications made until and including 28 February 2027, the German federal government funds consulting on business projects in Africa with up to 75\u00A0% of the consulting costs through the Beratungsgutscheine Afrika. SIFK is a consulting firm listed by BAFA under the Beratungsgutscheine Afrika programme."
       }
     ]
   },

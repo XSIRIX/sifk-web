@@ -21,3 +21,12 @@ export function formRedirectPath(locale: string, ok: boolean): string {
   const page = language(locale) === "en" ? "/en/kontakt" : "/kontakt";
   return `${page}#${ok ? "gesendet" : "fehler"}`;
 }
+
+/**
+ * The full redirect for a form post: same origin as the request, the path from formRedirectPath,
+ * and nothing else. Form fields never reach the address; only a string `locale` is read.
+ */
+export function formRedirectUrl(body: Record<string, unknown>, ok: boolean, requestUrl: string): URL {
+  const locale = typeof body.locale === "string" ? body.locale.trim() : "";
+  return new URL(formRedirectPath(locale, ok), new URL(requestUrl).origin);
+}
