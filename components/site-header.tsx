@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 
 import { ArrowIcon } from "@/components/icons";
 import { getContent } from "@/lib/content";
@@ -10,6 +10,9 @@ import { getLocaleFromPathname, localizePath, switchLocalePath } from "@/lib/loc
 import { sharedCopy } from "@/lib/shared-copy";
 
 const FIELD = /\bf-(plaster|white|ink|glut|gold|lime|laub)\b/;
+
+/** The submenu's id, from its item's href: "/leistungen" → "nav-sub-leistungen". */
+const subId = (href: string) => `nav-sub-${href.replace(/^\//, "").replace(/\W+/g, "-") || "start"}`;
 
 export function SiteHeader() {
   const pathname = usePathname() ?? "/";
@@ -23,6 +26,11 @@ export function SiteHeader() {
   const [hidden, setHidden] = useState(false);
   const lastY = useRef(0);
   const bar = useRef<HTMLElement | null>(null);
+  // The desktop submenu that is open, by its item's href. A mouse opens it on hover; a click,
+  // tap or Enter toggles it. hoverOpened stops the click that follows a hover from closing it.
+  const [sub, setSub] = useState<string | null>(null);
+  const hoverOpened = useRef(false);
+  const nav = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const onScroll = () => {
@@ -70,7 +78,30 @@ export function SiteHeader() {
 
   useEffect(() => {
     setOpen(false);
+    setSub(null);
   }, [pathname]);
+
+  useEffect(() => {
+    if (hidden) setSub(null);
+  }, [hidden]);
+
+  useEffect(() => {
+    if (!sub) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      setSub(null);
+      nav.current?.querySelector<HTMLButtonElement>(`[aria-controls="${subId(sub)}"]`)?.focus();
+    };
+    const onDown = (event: PointerEvent) => {
+      if (!nav.current?.contains(event.target as Node)) setSub(null);
+    };
+    window.addEventListener("keydown", onKey);
+    window.addEventListener("pointerdown", onDown);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      window.removeEventListener("pointerdown", onDown);
+    };
+  }, [sub]);
 
   useEffect(() => {
     const root = document.documentElement;
@@ -87,6 +118,10 @@ export function SiteHeader() {
   }, [open]);
 
   const isCurrent = (href: string) => pathname === localizePath(href, locale);
+  const inSection = (href: string) => {
+    const base = localizePath(href, locale);
+    return pathname === base || pathname.startsWith(`${base}/`);
+  };
   // The open menu is a sheet in the colour the bar already has.
   const ground = field;
   const menuField = field === "hero" ? "plaster" : field;
@@ -102,17 +137,64 @@ export function SiteHeader() {
             <img alt={copy.header.logoAlt} height={80} src="/logo-horizontal.png" width={240} />
           </Link>
 
-          <nav aria-label={copy.header.navAriaLabel} className="nav">
-            {copy.navigation.map((item) => (
-              <Link
-                aria-current={isCurrent(item.href) ? "page" : undefined}
-                className="nav-link"
-                href={localizePath(item.href, locale)}
-                key={item.href}
-              >
-                {item.label}
-              </Link>
-            ))}
+          <nav aria-label={copy.header.navAriaLabel} className="nav" ref={nav}>
+            {copy.navigation.map((item) =>
+              item.children ? (
+                <div
+                  className={`nav-group${sub === item.href ? " is-open" : ""}`}
+                  key={item.href}
+                  onBlur={(event) => {
+                    // Tabbing out of the group closes it.
+                    if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setSub(null);
+                  }}
+                  onPointerEnter={(event) => {
+                    if (event.pointerType !== "mouse") return;
+                    hoverOpened.current = sub !== item.href;
+                    setSub(item.href);
+                  }}
+                  onPointerLeave={(event) => {
+                    if (event.pointerType === "mouse") setSub(null);
+                  }}
+                >
+                  <button
+                    aria-controls={subId(item.href)}
+                    aria-expanded={sub === item.href}
+                    className="nav-link nav-toggle"
+                    data-current={inSection(item.href) ? "" : undefined}
+                    onClick={() => {
+                      if (hoverOpened.current) {
+                        hoverOpened.current = false;
+                        return;
+                      }
+                      setSub((value) => (value === item.href ? null : item.href));
+                    }}
+                    type="button"
+                  >
+                    {item.label}
+                    <ArrowIcon className="icon nav-chevron" />
+                  </button>
+                  <ul className="nav-sub" id={subId(item.href)}>
+                    {item.children.map((child) => (
+                      <li key={child.href}>
+                        <Link aria-current={isCurrent(child.href) ? "page" : undefined} href={localizePath(child.href, locale)}>
+                          {child.label}
+                          <ArrowIcon />
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : (
+                <Link
+                  aria-current={isCurrent(item.href) ? "page" : undefined}
+                  className="nav-link"
+                  href={localizePath(item.href, locale)}
+                  key={item.href}
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
           </nav>
 
           <div className="header-side">
@@ -151,9 +233,21 @@ export function SiteHeader() {
       <div className={`menu f-${menuField}${open ? " is-open" : ""}`} id="site-menu" inert={!open}>
         <nav aria-label={copy.header.navAriaLabel} className="menu-links">
           {copy.navigation.map((item) => (
-            <Link href={localizePath(item.href, locale)} key={item.href}>
-              {item.label}
-            </Link>
+            <Fragment key={item.href}>
+              <Link href={localizePath(item.href, locale)}>{item.label}</Link>
+              {/* The overview is the item's own link; the pages below it are listed smaller. */}
+              {item.children ? (
+                <ul className="menu-sub">
+                  {item.children
+                    .filter((child) => child.href !== item.href)
+                    .map((child) => (
+                      <li key={child.href}>
+                        <Link href={localizePath(child.href, locale)}>{child.label}</Link>
+                      </li>
+                    ))}
+                </ul>
+              ) : null}
+            </Fragment>
           ))}
           <Link href={localizePath("/kontakt", locale)}>{copy.header.contactLabel}</Link>
         </nav>

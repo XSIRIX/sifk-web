@@ -2,10 +2,19 @@ import type { Locale } from "@/lib/locale-routing";
 
 type TopicOption = { value: string; label: string };
 
+type NavLink = { href: string; label: string };
+
+/**
+ * A main navigation item. With `children` it opens a submenu instead of being a link;
+ * the first child is the overview page. Add a service page here and it appears in the
+ * desktop submenu and the phone menu.
+ */
+export type NavItem = NavLink & { children?: NavLink[] };
+
 export type SharedCopy = {
   skipLink: string;
   notFound: { title: string; text: string; home: string };
-  navigation: Array<{ href: string; label: string }>;
+  navigation: NavItem[];
   header: {
     contactLabel: string;
     navAriaLabel: string;
@@ -65,7 +74,15 @@ export const sharedCopy: Record<Locale, SharedCopy> = {
       home: "Zur Startseite"
     },
     navigation: [
-      { href: "/leistungen", label: "Leistungen" },
+      {
+        href: "/leistungen",
+        label: "Leistungen",
+        children: [
+          { href: "/leistungen", label: "Alle Leistungen" },
+          { href: "/leistungen/energieberatung", label: "Energieberatung für Unternehmen" },
+          { href: "/leistungen/markteintritt-afrika", label: "Markteintritt Afrika" }
+        ]
+      },
       { href: "/unser-team", label: "Team" },
       { href: "/ueber-uns", label: "Über uns" },
       { href: "/cloody", label: "Cloody" }
@@ -140,7 +157,15 @@ export const sharedCopy: Record<Locale, SharedCopy> = {
       home: "Back to the home page"
     },
     navigation: [
-      { href: "/leistungen", label: "Services" },
+      {
+        href: "/leistungen",
+        label: "Services",
+        children: [
+          { href: "/leistungen", label: "All services" },
+          { href: "/leistungen/energieberatung", label: "Energy consulting for companies" },
+          { href: "/leistungen/markteintritt-afrika", label: "Africa market entry" }
+        ]
+      },
       { href: "/unser-team", label: "Team" },
       { href: "/ueber-uns", label: "About" },
       { href: "/cloody", label: "Cloody" }

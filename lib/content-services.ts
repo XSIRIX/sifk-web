@@ -127,7 +127,7 @@ const energyDe: ServicePageContent = {
           text: "Für die Sanierung von Nichtwohngebäuden gibt es die Bundesförderung für effiziente Gebäude."
         },
         {
-          title: "Transformationspläne (BAFA, Modul 5)",
+          title: "Transformations\u00ADpläne (BAFA, Modul 5)",
           text: "Gefördert werden Pläne, mit denen ein Unternehmen seinen Weg zur Treibhausgasneutralität plant. Den Antrag stellen Sie beim Projektträger VDI/VDE Innovation + Technik."
         }
       ]
@@ -151,7 +151,7 @@ const energyDe: ServicePageContent = {
         a: "Mindestens alle vier Jahre, gerechnet vom Abschluss des letzten Energieaudits."
       },
       {
-        q: "Energieaudit oder Energiemanagementsystem?",
+        q: "Energie\u00ADaudit oder Energie\u00ADmanagement\u00ADsystem?",
         a: "Ein Energieaudit ist eine Bestandsaufnahme, die alle vier Jahre wiederholt wird. Ein Energiemanagementsystem nach DIN EN ISO 50001 ist ein dauerhafter Prozess. Wer eines einrichtet, ist von der Auditpflicht befreit."
       },
       {
@@ -361,7 +361,7 @@ const africaDe: ServicePageContent = {
           text: "Wir suchen und prüfen Händler, Lieferanten und Behörden und begleiten die ersten Gespräche."
         },
         {
-          title: "Projektbegleitung und Stakeholder-Koordination",
+          title: "Projekt\u00ADbegleitung und Stakeholder-Koordination",
           text: "Termine, Dokumente, Beteiligte: Wir halten Ihr Projekt vor Ort zusammen."
         },
         {
@@ -381,7 +381,7 @@ const africaDe: ServicePageContent = {
       title: "Förderung.",
       items: [
         {
-          title: "Beratungsgutscheine Afrika",
+          title: "Beratungs\u00ADgutscheine Afrika",
           text: "Für Anträge bis einschließlich 28.02.2027 fördert der Bund Beratung zu Ihrem Geschäftsvorhaben in Afrika mit bis zu 75\u00A0% der Beratungskosten.",
           link: { href: "/beratungsgutscheine-afrika", label: "Beratungs\u00ADgutscheine Afrika" }
         }
@@ -506,7 +506,7 @@ const africaEn: ServicePageContent = {
       title: "Funding.",
       items: [
         {
-          title: "Beratungsgutscheine Afrika (Africa consulting vouchers)",
+          title: "Beratungs\u00ADgutscheine Afrika (Africa consulting vouchers)",
           text: "For applications made until and including 28 February 2027, the German federal government funds consulting on your business project in Africa with up to 75\u00A0% of the consulting costs.",
           // The voucher page exists in German only. Never localize this link.
           link: { href: "/beratungsgutscheine-afrika", label: "Details (in German)", hrefLang: "de" }

@@ -113,10 +113,13 @@ export function ServicePageView({ locale, page }: { locale: Locale; page: Servic
                     <p>{item.text}</p>
                     {item.link ? (
                       // Written as given: a German-only page must not get an /en prefix.
-                      <a className="link" href={item.link.href} hrefLang={item.link.hrefLang}>
-                        {item.link.label}
-                        <ArrowIcon />
-                      </a>
+                      // In a <p>, so the grid row does not squeeze the link to its narrowest width.
+                      <p>
+                        <a className="link" href={item.link.href} hrefLang={item.link.hrefLang}>
+                          {item.link.label}
+                          <ArrowIcon />
+                        </a>
+                      </p>
                     ) : null}
                   </li>
                 ))}

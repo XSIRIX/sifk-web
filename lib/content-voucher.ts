@@ -107,7 +107,7 @@ export const voucherDe: VoucherContent = {
     title: "Häufige Fragen.",
     items: [
       {
-        q: "Wer kann die Beratungsgutscheine nutzen?",
+        q: "Wer kann die Beratungs\u00ADgutscheine nutzen?",
         a: "Rechtlich selbständige kleine und mittlere Unternehmen der gewerblichen Wirtschaft und des Handwerks mit Betriebsstätte oder Niederlassung in Deutschland und substanziellem Interesse am Markteintritt in Afrika. Wo der Hauptsitz liegt, spielt keine Rolle. Start-ups können den Gutschein nutzen, wenn sie diese Bedingungen erfüllen."
       },
       {
