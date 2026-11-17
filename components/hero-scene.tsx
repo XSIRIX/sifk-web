@@ -5,6 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
 import { Fragment, useEffect, useRef, useState } from "react";
+import { preload } from "react-dom";
 
 import { ArrowIcon } from "@/components/icons";
 import { MOTION_QUERY, STACK_QUERY } from "@/components/motion-root";
@@ -38,6 +39,20 @@ export function HeroScene({
   const video = useRef<HTMLVideoElement | null>(null);
   // True when the film cannot play: then the finished picture is shown instead.
   const [woven, setWoven] = useState(false);
+
+  // The still inside <picture> is not found early by the browser, so ask for it in the head.
+  // One request per source that applies with motion on, each with that source's media query.
+  // Reduced-motion visitors get the woven picture instead, so they are left out here.
+  preload("/world/hero-start-m.webp", {
+    as: "image",
+    fetchPriority: "high",
+    media: "(max-width: 44rem) and (prefers-reduced-motion: no-preference)"
+  });
+  preload("/world/hero-start.webp", {
+    as: "image",
+    fetchPriority: "high",
+    media: "(min-width: 44.0625rem) and (prefers-reduced-motion: no-preference)"
+  });
 
   // The film is an enhancement: the empty table is the first paint, the film fades in over it.
   useEffect(() => {

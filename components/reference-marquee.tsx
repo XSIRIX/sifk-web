@@ -93,7 +93,7 @@ export function ReferenceMarquee({ title, ariaLabel }: ReferenceMarqueeProps) {
       </div>
       {/* The street of businesses on the five ribbons. Decoration: the logos below carry the names. */}
       <div aria-hidden="true" className="refs-street">
-        <img alt="" height={800} src="/world/clients-street.webp" width={2736} />
+        <img alt="" height={800} loading="lazy" src="/world/clients-street.webp" width={2736} />
       </div>
       <div aria-label={ariaLabel} className="refs-stage" role="group">
         {rows.map((logos, row) => (
@@ -106,7 +106,7 @@ export function ReferenceMarquee({ title, ariaLabel }: ReferenceMarqueeProps) {
             {[false, true].flatMap((copy) =>
               logos.map((logo) => (
                 <li aria-hidden={copy || undefined} key={`${logo.src}${copy ? "-2" : ""}`}>
-                  <img alt={copy ? "" : logo.alt} decoding="async" src={logo.src} />
+                  <img alt={copy ? "" : logo.alt} decoding="async" loading="lazy" src={logo.src} />
                 </li>
               ))
             )}
