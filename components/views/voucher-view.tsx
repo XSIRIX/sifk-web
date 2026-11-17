@@ -26,7 +26,7 @@ export function VoucherView() {
         title={body.hero.title}
       />
 
-      <section className="chapter sheet field f-glut">
+      <section className="chapter sheet field f-white">
         <div className="shell">
           <h2 className="mega chapter-head" data-split>
             {body.programme.title}
